@@ -1,0 +1,69 @@
+<!--pages/iamdudao/iamdudao.wxml-->
+<view class='iamdudao'>
+  <!--说几句 start-->
+  <view class='sayBox'>
+    <view class='tit'>说几句</view>
+    <view class='box'>
+      <textarea placeholder='在此处写下你想说的话' placeholder-class='sayTextarea'></textarea>
+    </view>
+    <button class='ok'>完成</button>
+  </view>
+  <!--说几句 end-->
+  <!--排行榜 start-->
+  <view class='phb'>
+    <view class='tit'>
+      <image src='/img/bookIcon.png'></image>钱多多的排行榜
+    </view>
+    <view class='tabs'>
+      <view class='tab'>全国
+        <view class='line'></view>
+      </view>
+      <view class='tab'>同城
+        <view class='line'></view>
+      </view>
+      <view class='tab'>同圈</view>
+    </view>
+    <view class='list'>
+      <view class='card'>
+        <view class='c-left'>完成习惯个数</view>
+        <view class='c-right'>
+          <text>2个</text>
+          <text>排名2014名</text>
+          <text>金牌</text>
+        </view>
+      </view>
+      <view class='card'>
+        <view class='c-left'>完成习惯次数</view>
+        <view class='c-right'>
+          <text>2个</text>
+          <text>排名2014名</text>
+          <text>金牌</text>
+        </view>
+      </view>
+      <view class='card'>
+        <view class='c-left'>完成课时数</view>
+        <view class='c-right'>
+          <text>2个</text>
+          <text>排名2014名</text>
+          <text>金牌</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--排行榜 end-->
+
+  <!--晨读 start-->
+  <view class='readBox'>
+    <view class='tit'>
+      <image src="/img/bookIcon.png"></image>晨读
+    </view>
+    <view class='list'>
+      <showCard></showCard>
+      <showCard></showCard>
+      <showCard></showCard>
+    </view>
+  </view>
+  <!--晨读 end-->
+  <button class='gbtn left'>我也要养成</button>
+  <button class='gbtn right'>“袭”一下TA</button>
+</view>

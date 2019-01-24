@@ -1,0 +1,27 @@
+/* components/habitDetail-card/habitDetail-card.wxss */
+
+.card {
+  margin-bottom: 25rpx;
+  height: 37rpx;
+}
+
+.card .label {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 37rpx;
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+}
+
+.card .num {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 37rpx;
+  display: inline-block;
+  width: 70%;
+  text-align: right;
+  vertical-align: top;
+}

@@ -1,0 +1,9 @@
+{
+ "usingComponents": {
+  "component": "/components_show/component-tag-name"
+},
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#F3F7F8",
+  "navigationBarTitleText": "添加活动",
+  "navigationBarTextStyle": "black"
+}

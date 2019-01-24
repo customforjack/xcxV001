@@ -1,0 +1,65 @@
+<!--pages/post_activity/post_activity.wxml-->
+<view>
+  <component id="component"  bindtap="showModal"></component>
+</view>
+<view class='form'>
+<view class='input_name'>
+  <view><text>活动名称</text></view>
+  <view><input placeholder='请输入活动名称'></input></view>
+</view>
+  <view class='input_name'>
+   <view><text>活动时间</text></view>
+   <view><input placeholder='请输入活动时间'></input></view>
+</view>
+  <view class='input_name'>
+   <view><text>活动地点</text></view>
+   <view><input placeholder='请输入活动地点'></input></view>
+</view>
+<view class='input_name'>
+   <view><text>主办单位</text></view>
+   <view><input placeholder='请输入主办单位'></input></view>
+</view>
+<view class='input_name'>
+   <view><text>参与对象</text></view>
+   <view><input placeholder='请输入主办单位'></input></view>
+</view>
+<view class='input_name' style='height: 203rpx;'>
+   <view><text>参与对象</text></view>
+   <view><input placeholder='请输入对象与对象介绍...'></input></view>
+</view>
+<view class='input_name' style='height: 203rpx;margin-bottom:0rpx'>
+   <view><text>活动介绍</text></view>
+   <view><input placeholder='请输入对活动对象的描述...'></input></view>
+</view>
+</view>
+<view class='content'>
+  <text class='content_tile'>活动正文</text>
+  <image  style='height: 374rpx; display:block;width: 100%;margin-bottom:26rpx ' src='../../img/advertisement.jpg' ></image>
+  <text class='content_tile2' >在这个寒冬, 想念夏天的尾巴</text>
+  <textarea value='最可怕的不是变老, 而是高枯衰老的破坏力. 你害怕变老吗? 害怕变成家里那个不受关注的一员吗? 好妻子该如何抵抗这 些, 一件…'></textarea>
+  <text class='content_tile3' >标题主图</text>
+
+  <view>
+    <scroll-view class="image-group" scroll-x="true">
+        <view ></view>
+        <view ></view>
+        <view ></view>
+        <view ></view>
+        <view ></view>
+        <view ></view>
+        <view ></view>
+   </scroll-view>
+  </view>
+   <text class='content_tile4'>
+   活动费用
+   </text>
+   <view class='cost'>
+   <button>免费</button>
+   <button>自定义</button>
+   </view>
+    
+</view>
+  <view class='over'><button bindtap='over'>完成</button></view>
+
+
+         

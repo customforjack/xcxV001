@@ -1,0 +1,41 @@
+<!--pages/remind/remind.wxml-->
+
+ 
+  <view class='tilte'>
+    <text class='tilte_big'>2018年12月</text>
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg'></image>
+      </view>
+     <view class='miaoshu'>
+      <text> 
+         为丈夫做早餐
+      </text>
+      <text style='padding-top：8rpx'> 
+         TA已练习20次
+      </text>
+      <text>1000人正在练习</text>
+     </view>
+      <!-- <view class='qdd'>钱多多</view> -->
+     <view class='click_ta'>打卡  +</view>
+    </view>
+    
+
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg'></image>
+      </view>
+     <view class='miaoshu'>
+      <text> 
+         为丈夫做早餐
+      </text>
+      <text style='padding-top：8rpx'> 
+         TA已练习20次
+      </text>
+      <text>1000人正在练习</text>
+     </view>
+      <!-- <view class='qdd'>钱多多</view> -->
+     <view class='click_ta'>打卡  +</view>
+    </view>
+  </view>
+ 

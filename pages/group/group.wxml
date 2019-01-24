@@ -1,0 +1,128 @@
+<!--pages/group/group.wxml-->
+
+<view class='classContent'>
+
+<view class='tips'>
+ <text>角色群</text>
+</view>
+<view class='class_black'>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+ <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+</view>
+<view class='tips'>
+ <text>课程群</text>
+</view>
+<view class='class_black'>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+ <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+</view>
+<view class='tips'>
+ <text>几天群</text>
+</view>
+<view class='class_black'>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+ <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+</view>
+</view>

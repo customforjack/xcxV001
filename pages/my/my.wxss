@@ -1,0 +1,96 @@
+/* pages/my/my.wxss */
+page{
+  background: #F7F9FB;
+}
+.bj_top{
+  background: #232427;
+  height: 140rpx;
+}
+.info_box{
+  height: 282rpx;
+  border-radius:20rpx;
+  background: #fff;
+  margin: -56rpx 22rpx 25rpx;
+  position: relative;
+  box-shadow:0px 0px 20px 0px rgba(200,200,200,0.5);
+}
+.photo{
+  position: absolute;
+  display: block;
+  width: 159rpx;
+  height: 159rpx;
+  border-radius: 100%;
+  top: -62rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.name{
+  position: absolute;
+  top: 136rpx;
+  width: 100%;
+  line-height: 65rpx;
+  color: #3A3A3A;
+  font-size: 46rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.biaoqian{
+  position: absolute;
+  top: 218rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #A0A0A0;
+  line-height: 42rpx;
+}
+.model_one{
+  margin: 0 22rpx 25rpx;
+  height: 214rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 48rpx;
+}
+.model_item{
+  padding: 48rpx 0;
+  width: 115rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 400;
+}
+.model_item image{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  background: #D8D8D8;
+  margin: 0 auto;
+}
+.model_two{
+  margin: 0 22rpx 25rpx;
+  background: #fff;
+  padding: 34rpx 48rpx 0;
+}
+.row{
+  display: flex;
+  justify-content: space-between;  
+}
+.model_item_copy{
+  padding: 14rpx 0 48rpx;
+  width: 115rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 400;
+}
+.model_item_copy image{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  background: #D8D8D8;
+  margin: 0 auto 16rpx;
+}

@@ -1,0 +1,5 @@
+<!--components/addBtn/addBtn.wxml-->
+<view class='addBtn'>
+      <button class='addBtn' bindtap="todo">+</button>
+</view>
+

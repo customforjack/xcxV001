@@ -1,0 +1,56 @@
+/* pages/my/withdraw/withdraw.wxss */
+page{
+  background: #F7F9FB;
+}
+.tixian{
+  width: 690rpx;
+  height: 514rpx;
+  background: #fff;
+  border-radius:12rpx;
+  margin: 50rpx auto 0;
+}
+.title{
+  color: #161616;
+  font-size: 28rpx;
+  padding: 63rpx 40rpx 0;
+}
+.qian{
+  padding: 38rpx 0;
+  margin: 0 41rpx;
+  border-bottom: 1rpx solid rgba(241,241,241,1);
+  height: 52rpx;
+  display: flex;
+}
+.qian text{
+  display: inline-block;
+  line-height: 52rpx;
+  font-size: 48rpx;
+  color: #333;
+  font-weight: bold;
+  margin-right: 30rpx;
+}
+.qian input{
+  flex: 1;
+  outline: none;
+  border: none;
+  font-size: 34rpx;
+}
+.tishi{
+  font-size: 28rpx;
+  color: #BABABA;
+  padding: 47rpx 40rpx 44rpx;
+}
+.tishi text{
+  color: #2AC0CB;
+}
+.btn{
+  margin: 0 40rpx;
+  height: 88rpx;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #161616;
+  -webkit-text-stroke:1rpx rgba(22,22,22,1);
+  background: #5FD3DB;
+  border-radius:4rpx;
+}

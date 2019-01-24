@@ -1,0 +1,33 @@
+<!--pages/vip/vip.wxml-->
+<view class='assort'>
+  <view class='type'>职场类</view>
+  <view class='assort_content'>
+    <view class='item' wx:for="{{type}}" wx:key="unique">
+      <view class='name'>{{item.title}}</view>
+      <view class='canshu'>20009人已加入</view>
+    </view>
+  </view>
+</view>
+<view class='assort'>
+  <view class='type'>家庭类</view>
+  <view class='assort_content'>
+    <view class='item' wx:for="{{type}}" wx:key="unique">
+      <view class='name'>{{item.title}}</view>
+      <view class='canshu'>20009人已加入</view>
+    </view>
+  </view>
+</view>
+<view class='assort'>
+  <view class='type'>学校类</view>
+  <view class='assort_content'>
+    <view class='item' wx:for="{{type}}" wx:key="unique">
+      <view class='name'>{{item.title}}</view>
+      <view class='canshu'>20009人已加入</view>
+    </view>
+  </view>
+</view>
+
+<view class='anniu'>
+  <view class='collect'>收藏</view>
+  <view class='collect buy'>立即购买</view>
+</view>

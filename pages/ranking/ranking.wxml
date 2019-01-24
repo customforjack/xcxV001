@@ -1,0 +1,70 @@
+<!--pages/ranking/ranking.wxml-->
+
+ <view class='circle_top'>
+    <view class='tab_item' bindtap='changeTab' data-tab='0'>
+      <text class="text {{flag==0?'act':''}}">练习数</text>
+    </view>
+    <view class='tab_item' bindtap='changeTab' data-tab='1'>
+      <text class="text {{flag==1?'act':''}}">习惯数</text>
+    </view>
+    <view class='tab_item' bindtap='changeTab' data-tab='2'>
+      <text class="text {{flag==2?'act':''}}">课时数</text>
+    </view>
+  </view>
+
+<block wx:if='{{flag==0}}'>
+  <view class='recommend'>
+  <view class='recommend_list rank'>
+    <image src='../../img/paixu.png'></image>
+    </view>
+    <view class='recommend_list pix'>
+    <image src='../../img/advertisement.jpg'></image>
+    </view>
+    <view class='recommend_list content'>
+      <view>仙女只喝露水</view>
+      <view class='content_list'>
+        <text>200次练习数</text>
+        <text>30次习惯数</text>
+        <text>40次课时数</text>
+      </view>
+    </view>
+  </view>
+</block>
+
+<block wx:if='{{flag==1}}'>
+  <view class='recommend'>
+  <view class='recommend_list rank'>
+    <image src='../../img/paixu.png'></image>
+    </view>
+    <view class='recommend_list pix'>
+    <image src='../../img/advertisement.jpg'></image>
+    </view>
+    <view class='recommend_list content'>
+      <view>仙女只喝露水1</view>
+      <view class='content_list'>
+        <text>200次练习数</text>
+        <text>30次习惯数</text>
+        <text>40次课时数</text>
+      </view>
+    </view>
+  </view>
+</block>
+
+<block wx:if='{{flag==2}}'>
+  <view class='recommend'>
+  <view class='recommend_list rank'>
+    <image src='../../img/paixu.png'></image>
+    </view>
+    <view class='recommend_list pix'>
+    <image src='../../img/advertisement.jpg'></image>
+    </view>
+    <view class='recommend_list content'>
+      <view>仙女只喝露水3</view>
+      <view class='content_list'>
+        <text>200次练习数</text>
+        <text>30次习惯数</text>
+        <text>40次课时数</text>
+      </view>
+    </view>
+  </view>
+</block>

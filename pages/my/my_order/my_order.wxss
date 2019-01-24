@@ -1,0 +1,74 @@
+/* pages/my/my_order/my_order.wxss */
+.tab_box{
+  padding: 0 28rpx;
+  height: 100rpx;
+  display: flex;
+}
+.tab_item{
+  width: auto;
+  height: 96rpx;
+  line-height: 124rpx;
+  border-bottom: 4rpx solid transparent;
+  margin-right: 66rpx;
+  font-size: 30rpx;
+}
+.act{
+  color: #2AC0CB;
+  border-bottom: 4rpx solid #2AC0CB;
+}
+.list_item{
+  padding: 40rpx 0 25rpx;
+  margin: 0 0 0 36rpx;
+  border-bottom: 1rpx solid rgba(220,220,220,1);
+  height: 178rpx;
+  display: flex;
+}
+.tu{
+  display: block;
+  width: 178rpx;
+  height: 178rpx;
+  margin-right: 44rpx;
+}
+.list_r{
+  flex: 1;
+}
+.juese{
+  display: flex;
+  height: 55rpx;
+  line-height: 55rpx; 
+  margin-bottom: 8rpx;
+}
+.juese text{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #010101;
+  margin-right: 6rpx;
+}
+.juese view{
+  width: 58rpx;
+  height: 30rpx;
+  border: 1rpx solid #5FD3DB;
+  border-radius:15rpx;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 20rpx;
+  color: #5FD3DB;
+  margin-top: 10rpx;
+}
+.desc{
+  color: #616161;
+  font-size: 22rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 20rpx;
+}
+.num{
+  font-size: 20rpx;
+  color: #999;
+}
+.money{
+  color: #FF1E1D;
+  font-size: 28rpx;
+  margin-top: 5rpx;
+}

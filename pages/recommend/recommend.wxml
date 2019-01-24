@@ -1,0 +1,47 @@
+<!--pages/recommend/recommend.wxml-->
+<view>
+<view class='recommend'>
+  <view class='recommend_list pix'><image src='../../img/advertisement.jpg'></image></view>
+  <view class='recommend_list content'>
+    <view>仙女只喝露水</view>
+    <view class='content_list'>
+      <text>已邀请10人</text>
+      <text>已付费3人</text>
+      <text>所属100人</text>
+    </view>
+    <view class='date'>12月13日</view>
+  </view>
+  <view class='recommend_list pay'>
+    <view class='num'>13000000001</view>
+    <view class='al_pay'>
+    <text class='al_pay2'>已付款26人</text>
+    </view>
+  </view>
+</view>
+ <view class='baseline'></view>
+ </view>
+
+
+
+ <view>
+<view class='recommend'>
+  <view class='recommend_list pix'><image src='../../img/advertisement.jpg'></image></view>
+  <view class='recommend_list content'>
+    <view>仙女只喝露水</view>
+    <view class='content_list'>
+      <text>已邀请10人</text>
+      <text>已付费3人</text>
+      <text>所属100人</text>
+    </view>
+    <view class='date'>12月13日</view>
+  </view>
+  <view class='recommend_list pay'>
+    <view class='num'>13000000001</view>
+    <view class='al_pay'>
+    <text class='al_pay2'>已付款26人</text>
+    </view>
+  </view>
+</view>
+ <view class='baseline'></view>
+ </view>
+

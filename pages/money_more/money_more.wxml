@@ -1,0 +1,47 @@
+<!--pages/money_more/money_more.wxml-->
+ <view class='tilte'>
+    <!-- <text class='tilte_big'>MORE</text> -->
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg'></image>
+      </view>
+     <view class='miaoshu'>
+      <text> 
+         为丈夫做早餐
+      </text>
+      <text> 
+         TA已练习20次
+      </text>
+      <text>
+      20.6万人参与/钱多多
+      </text>
+     </view>
+      <!-- <view class='qdd'>钱多多</view> -->
+     <view class='click_ta'>袭TA一下</view>
+    </view>
+  </view>
+
+
+  <view class='tilte'>
+    <!-- <text class='tilte_big'>MORE</text> -->
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg'></image>
+      </view>
+     <view class='miaoshu'>
+      <text> 
+         为丈夫做早餐
+      </text>
+      <text> 
+         TA已练习20次
+      </text>
+      <text>
+      20.6万人参与/钱多多
+      </text>
+     </view>
+      <!-- <view class='qdd'>钱多多</view> -->
+     <view class='click_ta'>袭TA一下</view>
+    </view>
+  </view>
+
+

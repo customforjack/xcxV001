@@ -1,0 +1,19 @@
+<!--pages/leavingMsg/leavingMsg.wxml-->
+<view class='leavingMsg'>
+  <view class='tip'>
+    <button>打卡要求: 必须上传图片</button>
+  </view>
+  <textarea placeholder='说说今天的感想…' class='say'></textarea>
+  <view class='sayType'>
+    <button class='sayBtn'>
+      <image src='/img/ziyuan.png'></image>
+    </button>
+    <button class='imgBtn'>
+      <image src='/img/tupian.png'></image>
+    </button>
+    <button class='videoBtn'>
+      <image src='/img/videpBtn.png'></image>
+    </button>
+  </view>
+  <button class='fbBtn'>发布</button>
+</view>

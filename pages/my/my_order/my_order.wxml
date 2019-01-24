@@ -1,0 +1,30 @@
+<!--pages/my/my_order/my_order.wxml-->
+<view class='tab_box'>
+  <view class="tab_item {{act==0?'act':''}}" bindtap='changeTab' data-act='0'>全部</view>
+  <view class="tab_item {{act==1?'act':''}}" bindtap='changeTab' data-act='1'>已付款</view>
+  <view class="tab_item {{act==2?'act':''}}" bindtap='changeTab' data-act='2'>未付款</view>
+</view>
+<view class='list_item'>
+  <image src='/img/demo.jpeg' class='tu'></image>
+  <view class='list_r'>
+    <view class='juese'>
+      <text>好妻子</text>
+      <view>精选</view>
+    </view>
+    <view class='desc'>如何成为一个贤惠的好妻子</view>
+    <view class='num'>已购289件</view>
+    <view class='money'>￥99</view>
+  </view>
+</view>
+<view class='list_item'>
+  <image src='/img/demo.jpeg' class='tu'></image>
+  <view class='list_r'>
+    <view class='juese'>
+      <text>好妻子</text>
+      <view>精选</view>
+    </view>
+    <view class='desc'>如何成为一个贤惠的好妻子</view>
+    <view class='num'>已购289件</view>
+    <view class='money'>￥99</view>
+  </view>
+</view>

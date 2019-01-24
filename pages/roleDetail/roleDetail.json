@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "showCard": "/components/showCard/showCard",
+    "toDoBtn": "/components/toDoBtn/toDoBtn",
+    "addBtn": "/components/addBtn/addBtn"
+  },
+  "navigationBarTitleText": "好妻子的课堂"
+}

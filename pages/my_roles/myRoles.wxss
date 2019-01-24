@@ -1,0 +1,45 @@
+/* pages/my_roles/myRoles.wxss */
+
+.scroll-x {
+  white-space: nowrap;
+}
+.tabs{
+  padding-left: 30rpx;
+  height: 88rpx;
+  margin-top: 6rpx;
+}
+.tabs .tab {
+  padding: 0;
+  display: inline-block;
+  margin-right: 52rpx;
+  background: none;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: #161616;
+  line-height: 82rpx;
+  position: relative;
+}
+
+.tabs .tab.active {
+  color: rgba(42, 192, 203, 1);
+}
+.tabs .tab.active:before{
+  width: 70%;
+  content: '';
+  display: block;
+  height: 0;
+  border-bottom: 4rpx solid rgba(42, 192, 203, 1); 
+  position: absolute;
+  bottom:0rpx;
+  left:15%;
+}
+.tabs .tab:after {
+  display: none;
+}
+swiper{
+  height: 374rpx;
+}
+swiper swiper-item image{
+  width: 100%;
+  display: block;
+}

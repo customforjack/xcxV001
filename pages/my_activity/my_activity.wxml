@@ -1,0 +1,54 @@
+<!--pages/my_activity/my_activity.wxml-->
+  <view class='clearance'></view>
+
+   <view class='circle_top'>
+    <view class='tab_item' bindtap='changeTab' data-tab='0'>
+      <text class="text {{flag==0?'act':''}}">我参与的</text>
+    </view>
+    <view class='tab_item' bindtap='changeTab' data-tab='1'>
+      <text class="text {{flag==1?'act':''}}">我发起的</text>
+    </view>
+   
+  </view>
+  
+  <block wx:if='{{flag==0}}'>
+  <view class='tilte'>
+    <text class='tilte_big'>陪孩子一小时</text>
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg' style='width:140rpx;height:140rpx; vertical-align: middle;'></image>
+      </view>
+     <view class='miaoshu'>
+      <text class='introduce'>如何和孩子建立亲密关系的自我学习和介绍</text>
+      <view class='miaoshu_add'>
+      <text>20.6万人参与/钱多多</text>
+      <text>2:00 上海</text>
+      
+      </view>
+      
+     </view>
+    </view>
+  </view>
+  <view class='division'></view>
+   </block>
+
+    <block wx:if='{{flag==1}}'>
+  <view class='tilte'>
+    <text class='tilte_big'>出门散步</text>
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg' style='width:140rpx;height:140rpx; vertical-align: middle;'></image>
+      </view>
+     <view class='miaoshu'>
+      <text class='introduce'>如何和孩子建立亲密关系的自我学习和介绍</text>
+      <view class='miaoshu_add'>
+      <text>20.6万人参与/钱多多</text>
+      <text>2:00 上海</text>
+      
+      </view>
+      
+     </view>
+    </view>
+  </view>
+  <view class='division'></view>
+   </block>

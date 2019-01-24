@@ -1,0 +1,10 @@
+<!--pages/my/withdraw/withdraw.wxml-->
+<view class='tixian'>
+  <view class='title'>提现金额</view>
+  <view class='qian'>
+    <text>￥</text>
+    <input></input>
+  </view>
+  <view class='tishi'>可提现余额 0.00, <text>全部提现</text></view>
+  <view class='btn'>提现</view>
+</view>

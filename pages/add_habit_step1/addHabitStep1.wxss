@@ -1,0 +1,227 @@
+/* pages/add_habit_step1/addHabitStep1.wxss */
+
+.addHabitStep1 {
+  min-height: 100vh;
+  background: #f7f9fb;
+  padding-bottom: 58rpx;
+}
+
+.addHabitStep1 .box {
+  margin: 0 20rpx;
+  background: #fff;
+  padding: 50rpx 40rpx 0;
+}
+
+.addHabitStep1 .box .name {
+  height: 96rpx;
+  background: rgba(243, 247, 248, 1);
+  border-radius: 18rpx;
+  padding: 0 30rpx;
+  text-align: center;
+  margin-bottom: 52rpx;
+}
+
+.addHabitStep1 .box .nameStyle {
+  line-height: 45px;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(189, 192, 199, 1);
+  text-align: center;
+}
+
+.addHabitStep1 .timeBox .card {
+  margin-bottom: 75rpx;
+}
+
+.addHabitStep1 .timeBox .card text {
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  display: inline-block;
+  vertical-align: top;
+  line-height: 42rpx;
+  width: 150rpx;
+}
+
+.addHabitStep1 .timeBox .card  input {
+  text-align: right;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  vertical-align: top;
+  line-height: 42rpx;
+  display: inline-block;
+  width: 450rpx;
+  margin-right: 20rpx;
+}
+
+.addHabitStep1 .timeBox .card picker {
+  display: inline-block;
+}
+
+.addHabitStep1 .timeBox .card  image {
+  width: 14rpx;
+  height: 25rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15rpx;
+}
+
+.times .addBtn {
+  margin-right: 20rpx;
+}
+
+.times .addTime {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42rpx;
+  vertical-align: top;
+}
+
+.times .addTime button image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.timeList {
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+.timeList .addBtn image {
+  width: 40%;
+  height: 40%;
+  display: block;
+  margin-left: 30%;
+  margin-top: 30%;
+}
+
+.timeList button {
+  width: 100rpx;
+  height: 100rpx;
+  display: inline-block;
+  padding: 0;
+  border: none;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  color: rgba(51, 51, 51, 1);
+  vertical-align: top;
+  background: rgba(245, 246, 248, 1);
+  border-radius: 8rpx;
+}
+
+.timeList .btnBox {
+  display: inline-block;
+  margin-right: 20rpx;
+  position: relative;
+}
+
+.timeList button:after {
+  display: none;
+}
+
+.timeList .btnBox .icon {
+  width: 36rpx;
+  height: 36rpx;
+  background: #5fd3db;
+  border-radius: 50%;
+  position: absolute;
+  top: -18rpx;
+  right: -18rpx;
+}
+
+.timeList .btnBox .icon .line {
+  height: 3rpx;
+  background: #fff;
+  margin-top: 16rpx;
+  width: 20rpx;
+  margin-left: 8rpx;
+}
+
+.repert {
+  margin-top: 63rpx;
+}
+
+.repert .tit {
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42rpx;
+  margin-bottom: 48rpx;
+}
+
+.repert .list {
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+.repert .list button {
+  width: 76rpx;
+  height: 76rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(18, 18, 18, 1);
+  padding: 0;
+  border-radius: 50%;
+  font-size: 28rpx;
+  color: #333;
+  display: inline-block;
+  margin-right: 16rpx;
+}
+
+.repert .list button.active {
+  background: #5fd3db;
+}
+.promise{
+  position: relative;
+  margin-top: 63rpx;
+}
+.promise .tit {
+  margin-bottom: 30rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42rpx;
+}
+
+.promise input {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(189, 192, 199, 1);
+  line-height: 45rpx;
+  padding: 25rpx;
+  background: rgba(243, 247, 248, 1);
+  border-radius: 18rpx;
+  margin-bottom: 30rpx;
+}
+
+.ipt-place {
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(189, 192, 199, 1);
+  line-height: 45rpx;
+}
+.promise .sendBtn{
+  width:120rpx;
+line-height:60rpx;
+background:rgba(42,192,203,1);
+border-radius:6rpx;
+font-size: 28rpx;
+padding: 0;
+color: #fff;
+position: absolute;
+right: 0;
+top: -7rpx;
+}
+.subBtn{
+  line-height:92rpx;
+background:rgba(95,211,219,1);
+border-radius:17rpx;
+margin-top: 66rpx;
+color: #161616;
+font-size: 32rpx;
+}

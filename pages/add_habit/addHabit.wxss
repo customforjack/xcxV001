@@ -1,0 +1,175 @@
+/* pages/add_habit/addHabit.wxss */
+
+.addHabit {
+  background: #f7f9fb;
+  min-height: 100vh;
+  padding: 40rpx 36rpx 126rpx;
+}
+
+.tabs {
+  
+}
+
+.tabs .tab {
+  width: 118rpx;
+  line-height: 64rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 32rpx;
+  display: inline-block;
+  margin-right: 34rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  border: none;
+  color: rgba(155, 155, 155, 1);
+}
+
+.tabs .tab:after {
+  display: none;
+}
+
+.tabs .tab.active {
+  background: rgba(95, 211, 219, 1);
+  color: rgba(52, 52, 51, 1);
+}
+
+.list {
+  margin-top: 39rpx;
+}
+
+.list .card {
+  width: 196rpx;
+  height: 196rpx;
+  background: rgba(254, 255, 254, 1);
+  border-radius: 6rpx;
+  display: inline-block;
+  padding: 26rpx 26rpx 0;
+  box-sizing: border-box;
+  margin-right: 45rpx;
+  margin-bottom: 46rpx;
+}
+
+.list .card:nth-of-type(3n+0) {
+  margin-right: 0;
+}
+
+.list .card .img-box {
+  margin-top: 27rpx;
+  text-align: right;
+}
+
+.list .card text {
+  display: block;
+  height: 45rpx;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(52, 52, 51, 1);
+  line-height: 45rpx;
+}
+
+.list .card image {
+  width: 64rpx;
+  display: inline-block;
+}
+
+.addBtn {
+  width: 678rpx;
+  height: 96rpx;
+  background: rgba(95, 211, 219, 1);
+  border-radius: 4rpx;
+  position: fixed;
+  left: 36rpx;
+  right: 36rpx;
+  bottom: 30rpx;
+  text-align: center;
+  padding: 24rpx 0;
+  box-sizing: border-box;
+}
+
+.addBtn cover-image {
+  width: 48rpx;
+  height: 48rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 23rpx;
+}
+
+.addBtn cover-view {
+  display: inline-block;
+  line-height: 48rpx;
+  vertical-align: top;
+  color: #161616;
+}
+
+.quanziList {
+  background: #fff;
+  padding: 0 36rpx;
+}
+
+.quanziList .tit {
+  line-height: 106rpx;
+  font-weight: 400;
+  color: rgba(52, 52, 51, 1);
+  font-size: 30rpx;
+}
+
+.quanziList .box {
+}
+
+.quanziList .box .card {
+  padding-top: 28rpx;
+  border-top: 1rpx solid rgba(235, 235, 235, 1);
+  padding-bottom: 28rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.quanziList .box .card .c-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.quanziList .box .card .name {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(27, 27, 27, 1);
+  line-height: 45rpx;
+  -webkit-text-stroke: 1rpx rgba(27, 27, 27, 1);
+  text-stroke: 1rpx rgba(27, 27, 27, 1);
+  text-align: left;
+  margin-top: 26rpx;
+  margin-bottom: 2rpx;
+}
+
+.quanziList .box .card .label {
+  width: 101rpx;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  height: 51rpx;
+  background: linear-gradient(180deg, rgba(255, 205, 150, 1) 0%, rgba(254, 159, 93, 1) 100%);
+  border-radius: 18rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 51rpx;
+  text-align: center;
+  position: absolute;
+  left: -15rpx;
+  top: -15rpx;
+}
+
+.quanziList .box .card .detail {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(110, 110, 110, 1);
+  line-height: 37rpx;
+}
+
+video {
+  height: 328rpx;
+  width: 100%;
+  display: block;
+  border-radius: 10rpx;
+}

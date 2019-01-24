@@ -1,0 +1,62 @@
+/* pages/my/my_account/my_account.wxss */
+.account{
+  display: flex;
+  flex-direction: column;
+}
+.account_top{
+  height: 84rpx;
+  display: flex;
+}
+.tab_item{
+  width: 50%;
+  text-align: center;
+  font-size: 30rpx;
+}
+.text{
+  color: #161616;
+  display: inline-block;
+  line-height: 88rpx;
+  height: 80rpx;
+  border-bottom: 4rpx solid transparent;
+}
+.act{
+  color: #2AC0CB;
+  border-bottom: 4rpx solid #5FD3DB;
+}
+.account_main{
+  flex: 1;
+  border-top: 1rpx solid rgba(240,240,240,1);
+}
+.yu_title{
+  color: #333;
+  font-size: 28rpx;
+  margin-top: 103rpx;
+  text-align: center;
+}
+.money{
+  text-align: center;
+  font-size: 96rpx;
+  color: #333;
+  margin-bottom: 100rpx;
+  font-family:Helvetica;
+}
+.money text{
+  font-size: 60rpx;
+}
+.tixian{
+  width: 678rpx;
+  height: 96rpx;
+  margin: 0 auto 48rpx;
+  background: #5FD3DB;
+  text-align: center;
+  line-height: 96rpx;
+  -webkit-text-stroke:1rpx rgba(22,22,22,1);
+  font-size: 34rpx;
+  border-radius:4rpx;
+}
+.mingxi{
+  width: 676rpx;
+  height: 94rpx;
+  background: none;
+  border: 1rpx solid rgba(167,167,167,1);
+}

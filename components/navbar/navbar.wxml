@@ -1,0 +1,8 @@
+<!--components/navbar/index.wxml-->
+<view class='nav-wrap' style="height: {{height*2 + 20}}px">
+  <!-- // 导航栏 中间的标题 -->
+  <view class='nav-title' style='line-height: {{height*2 + 44}}px;'>{{navbarData.title}}</view>
+  <view bindtap='navback' class='navback' style='margin-top:{{(height*2 + 34-42)}}px;'>
+    <image src='/img/back.jpeg' mode='aspectFill' class='back-pre'></image>
+  </view>
+</view>

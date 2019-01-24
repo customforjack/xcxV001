@@ -1,0 +1,65 @@
+/* pages/leavingMsg/leavingMsg.wxss */
+.leavingMsg{
+  padding: 0 37rpx;
+}
+.tip{
+  text-align: left;
+  padding: 0 3rpx;
+}
+.tip button {
+  display: inline-block;
+  width: 302rpx;
+  height: 56rpx;
+  background: rgba(195, 236, 239, 1);
+  border-radius: 28rpx;
+  font-size: 22rpx;
+  color: rgba(69, 180, 188, 1);
+  line-height:56rpx;
+  opacity: 0.7016;
+}
+.leavingMsg .say{
+  font-size:32rpx;
+  color:rgba(183,183,183,1);
+  line-height:45rpx;
+  margin-top: 60rpx;
+  width: 100%;
+  padding-bottom: 40rpx;
+  box-sizing: border-box;
+  min-height: 175rpx;
+}
+.sayType button{
+  display: inline-block;
+  width: 212rpx;
+  height: 210rpx;
+  line-height: 210rpx;
+  vertical-align: middle;
+  background:rgba(243,247,248,1);
+  border: none;
+  margin-right: 21rpx;
+}
+.sayType button:after{
+  display: none;
+}
+.sayType button:nth-of-type(1) image{
+  width: 44rpx;
+  height: 65rpx;
+}
+.sayType button:nth-of-type(2) image{
+  width: 64rpx;
+  height: 64rpx;
+}
+.sayType button:nth-of-type(3){
+  margin-right: 0;
+}
+.sayType button:nth-of-type(3) image{
+  width: 70rpx;
+  height: 46rpx;
+}
+.fbBtn{
+  background:rgba(95,211,219,1);
+  border-radius:10rpx;
+  font-size:38rpx;
+  margin-top: 78rpx;
+  color:rgba(22,22,22,1);
+  line-height: 96rpx;
+}

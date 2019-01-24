@@ -1,0 +1,122 @@
+/* pages/toPay/toPay.wxss */
+
+
+.list_item{
+  padding: 40rpx 0 25rpx;
+  margin: 0 0 0 36rpx;
+  border-bottom: 1rpx solid rgba(220,220,220,1);
+  height: 178rpx;
+  display: flex;
+}
+.tu{
+  display: block;
+  width: 178rpx;
+  height: 178rpx;
+  margin-right: 44rpx;
+}
+.list_r{
+  flex: 1;
+}
+.juese{
+  display: flex;
+  height: 55rpx;
+  line-height: 55rpx; 
+  margin-bottom: 8rpx;
+}
+.juese text{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #010101;
+  margin-right: 6rpx;
+}
+.juese view{
+  width: 58rpx;
+  height: 30rpx;
+  border: 1rpx solid #5FD3DB;
+  border-radius:15rpx;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 20rpx;
+  color: #5FD3DB;
+  margin-top: 10rpx;
+}
+.desc{
+  color: #616161;
+  font-size: 22rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 20rpx;
+}
+.num{
+  font-size: 20rpx;
+  color: #999;
+}
+.money{
+  display: flex;
+  position: relative;
+ 
+}
+.price{
+  color: #FF1E1D;
+  font-size: 28rpx;
+  margin-top: 5rpx;
+}
+.amount{
+  position: absolute;
+  top:0 ;
+  right: 30rpx;
+  width: 160rpx;
+  height: 40rpx;
+  /* border: 1rpx solid #979797; */
+  border-radius: 3rpx;
+  display: flex;
+  font-size: 20rpx;
+  text-align: center;
+}
+.amount text{
+  display: inline-block;
+}
+.reduce ,.addition{
+  flex: 1;
+  border: 1rpx solid #979797;
+}
+.num_all{
+  flex: 2;
+  border-top: 1rpx solid #979797;
+  border-bottom: 1rpx solid #979797;
+}
+.back_color{
+  background: #979797
+}
+.total{
+  color: #383838;
+  font-size: 30rpx;
+  margin:0 0 23rpx 38rpx;
+
+}
+.total text{
+  color: #FF1E1D;
+}
+.payment{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.all_pay{
+  width: 100%;
+  text-align: center;
+  border-top: 1rpx solid #D6F9FB;
+  display: flex;
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 34rpx;
+  color: #161616;
+}
+.type{
+  border-right:1rpx solid #D6F9FB; 
+  flex: 1;
+}
+.check{
+    background: #5FD3DB;
+}

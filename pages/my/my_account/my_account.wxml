@@ -1,0 +1,20 @@
+<!--pages/my/my_account/my_account.wxml-->
+<view class='account'>
+  <view class='account_top'>
+    <view class='tab_item' bindtap='changeTab' data-tab='0'>
+      <text class="text {{flag==0?'act':''}}">账户</text>
+    </view>
+    <view class='tab_item' bindtap='changeTab' data-tab='1'>
+      <text class="text {{flag==1?'act':''}}">优惠券</text>
+    </view>
+  </view>
+  <view class='account_main'>
+    <block wx:if="{{flag==0}}">
+      <view class='yu_title'>我的余额</view>
+      <view class='money'><text>￥</text>0.00</view>
+      <view class='tixian' bindtap='tixian'>微信提现</view>
+      <view class='tixian mingxi'>账单明细</view>
+    </block>
+  </view>
+</view>
+

@@ -1,0 +1,48 @@
+<!--pages/my_speak/my_speak.wxml-->
+
+
+  <view class='clearance'></view>
+
+   <view class='circle_top'>
+    <view class='tab_item' bindtap='changeTab' data-tab='0'>
+      <text class="text {{flag==0?'act':''}}">全部</text>
+    </view>
+    <view class='tab_item' bindtap='changeTab' data-tab='1'>
+      <text class="text {{flag==1?'act':''}}">角色</text>
+    </view>
+     <view class='tab_item' bindtap='changeTab' data-tab='2'>
+      <text class="text {{flag==2?'act':''}}">课堂</text>
+    </view>
+   <view class='tab_item' bindtap='changeTab' data-tab='3'>
+      <text class="text {{flag==3?'act':''}}">集团</text>
+    </view>
+     <view class='tab_item' bindtap='changeTab' data-tab='4'>
+      <text class="text {{flag==4?'act':''}}">其他</text>
+    </view>
+  </view>
+
+
+
+  <view class='tilte'>
+    
+    <view class='content'>
+    <view class='date'>
+    <text>28</text><text>8月</text>
+   
+    </view>
+     <view>
+      <image src='../../img/advertisement.jpg' style='width:140rpx;height:140rpx; vertical-align: middle;'></image>
+      </view>
+     <view class='miaoshu'>
+      <text>最可怕的不是变老, 好妻子该如 何抵抗这 最可怕的不是变老, 好妻子该如 何抵抗这</text>
+      <view class='fabulous'>
+      <image src='../../img/fabulous.png'></image><text>2020</text>
+      </view>
+      
+     </view>
+    </view>
+  </view>
+  <view class='division'></view>
+
+
+

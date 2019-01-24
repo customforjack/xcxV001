@@ -1,0 +1,41 @@
+/* pages/authorize/authorize.wxss */
+page{
+  background: #F7F9FB;
+}
+.auth-btn{
+  margin: 78rpx auto 0;
+  width: 678rpx;
+  height: 92rpx;
+  background:#5FD3DB;
+  border-radius:8rpx;
+  font-size:36rpx;
+  color:#161616;
+  line-height:92rpx;
+  font-weight:600;
+}
+.auth-btn::after{
+  border: 1rpx solid #5FD3DB;
+}
+.please-text{
+  margin: 350rpx 0;
+  text-align: center;
+  font-size:28rpx;
+  color:#161616;
+}
+.logo{
+  display: block;
+  width: 250rpx;
+  height: 250rpx;
+  margin: 145rpx auto 65rpx;
+}
+.shuoming{
+  color:#161616;
+  font-size:30rpx;
+  text-align: center;
+}
+.tips{
+  font-size:26rpx;
+  text-align: center;
+  color: #666666;
+  margin-top: 5rpx;
+}

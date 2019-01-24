@@ -1,0 +1,62 @@
+<!--pages/toPay/toPay.wxml-->
+<view>
+  <component id="component"  bindtap="showModal"></component>
+</view>
+
+<!-- 购买列表 -->
+<view class='list_item'>
+  <image src='/img/demo.jpeg' class='tu'></image>
+  <view class='list_r'>
+    <view class='juese'>
+      <text>好妻子</text>
+      <view>精选</view>
+    </view>
+    <view class='desc'>如何成为一个贤惠的好妻子</view>
+    <view class='num'>已购289件</view>
+    <view class='money'>
+        <view class='price'>￥99</view>
+        <view class='amount'>
+        <view class='reduce' hover-class='back_color' bindtap='reduce'>-</view>
+        <view class='num_all'>{{num}}</view>
+        <view class='addition' hover-class='back_color' bindtap='addition'>+</view>
+        </view>
+    </view>
+  </view>
+</view>
+
+<view class='list_item'>
+  <image src='/img/demo.jpeg' class='tu'></image>
+  <view class='list_r'>
+    <view class='juese'>
+      <text>好妻子</text>
+      <view>精选</view>
+    </view>
+    <view class='desc'>如何成为一个贤惠的好妻子</view>
+    <view class='num'>已购289件</view>
+    <view class='money'>
+        <view class='price'>￥99</view>
+        <view class='amount'>
+        <view class='reduce' hover-class='back_color' bindtap='reduce'>-</view>
+        <view class='num_all'>{{num}}</view>
+        <view class='addition' hover-class='back_color' bindtap='addition'>+</view>
+        </view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='payment'>
+    <view class='total'>总价: <text>￥34000</text></view>
+    <view class='all_pay'>
+        <view bindtap='changeBack' data-tab='0' class="type {{flag==0?'check':''}}">
+          <text>余额支付</text>
+        <text>(99元)</text>
+        </view>
+        <view bindtap='changeBack' data-tab='1' class="type {{flag==1?'check':''}}">
+            立即支付
+        </view>
+    </view>
+</view>
+
+

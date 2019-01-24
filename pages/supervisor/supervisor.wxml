@@ -1,0 +1,133 @@
+<!--pages/supervisor/supervisor.wxml-->
+ 
+   <view class='circle_top'>
+    <view class='tab_item' bindtap='changeTab' data-tab='0'>
+      <text class="text {{flag==0?'act':''}}">我的督导</text>
+    </view>
+    <view class='tab_item' bindtap='changeTab' data-tab='1'>
+      <text class="text {{flag==1?'act':''}}">督导我的</text>
+    </view>
+  </view>
+  
+
+ <block wx:if="{{flag==0}}">
+  <view class='tilte'>
+    <text class='tilte_big'>MORE</text>
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg'></image>
+      </view>
+     <view class='miaoshu'>
+      <text> 
+         为丈夫做早餐
+      </text>
+      <text> 
+         TA已练习20次
+      </text>
+      <text>
+      20.6万人参与/钱多多
+      </text>
+     </view>
+      <view class='qdd'>钱多多</view>
+     <view class='click_ta'>袭TA一下</view>
+    </view>
+  </view>
+ 
+ <view class='tilte'>
+    <text class='tilte_big'>MORE</text>
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg' ></image>
+      </view>
+     <view class='miaoshu'>
+      <text> 
+         为丈夫做早餐
+      </text>
+      <text> 
+         TA已练习20次
+      </text>
+      <text>
+      20.6万人参与/钱多多
+      </text>
+     </view>
+     <view class='qdd'>钱多多</view>
+     <view class='click_ta'>袭TA一下</view>
+    </view>
+  </view>
+  
+</block>
+
+
+ <block wx:if="{{flag==1}}">
+  <view class='tilte'>
+    <!-- <text class='tilte_big'>MORE</text> -->
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg'></image>
+      </view>
+     <view class='miaoshu'>
+      <text> 
+         为丈夫做早餐
+      </text>
+      <text> 
+         TA已练习20次
+      </text>
+      <text>
+      20.6万人参与/钱多多
+      </text>
+     </view>
+      <!-- <view class='qdd'>钱多多</view> -->
+     <view class='click_cade'>打卡</view>
+    </view>
+    <view  class='.pic_name'>
+    
+       <view class='hitCard'>
+       <image src='../../img/advertisement.jpg'></image>
+        <text>小可</text>
+       </view>
+
+       <view class='hitCard'>
+        <image src='../../img/advertisement.jpg'></image>
+        <text>小可</text>
+       </view>
+       </view>
+      <view class='line'></view>
+  </view>
+ 
+ <view class='tilte'>
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg'></image>
+      </view>
+     <view class='miaoshu'>
+      <text> 
+         为丈夫做早餐
+      </text>
+      <text> 
+         TA已练习20次
+      </text>
+      <text>
+      20.6万人参与/钱多多
+      </text>
+     </view>
+      <!-- <view class='qdd'>钱多多</view> -->
+     <view class='click_cade'>打卡</view>
+    </view>
+    <view  class='.pic_name'>
+       <view class='hitCard'>
+       <image src='../../img/advertisement.jpg'></image>
+        <text>小可</text>
+       </view>
+    
+     
+       <view class='hitCard'>
+        <image src='../../img/advertisement.jpg'></image>
+        <text>小可</text>
+       </view>
+     
+      </view>
+    <view class='line'></view>
+ </view>
+   
+</block>
+  

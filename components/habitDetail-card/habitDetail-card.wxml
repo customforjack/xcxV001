@@ -1,0 +1,5 @@
+<!--components/habitDetail-card/habitDetail-card.wxml-->
+   <view class='card clearfix'>
+      <text class='label'>{{label}}</text>
+      <text class='num'>{{num}}</text>
+    </view>

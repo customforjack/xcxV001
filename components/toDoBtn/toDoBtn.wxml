@@ -1,0 +1,2 @@
+<!--components/toDoBtn.wxml-->
+  <button class="iWantTalkBtn" bindtap="todo"><image src='/img/btnRight-jt.png'></image>{{text}}</button>

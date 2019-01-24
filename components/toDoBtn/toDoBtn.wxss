@@ -1,0 +1,20 @@
+
+.iWantTalkBtn {
+  line-height: 90rpx;
+  height: 90rpx;
+  background: rgba(95, 211, 219, 1);
+  box-shadow: 2rpx 4rpx 16rpx 0 rgba(134, 228, 234, 1);
+  border-radius: 44rpx;
+  position: fixed;
+  right: 42rpx;
+  bottom: 75rpx;
+  font-size:32rpx;
+  padding: 0 32rpx;
+}
+.iWantTalkBtn image{
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  margin-right: 17rpx;
+}

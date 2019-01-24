@@ -1,0 +1,127 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wxca70f0c0e9d48b0a",
+	"projectname": "customv2",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 13,
+			"list": [
+				{
+					"id": -1,
+					"name": "角色详情",
+					"pathName": "pages/roleDetail/roleDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "新建习惯",
+					"pathName": "pages/add_habit/addHabit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新建习惯step1",
+					"pathName": "pages/add_habit_step1/addHabitStep1",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "角色购买",
+					"pathName": "pages/buyRoles/buyRoles",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的角色",
+					"pathName": "pages/my_roles/myRoles",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "角色详情",
+					"pathName": "pages/roleDetail/roleDetail",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "习惯详情",
+					"pathName": "pages/habitDetail/habitDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我是督导",
+					"pathName": "pages/iamdudao/iamdudao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "留言",
+					"pathName": "pages/leavingMsg/leavingMsg",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发送邀请",
+					"pathName": "pages/sendInvita/sendInvita",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "接受邀请邀请",
+					"pathName": "pages/acceptInvita/acceptInvita",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "授权登录",
+					"pathName": "pages/login/login"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,50 @@
+/* components/index/search/search.wxss */
+
+.search {
+  height: 90rpx;
+  background: rgba(235, 240, 242, 1);
+  position: relative;
+  padding: 14rpx 27rpx;
+  box-sizing: border-box;
+}
+
+.search input {
+  height: 62rpx;
+  padding: 0 20rpx;
+  position: absolute;
+  left: 27rpx;
+  top: 14rpx;
+  right: 14rpx;
+  bottom: 27rpx;
+  box-sizing: border-box;
+}
+
+.box {
+  height: 62rpx;
+  background: #fff;
+  border-radius: 4rpx;
+  text-align: center;
+  color: #d2d2d2;
+  font-size: 28rpx;
+  position: absolute;
+  left: 27rpx;
+  top: 14rpx;
+  right: 14rpx;
+  bottom: 27rpx;
+}
+
+.box .text {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 26rpx 26rpx;
+  background-position-y: 18rpx;
+  padding-left: 36rpx;
+  line-height: 62rpx;
+  text-align: center;
+}
+.box .text image{
+  width: 26rpx;
+  height:26rpx;
+  display: inline-block;
+  vertical-align: middle;
+}

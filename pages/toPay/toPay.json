@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "component": "/components_show/component-tag-name"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#FFF",
+  "navigationBarTitleText": "购买页",
+  "navigationBarTextStyle": "black"
+}

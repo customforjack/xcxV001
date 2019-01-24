@@ -1,0 +1,6 @@
+<!--pages/authorize/authorize.wxml-->
+<image src='/img/auth.png' class='logo'></image>
+<view class='shuoming'>习达人申请获得以下权限</view>
+<view class='tips'>获得你的公开信息(昵称, 头像等)</view>
+<button class='auth-btn' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">确认授权</button>
+<view class='please-text' wx:else>请升级微信版本</view>

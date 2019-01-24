@@ -1,0 +1,118 @@
+/* pages/acceptInvita/acceptInvita.wxss *//* pages/sendInvita/sendInvita.wxss */
+
+.acceptInvita {
+  background: rgba(225, 232, 235, 1);
+}
+
+.acceptInvita .bg {
+  height: 300rpx;
+  background: #518a91;
+  position: relative;
+}
+
+.acceptInvita .bg .icon {
+  width: 120rpx;
+  height: 120rpx;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -60rpx;
+  bottom: -60rpx;
+}
+
+.acceptInvita .info {
+  padding: 92rpx 23rpx 26rpx;
+  background: #fff;
+}
+
+.acceptInvita .info .tit {
+  font-size: 36rpx;
+  color: rgba(0, 0, 0, 1);
+  line-height: 50rpx;
+  text-align: center;
+  padding-bottom: 22rpx;
+  border-bottom: 2rpx solid rgba(235, 235, 235, 1);
+}
+
+.acceptInvita .info .text {
+  padding: 26rpx 10rpx 0;
+  font-size: 26rpx;
+  color: rgba(77, 77, 77, 1);
+  line-height: 40rpx;
+}
+
+.acceptInvita .info .auther {
+  font-size: 24rpx;
+  color: rgba(176, 176, 176, 1);
+  line-height: 33rpx;
+  margin-top: 12rpx;
+  padding: 0 10rpx 0;
+}
+
+.acceptInvita .activityRole {
+  margin-top: 10rpx;
+  background: #fff;
+  padding: 22rpx 33rpx 28rpx;
+}
+
+.acceptInvita .activityRole .tit {
+  font-size: 24rpx;
+  color: rgba(47, 185, 195, 1);
+  line-height: 33rpx;
+  margin-bottom: 25rpx;
+}
+
+.acceptInvita .activityRole .text {
+  font-size: 28rpx;
+  color: rgba(77, 77, 77, 1);
+  line-height: 42rpx;
+  text-align: justify;
+}
+
+.acceptInvita .btnBox {
+  background: #fff;
+  padding: 24rpx 33rpx 58rpx;
+  margin-top: 10rpx;
+}
+
+.acceptInvita .btnBox .checkCard {
+  font-size: 28rpx;
+  color: rgba(33, 33, 33, 1);
+  line-height: 40rpx;
+  margin-bottom: 24rpx;
+}
+
+.acceptInvita .btnBox .checkCard .check {
+  display: inline-block;
+  width: 26rpx;
+  height: 26rpx;
+  background: rgba(216, 216, 216, 1);
+  border-radius: 50%;
+  margin-right: 16rpx;
+  vertical-align: middle;
+}
+
+.acceptInvita .btnBox .checkCard .check.active {
+  background: rgba(95, 211, 219, 1);
+}
+.acceptInvita .boxs{
+  height: 96rpx;
+  padding-top: 12rpx;
+}
+.acceptInvita .boxs button{
+  font-size: 38rpx;
+  color: rgba(22, 22, 22, 1);
+   height: 96rpx;
+  background: rgba(95, 211, 219, 1);
+  border-radius: 48rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.acceptInvita .boxs .ok {
+  width:390rpx;
+}
+.acceptInvita .boxs .detail{
+  width: 274rpx;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,153 @@
+<!--pages/classes/classes.wxml-->
+<!-- 搜索 -->
+<view class='search_box'>
+ <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索你感兴趣的内容</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+
+</view>
+<!-- 搜索结束 -->
+<view class='classContent'>
+  <view class='class_title'>
+  <view  class=" {{currentTab==0?'content':''}}" data-current="0" bindtap="clickTab">我的课堂</view>
+  <view  class=" {{currentTab==1?'content':''}}" data-current="1" bindtap="clickTab">VIP体验课</view>
+  <view  class=" {{currentTab==2?'content':''}}" data-current="2" bindtap="clickTab">公开课</view>
+  <view  class=" {{currentTab==3?'content':''}}" data-current="3" bindtap="clickTab">精品</view>
+  </view>
+<view class='tips'>
+ <text>好妻子的12堂必修课</text>
+</view>
+<view class='class_black'>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+ <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+</view>
+<view class='tips'>
+ <text>公开课</text>
+</view>
+<view class='class_black'>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+ <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+</view>
+<view class='tips'>
+ <text>VIP课堂</text>
+</view>
+<view class='class_black'>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+ <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+  <view >
+  <text>好会计</text>
+  <text class='count'>2000人已加入</text>
+  </view>
+</view>
+</view>

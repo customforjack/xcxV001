@@ -1,0 +1,56 @@
+<!--pages/habitDetail/habitDetail.wxml-->
+<view class='habitDetail'>
+  <!--量化描述 start-->
+  <view class='remark'>
+    <view class='tit'>
+      <image src='/img/bookIcon.png'></image>量化描述
+    </view>
+    <view class='list'>
+      <remarkCard label="加入日期" num="2018年12月13"></remarkCard>
+      <remarkCard label="加入日期" num="2018年12月13"></remarkCard>
+      <remarkCard label="加入日期" num="2018年12月13"></remarkCard>
+    </view>
+  </view>
+  <!--量化描述 end-->
+  <!--我的辅导团 start-->
+  <view class='myfdyuan'>
+    <view class='tit'>
+      <image src='/img/bookIcon.png'></image>我的督导团
+    </view>
+    <view class='fudyuanList'>
+      <image src='/img/tupian.png'></image>
+      <image src='/img/tupian.png'></image>
+      <image src='/img/tupian.png'></image>
+      <image src='/img/tupian.png'></image>
+    </view>
+    <addBtn class="addfdy"></addBtn>
+  </view>
+  <!--我的辅导团 end-->
+  <!--说说感想 start-->
+  <view class='saySomething'>
+    <view class='tit'>
+      <image src="/img/something-icon.png"></image>说说感想</view>
+    <addBtn class="addBtn"></addBtn>
+    <view class='list'>
+      <view class='nodataBox'>
+        <image class='nodata' src='/img/nodata-say.png'></image>
+        <text>还没有留下感想哦</text>
+      </view>
+
+    </view>
+  </view>
+  <!--说说感想 end-->
+
+  <view class='friendBox'>
+    <view class='tit'>
+      <image src='/img/bookIcon.png'></image> 我们在一起练</view>
+    <view class='list'>
+      <showCard></showCard>
+      <showCard></showCard>
+    </view>
+
+  </view>
+
+
+  <toDoBtn text="去打卡"></toDoBtn>
+</view>

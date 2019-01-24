@@ -1,0 +1,220 @@
+/* components/showCard/showCard.wxss */
+
+.teacherBox {
+  padding:35rpx 30rpx 0;
+  background: #fff;
+}
+
+.teacherBox .tit {
+  font-size: 34rpx;
+  color: rgba(22, 22, 22, 1);
+  line-height: 48rpx;
+}
+.teacherBox .t-info .t-icon {
+  width: 120rpx;
+  height: 120rpx;
+  background: rgba(217, 217, 217, 1);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.teacherBox .t-info .t-msg {
+  padding-left: 26rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.teacherBox .t-info .t-msg text {
+  display: block;
+}
+
+.teacherBox .t-info .t-msg .t-i-t {
+  font-size: 28rpx;
+  color: rgba(22, 22, 22, 1);
+  line-height: 40rpx;
+  margin-top: 24rpx;
+}
+
+.teacherBox .t-info .t-msg .t-i-b {
+  font-size: 22rpx;
+  color: rgba(171, 171, 171, 1);
+  line-height: 30rpx;
+  margin-top: 3rpx;
+}
+
+.teacherBox .t-js {
+  margin-top: 27rpx;
+  font-size: 28rpx;
+  color: rgba(77, 77, 77, 1);
+  line-height: 50rpx;
+}
+
+.teacherBox .t-js image {
+  width: 222rpx;
+  height: 228rpx;
+  display: inline-block;
+  margin-right: 12rpx;
+}
+
+.teacherBox .t-js image:nth-of-type(3n+0) {
+  margin-right: 0;
+}
+
+.talk-box {
+  text-align: right;
+}
+
+.talk-box .msg {
+  font-size: 26rpx;
+  color: rgba(164, 164, 164, 1);
+  line-height: 37rpx;
+  float: left;
+}
+
+.talk-box button {
+  background: none;
+  box-shadow: none;
+  display: inline-block;
+  border: none;
+  font-size: 24rpx;
+  color: rgba(178, 178, 178, 1);
+  line-height: 33rpx;
+  padding: 0;
+  margin-left: 56rpx;
+}
+
+.talk-box button:after {
+  display: none;
+}
+
+.talk-box button image {
+  margin-right: 16rpx;
+}
+
+.talk-box .scBtn image {
+  width: 34rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.talk-box .talkBtn image {
+  width: 36rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.pageFooter {
+  height: 98rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  text-align: right;
+  padding: 0 30rpx;
+  border-top: 2rpx solid #d8d8d8;
+}
+
+.pageFooter button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  display: inline-block;
+  padding: 0;
+  margin-left: 56rpx;
+  color: #b2b2b2;
+  line-height: 98rpx;
+}
+
+.pageFooter button:after {
+  display: none;
+}
+
+.pageFooter button image {
+  margin-right: 16rpx;
+}
+
+.pageFooter .scBtn image {
+  width: 36rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.pageFooter .talkBtn image {
+  width: 36rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.habit {
+  padding: 0 28rpx;
+}
+
+.habit .h-tit {
+}
+
+.habit .h-tit > view {
+  display: inline-block;
+}
+
+.iWantTalkBtn {
+  line-height: 90rpx;
+  height: 90rpx;
+  background: rgba(95, 211, 219, 1);
+  box-shadow: 2rpx 4rpx 16rpx 0 rgba(134, 228, 234, 1);
+  border-radius: 44rpx;
+  position: fixed;
+  right: 42rpx;
+  bottom: 75rpx;
+  font-size:32rpx;
+  padding: 0 32rpx;
+}
+.iWantTalkBtn image{
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  margin-right: 17rpx;
+}
+.friendList .teacherBox{
+  padding-bottom: 40rpx;
+  border-bottom: 1px solid rgba(236,236,236,1);
+}
+.friendList .teacherBox .t-info .t-icon{
+  width: 82rpx;
+  height: 82rpx;
+}
+.friendList .teacherBox .t-js{
+  line-height: 0;
+}
+.friendList .teacherBox .talk-box{
+  margin-top: 32rpx;
+  height: 37rpx;
+}
+.friendList .teacherBox .t-info .t-msg .t-i-t {
+  margin-top: 5rpx;
+}
+.friendList .teacherBox .t-info .t-msg{
+  padding-left: 18rpx;
+}
+.friendList .teacherBox .t-info .t-label{
+  display: inline-block;
+  vertical-align: top;
+  height: 28rpx;
+  padding-left: 29rpx;
+  background:rgba(233,169,255,1);
+  box-sizing: border-box;
+  width: 80rpx;
+    margin-left: 26rpx;
+    margin-top: 10rpx;
+    border-radius:4rpx;
+}
+.friendList .teacherBox .t-info .t-label text{
+  line-height: 28rpx;
+  height: 28rpx;
+  background: #F5E0FF;
+  display: block;
+  font-size:20rpx;
+  color:rgba(174,98,205,1);
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+/* components/addBtn/addBtn.wxss */
+
+.addBtn {
+  display: inline-block;
+}
+
+.addBtn button {
+  display: inline-block;
+  padding: 0;
+  width: 70rpx;
+  line-height: 50rpx;
+  height: 60rpx;
+  background: rgba(42, 192, 203, 1);
+  border-radius: 6rpx;
+  color: #fff;
+  font-size: 60rpx;
+  vertical-align: top;
+}

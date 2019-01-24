@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/toPay/toPay",
+    "pages/post_activity/post_activity",
+    "pages/ranking/ranking",
+    "pages/recommend/recommend",
+    "pages/remind/remind",
+    "pages/supervisor/supervisor",
+    "pages/group/group",
+    "pages/my_activity/my_activity",
+    "pages/my_speak/my_speak",
+    "pages/my_study/my_study",
+    "pages/my_role/my_role",
+    "pages/authorize/authorize",
+    "pages/money_more/money_more",
+    "pages/activity/activity",
+    "pages/classes/classes",
+    "pages/my_class/my_class",
+    "pages/collection/collection",
+    "pages/login/login",
+    "pages/add_habit/addHabit",
+    "pages/add_habit_step1/addHabitStep1",
+    "pages/buyRoles/buyRoles",
+    "pages/my_roles/myRoles",
+    "pages/buyRolesStep2/buyRolesStep2",
+    "pages/roleDetail/roleDetail",
+    "pages/habitDetail/habitDetail",
+    "pages/iamdudao/iamdudao",
+    "pages/leavingMsg/leavingMsg",
+    "pages/sendInvita/sendInvita",
+    "pages/acceptInvita/acceptInvita",
+
+
+    "pages/find/find",
+    "pages/my/my",
+    "pages/vip/vip",
+    "pages/add_custom/add_custom",
+    "pages/my/my_account/my_account",
+    "pages/my/withdraw/withdraw",
+    "pages/my/my_order/my_order"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "习达人",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#B6B6B6",
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "习惯",
+        "iconPath": "/img/xiguanbang.png",
+        "selectedIconPath": "/img/xiguanbang_act.png"
+      },
+      {
+        "pagePath": "pages/classes/classes",
+        "text": "课堂",
+        "iconPath": "/img/yueke.png",
+        "selectedIconPath": "/img/yueke_act.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "/img/faxian.png",
+        "selectedIconPath": "/img/faxian_act.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/img/paixu.png",
+        "selectedIconPath": "/img/paixu_act.png"
+      }
+    ]
+  }
+}

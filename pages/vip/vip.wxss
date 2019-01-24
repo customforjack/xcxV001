@@ -1,0 +1,71 @@
+/* pages/vip/vip.wxss */
+page{
+  background: #F7F9FB;
+  padding-bottom: 145rpx;
+}
+.assort{
+  padding: 5rpx 32rpx 25rpx;
+}
+.type{
+  height: 37rpx;
+  line-height: 37rpx;
+  font-size: 26rpx;
+  color: #A4A4A4;
+  margin-bottom: 28rpx;
+}
+.assort_content{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+}
+.item{
+  width: 222rpx;
+  height: 152rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+  border-radius:10rpx;
+}
+.name{
+  font-size: 30rpx;
+  color: #333;
+  padding: 22rpx 24rpx 8rpx;
+  line-height: 42rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.canshu{
+  padding: 0 24rpx;
+  font-size: 20rpx;
+  color: #999999;
+  line-height: 28rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.anniu{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 30rpx 0;
+  height: 96rpx;
+  display: flex;
+  background: #F7F9FB;
+}
+.collect{
+  width: 272rpx;
+  height: 100%;
+  background: #5FD3DB;
+  line-height: 96rpx;
+  margin: 0 20rpx 0 33rpx;
+  text-align: center;
+  color: #161616;
+  font-size: 38rpx;
+  font-weight: bold;
+  border-radius:4px;
+}
+.buy{
+  flex: 1;
+  margin: 0 33rpx 0 0;
+}

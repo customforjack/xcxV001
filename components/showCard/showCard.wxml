@@ -1,0 +1,29 @@
+<!--components/showCard/showCard.wxml-->
+<view class='friendList'>
+  <view class='teacherBox'>
+    <view class='t-info'>
+      <view class='t-icon'></view>
+      <view class='t-msg'>
+        <text class='t-i-t'>Xu茂茂</text>
+        <text class='t-i-b'>1天前</text>
+      </view>
+      <view class='t-label'>
+        <text class='t-label-txt'>皇冠</text>
+      </view>
+    </view>
+    <view class='t-js'>
+      <image src='/img/img.png'></image>
+      <image src='/img/img.png'></image>
+      <image src='/img/img.png'></image>
+    </view>
+    <view class='talk-box'>
+      <view class='fl msg'>已坚持打卡28天</view>
+      <button class='scBtn'>
+        <image mode="widthFix" src='/img/shoucang-2.png'></image> 12
+      </button>
+      <button class='talkBtn'>
+        <image mode="widthFix" src='/img/xiazai16.png'></image> 3
+      </button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "showCard": "/components/showCard/showCard",
+    "toDoBtn": "/components/toDoBtn/toDoBtn",
+    "remarkCard": "/components/habitDetail-card/habitDetail-card",
+    "addBtn": "/components/addBtn/addBtn"
+  },
+  "navigationBarTitleText": "今日打卡"
+}

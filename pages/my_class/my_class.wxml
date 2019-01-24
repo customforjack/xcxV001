@@ -1,0 +1,152 @@
+<!--pages/my_class/my_class/my_class.wxml-->
+<view class='circle'>
+  <view class='circle_top'>
+    <view class='tab_item' bindtap='changeTab' data-tab='0'>
+      <text class="text {{flag==0?'act':''}}">VIP课</text>
+    </view>
+    <view class='tab_item' bindtap='changeTab' data-tab='1'>
+      <text class="text {{flag==1?'act':''}}">公开课</text>
+    </view>
+     <view class='tab_item' bindtap='changeTab' data-tab='2'>
+      <text class="text {{flag==2?'act':''}}">精品课</text>
+    </view>
+   <view class='tab_item'>
+    <image  src='../../img/other.png' mode='widthFix'></image>
+   </view>
+  </view>
+ 
+  <view class='advertisement'>
+    <image src='../../img/advertisement.jpg' ></image>
+  </view>
+
+   <view class='circle_list'>
+    <view class='circle_item' >
+     <view class='time'>10分钟前</view>
+      <view  class='exhibition'>
+      <image src='../../img/advertisement.jpg'> </image>
+      </view>
+    <view class='tilet'>如何成为一个贤惠的好妻子</view>
+    <view class='content'>
+      最可怕的不是变老,
+      而是高枯衰老的破坏力. 你害怕变老吗? 
+      害怕 变成家里那个不受关注的一员吗? 
+      好妻子该如何抵抗这些, 一件…
+    </view>
+    <view class='other'>
+        <view>
+        <image src='../../img/edit.png'></image>
+        </view>
+         <view> 
+         <image src='../../img/yueke.png'></image>
+         <text>121</text>
+         </view>
+          <view>
+           <image src='../../img/fabulous.png'></image>
+           <text>32</text>
+          </view>
+           <view> 
+           <image src='../../img/refresh.png'></image>
+           <text>5454</text>
+           </view>
+        <view><image src='../../img/more.png'></image></view>
+      </view>
+    </view>
+  
+  <view class='circle_item' >
+     <view class='time'>10分钟前</view>
+      <view  class='exhibition'>
+      <image src='../../img/advertisement.jpg'> </image>
+      </view>
+    <view class='tilet'>如何成为一个贤惠的好妻子</view>
+    <view class='content'>
+      最可怕的不是变老,
+      而是高枯衰老的破坏力. 你害怕变老吗? 
+      害怕 变成家里那个不受关注的一员吗? 
+      好妻子该如何抵抗这些, 一件…
+    </view>
+    <view class='other'>
+        <view>
+        <image src='../../img/edit.png'></image>
+        </view>
+         <view> 
+         <image src='../../img/yueke.png'></image>
+         <text>121</text>
+         </view>
+          <view>
+           <image src='../../img/fabulous.png'></image>
+           <text>32</text>
+          </view>
+           <view> 
+           <image src='../../img/refresh.png'></image>
+           <text>5454</text>
+           </view>
+        <view><image src='../../img/more.png'></image></view>
+      </view>
+    </view>
+  
+<view class='circle_item' >
+     <view class='time'>10分钟前</view>
+      <view  class='exhibition'>
+      <image src='../../img/advertisement.jpg'> </image>
+      </view>
+    <view class='tilet'>如何成为一个贤惠的好妻子</view>
+    <view class='content'>
+      最可怕的不是变老,
+      而是高枯衰老的破坏力. 你害怕变老吗? 
+      害怕 变成家里那个不受关注的一员吗? 
+      好妻子该如何抵抗这些, 一件…
+    </view>
+    <view class='other'>
+        <view>
+        <image src='../../img/edit.png'></image>
+        </view>
+         <view> 
+         <image src='../../img/yueke.png'></image>
+         <text>121</text>
+         </view>
+          <view>
+           <image src='../../img/fabulous.png'></image>
+           <text>32</text>
+          </view>
+           <view> 
+           <image src='../../img/refresh.png'></image>
+           <text>5454</text>
+           </view>
+        <view><image src='../../img/more.png'></image></view>
+      </view>
+    </view>
+  
+  <view class='circle_item' >
+     <view class='time'>10分钟前</view>
+      <view  class='exhibition'>
+      <image src='../../img/advertisement.jpg'> </image>
+      </view>
+    <view class='tilet'>如何成为一个贤惠的好妻子</view>
+    <view class='content'>
+      最可怕的不是变老,
+      而是高枯衰老的破坏力. 你害怕变老吗? 
+      害怕 变成家里那个不受关注的一员吗? 
+      好妻子该如何抵抗这些, 一件…
+    </view>
+    <view class='other'>
+        <view>
+        <image src='../../img/edit.png'></image>
+        </view>
+         <view> 
+         <image src='../../img/yueke.png'></image>
+         <text>121</text>
+         </view>
+          <view>
+           <image src='../../img/fabulous.png'></image>
+           <text>32</text>
+          </view>
+           <view> 
+           <image src='../../img/refresh.png'></image>
+           <text>5454</text>
+           </view>
+        <view><image src='../../img/more.png'></image></view>
+      </view>
+    </view>
+   
+  </view>
+</view>

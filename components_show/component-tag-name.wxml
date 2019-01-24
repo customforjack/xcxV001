@@ -1,0 +1,45 @@
+<!-- 组件模板 -->
+<view class="wrapper" wx:if='{{show}}'>
+<!-- 权限不够 -->
+  <view class='diong'  wx:if='{{mark==1}}'>
+  
+    <view >
+        <view class='title'>
+          <view class='mark'>
+          <image src='../img/gan.png'></image>
+          </view> 
+          <text>无法完成操作</text>
+        </view>
+        <view class='list'>
+        <text>发起活动方需要取得授权,现阶段授权仅限
+        以下角色：</text>
+        <view>
+        <icon type="circle" size="15"></icon>
+        <text class='list_li'>省级合伙人</text>
+        </view>
+        <view>
+        <icon type="circle" size="15" ></icon>
+        <text class='list_li'>城市合伙人</text>
+        </view>
+        <view>
+        <icon type="circle" size="15"></icon>
+        <text class='list_li'>县区合伙人</text>
+        </view>
+        <view>
+        <icon type="circle" size="15"></icon>
+        <text class='list_li'>V6级以上习达人</text>
+        </view>
+        <view>你目前尚未取得在平台自主发布活动的授权资</view>
+        </view>
+        <view class='close' wx:if='{{mark}}' bindtap='close'>
+          <image src='../img/close.png'></image></view>
+        </view>
+  </view>
+  <!-- 去支付 -->
+  <view class='diong_pay' wx:if='{{pay==2}}'>
+      <view class='pay_title'>你的余额不足,请前往购买哦!</view>
+      <button class='go_pay'>去支付</button>
+  </view>
+  
+  <slot></slot>
+</view>

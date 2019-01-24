@@ -1,0 +1,99 @@
+<!--pages/activity/activity.wxml-->
+<view class='search_box'>
+<view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索你感兴趣的内容</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+</view>
+        
+  <view class='advertisement'>
+    <image src='../../img/advertisement.jpg' ></image>
+  </view>
+
+  <view class='clearance'></view>
+
+   <view class='circle_top'>
+    <view class='tab_item' bindtap='changeTab' data-tab='0'>
+      <text class="text {{flag==0?'act':''}}">热门活动</text>
+    </view>
+    <view class='tab_item' bindtap='changeTab' data-tab='1'>
+      <text class="text {{flag==1?'act':''}}">热门新闻</text>
+    </view>
+     <view class='tab_item' bindtap='changeTab' data-tab='2'>
+      <text class="text {{flag==2?'act':''}}">商城</text>
+    </view>
+   <view class='tab_item' bindtap='changeTab' data-tab='3'>
+      <text class="text {{flag==3?'act':''}}">优惠券</text>
+    </view>
+  </view>
+  <view class='screen'>
+    <text bindtap='changeTabx' data-tabx='0' class="{{tabx==0?'screen_text':''}}">文本</text>
+    <text bindtap='changeTabx' data-tabx='1' class="{{tabx==1?'screen_text':''}}">时间</text>
+    <text bindtap='changeTabx' data-tabx='2' class="{{tabx==2?'screen_text':''}}">人数</text>
+    <text bindtap='changeTabx' data-tabx='3' class="{{tabx==3?'screen_text':''}}">费用</text>
+  </view>
+
+
+  <view class='tilte'>
+    <text class='tilte_big'>陪孩子一小时</text>
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg' style='width:140rpx;height:140rpx; vertical-align: middle;'></image>
+      </view>
+     <view class='miaoshu'>
+      <text>如何和孩子建立亲密关系的自我学习和 介绍
+    
+      </text>
+      <text>20.6万人参与/钱多多
+      </text>
+     </view>
+    </view>
+  </view>
+  <view class='division'></view>
+
+
+  <view class='tilte'>
+    <text class='tilte_big'>睡前阅读</text>
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg' style='width:140rpx;height:140rpx; vertical-align: middle;'></image>
+      </view>
+     <view class='miaoshu'>
+      <text>如何和孩子建立亲密关系的自我学习和 介绍
+    
+      </text>
+      <text>20.6万人参与/钱多多
+      </text>
+     </view>
+    </view>
+  </view>
+  <view class='division'></view>
+
+  <view class='tilte'>
+    <text class='tilte_big'>考证打卡</text>
+    <view class='content'>
+     <view>
+      <image src='../../img/advertisement.jpg' style='width:140rpx;height:140rpx; vertical-align: middle;'></image>
+      </view>
+     <view class='miaoshu'>
+      <text>如何和孩子建立亲密关系的自我学习和 介绍
+    
+      </text>
+      <text>20.6万人参与/钱多多
+      </text>
+     </view>
+    </view>
+  </view>
+  <view class='division'></view>

@@ -1,0 +1,7 @@
+<!--components/index/search/search.wxml-->
+<view class='search'>
+  <input value='{{text}}' bindinput='input' bindblur='blur' bindconfirm="comfirm" bindfocus='focus'/>
+  <view class='box'>
+    <view class='text' wx:if="{{focus === false}}" ><image  width="20" height="20" src='/img/search.png'></image>  搜索你感兴趣的内容</view>
+  </view>
+</view>
