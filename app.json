@@ -54,7 +54,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "习惯1",
+        "text": "习惯",
         "iconPath": "/img/xiguanbang.png",
         "selectedIconPath": "/img/xiguanbang_act.png"
       },
