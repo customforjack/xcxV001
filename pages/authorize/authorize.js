@@ -39,6 +39,7 @@ Page({
           console.log(res)
           if (res.code === 1) {
             // 登陆成功
+            wx.setStorageSync('token', res.data.token)
           } else if (res.code === 201) {
             // 未注册 跳转到注册页
             wx.setStorageSync('open_id', res.data.open_id)
