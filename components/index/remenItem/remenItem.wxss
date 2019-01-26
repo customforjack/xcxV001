@@ -36,6 +36,7 @@
   display: block;
   width: 140rpx;
   height: 140rpx;
+  border-radius: 6rpx;
 }
 .main_tu .icon{
   display: block;

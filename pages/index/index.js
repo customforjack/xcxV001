@@ -31,7 +31,8 @@ Page({
         num: '2.6万人'
       }],
     checkxg: ['热门习惯','热门角色'],
-    xgCheck:0
+    xgCheck:0,
+    detail:{}
   },
   search (e) {
       console.log('s',e)
@@ -86,10 +87,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const _this = this
     wx.ajax({
       url: '/api/Home/home',
       params: {
         token: wx.getStorageSync('token')
+      },
+      success (res) {
+        if(res.code === 1) {
+          _this.setData({
+            detail:res.data
+          })
+        }
       }
     })
   },

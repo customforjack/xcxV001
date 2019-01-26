@@ -1,0 +1,94 @@
+/* components/index/myHabitCard/myHabitCard.wxss */
+
+.myHabitCard {
+  padding: 32rpx 6rpx 0;
+  height: 207rpx;
+  position: relative;
+}
+
+.myHabitCard .icon {
+  width: 178rpx;
+  height: 207rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.myHabitCard .icon image {
+  width: 100%;
+  height: 178rpx;
+  display: block;
+  border-radius: 5rpx;
+  margin-top: 6rpx;
+}
+
+.myHabitCard  .h-info {
+  width: 504rpx;
+  display: inline-block;
+  vertical-align: top;
+  height: 178rpx;
+  padding-left: 44rpx;
+  box-sizing: border-box;
+}
+
+.myHabitCard  .h-info .h-name {
+  font-size: 30rpx;
+  color: rgba(1, 1, 1, 1);
+  line-height: 42rpx;
+}
+
+.myHabitCard  .h-info .h-num {
+  font-size: 24rpx;
+  color: rgba(97, 97, 97, 1);
+  line-height: 33rpx;
+  margin-top: 10rpx;
+}
+
+.myHabitCard  .h-info .h-total {
+  font-size: 22rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 30rpx;
+  margin-top: 69rpx;
+}
+
+.myHabitCard .btn-group {
+  height: 60rpx;
+  background: rgba(42, 192, 203, 1);
+  border-radius: 6rpx;
+  position: absolute;
+  right: 0;
+  top:32rpx;
+}
+.myHabitCard .btn-group button {
+  display: inline-block;
+  border: none;
+  width: auto;
+  background: none;
+  line-height: 60rpx;
+  height: 60rpx;
+  padding: 0;
+  color: #fff;
+  font-size:26rpx;
+}
+.myHabitCard .btn-group button text{
+  width: 75rpx;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  display: none;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+.myHabitCard .btn-group  .add {
+  color: #fff;
+}
+.myHabitCard .btn-group  .add image {
+  width: 70rpx;
+  height: 60rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.myHabitCard .btn-group button:after {
+  display: none;
+}
+.myHabitCard .btn-group .showText text{
+  display: inline-block;
+}

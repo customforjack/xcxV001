@@ -2,16 +2,16 @@
 <view>
   <view class='remen_item'>
     <view class='title_box'>
-      <view class='title'>陪孩子一小时</view>
+      <view class='title'>{{item.name}}</view>
       <image src='/img/add.png' bindtap='toaddStepOne'></image>
     </view>
     <view class='main_content'>
       <view class='main_tu'>
-        <image src='/img/demo.jpeg' class='tu'></image>
+        <image src='{{item.thumbnail}}' class='tu'></image>
         <image src='/img/v.png' class='icon'></image>
       </view>
       <view class='main_right'>
-        <view class='desc'>只要有考证目标的你都可以加入。进入我的圈, 你就是圈里人</view>
+        <view class='desc'>{{item.description}}</view>
         <view class='canshu'>20.6万人参与 / 家庭</view>
       </view>
     </view>

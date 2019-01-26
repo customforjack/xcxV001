@@ -1,8 +1,18 @@
-<!--pages/index/index.wxml-->
-<!-- <nav-bar navbar-data='{{nvabarData}}'></nav-bar> -->
-<!-- 搜索 -->
-
 <search bind:comfirm="search"></search>
+
+<!--我的习惯列表 start-->
+<view class='myHabitList'>
+  <view class='tit'>
+    <text class='label'>今天</text>
+    <view class='line'></view>
+    <text class='date'>12月3号 星期一</text>
+    <button>查看历史 <image src='/img/r_jiantou.png'></image></button>
+  </view>
+  <view class='list'>
+    <myHabitCard wx:for="{{detail.my_habit}}" wx:key="index" item="{{item}}"></myHabitCard>
+  </view>
+</view>
+<!--我的习惯列表  end-->
 <!-- 训练营 -->
 <view class='xunlian'>
   <view class='xl_top'>
@@ -20,10 +30,10 @@
   </block>
   <block wx:if="{{act==1}}">
     <scroll-view scroll-x="true" class="vip_xl">
-      <view class='vip_item' wx:for="{{vip}}" wx:key="unique">
-        <image></image>
-        <view class='title'>{{item.title}}</view>
-        <view class='num'>{{item.num}}</view>
+      <view class='vip_item' wx:for="{{detail.unfree_habit_list}}" wx:key="unique">
+        <image src='{{item.icon}}'></image>
+        <view class='title'>{{item.name}}</view>
+        <view class='num'>{{item.step}}</view>
       </view>
     </scroll-view>
   </block>
@@ -39,8 +49,9 @@
     <image  bindtap='toMore' src='/img/r_jiantou.png'></image>
   </view>
   <!-- 列表 -->
-  <remmen-item class="item"></remmen-item> 
-  <remmen-item  class="item"></remmen-item> 
+  <remmen-item wx:if="{{xgCheck === 0}}" wx:for="{{detail.habit_list}}" item="{{item}}" wx:key="index" class="item"></remmen-item>
+    <remmen-item wx:if="{{xgCheck === 1}}" wx:for="{{detail.character_list}}" item="{{item}}" wx:key="index" class="item"></remmen-item> 
+
 </view>
 
 <!-- 已显示全部内容 -->

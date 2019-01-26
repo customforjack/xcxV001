@@ -5,6 +5,7 @@
   "usingComponents": {
     "nav-bar": "/components/navbar/navbar",
     "remmen-item": "/components/index/remenItem/remenItem",
-    "search":"/components/index/search/search"
+    "search":"/components/index/search/search",
+    "myHabitCard": "/components/index/myHabitCard/myHabitCard"
   }
 }

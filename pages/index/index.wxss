@@ -1,45 +1,53 @@
 /* pages/index/index.wxss */
-page{
-  background: #EBF0F2;
+
+page {
+  background: #ebf0f2;
 }
-.search_box{
+
+.search_box {
   padding: 14rpx 27rpx;
 }
 
 /* 训练营 */
-.xunlian{
+
+.xunlian {
   padding: 34rpx 0 26rpx;
   background: #fff;
   margin-bottom: 20rpx;
 }
-.xl_top{
+
+.xl_top {
   padding: 0 28rpx;
   display: flex;
   height: 45rpx;
 }
-.today{
-  font-size:32rpx;
-  font-weight:400;
-  color:#4A4A4A;
-  line-height:45rpx;
+
+.today {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 45rpx;
   margin-right: 20rpx;
 }
-.date{
+
+.xunlian .date {
   padding-left: 20rpx;
   height: 26rpx;
-  border-left: 2rpx solid rgba(199,199,199,1);
+  border-left: 2rpx solid rgba(199, 199, 199, 1);
   font-size: 26rpx;
-  color: #9C9C9C;
+  color: #9c9c9c;
   line-height: 26rpx;
   margin-top: 9rpx;
 }
-.tab{
+
+.tab {
   display: flex;
   padding: 0 28rpx;
   height: 60rpx;
   margin: 18rpx 0 36rpx;
 }
-.tab_item{
+
+.tab_item {
   display: inline-block;
   background-repeat: no-repeat;
   background-size: 30rpx 33rpx;
@@ -49,53 +57,63 @@ page{
   color: #161616;
   font-size: 36rpx;
 }
-.posi{
+
+.posi {
   background-size: 36rpx 32rpx;
   background-position-y: 13rpx;
   margin-left: 48rpx;
   padding-left: 51rpx;
 }
-.act{
-  color: #2AC0CB;
+
+.act {
+  color: #2ac0cb;
 }
-.add{
+
+.add {
   flex: 1;
   display: flex;
   flex-direction: row-reverse;
 }
-.add image{
+
+.add image {
   display: block;
   width: 70rpx;
   height: 60rpx;
 }
-.ziwo{
+
+.ziwo {
   display: block;
   width: 100%;
   height: 276rpx;
-  background:  rgba(0,0,0,0.32);  
+  background: rgba(0, 0, 0, 0.32);
 }
-.vip_xl{
-  padding: 0 28rpx; 
+
+.vip_xl {
+  padding: 0 28rpx;
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
   white-space: nowrap;
 }
-.vip_item{
+
+.vip_item {
   display: inline-block;
   width: 176rpx;
   height: 176rpx;
   border-radius: 10rpx;
   margin-right: 11rpx;
-  background: rgba(0,0,0,0.32);
+  background: rgba(0, 0, 0, 0.32);
   position: relative;
+  overflow: hidden;
 }
-.vip_item image{
+
+.vip_item image {
   display: block;
   width: 100%;
   height: 100%;
 }
-.vip_item .title{
+
+.vip_item .title {
   width: 80%;
   position: absolute;
   top: 46rpx;
@@ -109,6 +127,7 @@ page{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .num {
   width: 80%;
   position: absolute;
@@ -123,26 +142,30 @@ page{
   white-space: nowrap;
   top: 94rpx;
 }
-.remen{
-  padding:30rpx 28rpx;
+
+.remen {
+  padding: 30rpx 28rpx;
   background: #fff;
 }
-.biaoti{
+
+.biaoti {
   display: flex;
   height: 30rpx;
   font-size: 26rpx;
   margin-bottom: 37rpx;
 }
-.bt_left{
+
+.bt_left {
   flex: 1;
   background-repeat: no-repeat;
   background-size: 24rpx 29rpx;
   background-position-y: 0rpx;
   line-height: 30rpx;
   height: 30rpx;
-  color: #3C3C3C;
+  color: #3c3c3c;
 }
-.bt_left button{
+
+.bt_left button {
   background: none;
   border: none;
   display: inline-block;
@@ -152,33 +175,95 @@ page{
   font-size: 26rpx;
   margin-right: 44rpx;
 }
-.bt_left button.active{
-  color: #2AC0CB;
+
+.bt_left button.active {
+  color: #2ac0cb;
 }
-.bt_left  .icon{
+
+.bt_left  .icon {
   display: inline-block;
   margin-right: 10rpx;
   width: 24rpx;
   height: 29rpx;
   vertical-align: top;
 }
-.bt_left button:after{
+
+.bt_left button:after {
   display: none;
 }
-.biaoti text{
+
+.biaoti text {
   display: block;
   line-height: 30rpx;
-  color: #1FAAB4;
+  color: #1faab4;
   margin-right: 10rpx;
 }
-.biaoti image{
+
+.biaoti image {
   display: inline-block;
   width: 18rpx;
   height: 29rpx;
 }
 
+.myHabitList {
+  padding: 30rpx 28rpx 41rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
 
-.daodi{
+.myHabitList .tit {
+}
+
+.myHabitList .tit button {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 45rpx;
+  padding: 0;
+  font-size: 26rpx;
+  color: rgba(31, 170, 180, 1);
+  background: none;
+  width: 133rpx;
+}
+.myHabitList .tit button image{
+  width: 14rpx;
+  height: 25rpx;
+  margin-left: 10rpx;
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 10rpx;
+}
+.myHabitList .tit button:after {
+  display: none;
+}
+
+.myHabitList .tit text {
+  display: inline-block;
+  vertical-align: top;
+}
+.myHabitList .tit .line{
+  width:0;
+height:25rpx;
+display: inline-block;
+margin-top: 10rpx;
+vertical-align: top;
+border-right:2rpx solid rgba(199,199,199,1);
+}
+.myHabitList .tit .label {
+  font-size: 32rpx;
+  color: rgba(74, 74, 74, 1);
+  line-height: 45rpx;
+  width: 80rpx;
+}
+
+.myHabitList .tit .date {
+  font-size: 26rpx;
+  color: rgba(156, 156, 156, 1);
+  line-height: 45rpx;
+  padding-left: 20rpx;
+  width: 458rpx;
+}
+
+.daodi {
   height: 88rpx;
   line-height: 88rpx;
   font-size: 28rpx;

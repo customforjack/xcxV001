@@ -1,0 +1,14 @@
+<!--components/index/myHabitCard/myHabitCard.wxml-->
+<view class='myHabitCard'>
+    <view class='icon'>
+      <image src='/img/demo.jpeg'></image>
+    </view>
+    <view class='h-info'>
+      <view class='h-name'>{{item.habit_name}}</view>
+      <view class='h-num'>TA已练习20次</view>
+      <view class='h-total'>18888人正在练习</view>
+    </view>
+    <view class='btn-group'>
+      <button class='add' hover-class="showText"><text>打卡</text><image src='/img/add.png'></image></button>
+    </view>
+</view>

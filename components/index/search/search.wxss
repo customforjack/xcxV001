@@ -29,7 +29,7 @@
   position: absolute;
   left: 27rpx;
   top: 14rpx;
-  right: 14rpx;
+  right: 27rpx;
   bottom: 27rpx;
 }
 
