@@ -56,15 +56,23 @@ Page({
     if (e.detail.userInfo) {
       wx.setStorageSync('userInfo', e.detail.userInfo);
       //用户按了允许授权按钮
-      console.log(wx)
+      console.log(e.detail.userInfo)
       wx.ajax({
         url: '/api/Member/getInfoMP',
         params: {
-          code: e.detail.userInfo.code
+          code: wx.getStorageSync('code')
         },
         type: 'POST',
         success(res) {
           console.log(res)
+          if (res.code === 1) {
+            // 登陆成功
+          } else if (res.code === 201) {
+            // 未注册 跳转到注册页
+            wx.navigateTo({
+              url: '/pages/login/login',
+            })
+          }
         }
       })
     } 

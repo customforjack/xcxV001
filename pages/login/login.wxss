@@ -90,6 +90,7 @@
   position: absolute;
   right: 15rpx;
   top: 50rpx;
+  z-index: 1000;
 }
 
 .sendCode:after {

@@ -3,19 +3,19 @@
   <view class='box'>
     <view class='clearfix'>
       <text class="tit">登录习达人</text>
-      <view class='close fr'><image src='/img/close.png'></image></view>
+      <view class='close fr' bindtap='to'><image src='/img/close.png'></image></view>
     </view>
     <view class='form'>
       <view class='item'>
         <image class='p-icon' src='/img/phone-icon.png'></image>
-        <input type='number' maxlength='11'  placeholder-class="pl"  placeholder='请输入手机号码'></input>
+        <input type='number' maxlength='11' bindinput='getphone'  placeholder-class="pl"  placeholder='请输入手机号码'></input>
       </view>
       <view class='item'>
         <image class='s-icon' src='/img/suo.png'></image>
-        <input type='password' placeholder-class="pl" placeholder='请输入密码'></input>
-        <button class='sendCode'>发送验证码</button>
+        <input type='text' bindinput='code' placeholder-class="pl" placeholder='请输入验证码'></input>
+        <button class='sendCode' bindtap='sendCode'>发送验证码</button>
       </view>
     </view>
-    <button class='loginBtn'>登录</button>
+    <button class='loginBtn' bindtap='login'>登录</button>
   </view> 
 </view>
