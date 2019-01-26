@@ -40,6 +40,9 @@ Page({
           if (res.code === 1) {
             // 登陆成功
             wx.setStorageSync('token', res.data.token)
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
           } else if (res.code === 201) {
             // 未注册 跳转到注册页
             wx.setStorageSync('open_id', res.data.open_id)
