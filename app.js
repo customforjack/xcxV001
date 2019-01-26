@@ -2,7 +2,10 @@
 import {ajax} from "./utils/request.js";
 wx.ajax = ajax
 // 校验登陆态
-wx.checkLogin = () => {
+wx.checkLogin = (params) => {
+  let opt = Object.assign({
+    toLogin: false
+  }, params)
   return new Promise((resolve, reject) => {
     ajax({
       url: '/api/Member/checklogin',

@@ -18,6 +18,7 @@ const md5 = (params) => {
       str += utilMd5.hexMD5(seckey + params[k])
     }
   }
+
   str = utilMd5.hexMD5(seckey + str + seckey)
   params.apitoken = str
   return params;
@@ -29,6 +30,7 @@ let options = {
   msg: '加载中...',
   loading: 'loading',
   type: 'post',
+  checkRole: true,
   success(res) {
 
   },
@@ -45,6 +47,12 @@ function ajax(opt) {
   } else {
     wx.showNavigationBarLoading()
   }
+if(obj.checkRole){
+  const token = wx.getStorageSync('token')
+  token ? opt.params.token = token : wx.navigateTo({
+    url: '/pages/authorize/authorize',
+  })
+}
   wx.request({
     url: pageJson.host + obj.url,
     data: md5(obj.params),
@@ -78,6 +86,7 @@ function ajax(opt) {
 
     }
   })
+
 }
 
 module.exports = {

@@ -86,8 +86,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.checkLogin().then(res=>{
-      console.log('login status', res)
+    wx.ajax({
+      url: '/api/Home/home',
+      params: {
+      }
     })
   },
 

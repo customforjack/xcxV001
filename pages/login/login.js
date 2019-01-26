@@ -45,6 +45,7 @@ Page({
     }
     wx.ajax({
       url: '/api/Member/sendCode',
+      checkRole: false,
       params: {
         member_mobile: this.data.member_mobile
       },
@@ -89,6 +90,7 @@ Page({
     wx.ajax({
       url: '/api/Member/registerMP',
       type: 'POST',
+      checkRole: false,
       params: {
         member_mobile: _this.data.member_mobile,
         member_name: userInfo.nickName,
