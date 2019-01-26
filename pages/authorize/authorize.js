@@ -41,6 +41,8 @@ Page({
             // 登陆成功
           } else if (res.code === 201) {
             // 未注册 跳转到注册页
+            wx.setStorageSync('open_id', res.data.open_id)
+            wx.setStorageSync('session_key', res.data.session_key)
             wx.navigateTo({
               url: '/pages/login/login',
             })

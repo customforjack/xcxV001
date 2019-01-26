@@ -68,7 +68,7 @@ function ajax(opt) {
       method: 'POST',
       success(e) {
         console.log('check login', e)
-        if (e.code === 1) {
+        if (e.data.code === 1) {
           // 正常登录 继续请求
           wx.request({
             url: pageJson.host + obj.url,

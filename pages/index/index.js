@@ -89,6 +89,7 @@ Page({
     wx.ajax({
       url: '/api/Home/home',
       params: {
+        token: wx.getStorageSync('token')
       }
     })
   },

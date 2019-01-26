@@ -95,7 +95,7 @@ Page({
         member_mobile: _this.data.member_mobile,
         member_name: userInfo.nickName,
         member_img: userInfo.avatarUrl,
-        mp_openid: 'wxa479eb67437f1dc4',
+        mp_openid: wx.getStorageSync('open_id'),
         code: _this.data.code,
         union_id: ''
       },
@@ -108,6 +108,10 @@ Page({
           wx.setStorageSync('token', res.data.token)
           wx.switchTab({
             url: '/pages/index/index',
+          })
+        } else {
+          wx.showToast({
+            title: res.msg,
           })
         }
       }
