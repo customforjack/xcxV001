@@ -1,9 +1,13 @@
 //app.js
+import {ajax} from "./utils/request.js";
+wx.ajax = ajax
 App({
   onLaunch: function () {
     // 登录
     wx.login({
       success: res => {
+        console.log('res', res)
+        wx.setStorageSync('code', res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })

@@ -1,5 +1,7 @@
 <!--pages/authorize/authorize.wxml-->
 <image src='/img/auth.png' class='logo'></image>
+<view class='userName'>习达人</view>
+<view class='line'></view>
 <view class='shuoming'>习达人申请获得以下权限</view>
 <view class='tips'>获得你的公开信息(昵称, 头像等)</view>
 <button class='auth-btn' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">确认授权</button>

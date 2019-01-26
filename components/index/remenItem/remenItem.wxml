@@ -3,7 +3,7 @@
   <view class='remen_item'>
     <view class='title_box'>
       <view class='title'>陪孩子一小时</view>
-      <image src='/img/add.png'></image>
+      <image src='/img/add.png' bindtap='toaddStepOne'></image>
     </view>
     <view class='main_content'>
       <view class='main_tu'>

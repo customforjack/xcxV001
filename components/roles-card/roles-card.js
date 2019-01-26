@@ -1,4 +1,4 @@
-// components/index/renmenItem/remmenItem.js
+// components/roles-card/roles-card.js
 Component({
   /**
    * 组件的属性列表
@@ -18,10 +18,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    toaddStepOne() {
-      wx.navigateTo({
-        url: '/pages/add_habit_step1/addHabitStep1',
-      })
-    }
+
   }
 })

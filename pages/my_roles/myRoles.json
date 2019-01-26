@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "role-card": "/components/roles-card/roles-card"
+  },
     "navigationBarTitleText": "我的角色"
 }

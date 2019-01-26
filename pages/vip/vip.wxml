@@ -28,6 +28,5 @@
 </view>
 
 <view class='anniu'>
-  <view class='collect'>收藏</view>
   <view class='collect buy'>立即购买</view>
 </view>

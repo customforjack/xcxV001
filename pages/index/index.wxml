@@ -35,8 +35,8 @@
       <image src='/img/remen.png' class='icon'></image>
       <button  class="{{xgCheck === idx ? 'active':''}}" wx:for="{{checkxg}}" data-idx="{{idx}}" wx:for-index="idx" wx:key="idx" wx:for-item="item"  bindtap='toCheck'>{{item}}</button> 
     </view>
-    <text>更多</text>
-    <image src='/img/r_jiantou.png'></image>
+    <text bindtap='toMore'>更多</text>
+    <image  bindtap='toMore' src='/img/r_jiantou.png'></image>
   </view>
   <!-- 列表 -->
   <remmen-item class="item"></remmen-item> 

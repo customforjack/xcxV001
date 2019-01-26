@@ -5,7 +5,7 @@
   </view>
 
   <view class='list'>
-    <view class='card' wx:key="index" wx:for="{{list}}">
+    <view class='card'  bindtap='toDetail' wx:key="index" wx:for="{{list}}">
       <text>{{item.name}}</text>
       <view class='img-box'>
         <image mode="widthFix" src='/img/{{item.img}}'></image>

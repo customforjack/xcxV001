@@ -14,11 +14,11 @@
   </swiper>
 
   <view class='listBox'>
-  <view class='tit'>早茶 18.12.2</view>
     <view class='list'>
-      <view class='card'>
-
-      </view>
+      <role-card></role-card>
+      <role-card></role-card>
+      <role-card></role-card>
+      <role-card></role-card>
     </view>
   </view>
 </view>

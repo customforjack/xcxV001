@@ -2,6 +2,6 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#333333",
     "navigationBarTitleText": "习达人授权登录",
-    "navigationBarTextStyle": "write",
+    "navigationBarTextStyle": "white",
    "usingComponents": {}
 }

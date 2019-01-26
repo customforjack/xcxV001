@@ -1,0 +1,59 @@
+/* components/roles-card/roles-card.wxss */
+.my-roles-card{
+  padding-top: 30rpx;
+    padding-bottom: 42rpx; 
+  border-bottom:1px solid rgba(231,231,231,1);
+}
+.my-roles-card .info .role-c-text{
+    margin-bottom: 30rpx;
+}
+.my-roles-card .tit{
+  margin-bottom: 39rpx;
+  font-size:36rpx;
+color:rgba(22,22,22,1);
+line-height:50rpx;
+}
+.my-roles-card .role-c-icon{
+  width:140rpx;
+  height: 140rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.my-roles-card .role-c-info{
+  vertical-align: top;
+}
+.my-roles-card .role-c-icon image{
+  width:140rpx;
+  height: 140rpx;
+  border-radius:6rpx;
+  display: inline-block;
+}
+.my-roles-card .role-c-info .role-c-labels .left{
+font-size:20rpx;
+color:rgba(56,56,56,1);
+width: 430rpx;
+display: inline-block;
+line-height:33rpx;
+}
+.my-roles-card .role-c-info .role-c-labels .right{
+font-size:20rpx;
+color:rgba(56,56,56,1);
+line-height:33rpx;
+display: inline-block;
+width: 82rpx;
+}
+.my-roles-card .role-c-info .role-c-labels .right image{
+  display: inline-block;
+  width: 30rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  margin-right: 8rpx;
+}
+.my-roles-card .role-c-info{
+  display: inline-block;
+  padding-left: 26rpx; 
+  width: 530rpx;
+  font-size:28rpx;
+color:rgba(56,56,56,1);
+line-height:40rpx;
+}

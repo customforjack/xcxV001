@@ -47,6 +47,7 @@ Page({
           wx.switchTab({
             url: '/pages/index/index',
           })
+
         }
       }
     })
@@ -55,8 +56,16 @@ Page({
     if (e.detail.userInfo) {
       wx.setStorageSync('userInfo', e.detail.userInfo);
       //用户按了允许授权按钮
-      wx.switchTab({
-        url: '/pages/index/index',
+      console.log(wx)
+      wx.ajax({
+        url: '/api/Member/getInfoMP',
+        params: {
+          code: e.detail.userInfo.code
+        },
+        type: 'POST',
+        success(res) {
+          console.log(res)
+        }
       })
     } 
   },

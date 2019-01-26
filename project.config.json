@@ -4,16 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
-	"appid": "wxca70f0c0e9d48b0a",
-	"projectname": "customv2",
+	"appid": "wxa479eb67437f1dc4",
+	"projectname": "customv_git",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -36,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 17,
 			"list": [
 				{
 					"id": -1,
@@ -51,14 +52,14 @@
 					"query": ""
 				},
 				{
-					"id": 1,
-					"name": "新建习惯",
+					"id": 2,
+					"name": "新建习惯 4",
 					"pathName": "pages/add_habit/addHabit",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "新建习惯step1",
+					"id": 3,
+					"name": "新建习惯step1 5",
 					"pathName": "pages/add_habit_step1/addHabitStep1",
 					"query": ""
 				},
@@ -119,7 +120,33 @@
 				{
 					"id": -1,
 					"name": "授权登录",
-					"pathName": "pages/login/login"
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "我的角色",
+					"pathName": "pages/my_roles/myRoles",
+					"query": ""
+				},
+				{
+					"id": 15,
+					"name": "选择角色 7-1",
+					"pathName": "pages/buyRoles/buyRoles",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "角色购买 6",
+					"pathName": "pages/vip/vip",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "授权页面",
+					"pathName": "pages/authorize/authorize",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

@@ -43,3 +43,7 @@ swiper swiper-item image{
   width: 100%;
   display: block;
 }
+.list{
+ padding-left: 26rpx;
+  padding-right: 26rpx;
+}

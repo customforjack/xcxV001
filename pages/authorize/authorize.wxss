@@ -1,41 +1,76 @@
 /* pages/authorize/authorize.wxss */
-page{
-  background: #F7F9FB;
+
+page {
+  background: #fff;
 }
-.auth-btn{
-  margin: 78rpx auto 0;
-  width: 678rpx;
-  height: 92rpx;
-  background:#5FD3DB;
-  border-radius:8rpx;
-  font-size:36rpx;
-  color:#161616;
-  line-height:92rpx;
-  font-weight:600;
+
+.auth-btn {
+  margin: 100rpx auto 0;
+  width: 610rpx;
+  height: 86rpx;
+  background: rgba(8, 212, 108, 1);
+  border-radius: 7rpx;
+  color: #fff;
+  font-size: 32rpx;
 }
-.auth-btn::after{
-  border: 1rpx solid #5FD3DB;
+
+.auth-btn::after {
+  border: 1rpx solid #5fd3db;
 }
-.please-text{
+
+.please-text {
   margin: 350rpx 0;
   text-align: center;
-  font-size:28rpx;
-  color:#161616;
+  font-size: 28rpx;
+  color: #161616;
 }
-.logo{
+
+.userName {
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 55rpx;
+}
+
+.line {
+  width: 622rpx;
+  height: 0;
+  border-bottom: 1px solid rgba(217, 217, 217, 1);
+  margin: 0 auto 44rpx;
+}
+
+.logo {
   display: block;
-  width: 250rpx;
-  height: 250rpx;
-  margin: 145rpx auto 65rpx;
+  width: 127rpx;
+  height: 127rpx;
+  margin: 80rpx auto 14rpx;
 }
-.shuoming{
-  color:#161616;
-  font-size:30rpx;
-  text-align: center;
+
+.shuoming {
+  padding: 0 62rpx;
+  font-size: 30rpx;
+  color: rgba(22, 22, 22, 1);
+  line-height: 42rpx;
 }
-.tips{
-  font-size:26rpx;
-  text-align: center;
-  color: #666666;
-  margin-top: 5rpx;
+
+.tips {
+  margin-top: 22rpx;
+  font-size: 28rpx;
+  color: rgba(136, 136, 136, 1);
+  line-height: 40rpx;
+  padding: 0 62rpx 0 109rpx;
+  position: relative;
+}
+
+.tips:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  background: rgba(136, 136, 136, 1);
+  border-radius: 50%;
+  left: 72rpx;
+  top: 17rpx;
 }

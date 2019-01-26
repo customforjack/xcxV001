@@ -41,7 +41,7 @@ Page({
      */
   goMe() {
     wx.navigateTo({
-      url: '/pages/add_custom/add_custom',
+      url: '/pages/add_habit/addHabit',
     })
   },
   /**
@@ -68,6 +68,19 @@ Page({
     })
     console.log(e.currentTarget.dataset.idx)
 
+  },
+  toMore(){
+    // 判断是热门习惯pages/add_habit/addHabit  还是热门角色
+    console.log(this.data.xgCheck)
+    if (this.data.xgCheck === 0){
+      wx.navigateTo({
+        url: '/pages/add_habit/addHabit',
+      })
+    } else if (this.data.xgCheck === 1){
+      wx.navigateTo({
+        url: '/pages/buyRoles/buyRoles',
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
