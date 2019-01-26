@@ -13,33 +13,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) { 
-    // wx.login({
-    //   success: res => {
-    //     wx.request({
-    //       url: config.loginUrl, //后台接口
-    //       method: 'POST',
-    //       data: {
-    //         code: res.code,
-    //       },
-    //       header: {
-    //         'content-type': 'application/json' // 默认值
-    //       },
-    //       success: function (res) {
-    //         wx.setStorageSync('token_type', res.data.data.token_type)
-    //         wx.setStorageSync('openid', res.data.data.openid)
-    //         wx.setStorageSync('access_token', res.data.data.access_token)
-    //         wx.getSetting({
-    //           success: res => {
-    //             if (res.authSetting['scope.userInfo'] && wx.getStorageSync('access_token') == null) {
-    //               // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-    //             }
-    //           }
-    //         })
-    //       }
-    //     })
-    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
-    //   }
-    // })
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {

@@ -39,6 +39,7 @@ let options = {
   }
 }
 function ajax(opt) {
+  const tk = wx.getStorageSync('token')
   let obj = Object.assign(options, opt)
   if (obj.loading === 'loading') {
     wx.showLoading({
@@ -47,45 +48,106 @@ function ajax(opt) {
   } else {
     wx.showNavigationBarLoading()
   }
-if(obj.checkRole){
-  const token = wx.getStorageSync('token')
-  token ? opt.params.token = token : wx.navigateTo({
-    url: '/pages/authorize/authorize',
-  })
-}
-  wx.request({
-    url: pageJson.host + obj.url,
-    data: md5(obj.params),
-    header: {
-      //'Content-Type': 'application/json'
-      'content-type': 'application/x-www-form-urlencoded'
-    },
-    method: obj.type,
-    success: function (res) {
-      if (obj.loading === 'loading') {
-        wx.hideLoading()
-      } else {
-        wx.hideNavigationBarLoading()
-      }
-      obj.success(res.data)
-    },
-    fail: function (err) {
-      console.log('err,', err)
-      if (obj.loading === 'loading') {
-        wx.hideLoading()
-      } else {
-        wx.hideNavigationBarLoading()
-      }
-      wx.showToast({
-        title: err.errMsg || '返回错误！',
-        icon: 'none'
+  // 调接口之前先校验登录  先判断checkRole  是否为true
+  if (obj.checkRole){ // 校验登录
+    tk ? '' :''
+    if (!tk || tk === 'undefined'){
+      wx.navigateTo({
+        url: '/pages/authorize/authorize',
       })
-      obj.fail(err);
-    },
-    complete: function (res) {
-
+      return false
     }
-  })
+    wx.request({
+      url: pageJson.host + '/api/Member/checklogin',
+      data: md5({
+        token: wx.getStorageSync('token')
+      }),
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success(e) {
+        console.log('check login', e)
+        if (e.code === 1) {
+          // 正常登录 继续请求
+          wx.request({
+            url: pageJson.host + obj.url,
+            data: md5(obj.params),
+            header: {
+              //'Content-Type': 'application/json'
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: obj.type,
+            success: function (res) {
+              if (obj.loading === 'loading') {
+                wx.hideLoading()
+              } else {
+                wx.hideNavigationBarLoading()
+              }
+              obj.success(res.data)
+            },
+            fail: function (err) {
+              console.log('err,', err)
+              if (obj.loading === 'loading') {
+                wx.hideLoading()
+              } else {
+                wx.hideNavigationBarLoading()
+              }
+              wx.showToast({
+                title: err.errMsg || '返回错误！',
+                icon: 'none'
+              })
+              obj.fail(err);
+            },
+            complete: function (res) {
+
+            }
+          })
+        } else {
+          // 失效
+          if (obj.checkRole) {
+            wx.navigateTo({
+              url: '/pages/authorize/authorize'
+            })
+          }
+        }
+      }
+    })
+  } else { // 不校验登录
+    wx.request({
+      url: pageJson.host + obj.url,
+      data: md5(obj.params),
+      header: {
+        //'Content-Type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: obj.type,
+      success: function (res) {
+        if (obj.loading === 'loading') {
+          wx.hideLoading()
+        } else {
+          wx.hideNavigationBarLoading()
+        }
+        obj.success(res.data)
+      },
+      fail: function (err) {
+        console.log('err,', err)
+        if (obj.loading === 'loading') {
+          wx.hideLoading()
+        } else {
+          wx.hideNavigationBarLoading()
+        }
+        wx.showToast({
+          title: err.errMsg || '返回错误！',
+          icon: 'none'
+        })
+        obj.fail(err);
+      },
+      complete: function (res) {
+
+      }
+    })
+  }
 
 }
 
