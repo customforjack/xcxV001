@@ -65,7 +65,7 @@
         "selectedIconPath": "/img/yueke_act.png"
       },
       {
-        "pagePath": "pages/find/find",
+        "pagePath": "pages/activity/activity",
         "text": "发现",
         "iconPath": "/img/faxian.png",
         "selectedIconPath": "/img/faxian_act.png"
