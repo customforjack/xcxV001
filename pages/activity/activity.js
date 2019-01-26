@@ -41,7 +41,12 @@ Page({
       inputVal: e.detail.value
     });
   },
-  /**
+  go_postactivity() {
+    wx.navigateTo({
+      url: '/pages/post_activity/post_activity',
+    })
+  },
+  /**go_postactivity
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {

@@ -97,3 +97,8 @@
     </view>
   </view>
   <view class='division'></view>
+
+  <view class='postActivity' bindtap='go_postactivity'>
+    <text >发起活动</text>
+  </view>
+

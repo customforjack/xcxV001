@@ -14,15 +14,15 @@
     <image></image>
     <text>我的订单</text>
   </view>
-  <view class='model_item'>
+  <view class='model_item' bindtap='goRole'>
     <image></image>
-    <text>我的积分</text>
+    <text>我的角色</text>
   </view>
 </view>
 
 <view class='model_two'>
   <view class='row'>
-    <view class='model_item_copy'>
+    <view class='model_item_copy'  bindtap='goStudy'>
       <image></image>
       <text>我的学习</text>
     </view>
@@ -30,30 +30,34 @@
       <image></image>
       <text>我的代理</text>
     </view>
-    <view class='model_item_copy'>
+    <view class='model_item_copy'  bindtap='goCollection'>
       <image></image>
       <text>我的收藏</text>
     </view>
   </view>
   <view class='row'>
-    <view class='model_item_copy'>
+    <view class='model_item_copy' bindtap='goRanking'>
       <image></image>
       <text>我的排行</text>
     </view>
-    <view class='model_item_copy'>
+    <view class='model_item_copy' bindtap='goSupervisor'>
       <image></image>
       <text>我的督导</text>
     </view>
-    <view class='model_item_copy'></view>
+    <view class='model_item_copy' bindtap='goRecommend'>
+      <image></image>
+      <text>我的推荐</text>
+    </view>
+   
   </view>
 </view>
 
 <view class='model_one'>
-  <view class='model_item'>
+  <view class='model_item' bindtap='goActivity'>
     <image></image>
     <text>我的活动</text>
   </view>
-  <view class='model_item'>
+  <view class='model_item' bindtap='goGroup'>
     <image></image>
     <text>我的社群</text>
   </view>
@@ -61,4 +65,9 @@
     <image></image>
     <text>集团用户</text>
   </view>
+   <view class='model_item'>
+    <image></image>
+    <text>我的提醒</text>
+  </view>
 </view>
+

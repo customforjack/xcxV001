@@ -20,7 +20,46 @@ Page({
       url: '/pages/my/my_order/my_order',
     })
   },
-
+  goRole() {
+    wx.navigateTo({
+      url: '/pages/my_role/my_role',
+    })
+  },
+  goStudy() {
+    wx.navigateTo({
+      url: '/pages/my_study/my_study',
+    })
+  },
+  goCollection() {
+    wx.navigateTo({
+      url: '/pages/collection/collection',
+    })
+  },
+  goRanking() {
+    wx.navigateTo({
+      url: '/pages/ranking/ranking',
+    })
+  },
+  goSupervisor() {
+    wx.navigateTo({
+      url: '/pages/supervisor/supervisor',
+    })
+  },
+  goRecommend() {
+    wx.navigateTo({
+      url: '/pages/recommend/recommend',
+    })
+  },
+  goGroup() {
+    wx.navigateTo({
+      url: '/pages/group/group',
+    })
+  },
+  goActivity() {
+    wx.navigateTo({
+      url: '/pages/my_activity/my_activity',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
