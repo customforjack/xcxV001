@@ -1,4 +1,7 @@
 {
+  "usingComponents": {
+    "calendar": "/components_show/calendar/calendar"
+  },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTitleText": "提醒",

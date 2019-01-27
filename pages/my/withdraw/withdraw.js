@@ -14,7 +14,31 @@ Page({
   onLoad: function (options) {
 
   },
+  numInput:function(e){
+    this.setData({
+      cash: e.detail.value
+    })
+  },
+  drawing:function(){
 
+    var that = this;
+    var cash=that.data.cash;
+    console.log(cash);
+    /*提现*/
+    wx.ajax({
+      url: '/api/Member/withdraw',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        price: cash,
+      },
+      type: 'POST',
+      success(res) {
+        console.log("提现", res);
+      
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

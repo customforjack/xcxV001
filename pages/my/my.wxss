@@ -67,7 +67,7 @@ page{
   display: block;
   width: 60rpx;
   height: 60rpx;
-  background: #D8D8D8;
+  /* background: #D8D8D8; */
   margin: 0 auto;
 }
 .model_two{
@@ -91,6 +91,6 @@ page{
   display: block;
   width: 60rpx;
   height: 60rpx;
-  background: #D8D8D8;
+  /* background: #D8D8D8; */
   margin: 0 auto 16rpx;
 }

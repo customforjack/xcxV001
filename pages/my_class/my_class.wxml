@@ -1,152 +1,85 @@
 <!--pages/my_class/my_class/my_class.wxml-->
-<view class='circle'>
-  <view class='circle_top'>
+<view class='circle_top'>
     <view class='tab_item' bindtap='changeTab' data-tab='0'>
-      <text class="text {{flag==0?'act':''}}">VIP课</text>
+      <text class="text {{flag==0?'act':''}}">vip课</text>
     </view>
     <view class='tab_item' bindtap='changeTab' data-tab='1'>
       <text class="text {{flag==1?'act':''}}">公开课</text>
     </view>
-     <view class='tab_item' bindtap='changeTab' data-tab='2'>
+    <view class='tab_item' bindtap='changeTab' data-tab='2'>
       <text class="text {{flag==2?'act':''}}">精品课</text>
     </view>
-   <view class='tab_item'>
-    <image  src='../../img/other.png' mode='widthFix'></image>
-   </view>
   </view>
- 
-  <view class='advertisement'>
-    <image src='../../img/advertisement.jpg' ></image>
+  
+
+ <block wx:if="{{flag==0}}">
+ <!--  wx:for='{{}}'  wx:for-item=""  wx:key="" -->
+  <view class='tilte'>
+    <view class='tilte_one'>如何成为一个贤惠的妻子</view>
+    <view class='content'>
+      
+     <view class='vip_box'>
+      <image src='../../img/advertisement.jpg'></image>
+      <image class='vip' style='width:34rpx;height:34rpx;' src='../../img/v.png'></image>
+      </view>
+     <view class='miaoshu'>
+      <text class='miaoshu_one'>{{role.description}}如何成为一个贤惠的妻子，这是一个非常n你还还好和话nianidnaidnadnaisdnaisdnhhiahi画的画皇帝a</text>
+      <view class='heart_xx'>
+      <text>20.6万人参与/200人转发</text>
+       <image src='../../img/shoucang-2.png'></image>
+      </view>
+     </view>
+      
+    </view>
   </view>
 
-   <view class='circle_list'>
-    <view class='circle_item' >
-     <view class='time'>10分钟前</view>
-      <view  class='exhibition'>
-      <image src='../../img/advertisement.jpg'> </image>
-      </view>
-    <view class='tilet'>如何成为一个贤惠的好妻子</view>
-    <view class='content'>
-      最可怕的不是变老,
-      而是高枯衰老的破坏力. 你害怕变老吗? 
-      害怕 变成家里那个不受关注的一员吗? 
-      好妻子该如何抵抗这些, 一件…
-    </view>
-    <view class='other'>
-        <view>
-        <image src='../../img/edit.png'></image>
-        </view>
-         <view> 
-         <image src='../../img/yueke.png'></image>
-         <text>121</text>
-         </view>
-          <view>
-           <image src='../../img/fabulous.png'></image>
-           <text>32</text>
-          </view>
-           <view> 
-           <image src='../../img/refresh.png'></image>
-           <text>5454</text>
-           </view>
-        <view><image src='../../img/more.png'></image></view>
-      </view>
-    </view>
+
+ </block>
+
+
+ <block wx:if="{{flag==1}}">
+ <!--  wx:for='{{}}' wx:for-item=""  wx:key='' -->
   
-  <view class='circle_item' >
-     <view class='time'>10分钟前</view>
-      <view  class='exhibition'>
-      <image src='../../img/advertisement.jpg'> </image>
-      </view>
-    <view class='tilet'>如何成为一个贤惠的好妻子</view>
+  <view class='tilte'>
+    <view class='tilte_one'>公开课</view>
     <view class='content'>
-      最可怕的不是变老,
-      而是高枯衰老的破坏力. 你害怕变老吗? 
-      害怕 变成家里那个不受关注的一员吗? 
-      好妻子该如何抵抗这些, 一件…
-    </view>
-    <view class='other'>
-        <view>
-        <image src='../../img/edit.png'></image>
-        </view>
-         <view> 
-         <image src='../../img/yueke.png'></image>
-         <text>121</text>
-         </view>
-          <view>
-           <image src='../../img/fabulous.png'></image>
-           <text>32</text>
-          </view>
-           <view> 
-           <image src='../../img/refresh.png'></image>
-           <text>5454</text>
-           </view>
-        <view><image src='../../img/more.png'></image></view>
+      
+     <view class='vip_box'>
+      <image src='../../img/advertisement.jpg'></image>
+      <image class='vip' style='width:34rpx;height:34rpx;' src='../../img/v.png'></image>
       </view>
-    </view>
-  
-<view class='circle_item' >
-     <view class='time'>10分钟前</view>
-      <view  class='exhibition'>
-      <image src='../../img/advertisement.jpg'> </image>
+     <view class='miaoshu'>
+      <text class='miaoshu_one'>{{role.description}}如何成为一个贤惠的妻子，这是一个非常n你还还好和话nianidnaidnadnaisdnaisdnhhiahi画的画皇帝a</text>
+      <view class='heart_xx'>
+      <text>20.6万人参与/200人转发</text>
+       <image src='../../img/shoucang-2.png'></image>
       </view>
-    <view class='tilet'>如何成为一个贤惠的好妻子</view>
-    <view class='content'>
-      最可怕的不是变老,
-      而是高枯衰老的破坏力. 你害怕变老吗? 
-      害怕 变成家里那个不受关注的一员吗? 
-      好妻子该如何抵抗这些, 一件…
+     </view>
+      
     </view>
-    <view class='other'>
-        <view>
-        <image src='../../img/edit.png'></image>
-        </view>
-         <view> 
-         <image src='../../img/yueke.png'></image>
-         <text>121</text>
-         </view>
-          <view>
-           <image src='../../img/fabulous.png'></image>
-           <text>32</text>
-          </view>
-           <view> 
-           <image src='../../img/refresh.png'></image>
-           <text>5454</text>
-           </view>
-        <view><image src='../../img/more.png'></image></view>
-      </view>
-    </view>
-  
-  <view class='circle_item' >
-     <view class='time'>10分钟前</view>
-      <view  class='exhibition'>
-      <image src='../../img/advertisement.jpg'> </image>
-      </view>
-    <view class='tilet'>如何成为一个贤惠的好妻子</view>
-    <view class='content'>
-      最可怕的不是变老,
-      而是高枯衰老的破坏力. 你害怕变老吗? 
-      害怕 变成家里那个不受关注的一员吗? 
-      好妻子该如何抵抗这些, 一件…
-    </view>
-    <view class='other'>
-        <view>
-        <image src='../../img/edit.png'></image>
-        </view>
-         <view> 
-         <image src='../../img/yueke.png'></image>
-         <text>121</text>
-         </view>
-          <view>
-           <image src='../../img/fabulous.png'></image>
-           <text>32</text>
-          </view>
-           <view> 
-           <image src='../../img/refresh.png'></image>
-           <text>5454</text>
-           </view>
-        <view><image src='../../img/more.png'></image></view>
-      </view>
-    </view>
-   
   </view>
-</view>
+</block>
+
+
+ <block wx:if="{{flag==2}}">
+ <!--  wx:for='{{}}' wx:for-item=""  wx:key='' -->
+  
+  <view class='tilte'>
+    <view class='tilte_one'>精品课</view>
+    <view class='content'>
+      
+     <view class='vip_box'>
+      <image src='../../img/advertisement.jpg'></image>
+      <image class='vip' style='width:34rpx;height:34rpx;' src='../../img/v.png'></image>
+      </view>
+     <view class='miaoshu'>
+      <text class='miaoshu_one'>{{role.description}}如何成为一个贤惠的妻子，这是一个非常n你还还好和话nianidnaidnadnaisdnaisdnhhiahi画的画皇帝a</text>
+      <view class='heart_xx'>
+      <text>20.6万人参与/200人转发</text>
+       <image src='../../img/shoucang-2.png'></image>
+      </view>
+     </view>
+      
+    </view>
+  </view>
+</block>

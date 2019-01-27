@@ -7,15 +7,15 @@
 </view>
 <view class='model_one'>
   <view class='model_item' bindtap='goAccount'>
-    <image></image>
+    <image src='../../img/suo.png'></image>
     <text>我的账户</text>
   </view>
   <view class='model_item' bindtap='goOrder'>
-    <image></image>
+    <image src='../../img/bookIcon.png'></image>
     <text>我的订单</text>
   </view>
   <view class='model_item' bindtap='goRole'>
-    <image></image>
+    <image src='../../img/paixu.png'></image>
     <text>我的角色</text>
   </view>
 </view>
@@ -23,29 +23,29 @@
 <view class='model_two'>
   <view class='row'>
     <view class='model_item_copy'  bindtap='goStudy'>
-      <image></image>
+      <image src='../../img/search.png'></image>
       <text>我的学习</text>
     </view>
     <view class='model_item_copy'>
-      <image></image>
+      <image src='../../img/suo.png'></image>
       <text>我的代理</text>
     </view>
     <view class='model_item_copy'  bindtap='goCollection'>
-      <image></image>
+      <image src='../../img/shoucang.png'></image>
       <text>我的收藏</text>
     </view>
   </view>
   <view class='row'>
     <view class='model_item_copy' bindtap='goRanking'>
-      <image></image>
+      <image src='../../img/suo.png'></image>
       <text>我的排行</text>
     </view>
     <view class='model_item_copy' bindtap='goSupervisor'>
-      <image></image>
+      <image src='../../img/suo.png'></image>
       <text>我的督导</text>
     </view>
     <view class='model_item_copy' bindtap='goRecommend'>
-      <image></image>
+      <image src='../../img/suo.png'></image>
       <text>我的推荐</text>
     </view>
    
@@ -54,20 +54,24 @@
 
 <view class='model_one'>
   <view class='model_item' bindtap='goActivity'>
-    <image></image>
+    <image src='../../img/suo.png'></image>
     <text>我的活动</text>
   </view>
   <view class='model_item' bindtap='goGroup'>
-    <image></image>
+    <image src='../../img/suo.png'></image>
     <text>我的社群</text>
   </view>
   <view class='model_item'>
-    <image></image>
+    <image src='../../img/suo.png'></image>
     <text>集团用户</text>
   </view>
-   <view class='model_item'>
-    <image></image>
+  
+</view>
+
+<view class='model_one'>
+ 
+   <view class='model_item' bindtap='goRemind'>
+    <image src='../../img/suo.png'></image>
     <text>我的提醒</text>
   </view>
 </view>
-

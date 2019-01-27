@@ -5,49 +5,124 @@ Page({
    * 页面的初始数据
    */
   data: {
-    flag: 1,
+    flag: 0,
     tabx: 0
   },
   changeTab(e) {
-    var tab = e.currentTarget.dataset.tab
+    var that=this;
+    var tab = e.currentTarget.dataset.tab;
     this.setData({
       flag: tab
-    })
-  },
-  changeTabx(e) {
-    var tabx = e.currentTarget.dataset.tabx
-    this.setData({
-      tabx: tabx
-    })
-  },
-  showInput: function () {
-    this.setData({
-      inputShowed: true
     });
+      if(tab==1){
+          that.myCharacterUnused();
+          console.log(that.data)
+      }else if(tab==0){
+          that.myCharacterUsed();
+      }
   },
-  hideInput: function () {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
-    });
-  },
-  clearInput: function () {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
-  },
+
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      var that= this;
+      that.myCharacterUsed();
 
   },
+    myCharacterUsed:function(){
+        var that= this;
+        /*获取已使用角色*/
+        wx.ajax({
+            url: '/api/Member/myCharacterUsed',
+            checkRole: false,
+            params: {
+                token: wx.getStorageSync('token'),
+                page:1,
+                pageSize: 20
+            },
+            type: 'POST',
+            success(res) {
+                console.log("角色",res.data);
+                console.log("角色",res);
+                if (res.code === 1) {
+                    // 角色获取成功
+                    res.data=[
+                        {
+                            "id": 1,
+                            "name": "测试角色",
+                            "thumbnail": "../../img/advertisement.jpg",
+                            "description": "阿斯顿撒",
+                            "end_time": "2018-01-11",
+                            "time_status": 1
+                        },
+                        {
+                            "id": 2,
+                            "name": "测试角色",
+                            "thumbnail": "../../img/advertisement.jpg",
+                            "description": "阿斯顿撒",
+                            "end_time": "2018-01-11",
+                            "time_status": 1
+                        },
+                    ];
+                    var roleList= res.data;
+
+                    that.setData({
+                        roleList:roleList
+                    })
+                }
+            }
+        });
+    },
+    myCharacterUnused:function(){
+        var that= this;
+        /*获取未使用角色*/
+        wx.ajax({
+            url: '/api/Member/myCharacterUnused',
+            checkRole: false,
+            params: {
+                token: wx.getStorageSync('token'),
+                page:1,
+                pageSize: 20
+            },
+            type: 'POST',
+            success(res) {
+                console.log("未使用角色",res.data);
+                console.log("未使用角色",res);
+                if (res.code === 1) {
+                    // 角色获取成功
+                    res.data=[
+                        {
+                            "id": 1,
+                            "name": "未使用角色",
+                            "thumbnail": "../../img/advertisement.jpg",
+                            "description": "阿斯顿撒",
+                            "end_time": "2018-01-01",
+                            "number2":3,
+                            "time_status": 1
+                        },
+                        {
+                            "id": 2,
+                            "name": "未使用角色",
+                            "thumbnail": "../../img/advertisement.jpg",
+                            "description": "阿斯顿撒",
+                            "end_time": "2018-01-01",
+                            "number2":1,
+                            "time_status": 1
+                        },
+                    ];
+                    var roleList_no= res.data;
+
+                    that.setData({
+                        roleList_no:roleList_no
+                    })
+                }
+            }
+        })
+    },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

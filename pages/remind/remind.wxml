@@ -1,5 +1,7 @@
 <!--pages/remind/remind.wxml-->
-
+<view>
+  <calendar id="component"  bindtap=""></calendar>
+</view>
  
   <view class='tilte'>
     <text class='tilte_big'>2018年12月</text>

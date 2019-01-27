@@ -10,21 +10,20 @@
   
 
  <block wx:if="{{flag==0}}">
-  <view class='tilte'>
-    <!-- <text class='tilte_big'>MORE</text> -->
+  <view class='tilte' wx:for='{{roleList}}'  wx:for-item="role"  wx:key="unique">
     <view class='content'>
      <view>
-      <image src='../../img/advertisement.jpg'></image>
+      <image src='{{role.thumbnail}}'></image>
       </view>
      <view class='miaoshu'>
       <text> 
-         好妻子
-      </text>
-      <text> 
-         最可怕的不是变老, 好妻子该如 何抵抗这
+         {{role.name}}
       </text>
       <text>
-      有效期至2020年10月28日
+         {{role.description}}
+      </text>
+      <text>
+      有效期至{{role.end_time}}
       </text>
      </view>
       <view class='qdd'>已使用</view>
@@ -32,51 +31,25 @@
     </view>
   </view>
  
- <view class='tilte'>
-    <!-- <text class='tilte_big'>MORE</text> -->
-    <view class='content'>
-     <view>
-      <image src='../../img/advertisement.jpg'></image>
-      </view>
-     <view class='miaoshu'>
-      <text> 
-         好妻子
-      </text>
-      <text> 
-         最可怕的不是变老, 好妻子该如 何抵抗这
-      </text>
-      <text>
-      有效期至2020年10月28日
-      </text>
-     </view>
-      <view class='qdd'>已使用</view>
-     <view class='click_ta'>续费</view>
-    </view>
-  </view>
-
-
-
  </block>
 
 
  <block wx:if="{{flag==1}}">
-  <view class='tilte'>
-    <!-- <text class='tilte_big'>MORE</text> -->
+  <view class='tilte' wx:for='{{roleList_no}}' wx:for-item="norole"  wx:key='key_list'>
     <view class='content'>
      <view>
-      <image src='../../img/advertisement.jpg'></image>
+      <image src='{{norole.thumbnail}}'></image>
       </view>
      <view class='miaoshu'>
       <text> 
-         好妻子
+         {{norole.name}}
       </text>
       <text> 
-        最可怕的不是变老, 好妻子该如何抵抗这
-         最可怕的不是变老, 好妻子
+          {{norole.description}}
       </text>
       <text class='validity'>
-      有效期至2019年12月30日
-      <text class='remnant'>剩余4件</text>
+      有效期至{{norole.end_time}}
+      <text class='remnant'>剩余{{norole.number2}}件</text>
       </text>
      </view>
       <!-- <view class='qdd'>钱多多</view> -->

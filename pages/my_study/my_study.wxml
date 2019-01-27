@@ -11,15 +11,15 @@
   
 
  <block wx:if="{{flag==0}}">
-  <view class='tilte'>
+  <view class='tilte'   wx:for='{{studyList}}'  wx:for-item='studyList' wx:key='habitList'  wx:for-index="studyIndex" data-id='{{studyList.id}}'>
     <!-- <text class='tilte_big'>MORE</text> -->
     <view class='content'>
      <view>
-      <image src='../../img/advertisement.jpg'></image>
+      <image src='{{studyList.thumbnail}}'></image>
       </view>
      <view class='miaoshu'>
       <text> 
-         好妻子
+         {{studyList.name}}
       </text>
       <text> 
         TA已练习20次
@@ -29,7 +29,7 @@
       <text class='remnant'>已学习10分钟</text>
       </text>
      </view>
-     <view class='click_cade'>打卡</view>
+     <view class='click_cade'>进入角色</view>
     </view>
       
   </view> 
@@ -38,21 +38,22 @@
 
 
  <block wx:if="{{flag==1}}">
-  <view class='tilte'>
-    <!-- <text class='tilte_big'>MORE</text> -->
+  <view class='tilte' wx:for='{{habitList}}' wx:for-item='habitList' wx:key='habitList'  wx:for-index="habitIndex"  data-id='{{habitList.id}}'>
+
     <view class='content'>
      <view>
-      <image src='../../img/advertisement.jpg'></image>
+      <image src='{{habitList.thumbnail}}'></image>
       </view>
      <view class='miaoshu'>
       <text> 
-         好妻子
+         {{habitList.habit_name}}
       </text>
-      <text> 
-        最可怕的不是变老, 好妻子该 如何抵抗这
+      <text>
+      {{habitList.description}}
+
       </text>
       <text class='validity'>
-      有效期至2019年12月30日
+      有效期至{{habitList.end_time}}
       <text class='remnant'>已学习10分钟</text>
       </text>
      </view>
