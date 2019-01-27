@@ -126,6 +126,7 @@
 .quanziList .box .card .c-box {
   position: relative;
   overflow: hidden;
+  border-radius: 10rpx;
 }
 
 .quanziList .box .card .name {

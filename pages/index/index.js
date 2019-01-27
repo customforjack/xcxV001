@@ -14,22 +14,7 @@ Page({
     // 此页面 页面内容距最顶部的距离
     height: app.globalData.height * 2 + 20,
     act:0,
-    vip:[{
-      title:'陪孩子一小时',
-      num:'2.6万人'
-    }, {
-        title: '陪孩子一小时',
-        num: '2.6万人'
-      }, {
-        title: '陪孩子一小时',
-        num: '2.6万人'
-      }, {
-        title: '陪孩子一小时',
-        num: '2.6万人'
-      }, {
-        title: '陪孩子一小时',
-        num: '2.6万人'
-      }],
+    vip:[],
     checkxg: ['热门习惯','热门角色'],
     xgCheck:0,
     detail:{}
@@ -87,20 +72,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const _this = this
-    wx.ajax({
-      url: '/api/Home/home',
-      params: {
-        token: wx.getStorageSync('token')
-      },
-      success (res) {
-        if(res.code === 1) {
-          _this.setData({
-            detail:res.data
-          })
-        }
-      }
-    })
+  
   },
 
   /**
@@ -114,7 +86,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const _this = this
+    wx.ajax({
+      url: '/api/Home/home',
+      params: {
+        token: wx.getStorageSync('token')
+      },
+      success(res) {
+        if (res.code === 1) {
+          _this.setData({
+            detail: res.data
+          })
+        }
+      }
+    })
   },
 
   /**

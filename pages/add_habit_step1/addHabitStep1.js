@@ -128,6 +128,26 @@ Page({
       date1: e.detail.value
     })
   },
+  subFrom (){
+    wx.ajax({
+      url: '/api/Product/createMyHabi',
+      params: {
+        id: 0,
+        habit_name: '习惯名称',
+        start_time: '开始时间',
+        end_time: '结束时间',
+        my_promise_success: '自我承诺 成功',
+        my_promise_fail:'自我承诺 失败',
+        their_promise_success:'督导承诺 成功',
+        their_promise_fail:'	督导承诺 失败',
+        remind_time:'提醒时间 格式： 01:00,20:00,21:00',
+        remind_week: '提醒星期 格式： 1,3,5,7',
+        token: wx.getStorageSync('token')
+      }
+    }).then(res => {
+      
+    })
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
