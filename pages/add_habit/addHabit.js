@@ -5,53 +5,72 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: [
-      {
-    label: '健康',
-    select: false
-  },
-  {
-    label: '职场',
-    select: false
-  }
-    ],
-  list: [
-    {
-      name: '锻炼',
-      img: 'buxing.png'
-    },
-    {
-      name: '步行',
-      img: 'football.png'
-    },
-    {
-      name: '跑步',
-      img: 'jianshen-.png'
-    },
-    {
-      name: '乒乓球',
-      img: 'jianshenfang.png'
-    },
-    {
-      name: '健身',
-      img: 'jianshenfang.png'
-    },
-    {
-      name: '瑜伽',
-      img: 'jianshenfang.png'
-    },
-    {
-      name: '拳击',
-      img: 'jianshenfang.png'
-    },
-  ]
+    tabs: [],
+    list: [],
+    sportList: [],
+    quanziArr: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('load ...')
+    const _this = this
+    this.getHabitList()
+   setTimeout(()=>{
+     this.getQuanList()
+   },200)
+ 
+  },
+  // 获取习惯列表
+  getHabitList() {
+    const _this = this
+    return wx.ajax({
+        url: '/api/Product/getHabitListAll',
+        params: {
+          token: wx.getStorageSync('token')
+        }
+      }).then(res => {
+        const arr = []
+        const sArr = []
+        res.data.forEach((item, i) => {
+          if (i === 0) {
+            arr.push({
+              label: item.name,
+              select: true
+            })
+          } else {
+            arr.push({
+              label: item.name,
+              select: false
+            })
+          }
+          sArr.push(item.habit_list)
+        })
+        _this.setData({
+          tabs: arr,
+          sportList: sArr
+        })
+      })
 
+  },
+  getQuanList () {
+    const _this = this
+     return wx.ajax({
+        url: '/api/Topic/getTopicList',
+        params: {
+          type: 3,
+          p_id: 0,
+          page: 1,
+          pageSize: 10,
+          token: wx.getStorageSync('token')
+        }
+     }).then(res => {
+       _this.setData({
+         quanziArr:res.data.data
+       })
+     })
   },
   toDetail() {
     wx.navigateTo({

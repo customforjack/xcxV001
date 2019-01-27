@@ -1,7 +1,7 @@
 <!--pages/add_habit_step1/addHabitStep1.wxml-->
 <view class='addHabitStep1'>
   <view class='box'>
-    <input class='name' placeholder-class="nameStyle" placeholder='请输入习惯名称'></input>
+    <input class='name' bindinput='habitName' placeholder-class="nameStyle" placeholder='请输入习惯名称'></input>
     <!--开始时间 start-->
     <view class='timeBox'>
       <view class='card'>
@@ -26,19 +26,17 @@
     <!--开始时间 end-->
     <view class='times'>
       <view class='addTime'>
-       提醒时间
+        提醒时间
       </view>
       <view class='timeList'>
-        <button class='addBtn'><image src='/img/addBtn-bg.png'></image></button>
-        <view class='btnBox'>
-          <button>00:00</button>
-          <view class='icon'>
-              <view class='line'></view>
-          </view>
-        </view>
-        <view class='btnBox'>
-          <button>00:10</button>
-          <view class='icon'>
+        <button class='addBtn'>
+          <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+               <cover-image src='/img/addBtn-bg.png'></cover-image>
+          </picker>
+        </button>
+        <view class='btnBox' wx:for="{{timeArr}}" wx:key="index">
+          <button>{{item}}</button>
+          <view class='icon' data-idx="{{index}}" bindtap='deleteTime'>
             <view class='line'></view>
           </view>
         </view>
@@ -47,27 +45,21 @@
     <view class='repert'>
       <view class='tit'>重复</view>
       <view class='list'>
-        <button >周一</button>
-        <button class='active' >周二</button>
-        <button class='active' >周三</button>
-        <button >周四</button>
-        <button >周五</button>
-        <button >周六</button>
-        <button >周日</button>
+        <button class="{{item.select ? 'active': ''}}" data-idx="{{index}}" bindtap='checkWeek' wx:for="{{weekArr}}" wx:key="index">{{item.name}}</button>
       </view>
     </view>
     <view class='promise'>
       <view class='tit'>自我承诺</view>
-      <input placeholder-class='ipt-place' placeholder='完成任何, 如何奖励自己'></input>
-      <input  placeholder-class='ipt-place'  placeholder='未完成任何, 如何自我惩罚'></input>
+      <input placeholder-class='ipt-place' bindinput='checkMyPro1' placeholder='完成任何, 如何奖励自己'></input>
+      <input placeholder-class='ipt-place'  bindinput='checkMyPro2'  placeholder='未完成任何, 如何自我惩罚'></input>
     </view>
 
     <view class='promise'>
       <view class='tit'>对督导团承诺
         <button class='sendBtn'>发送包</button>
       </view>
-      <input placeholder-class='ipt-place' placeholder='完成任何, 如何犒劳督导'></input>
-      <input placeholder-class='ipt-place' placeholder='未完成任何, 如何自我惩罚'></input>
+      <input placeholder-class='ipt-place' bindinput='checkOtherPro1'  placeholder='完成任何, 如何犒劳督导'></input>
+      <input placeholder-class='ipt-place'  bindinput='checkOtherPro2' placeholder='未完成任何, 如何自我惩罚'></input>
     </view>
     <button class='subBtn'>完成</button>
   </view>

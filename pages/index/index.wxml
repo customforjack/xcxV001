@@ -1,7 +1,7 @@
 <search bind:comfirm="search"></search>
 
 <!--我的习惯列表 start-->
-<view class='myHabitList'>
+<view class='myHabitList' wx:if="{{detail.my_habit.length}}">
   <view class='tit'>
     <text class='label'>今天</text>
     <view class='line'></view>
@@ -26,7 +26,13 @@
     <view class='add' bindtap='goVip' wx:if="{{act==1}}"><image src='/img/add.png'></image></view>
   </view>
   <block wx:if="{{act==0}}">
-    <image class='ziwo'></image>
+       <scroll-view scroll-x="true" class="vip_xl">
+      <view class='vip_item' wx:for="{{detail.free_habit_list}}" wx:key="unique">
+        <image src='{{item.icon}}'></image>
+        <view class='title'>{{item.name}}</view>
+        <view class='num'>{{item.step}}</view>
+      </view>
+    </scroll-view>
   </block>
   <block wx:if="{{act==1}}">
     <scroll-view scroll-x="true" class="vip_xl">
@@ -39,7 +45,7 @@
   </block>
 </view>
 <!-- 热门习惯 -->
-<view class='remen'>
+<view class='remmen'>
   <view class='biaoti'>
     <view class="bt_left">
       <image src='/img/remen.png' class='icon'></image>
@@ -49,9 +55,12 @@
     <image  bindtap='toMore' src='/img/r_jiantou.png'></image>
   </view>
   <!-- 列表 -->
-  <remmen-item wx:if="{{xgCheck === 0}}" wx:for="{{detail.habit_list}}" item="{{item}}" wx:key="index" class="item"></remmen-item>
-    <remmen-item wx:if="{{xgCheck === 1}}" wx:for="{{detail.character_list}}" item="{{item}}" wx:key="index" class="item"></remmen-item> 
-
+  <view class='re-card'  wx:if="{{xgCheck === 0}}" wx:key="index" wx:for="{{detail.habit_list}}">
+    <remmen-item class="remmen-card" item="{{item}}" ></remmen-item>
+  </view>
+  <view class='re-card' wx:if="{{xgCheck === 1}}" wx:key="index" wx:for="{{detail.character_list}}">
+    <remmen-item class="remmen-card"  item="{{item}}"  ></remmen-item> 
+  </view>
 </view>
 
 <!-- 已显示全部内容 -->

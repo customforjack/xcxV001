@@ -50,13 +50,35 @@ function ajax(opt) {
   }
   // 调接口之前先校验登录  先判断checkRole  是否为true
   if (obj.checkRole){ // 校验登录
-    tk ? '' :''
     if (!tk || tk === 'undefined'){
       wx.navigateTo({
         url: '/pages/authorize/authorize',
       })
       return false
     }
+    return checkRole().then(res =>{
+      if (res.data.code === 1){
+        //正常登陆 继续请求
+        return newAjax(obj)
+      }else {
+        // 失效
+        if (obj.checkRole) {
+          wx.navigateTo({
+            url: '/pages/authorize/authorize'
+          })
+        }
+      }
+    })
+  } else { // 不校验登录
+    return newAjax(obj).then(res=>{
+      return new Promise(resolve => {
+        resolve(res)
+      })
+    })
+  }
+}
+function checkRole (){
+  return new Promise((resolve,reject) => {
     wx.request({
       url: pageJson.host + '/api/Member/checklogin',
       data: md5({
@@ -66,91 +88,51 @@ function ajax(opt) {
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: 'POST',
-      success(e) {
-        console.log('check login', e)
-        if (e.data.code === 1) {
-          // 正常登录 继续请求
-          wx.request({
-            url: pageJson.host + obj.url,
-            data: md5(obj.params),
-            header: {
-              //'Content-Type': 'application/json'
-              'content-type': 'application/x-www-form-urlencoded'
-            },
-            method: obj.type,
-            success: function (res) {
-              if (obj.loading === 'loading') {
-                wx.hideLoading()
-              } else {
-                wx.hideNavigationBarLoading()
-              }
-              obj.success(res.data)
-            },
-            fail: function (err) {
-              console.log('err,', err)
-              if (obj.loading === 'loading') {
-                wx.hideLoading()
-              } else {
-                wx.hideNavigationBarLoading()
-              }
-              wx.showToast({
-                title: err.errMsg || '返回错误！',
-                icon: 'none'
-              })
-              obj.fail(err);
-            },
-            complete: function (res) {
-
-            }
-          })
-        } else {
-          // 失效
-          if (obj.checkRole) {
-            wx.navigateTo({
-              url: '/pages/authorize/authorize'
-            })
-          }
-        }
+      success(res) {
+        resolve(res)
       }
+      })
+  })
+}
+function newAjax(obj){
+  if (obj.loading === 'loading') {
+    wx.showLoading({
+      title: obj.msg,
     })
-  } else { // 不校验登录
+  } else {
+    wx.showNavigationBarLoading()
+  }
+  return new Promise((resolve,reject) => {
     wx.request({
       url: pageJson.host + obj.url,
       data: md5(obj.params),
       header: {
-        //'Content-Type': 'application/json'
         'content-type': 'application/x-www-form-urlencoded'
       },
-      method: obj.type,
-      success: function (res) {
+      method: 'POST',
+      success(res) {
         if (obj.loading === 'loading') {
           wx.hideLoading()
         } else {
           wx.hideNavigationBarLoading()
         }
         obj.success(res.data)
+        resolve(res.data)
       },
-      fail: function (err) {
-        console.log('err,', err)
+      fail(res){
         if (obj.loading === 'loading') {
           wx.hideLoading()
         } else {
           wx.hideNavigationBarLoading()
         }
-        wx.showToast({
-          title: err.errMsg || '返回错误！',
-          icon: 'none'
-        })
-        obj.fail(err);
-      },
-      complete: function (res) {
-
+        obj.fail(res)
+        reject(res)
       }
-    })
-  }
+      })
+  })
 
 }
 
 module.exports = {
-  ajax: ajax,
+  ajax: ajax
 }

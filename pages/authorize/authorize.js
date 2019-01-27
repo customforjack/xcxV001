@@ -40,7 +40,7 @@ Page({
           if (res.code === 1) {
             // 登陆成功
             wx.setStorageSync('token', res.data.token)
-            wx.switchTab({
+            wx.reLaunch({
               url: '/pages/index/index',
             })
           } else if (res.code === 201) {

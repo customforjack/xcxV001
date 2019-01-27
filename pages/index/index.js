@@ -50,7 +50,7 @@ Page({
    */
   goVip(){
     wx.navigateTo({
-      url: '/pages/vip/vip',
+      url: '/pages/add_habit/addHabit',
     })
   },
   /**
@@ -107,7 +107,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log('ready')
   },
 
   /**

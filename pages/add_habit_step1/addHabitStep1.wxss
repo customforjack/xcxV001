@@ -90,13 +90,18 @@
   padding-bottom: 30rpx;
   border-bottom: 1px solid #f6f6f6;
 }
-
-.timeList .addBtn image {
+.timeList .addBtn picker{
+  display: block;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+.timeList .addBtn cover-image {
   width: 40%;
   height: 40%;
   display: block;
   margin-left: 30%;
-  margin-top: 30%;
+  margin-top: 30rpx;
 }
 
 .timeList button {

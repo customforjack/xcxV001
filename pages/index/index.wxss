@@ -143,11 +143,17 @@ page {
   top: 94rpx;
 }
 
-.remen {
+.remmen {
   padding: 30rpx 28rpx;
   background: #fff;
 }
 
+.remmen .re-card{
+    border-bottom: 1rpx solid rgba(231,231,231,1);
+}
+.remmen .remmen-card:nth-last-of-type(1){
+  border-bottom: none;
+}
 .biaoti {
   display: flex;
   height: 30rpx;

@@ -3,16 +3,16 @@
   <view class='tabs'>
     <button class="{{item.select ? 'tab active' :'tab'}}" wx:key="index" wx:for="{{tabs}}">{{item.label}}</button>
   </view>
-
   <view class='list'>
-    <view class='card'  bindtap='toDetail' wx:key="index" wx:for="{{list}}">
-      <text>{{item.name}}</text>
-      <view class='img-box'>
-        <image mode="widthFix" src='/img/{{item.img}}'></image>
+    <view wx:if="{{tabs[index].select}}" wx:for="{{sportList}}" wx:key="idx">
+      <view class='card' wx:for="{{item}}" bindtap='toDetail' wx:key="index">
+        <text>{{item.name}}</text>
+        <view class='img-box'>
+          <image mode="widthFix" src='{{item.icon}}'></image>
+        </view>
       </view>
     </view>
   </view>
-
   <cover-view class='addBtn'>
     <cover-image src='/img/addBtn.png'></cover-image>
     <cover-view>自定义</cover-view>

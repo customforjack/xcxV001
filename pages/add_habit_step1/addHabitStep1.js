@@ -5,7 +5,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    timeArr:[],
+    name: '',
+    myPromise1: '',
+    myPromise2: '',
+    otherPromise1: '',
+    otherPromise2: '',
+    weekArr: [
+     {
+       name:'周一',
+       select: true
+     },
+      {
+        name: '周二',
+        select: true
+      },
+      {
+        name: '周三',
+        select: true
+      },
+      {
+        name: '周四',
+        select: true
+      },
+      {
+        name: '周五',
+        select: true
+      },
+      {
+        name: '周六',
+        select: false
+      },
+      {
+        name: '周日',
+        select: false
+      }
+    ]
   },
 
   /**
@@ -21,26 +56,65 @@ Page({
   onReady: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
 
+  },
+  checkMyPro1(e){
+    this.setData({
+      myPromise1: e.detail.value
+    })
+  },
+  checkMyPro2(e){
+    this.setData({
+      myPromise2: e.detail.value
+    })
+  },
+  checkOtherPro1(e){
+    this.setData({
+      otherPromise1: e.detail.value
+    })
+  },
+  checkOtherPro2(e){
+    this.setData({
+      otherPromise2: e.detail.value
+    })
+  },
+  checkWeek(e){
+    //选择重复时间
+    this.data.weekArr[e.currentTarget.dataset.idx].select = !this.data.weekArr[e.currentTarget.dataset.idx].select
+    this.setData({
+      weekArr: this.data.weekArr
+    })
+  },
+  deleteTime(e){
+    // 删除时间
+    this.data.timeArr.splice(e.currentTarget.dataset.idx, 1)
+    this.setData({
+      timeArr: this.data.timeArr
+    })
+  },
+  bindTimeChange (e) {
+    // 选择时间
+    if (this.data.timeArr.length < 4) {
+      this.data.timeArr.push(e.detail.value)
+      this.setData({
+        timeArr: this.data.timeArr
+      })
+    } else {
+      wx.showToast({
+        title: '最多设置4个',
+        icon: 'none'
+      })
+    }
+  },
+  habitName (e) {
+    console.log(e.detail.value)
+    this.setData({
+      name: e.detail.value
+    })
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)

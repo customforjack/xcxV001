@@ -3,7 +3,10 @@
   <view class='remen_item'>
     <view class='title_box'>
       <view class='title'>{{item.name}}</view>
-      <image src='/img/add.png' bindtap='toaddStepOne'></image>
+      <view class='addBtn' data-id="{{item.id}}" hover-class="addBtnHover" bindtap='toaddStepOne'>
+        <view class='text'>加入</view>
+        <image src='/img/add.png'></image>
+      </view>
     </view>
     <view class='main_content'>
       <view class='main_tu'>

@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -55,7 +55,8 @@
 					"id": 2,
 					"name": "新建习惯 4",
 					"pathName": "pages/add_habit/addHabit",
-					"query": ""
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": 3,
@@ -76,16 +77,18 @@
 					"query": ""
 				},
 				{
-					"id": 5,
-					"name": "角色详情",
+					"id": 6,
+					"name": "角色详情 9",
 					"pathName": "pages/roleDetail/roleDetail",
-					"query": ""
+					"query": "",
+					"scene": null
 				},
 				{
-					"id": 6,
-					"name": "习惯详情",
+					"id": 7,
+					"name": "习惯详情 11-1",
 					"pathName": "pages/habitDetail/habitDetail",
-					"query": ""
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": -1,
@@ -152,6 +155,7 @@
 					"id": -1,
 					"name": "vip",
 					"pathName": "pages/vip/vip",
+					"query": "",
 					"scene": null
 				}
 			]
