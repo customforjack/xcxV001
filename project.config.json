@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 22,
+			"current": 24,
 			"list": [
 				{
 					"id": -1,
@@ -187,6 +187,20 @@
 					"id": -1,
 					"name": "督导详情 11-2",
 					"pathName": "pages/dudaoDetail/dudaoDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "发送督导邀请 14-1",
+					"pathName": "pages/sendInvita/sendInvita",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "督导接受邀请 14-2",
+					"pathName": "pages/acceptInvita/acceptInvita",
 					"query": "",
 					"scene": null
 				}
