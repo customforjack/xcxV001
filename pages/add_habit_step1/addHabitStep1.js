@@ -11,34 +11,45 @@ Page({
     myPromise2: '',
     otherPromise1: '',
     otherPromise2: '',
+    date:'',
+    date1:'',
     weekArr: [
      {
        name:'周一',
-       select: true
+       select: true,
+       value:'1'
      },
       {
         name: '周二',
-        select: true
+        select: true,
+        value: '2'
+
       },
       {
         name: '周三',
-        select: true
+        select: true,
+        value: '3'
       },
       {
         name: '周四',
-        select: true
+        select: true,
+        value: '4'
+
       },
       {
         name: '周五',
-        select: true
+        select: true,
+        value: '5'
       },
       {
         name: '周六',
-        select: false
+        select: false,
+        value: '6'
       },
       {
         name: '周日',
-        select: false
+        select: false,
+        value: '7'
       }
     ]
   },
@@ -111,41 +122,97 @@ Page({
     }
   },
   habitName (e) {
-    console.log(e.detail.value)
     this.setData({
       name: e.detail.value
     })
   },
   bindDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
     })
   },
   bindDateChange1: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date1: e.detail.value
     })
   },
   subFrom (){
+    const _this = this
+    // 校验非空
+    if (_this.data.name === ''){
+      wx.showToast({
+        title: '名称不能为空',
+        icon:'none'
+      })
+      return false
+    } 
+    if (_this.data.date === '') {
+      wx.showToast({
+        title: '请选择开始时间',
+        icon: 'none'
+      })
+      return false
+    } 
+    if (_this.data.date1 === '') {
+      wx.showToast({
+        title: '请选择结束时间',
+        icon: 'none'
+      })
+      return false
+    } 
+    if (_this.data.timeArr.length === 0) {
+      wx.showToast({
+        title: '请添加提醒时间',
+        icon: 'none'
+      })
+      return false
+    } 
+    if (_this.data.weekArr.length === 0) {
+      wx.showToast({
+        title: '请选择重复时间',
+        icon: 'none'
+      })
+      return false
+    } 
+    if (_this.data.myPromise1 === '') {
+      wx.showToast({
+        title: '请填写自我承诺 成功',
+        icon: 'none'
+      })
+      return false
+    } 
+    if (_this.data.myPromise2 === '') {
+      wx.showToast({
+        title: '请填写自我承诺 失败',
+        icon: 'none'
+      })
+      return false
+    } 
+    //提醒时间处理
+    let time = this.data.timeArr.join(',')
+    let weekList = []
+    this.data.weekArr.forEach(item =>{
+      if(item.select){
+        weekList.push(item.value)
+      }
+    })
     wx.ajax({
-      url: '/api/Product/createMyHabi',
+      url: '/api/Product/createMyHabit',
       params: {
         id: 0,
-        habit_name: '习惯名称',
-        start_time: '开始时间',
-        end_time: '结束时间',
-        my_promise_success: '自我承诺 成功',
-        my_promise_fail:'自我承诺 失败',
-        their_promise_success:'督导承诺 成功',
-        their_promise_fail:'	督导承诺 失败',
-        remind_time:'提醒时间 格式： 01:00,20:00,21:00',
-        remind_week: '提醒星期 格式： 1,3,5,7',
+        habit_name: _this.data.name,
+        start_time: _this.data.date,
+        end_time: _this.data.date1,
+        my_promise_success: this.data.myPromise1,
+        my_promise_fail: this.data.myPromise2,
+        their_promise_success: this.data.otherPromise1,
+        their_promise_fail: this.data.otherPromise2,
+        remind_time: time,
+        remind_week: weekList.join(','),
         token: wx.getStorageSync('token')
       }
     }).then(res => {
-      
+
     })
   },
   /**

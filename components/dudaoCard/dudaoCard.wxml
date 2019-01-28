@@ -1,0 +1,33 @@
+<!--components/dudaoCard/dudaoCard.wxml-->
+<view class='dudaoCard'>
+  <view class='top'>
+    <view class='icon'>
+      <image src='/img/advertisement.jpg'></image>
+    </view>
+    <view class='info'>
+      <view class='name'>为丈夫做早餐</view>
+      <view class='num'>TA已练习20次</view>
+      <view class='peo'>18888人正在练习</view>
+    </view>
+    <view class='addBtn' hover-class='toAdd'>
+      <view class='addtxt'>打卡</view>
+      <view class='addIcon'>
+        <image src='/img/add.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='user'>
+      <image src='/img/advertisement.jpg'></image>
+      <view class='b_name'>Xu茂茂</view>
+    </view>
+    <view class='user'>
+      <image src='/img/advertisement.jpg'></image>
+      <view class='b_name'>Xu茂茂</view>
+    </view>
+    <view class='user'>
+      <image src='/img/advertisement.jpg'></image>
+      <view class='b_name'>Xu茂茂</view>
+    </view>
+  </view>
+</view>

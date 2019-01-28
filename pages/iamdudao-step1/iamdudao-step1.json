@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "dudaoCard": "/components/dudaoCard/dudaoCard"
+    "dudaoCard": "/components/dudaoCardStep1/dudaoCardStep1"
   },
   "navigationBarTitleText": "我是督导"
 }

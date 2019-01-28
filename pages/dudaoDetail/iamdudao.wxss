@@ -1,0 +1,179 @@
+/* pages/iamdudao/iamdudao.wxss */
+
+.iamdudao {
+  background: rgba(243, 247, 248, 1);
+  padding-bottom: 100rpx;
+}
+
+.iamdudao .readBox {
+  padding: 42rpx 0 25rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.iamdudao .readBox .tit {
+  font-size: 34rpx;
+  font-weight: 400;
+  color: rgba(22, 22, 22, 1);
+  line-height: 48rpx;
+  margin-bottom: 15rpx;
+  padding: 0 40rpx;
+}
+
+.iamdudao .readBox .tit image {
+  width: 34rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.gbtn {
+  width: 326rpx;
+  line-height: 96rpx;
+  background: rgba(95, 211, 219, 1);
+  border-radius: 48rpx;
+  font-size: 38rpx;
+  color: rgba(22, 22, 22, 1);
+  position: fixed;
+  bottom: 34rpx;
+}
+
+.gbtn.left {
+  left: 33rpx;
+}
+
+.gbtn.right {
+  right: 33rpx;
+}
+
+.phb {
+  padding: 42rpx 40rpx 2rpx;
+  background: #fff;
+}
+
+.phb .tit {
+  font-size: 34rpx;
+  color: rgba(22, 22, 22, 1);
+  line-height: 48rpx;
+}
+
+.phb .tit image {
+  margin-right: 20rpx;
+  width: 31rpx;
+  height: 26rpx;
+}
+
+.phb .tabs {
+  height: 37rpx;
+  margin-bottom: 20rpx;
+  margin-top: 36rpx;
+}
+
+.phb .tabs .tab {
+  display: inline-block;
+  font-size: 26rpx;
+  color: rgba(160, 160, 160, 1);
+  line-height: 37rpx;
+  margin-right: 29rpx;
+  vertical-align: top;
+  position: relative;
+}
+
+.phb .tabs .tab .line {
+  width: 1rpx;
+  height: 15rpx;
+  background: rgba(202, 202, 202, 1);
+  position: absolute;
+  right: -13rpx;
+  top: 13rpx;
+}
+
+.phb .list {
+}
+
+.phb .list .card {
+  height: 40rpx;
+  margin-bottom: 23rpx;
+}
+
+.phb .list .card>view {
+  vertical-align: top;
+}
+
+.phb .list .card .c-left {
+  display: inline-block;
+  width: 253rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: rgba(77, 77, 77, 1);
+}
+
+.phb .list .card .c-right {
+  display: inline-block;
+  border-radius: 4rpx;
+  background: rgba(243, 247, 248, 1);
+  width: 415rpx;
+  height: 40rpx;
+  text-align: justify;
+}
+
+.phb .list .card .c-right  text {
+  font-size: 24rpx;
+  color: rgba(100, 100, 100, 1);
+  line-height: 40rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.phb .list .card .c-right  text:nth-of-type(1) {
+  width: 87rpx;
+  text-align: right;
+}
+
+.phb .list .card .c-right  text:nth-of-type(2) {
+  width: 247rpx;
+  text-align: center;
+}
+
+.phb .list .card .c-right  text:nth-of-type(3) {
+  width: 95;
+  text-align: left;
+}
+
+.sayBox {
+  padding: 42rpx 36rpx 25rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.sayBox .tit {
+  margin-bottom: 30rpx;
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42rpx;
+}
+
+.sayBox textarea {
+  height: 96rpx;
+  min-height: 96rpx;
+  background: rgba(243, 247, 248, 1);
+  border-radius: 18rpx;
+  width: 100%;
+  padding: 26rpx 30rpx;
+  box-sizing: border-box;
+  line-height: 44rpx;
+}
+
+.sayBox .ok {
+  line-height: 96rpx;
+  background: rgba(95, 211, 219, 1);
+  border-radius: 10rpx 6rpx 6rpx 6rpx;
+  margin-top: 25rpx;
+}
+
+.sayTextarea {
+  font-size: 32rpx;
+  color: rgba(189, 192, 199, 1);
+  text-align: center;
+  line-height: 44rpx;
+}

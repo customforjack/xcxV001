@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 22,
 			"list": [
 				{
 					"id": -1,
@@ -65,16 +65,11 @@
 					"query": ""
 				},
 				{
-					"id": 3,
-					"name": "角色购买",
+					"id": 4,
+					"name": "角色购买 7-1",
 					"pathName": "pages/buyRoles/buyRoles",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "我的角色",
-					"pathName": "pages/my_roles/myRoles",
-					"query": ""
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": 6,
@@ -91,10 +86,11 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "我是督导",
+					"id": 7,
+					"name": "我是督导 26-2",
 					"pathName": "pages/iamdudao/iamdudao",
-					"query": ""
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": -1,
@@ -128,9 +124,10 @@
 				},
 				{
 					"id": 14,
-					"name": "我的角色",
+					"name": "课程详情页 8-1",
 					"pathName": "pages/my_roles/myRoles",
-					"query": ""
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": 15,
@@ -155,6 +152,41 @@
 					"id": -1,
 					"name": "vip",
 					"pathName": "pages/vip/vip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "购买角色 7-2",
+					"pathName": "pages/buyRolesStep2/buyRolesStep2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我是督导 26-1",
+					"pathName": "pages/iamdudao-step1/iamdudao-step1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单确认页 15",
+					"pathName": "pages/toPay/toPay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "日历页面",
+					"pathName": "pages/remind/remind",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "督导详情 11-2",
+					"pathName": "pages/dudaoDetail/dudaoDetail",
 					"query": "",
 					"scene": null
 				}

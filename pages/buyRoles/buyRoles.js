@@ -20,7 +20,7 @@ Page({
       },
       {
         name: '家庭',
-        checked: true
+        checked: false
       },
       {
         name: '职场',
@@ -50,9 +50,14 @@ Page({
   onLoad: function (options) {
 
   },
+  toNext(){
+    wx.navigateTo({
+      url: '/pages/my_roles/myRoles',
+    })
+  },
   toBuy () {
       wx.navigateTo({
-        url: '/pages/buyRolesStep2/buyRolesStep2',
+        url: '/pages/vip/vip',
       })
   },
   /**

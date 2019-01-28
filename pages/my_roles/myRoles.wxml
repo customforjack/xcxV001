@@ -5,14 +5,6 @@
       <button class="{{item.checked ? 'tab active' : 'tab'}}" wx:for="{{tabs}}" data-idx="{{index}}" wx:key="index" bindtap='toggleTab'>{{item.name}}</button>
     </view>
   </scroll-view>
-  <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}" wx:key="index">
-      <swiper-item>
-        <image src="{{item}}" mode="widthFix" class="slide-image" />
-      </swiper-item>
-    </block>
-  </swiper>
-
   <view class='listBox'>
     <view class='list'>
       <role-card></role-card>
@@ -21,4 +13,6 @@
       <role-card></role-card>
     </view>
   </view>
+
+  <button class="toBuy"><image src='/img/btnRight-jt.png'></image><text>去购买</text></button>
 </view>

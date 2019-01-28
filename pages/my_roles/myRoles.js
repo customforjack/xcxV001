@@ -16,15 +16,15 @@ Page({
     duration:300,
     tabs:[
       {
-        name: '好妻子的12堂必修课',
+        name: '好妻子',
         checked: true
       },
       {
-        name: '好妻子的12个习惯',
+        name: '12个习惯',
         checked: false
       },
       {
-        name: '好妻子的12个习惯',
+        name: '个习惯',
         checked: false
       }
     ]

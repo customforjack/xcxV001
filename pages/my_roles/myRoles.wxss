@@ -2,12 +2,15 @@
 
 .scroll-x {
   white-space: nowrap;
+  border-bottom: 1px solid rgba(237, 237, 237, 1);
 }
-.tabs{
+
+.tabs {
   padding-left: 30rpx;
   height: 88rpx;
   margin-top: 6rpx;
 }
+
 .tabs .tab {
   padding: 0;
   display: inline-block;
@@ -18,32 +21,65 @@
   color: #161616;
   line-height: 82rpx;
   position: relative;
+  border-radius: 0;
 }
 
 .tabs .tab.active {
   color: rgba(42, 192, 203, 1);
 }
-.tabs .tab.active:before{
-  width: 70%;
+
+.tabs .tab.active:before {
+  width: 100%;
   content: '';
   display: block;
   height: 0;
-  border-bottom: 4rpx solid rgba(42, 192, 203, 1); 
+  border-bottom: 4rpx solid rgba(42, 192, 203, 1);
   position: absolute;
-  bottom:0rpx;
-  left:15%;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
 }
+
 .tabs .tab:after {
   display: none;
 }
-swiper{
+
+swiper {
   height: 374rpx;
 }
-swiper swiper-item image{
+
+swiper swiper-item image {
   width: 100%;
   display: block;
 }
-.list{
- padding-left: 26rpx;
+
+.list {
+  padding-left: 26rpx;
   padding-right: 26rpx;
+}
+
+.toBuy {
+  width: 226rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+  background: rgba(95, 211, 219, 1);
+  box-shadow: 2rpx 4rpx 16rpx 0rpx rgba(134, 228, 234, 1);
+  border-radius: 44rpx;
+  position: fixed;
+  bottom: 67rpx;
+  right: 42rpx;
+}
+
+.toBuy  text {
+  line-height: 90rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.toBuy image {
+  display: inline-block;
+  width: 52rpx;
+  height: 52rpx;
+  margin-top: 19rpx;
+  margin-right: 16rpx;
 }

@@ -27,10 +27,11 @@
     "pages/roleDetail/roleDetail",
     "pages/habitDetail/habitDetail",
     "pages/iamdudao/iamdudao",
+    "pages/iamdudao-step1/iamdudao-step1",
     "pages/leavingMsg/leavingMsg",
     "pages/sendInvita/sendInvita",
     "pages/acceptInvita/acceptInvita",
-
+    "pages/dudaoDetail/dudaoDetail",
 
     "pages/find/find",
     "pages/my/my",

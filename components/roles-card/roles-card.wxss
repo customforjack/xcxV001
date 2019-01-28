@@ -37,7 +37,7 @@ line-height:33rpx;
 }
 .my-roles-card .role-c-info .role-c-labels .right{
 font-size:20rpx;
-color:rgba(56,56,56,1);
+color:#B2B2B2;
 line-height:33rpx;
 display: inline-block;
 width: 82rpx;
@@ -46,7 +46,8 @@ width: 82rpx;
   display: inline-block;
   width: 30rpx;
   height: 28rpx;
-  vertical-align: middle;
+  vertical-align: top;
+  margin-top: 5rpx;
   margin-right: 8rpx;
 }
 .my-roles-card .role-c-info{

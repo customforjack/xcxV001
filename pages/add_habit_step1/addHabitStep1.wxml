@@ -61,6 +61,6 @@
       <input placeholder-class='ipt-place' bindinput='checkOtherPro1'  placeholder='完成任何, 如何犒劳督导'></input>
       <input placeholder-class='ipt-place'  bindinput='checkOtherPro2' placeholder='未完成任何, 如何自我惩罚'></input>
     </view>
-    <button class='subBtn'>完成</button>
+    <button class='subBtn' bindtap='subFrom'>完成</button>
   </view>
 </view>

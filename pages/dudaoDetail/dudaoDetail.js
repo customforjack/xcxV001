@@ -5,16 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs:[
-      {
-        name:"我督导的",
-        select:true
-      },
-      {
-        name: "督导我的",
-        select: false
-      }
-    ]
+
   },
 
   /**
@@ -30,16 +21,7 @@ Page({
   onReady: function () {
 
   },
-  toggleTab(e){
-    console.log(e.currentTarget.dataset.idx)
-    this.data.tabs.forEach(item => {
-      item.select = false
-    })
-    this.data.tabs[e.currentTarget.dataset.idx].select = true
-    this.setData({
-      tabs: this.data.tabs
-    })
-  },
+
   /**
    * 生命周期函数--监听页面显示
    */
