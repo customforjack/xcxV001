@@ -72,9 +72,46 @@ Page({
        })
      })
   },
-  toDetail() {
-    wx.navigateTo({
-      url: '/pages/add_habit_step1/addHabitStep1',
+  toDetail(e) {
+    console.log('e', e.currentTarget.dataset.id)
+    const id = e.currentTarget.dataset.id
+    // 先获取新建习惯参数
+    wx.ajax({
+      url:'/api/Product/getHabitAuth',
+      params:{
+        token: wx.getStorageSync('token'),
+        id: id
+      }
+    }).then(res => {
+      const code = res.code
+      const params = res.data
+      if (code === 1){
+        wx.navigateTo({
+          url: '/pages/add_habit_step1/addHabitStep1?' + wx.getParams(params),
+        })
+      }
+      if (code === 601) {
+        // 8-1
+        wx.showToast({
+          title: res.msg
+        })
+        setTimeout(()=>{
+          wx.navigateTo({
+            url: '/pages/my_roles/myRoles?' + wx.getParams(params),
+          })
+        },1000)
+      }
+      if (code === 602) {
+      // 11-1
+        wx.showToast({
+          title: res.msg
+        })
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '/pages/habitDetail/habitDetail?' + wx.getParams(params),
+          })
+        }, 1000)
+      }
     })
   },
   /**

@@ -1,6 +1,16 @@
 //app.js
 import {ajax} from "./utils/request.js";
 wx.ajax = ajax
+wx.getParams = (params) => {
+  let str = ''
+  Object.keys(params).forEach(key => {
+    console.log('key', key)
+    str += `${key}=${params[key]}&`
+  })
+  console.log('str', str)
+  return str
+}
+
 // 校验登陆态
 wx.checkLogin = (params) => {
   let opt = Object.assign({

@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:0,
     timeArr:[],
     name: '',
     myPromise1: '',
@@ -58,7 +59,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log('options', options)
+    this.setData({
+      id: options.id
+    })
   },
 
   /**
@@ -212,7 +216,16 @@ Page({
         token: wx.getStorageSync('token')
       }
     }).then(res => {
-
+      if(res.code === 1){
+        wx.showToast({
+          title: '新建成功',
+        })
+      }
+      if (res.code === 602){
+        wx.showToast({
+          title: res.msg,
+        })
+      }
     })
   },
   /**
