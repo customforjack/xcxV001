@@ -12,10 +12,39 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this;
+    var roleId = options.id;
+    console.log(roleId);
+    that.details(roleId)
   },
   todo(){
     console.log('todo')
+  },
+  //获取详情
+  details: function (roleId){
+    var that = this;
+     wx.ajax({
+      url: '/api/Product/getCharacterClassify',
+      checkRole: false,
+      params: {
+        //token: wx.getStorageSync('token'),
+        id: roleId
+      },
+      type: 'POST',
+      success(res) {
+
+        console.log("角色详情", res);
+        if (res.code === 1) {
+          // 角色获取成功
+        
+          var roleDetails = res.data;
+
+          that.setData({
+
+          })
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

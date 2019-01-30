@@ -15,7 +15,7 @@
   <view class='tilte' wx:for='{{studyList}}'  wx:for-item="studyList" data-id='{{studyList.id}}' wx:key="bb">
     <view class='tilte_one'>
     <text>{{studyList.name}}</text>
-    <text class='buy'>购买+</text>
+    <text class='buy'>加入+</text>
     </view>
     <view class='content'>
       

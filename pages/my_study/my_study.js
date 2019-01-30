@@ -28,9 +28,9 @@ Page({
       var that=this;
       that.myCourse();
   },
+  /*我的课堂*/
     myCourse:function(){
         var that=this;
-        /*我的课堂*/
         wx.ajax({
             url: '/api/Member/myCourse',
             checkRole: false,
@@ -86,9 +86,9 @@ Page({
             }
         });
     },
+  /*我的习惯*/
     myHabit:function(){
         var that=this;
-        /*我的习惯*/
         wx.ajax({
             url: '/api/Member/myHabit',
             checkRole: false,
@@ -133,8 +133,15 @@ Page({
             }
         });
 },
-
-    
+  /*跳转角色详情页*/
+  details: function (e) {
+    console.log(e);
+    var roleId = e.currentTarget.dataset.id
+    var that = this;
+    wx.navigateTo({
+      url: '../roleDetail/roleDetail?id=' + roleId
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
