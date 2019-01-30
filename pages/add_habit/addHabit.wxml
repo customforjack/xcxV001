@@ -13,7 +13,7 @@
       </view>
     </view>
   </view>
-  <cover-view class='addBtn' bindtap='toDetail'>
+  <cover-view class='addBtn' bindtap='toAdd'>
     <cover-image src='/img/addBtn.png'></cover-image>
     <cover-view>自定义</cover-view>
   </cover-view>

@@ -1,7 +1,7 @@
 <!--pages/add_habit_step1/addHabitStep1.wxml-->
 <view class='addHabitStep1'>
   <view class='box'>
-    <input class='name' bindinput='habitName' placeholder-class="nameStyle" placeholder='请输入习惯名称'></input>
+    <input class='name' bindinput='habitName' disabled="{{name?true:false}}" value="{{name}}" placeholder-class="nameStyle" placeholder='请输入习惯名称'></input>
     <!--开始时间 start-->
     <view class='timeBox'>
       <view class='card'>
@@ -48,13 +48,13 @@
         <button class="{{item.select ? 'active': ''}}" data-idx="{{index}}" bindtap='checkWeek' wx:for="{{weekArr}}" wx:key="index">{{item.name}}</button>
       </view>
     </view>
-    <view class='promise'>
+    <view class='promise' wx:if="{{params.character_id !== 0}}">
       <view class='tit'>自我承诺</view>
       <input placeholder-class='ipt-place' bindinput='checkMyPro1' placeholder='完成任何, 如何奖励自己'></input>
       <input placeholder-class='ipt-place'  bindinput='checkMyPro2'  placeholder='未完成任何, 如何自我惩罚'></input>
     </view>
 
-    <view class='promise'>
+    <view class='promise'  wx:if="{{params.character_id !== 0}}">
       <view class='tit'>对督导团承诺
         <button class='sendBtn'>发送包</button>
       </view>

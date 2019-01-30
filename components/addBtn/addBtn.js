@@ -19,7 +19,7 @@ Component({
    */
   methods: {
     todo (){
-      this.tiggerEvent('bindtap')
+      //this.tiggerEvent('bindtap')
     }
   }
 })

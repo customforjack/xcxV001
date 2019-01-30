@@ -4,11 +4,20 @@ wx.ajax = ajax
 wx.getParams = (params) => {
   let str = ''
   Object.keys(params).forEach(key => {
-    console.log('key', key)
     str += `${key}=${params[key]}&`
   })
-  console.log('str', str)
   return str
+}
+wx.tranNumber = (params) => {
+  let Obj = {}
+  Object.keys(params).forEach(key =>{
+    if (key === 'id' || key === 'character_id' || key === 'classify_id'){
+      Obj[key] = parseInt(params[key])
+    } else {
+      Obj[key] = params[key]
+    }
+  })
+  return Obj
 }
 
 // 校验登陆态

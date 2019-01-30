@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:0,
+    params :{},
     timeArr:[],
     name: '',
     myPromise1: '',
@@ -59,9 +59,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('options', options)
+    console.log('options', wx.tranNumber(options))
+    const params = wx.tranNumber(options)
+    if (params.customType){
+      // 自定义习惯
+    }else{
+      this.setData({
+        name: params.name
+      })
+    }
     this.setData({
-      id: options.id
+      params: params
     })
   },
 
@@ -178,20 +186,22 @@ Page({
       })
       return false
     } 
-    if (_this.data.myPromise1 === '') {
-      wx.showToast({
-        title: '请填写自我承诺 成功',
-        icon: 'none'
-      })
-      return false
-    } 
-    if (_this.data.myPromise2 === '') {
-      wx.showToast({
-        title: '请填写自我承诺 失败',
-        icon: 'none'
-      })
-      return false
-    } 
+    if (this.data.params.character_id !== 0){
+      if (_this.data.myPromise1 === '') {
+        wx.showToast({
+          title: '请填写自我承诺 成功',
+          icon: 'none'
+        })
+        return false
+      }
+      if (_this.data.myPromise2 === '') {
+        wx.showToast({
+          title: '请填写自我承诺 失败',
+          icon: 'none'
+        })
+        return false
+      } 
+    }
     //提醒时间处理
     let time = this.data.timeArr.join(',')
     let weekList = []
@@ -203,7 +213,7 @@ Page({
     wx.ajax({
       url: '/api/Product/createMyHabit',
       params: {
-        id: 0,
+        id: _this.data.params.id,
         habit_name: _this.data.name,
         start_time: _this.data.date,
         end_time: _this.data.date1,
@@ -226,6 +236,11 @@ Page({
           title: res.msg,
         })
       }
+      setTimeout(() => {
+        wx.navigateTo({
+          url: '/pages/habitDetail/habitDetail?' + wx.getParams(res.data),
+        })
+      }, 1000)
     })
   },
   /**

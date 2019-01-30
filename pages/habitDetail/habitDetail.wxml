@@ -6,9 +6,10 @@
       <image src='/img/bookIcon.png'></image>量化描述
     </view>
     <view class='list'>
-      <remarkCard label="加入日期" num="2018年12月13"></remarkCard>
-      <remarkCard label="加入日期" num="2018年12月13"></remarkCard>
-      <remarkCard label="加入日期" num="2018年12月13"></remarkCard>
+      <remarkCard label="加入日期" num="{{detail.create_time}}"></remarkCard>
+      <remarkCard label="已打卡" num="{{detail.sign_num}}"></remarkCard>
+      <remarkCard label="当前连续打卡" num="{{detail.now_serial}}"></remarkCard>
+      <remarkCard label="最高连续打卡" num="{{detail.max_serial}}"></remarkCard>
     </view>
   </view>
   <!--量化描述 end-->
@@ -18,10 +19,7 @@
       <image src='/img/bookIcon.png'></image>我的督导团
     </view>
     <view class='fudyuanList'>
-      <image src='/img/tupian.png'></image>
-      <image src='/img/tupian.png'></image>
-      <image src='/img/tupian.png'></image>
-      <image src='/img/tupian.png'></image>
+      <image wx:for="{{detail.member_habit_supervisor}}" wx:key="index" src='{{item.member_img}}'></image>
     </view>
     <addBtn class="addfdy"></addBtn>
   </view>
@@ -30,7 +28,7 @@
   <view class='saySomething'>
     <view class='tit'>
       <image src="/img/something-icon.png"></image>说说感想</view>
-    <addBtn class="addBtn"></addBtn>
+    <addBtn class="addBtn" bindtap="addLeavingMsg"></addBtn>
     <view class='list'>
       <view class='nodataBox'>
         <image class='nodata' src='/img/nodata-say.png'></image>

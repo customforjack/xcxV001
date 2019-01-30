@@ -72,6 +72,11 @@ Page({
        })
      })
   },
+  toAdd(){
+    wx.navigateTo({
+      url: '/pages/add_habit_step1/addHabitStep1?id=0&character_id=0&customType=1',
+    })
+  },
   toDetail(e) {
     console.log('e', e.currentTarget.dataset.id)
     const id = e.currentTarget.dataset.id
@@ -93,7 +98,8 @@ Page({
       if (code === 601) {
         // 8-1
         wx.showToast({
-          title: res.msg
+          title: res.msg,
+          icon: 'none'
         })
         setTimeout(()=>{
           wx.navigateTo({
@@ -104,7 +110,8 @@ Page({
       if (code === 602) {
       // 11-1
         wx.showToast({
-          title: res.msg
+          title: res.msg,
+          icon: 'none'
         })
         setTimeout(() => {
           wx.navigateTo({

@@ -125,6 +125,7 @@ function newAjax(obj){
         } else {
           wx.hideNavigationBarLoading()
         }
+        console.log('err',res)
         obj.fail(res)
         reject(res)
       }

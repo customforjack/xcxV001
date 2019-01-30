@@ -5,16 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    detail: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log('options', options)
+    this.getDetail(options)
   },
-
+  addLeavingMsg(){
+    // 留言
+    wx.navigateTo({
+      url: '/pages/leavingMsg/leavingMsg?type=' + this.data.detail.type + '&p_id=' + this.data.detail.habit_id,
+    })
+  },
+  getDetail (params) {
+    wx.ajax({
+      url: '/api/Product/getHabitDetail',
+      params: {
+        member_habit_id: params.member_habit_id,
+        token: wx.getStorageSync('token')
+      }
+    }).then(res => {
+      this.setData({
+        detail: res.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
