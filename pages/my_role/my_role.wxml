@@ -10,7 +10,7 @@
   
 
  <block wx:if="{{flag==0}}">
-  <view class='tilte' wx:for='{{roleList}}'  wx:for-item="role"  wx:key="unique">
+  <view class='tilte' wx:for='{{roleList}}' bindtap='details' data-id='{{role.id}}'  wx:for-item="role"  wx:key="unique">
     <view class='content'>
      <view>
       <image src='{{role.thumbnail}}'></image>
@@ -35,7 +35,7 @@
 
 
  <block wx:if="{{flag==1}}">
-  <view class='tilte' wx:for='{{roleList_no}}' wx:for-item="norole"  wx:key='key_list'>
+  <view class='tilte' wx:for='{{roleList_no}}' wx:for-item="norole" bindtap='details' data-id='{{norole.id}}'  wx:key='key_list'>
     <view class='content'>
      <view>
       <image src='{{norole.thumbnail}}'></image>

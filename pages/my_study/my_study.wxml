@@ -11,7 +11,7 @@
   
 
  <block wx:if="{{flag==0}}">
-  <view class='tilte'   wx:for='{{studyList}}'  wx:for-item='studyList' wx:key='habitList'  wx:for-index="studyIndex" data-id='{{studyList.id}}'>
+  <view class='tilte'   wx:for='{{studyList}}'  wx:for-item='studyList' wx:key='habitList'  wx:for-index="studyIndex" >
     <!-- <text class='tilte_big'>MORE</text> -->
     <view class='content'>
      <view>
@@ -29,7 +29,7 @@
       <text class='remnant'>已学习10分钟</text>
       </text>
      </view>
-     <view class='click_cade'>进入角色</view>
+     <view class='click_cade' data-id='{{studyList.id}}' catchtap='details' >进入课堂</view>
     </view>
       
   </view> 
@@ -38,7 +38,7 @@
 
 
  <block wx:if="{{flag==1}}">
-  <view class='tilte' wx:for='{{habitList}}' wx:for-item='habitList' wx:key='habitList'  wx:for-index="habitIndex"  data-id='{{habitList.id}}'>
+  <view class='tilte' wx:for='{{habitList}}' bindtap='habitDetails' wx:for-item='habitList' wx:key='habitList'  wx:for-index="habitIndex"  data-id='{{habitList.id}}'>
 
     <view class='content'>
      <view>
@@ -57,7 +57,10 @@
       <text class='remnant'>已学习10分钟</text>
       </text>
      </view>
-     <view class='click_cade'>打卡</view>
+     <view class='click_cade' catchtap='daka' data-index='{{habitIndex}}'  data-id='{{habitList.id}}'>
+      <image wx:if="{{habitList.is_sign==2}}" src='../../img/add.png' style="height:30rpx;width:35rpx"></image>
+      <image wx:if="{{habitList.is_sign==1}}" src='../../img/daka.png' style="height:30rpx;width:35rpx"></image>
+     </view>
     </view>
       
   </view> 

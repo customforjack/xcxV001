@@ -61,11 +61,12 @@
 .tilte_one{
   font-size: 36rpx;
   position: relative;
+  z-index: 9;
   }
   .buy{
     position: absolute;
     display: inline-block;
-    width: 70rpx;
+    width: 170rpx;
     height: 60rpx;
     background: #2AC0CB;
     text-align: center;

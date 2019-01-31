@@ -32,6 +32,7 @@ Page({
       that.myCharacterUsed();
 
   },
+  //获取已使用角色列表
     myCharacterUsed:function(){
         var that= this;
         /*获取已使用角色*/
@@ -76,9 +77,9 @@ Page({
             }
         });
     },
+  //获取未使用的角色列表
     myCharacterUnused:function(){
         var that= this;
-        /*获取未使用角色*/
         wx.ajax({
             url: '/api/Member/myCharacterUnused',
             checkRole: false,
@@ -123,7 +124,15 @@ Page({
         })
     },
 
-
+  //跳转角色详情
+  details:function(e){
+    console.log(e);
+    var roleId = e.currentTarget.dataset.id
+    var that = this;
+    wx.navigateTo({
+      url: '../my_roles/myRoles?id='+roleId
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

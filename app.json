@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/my/my",
     "pages/toPay/toPay",
     "pages/post_activity/post_activity",
     "pages/ranking/ranking",
@@ -34,7 +35,7 @@
     "pages/dudaoDetail/dudaoDetail",
 
     "pages/find/find",
-    "pages/my/my",
+    "pages/calendar/calendar",
     "pages/vip/vip",
     "pages/add_custom/add_custom",
     "pages/my/my_account/my_account",
