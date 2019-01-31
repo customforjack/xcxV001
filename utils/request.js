@@ -135,5 +135,6 @@ function newAjax(obj){
 }
 
 module.exports = {
-  ajax: ajax
+  ajax: ajax,
+  getMd5: md5
 }

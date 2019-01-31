@@ -1,6 +1,7 @@
 //app.js
-import {ajax} from "./utils/request.js";
+import { ajax, getMd5} from "./utils/request.js";
 wx.ajax = ajax
+wx.getMd5 = getMd5
 wx.getParams = (params) => {
   let str = ''
   Object.keys(params).forEach(key => {

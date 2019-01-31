@@ -32,6 +32,9 @@ Page({
       this.setData({
         detail: res.data
       })
+      wx.setNavigationBarTitle({
+        title:this.data.detail.habit_name
+      })
     })
   },
   /**

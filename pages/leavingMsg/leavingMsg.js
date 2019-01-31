@@ -98,13 +98,15 @@ Page({
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
-        
+        console.log('file', res.tempFiles)
+
         res.tempFilePaths.forEach(item => {
           console.log('item', item)
           const uploadTask = wx.uploadFile({
             url: 'http://124.225.68.169:7777/api/Topic/upload',
             filePath:item,
             name: 'file',
+            formData: wx.getMd5({token: wx.getStorageSync('token')}),
             success(res) {
               console.log('upload img', res.data)
               // do something
@@ -112,7 +114,6 @@ Page({
           })
         })
         // 先上传文件
-
 
         _this.setData({
           tempFiles: res.tempFiles
