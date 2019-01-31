@@ -134,14 +134,14 @@
   color: #ffffff;
   border-radius: 6rpx;
   position: absolute;
-  width: 145rpx;
+  width: 35rpx;
   text-align: center;
-  height: 60rpx;
+  height: 30rpx;
   line-height: 60rpx;
   font-size: 26rpx;
   top: 0;
   right: 0;
-  background: #2AC0CB;
+
 
 }
 .click_cade2{

@@ -12,21 +12,21 @@
 
  <block wx:if="{{flag==2}}">
 
-  <view class='tilte' wx:for='{{studyList}}'  wx:for-item="studyList" data-id='{{studyList.id}}' wx:key="bb">
+  <view class='tilte' wx:for='{{habitList}}'  wx:for-item="habitList" data-id='{{habitList.id}}' wx:key="bb">
     <view class='tilte_one'>
-    <text>{{studyList.name}}</text>
-    <text class='buy'>加入+</text>
+    <text>{{habitList.name}}</text>
+    <text class='buy' catchtap='habitDetails' data-id='{{habitList.id}}'>加入</text>
     </view>
     <view class='content'>
       
      <view class='vip_box'>
-      <image src='{{studyList.thumbnail}}'></image>
+      <image src='{{habitList.thumbnail}}'></image>
       <image class='vip' style='width:34rpx;height:34rpx;' src='../../img/v.png'></image>
       </view>
      <view class='miaoshu'>
-      <text class='miaoshu_one'>{{studyList.description}}</text>
+      <text class='miaoshu_one'>{{habitList.description}}</text>
       <view class='heart_xx'>
-      <text>{{studyList.page_view}}万人参与/{{studyList.share_view}}人转发</text>
+      <text>{{habitList.page_view}}万人参与/{{habitList.share_view}}人转发</text>
       <text>audio</text>
        <!-- <image src='../../img/shoucang-2.png'></image> -->
       </view>
@@ -38,18 +38,18 @@
 
 
  <block wx:if="{{flag==1}}">
-    <view class='tilte' wx:for='{{studyList}}'  wx:for-item="studyList"  wx:key="bb">
-    <view class='tilte_one'>{{studyList.name}}</view>
+    <view class='tilte' wx:for='{{habitList}}' bindtap='classDetails'  wx:for-item="habitList" data-id='{{habitList.id}}'  wx:key="bb">
+    <view class='tilte_one'>{{habitList.name}}</view>
     <view class='content'>
       
      <view class='vip_box'>
-      <image src='{{studyList.thumbnail}}'></image>
+      <image src='{{habitList.thumbnail}}'></image>
       <image class='vip' style='width:34rpx;height:34rpx;' src='../../img/v.png'></image>
       </view>
      <view class='miaoshu'>
-      <text class='miaoshu_one'>{{studyList.description}}</text>
+      <text class='miaoshu_one'>{{habitList.description}}</text>
       <view class='heart_xx'>
-      <text>{{studyList.page_view}}万人参与/{{studyList.share_view}}人转发</text>
+      <text>{{habitList.page_view}}万人参与/{{habitList.share_view}}人转发</text>
       <text>audio</text>
        <!-- <image src='../../img/shoucang-2.png'></image> -->
       </view>

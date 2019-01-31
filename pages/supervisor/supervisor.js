@@ -29,9 +29,10 @@ Page({
       var that=this;
       that.mySupervisorList();
   },
+    /*我的督导*/
     mySupervisorList:function(){
         var that=this;
-        /*我的督导*/
+
         wx.ajax({
             url: '/api/Member/mySupervisorList',
             checkRole: false,
@@ -73,9 +74,10 @@ Page({
             }
         });
     },
-  supervisorMeList: function () {
-    var that = this;
     /*督导我的*/
+    supervisorMeList: function () {
+    var that = this;
+
     wx.ajax({
       url: '/api/Member/supervisorMeList',
       checkRole: false,
@@ -133,6 +135,18 @@ Page({
       }
     });
   },
+  //  更多督导
+    moreDudao:function(){
+        wx.navigateTo({
+            url: '../index/index'
+        })
+    },
+  // 督导详情
+    dudaoDetail:function(){
+        wx.navigateTo({
+            url: '../dudaoDetail/dudaoDetail'
+        })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -27,9 +27,9 @@ Page({
     var that=this;
     that.myCollection(2);
   },
+   /*我的习惯2/课堂1*/
   myCollection: function (type) {
     var that = this;
-    /*我的课堂*/
     wx.ajax({
       url: '/api/Member/getCollectionList',
       checkRole: false,
@@ -64,16 +64,32 @@ Page({
               "share_view": 1
             }
           ];
-          var studyList = res.data.data;
+          var habitList = res.data.data;
           that.setData({
-            studyList: studyList,
-            page_study: res.data.count.page,
-            pageSize_study: res.data.count.pageSize
+              habitList: habitList,
+            page_habit: res.data.count.page,
+            pageSize_habit: res.data.count.pageSize
           })
         }
       }
     });
   },
+  //加入习惯,跳转详情
+    habitDetails:function(e){
+        console.log(e);
+        var habitId = e.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: '../habitDetail/habitDetail?id='+habitId
+        })
+    },
+  //课堂详情跳转
+    classDetails:function(e){
+        console.log(e);
+        var habitId = e.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: '../roleDetail/roleDetail?id='+habitId
+        })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

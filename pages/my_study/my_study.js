@@ -6,7 +6,8 @@ Page({
    */
   data: {
     flag: 0,
-    tabx: 0
+    tabx: 0,
+    card:1
   },
   changeTab(e) {
       var that=this;
@@ -120,7 +121,7 @@ Page({
                             "sign_num": "11",
                             "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
                             "description": "2222",
-                            "is_sign": 1
+                            "is_sign": 2
                         },
                     ];
                     var habitList= res.data.data;
@@ -142,6 +143,55 @@ Page({
       url: '../roleDetail/roleDetail?id=' + roleId
     })
   },
+  /*跳转习惯详情页*/
+  habitDetails:function(e){
+        console.log(e);
+        var habitId = e.currentTarget.dataset.id;
+        wx.navigateTo({
+          url: '../habitDetail/habitDetail?id='+habitId
+      })
+    },
+    //打卡
+    daka:function(e){
+        console.log(e);
+        var that=this;
+        var index = e.currentTarget.dataset.index;
+        var habit_id = e.currentTarget.dataset.id;
+        var up = "habitList[" + index + "].is_sign";//先用一个变量，把(info[0].gMoney)用字符串拼接起来
+
+        if(that.data.habitList[index].is_sign==2){
+
+            that.setData({
+                [up]:1
+            })
+        }else {
+            console.log("已经点赞")
+        }
+        wx.ajax({
+            url: '/api/Product/signMyHabit',
+            checkRole: false,
+            params: {
+                token: wx.getStorageSync('token'),
+                member_habit_id:habit_id
+            },
+            type: 'POST',
+            success(res) {
+                console.log("我的习惯",res.data.data);
+                console.log("我的习惯",res.data.count);
+                if (res.code === 1) {
+                    // 打卡成功
+                    if(that.data.habitList[index].is_sign==2){
+                        that.setData({
+                            [up]:1
+                        })
+                    }else {
+                        console.log("已经点赞")
+                    }
+
+                }
+            }
+        });
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

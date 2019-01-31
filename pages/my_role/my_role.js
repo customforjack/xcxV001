@@ -130,7 +130,7 @@ Page({
     var roleId = e.currentTarget.dataset.id
     var that = this;
     wx.navigateTo({
-      url: '../roleDetail/roleDetail?id='+roleId
+      url: '../my_roles/myRoles?id='+roleId
     })
   },
   /**
