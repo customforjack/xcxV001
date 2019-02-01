@@ -22,16 +22,17 @@
          {{studyList.name}}
       </text>
       <text> 
-        TA已练习20次
+         {{studyList.description}}
       </text>
       <text class='validity'>
-      18888人正在练习
-      <text class='remnant'>已学习10分钟</text>
+        {{studyList.page_view}}人已浏览
+      <!-- <text class='remnant'>已学习10分钟</text> -->
       </text>
      </view>
-     <view class='click_cade' data-id='{{studyList.id}}' catchtap='details' >进入课堂</view>
+     <view class='click_cade' data-id='{{studyList.id}}' catchtap='details'>
+     进入课堂
+     </view>
     </view>
-      
   </view> 
    
 </block>
@@ -45,21 +46,20 @@
       <image src='{{habitList.thumbnail}}'></image>
       </view>
      <view class='miaoshu'>
-      <text> 
-         {{habitList.habit_name}}
+      <text>
+      {{habitList.habit_name}}
       </text>
       <text>
       {{habitList.description}}
-
       </text>
-      <text class='validity'>
-      有效期至{{habitList.end_time}}
-      <text class='remnant'>已学习10分钟</text>
+        <text class='validity'>
+      已打卡{{habitList.sign_num}}次
+     <!-- <text class='remnant'>已学习10分钟</text> -->
       </text>
-     </view>
-     <view class='click_cade' catchtap='daka' data-index='{{habitIndex}}'  data-id='{{habitList.id}}'>
-      <image wx:if="{{habitList.is_sign==2}}" src='../../img/add.png' style="height:30rpx;width:35rpx"></image>
-      <image wx:if="{{habitList.is_sign==1}}" src='../../img/daka.png' style="height:30rpx;width:35rpx"></image>
+     </view> 
+     <view class='daka' catchtap='daka' data-index='{{habitIndex}}'  data-id='{{habitList.id}}'>
+      <image wx:if="{{habitList.is_sign==2}}" src='../../img/add.png'></image>
+      <image wx:if="{{habitList.is_sign==1}}" src='../../img/daka.png'></image>
      </view>
     </view>
       

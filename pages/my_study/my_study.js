@@ -43,37 +43,29 @@ Page({
             type: 'POST',
             success(res) {
                 console.log("我的课堂",res.data.data);
-                console.log("我的课堂",res.data.count);
+                console.log("页码",res.data.count);
                 if (res.code === 1) {
                     // 角色获取成功
                     res.data.data=[
                         {
                             "id": 1,
                             "name": "测试课程",
-                            "description": "啊啊啊",
                             "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
+                            "description": "课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介",
                             "video_url": "http://47.99.45.172/mmv/7.mp4",
-                            "content": "2222",
-                            "teacher_id": 1,
-                            "character_id": 1,
-                            "is_free": 0,
-                            "collection_view": 0,
-                            "page_view": 0,
-                            "share_view": 0
+                            "collection_view": "100",
+                            "page_view": 110,
+                            "share_view": 110
                         },
                         {
-                            "id": 2,
-                            "name": "测试课程2",
-                            "description": "啊啊啊",
+                            "id": 1,
+                            "name": "测试课程",
                             "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
+                            "description": "课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介",
                             "video_url": "http://47.99.45.172/mmv/7.mp4",
-                            "content": "2222",
-                            "teacher_id": 1,
-                            "character_id": 1,
-                            "is_free": 0,
-                            "collection_view": 0,
-                            "page_view": 0,
-                            "share_view": 0
+                            "collection_view": "100",
+                            "page_view": 10,
+                            "share_view": 10
                         },
                     ];
                     var studyList= res.data.data;
@@ -103,26 +95,23 @@ Page({
                 console.log("我的习惯",res.data.data);
                 console.log("我的习惯",res.data.count);
                 if (res.code === 1) {
-                    // 角色获取成功
                     res.data.data=[
                         {
                             "id": 1,
                             "habit_name": "我的习惯",
-                            "end_time": "2019-01-11",
-                            "sign_num": "11",
+                            "sign_num": "1222",
                             "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                            "description": "最可怕的不是变老, 好妻子该 如何抵抗这",
+                        "description": "最可怕的不是变老, 好妻子该 如何抵抗这,最可怕的不是变老, 好妻子该 如何抵抗这",
                             "is_sign": 1
                         },
-                        {
-                            "id": 2,
-                            "habit_name": "我的习惯",
-                            "end_time": "2019-01-11",
-                            "sign_num": "11",
-                            "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                            "description": "2222",
-                            "is_sign": 2
-                        },
+                      {
+                        "id": 1,
+                        "habit_name": "我的习惯",
+                        "sign_num": "1222",
+                        "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
+                        "description": "最可怕的不是变老, 好妻子该 如何抵抗这,最可怕的不是变老, 好妻子该 如何抵抗这",
+                        "is_sign": 2
+                      },
                     ];
                     var habitList= res.data.data;
                     that.setData({
@@ -134,7 +123,7 @@ Page({
             }
         });
 },
-  /*跳转角色详情页*/
+  /*跳转课堂详情页*/
   details: function (e) {
     console.log(e);
     var roleId = e.currentTarget.dataset.id

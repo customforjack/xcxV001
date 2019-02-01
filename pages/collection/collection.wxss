@@ -64,6 +64,7 @@
   z-index: 9;
   }
   .buy{
+    color: white;
     position: absolute;
     display: inline-block;
     width: 170rpx;
@@ -71,6 +72,7 @@
     background: #2AC0CB;
     text-align: center;
     right: 0;
+    border-radius: 6rpx;
 }
 .content{
   margin-top: 39rpx;
