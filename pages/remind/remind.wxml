@@ -1,8 +1,11 @@
 <!--pages/remind/remind.wxml-->
+<view class='titel'>
+<image style='' src='../../img/xiguanbang_act.png'></image>
+<text>钱多多的习惯</text>
+</view>
 <view>
   <calendar id="component"  bindtap=""></calendar>
 </view>
- 
   <view class='tilte'>
     <text class='tilte_big'>2018年12月</text>
     <view class='content'>

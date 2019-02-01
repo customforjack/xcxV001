@@ -172,6 +172,7 @@
 }
 
 .date {
+  height: 110rpx;
   position: relative;
   width: 100%;
   text-align: center;
@@ -179,10 +180,30 @@
   background: #fff;
   line-height: 100rpx;
 }
-.reqi{
-  /* width: 60rpx;
+.mark{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 100%;
+  border: 1rpx solid #FF5050;
+  background: #FF5050;
+  position: absolute;
+  top: 90rpx;
+  left: calc(50% - 10rpx)
+}
+.reqi{ 
+  width: 100rpx;
+  /* height: 100rpx; */
+}
+.yuan{
+  text-align: center;
+  line-height: 60rpx;
+  width:60rpx;
   height: 60rpx;
-   border-radius: 100%; */
+  border: 1rpx solid #52b8f5;
+  border-radius:100%; 
+  margin: 20% auto;
+  background: #52b8f5;
+
 }
 .date.active {
   background: red;
@@ -194,9 +215,9 @@
 
 .date-current {
  
-  background: #52b8f5;
-  color: #fff;
-
+  /* background: #52b8f5; */
+  color: white;
+  /* color: black */
 }
 
 .data-circle {

@@ -61,6 +61,21 @@
 .screen_text{
   color: #FF7657;  
 }
+
+.titel{
+ color:  #161616;
+ font-size: 34rpx;
+ height: 48rpx;
+ margin-left: 48rpx;
+}
+.titel image{
+  margin-right: 14rpx;
+  width:26rpx;
+  height:38rpx;
+  vertical-align: middle
+}
+
+
 .tilte{
   margin: 30rpx 40rpx 0rpx 28rpx;
 

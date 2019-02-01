@@ -42,59 +42,14 @@ Component({
   },
   ready() {
     this.getWeek(new Date())
-    if (this.data.isOpen) {
-      this.setData({
-        calShow: false,
-        dateShow: true
-      })
-    }
-    
   },
   /**
    * 组件的方法列表
    */
   methods: {
-    /*dateSelection() {
-      if (this.data.isOpen) {
-        console.log(1);
-        return
-      }
-      let self = this;
-      if (self.data.calShow) {
-        console.log(2);
-        self.setData({
-          calShow: false
-        }, () => {
-          setTimeout(() => {
-            console.log(3);
-            self.setData({
-              dateShow: true
-            }, () => {
-              console.log(4);
-              self.triggerEvent('select', { ischeck: !self.data.calShow })
-            })
-          }, 100)
-        })
-      } else {
-        console.log(5);
-        self.setData({
-          dateShow: false
-        }, () => {
-          setTimeout(() => {
-            console.log(6);
-            self.setData({
-              calShow: true
-            }, () => {
-              console.log(7);
-              self.triggerEvent('select', { ischeck: !self.data.calShow })
-            })
-          }, 300)
-        })
-      }
 
-    },*/
     selectDay(e) {
-
+      console.log(e);
       let index = e.currentTarget.dataset.index;
       let week = e.currentTarget.dataset.week;
       let ischeck = e.currentTarget.dataset.ischeck;
@@ -103,32 +58,9 @@ Component({
       let month = canlender.weeks[week][index].month < 10 ? "0" + canlender.weeks[week][index].month : canlender.weeks[week][index].month
       let date = canlender.weeks[week][index].date < 10 ? "0" + canlender.weeks[week][index].date : canlender.weeks[week][index].date
       this.getWeek(canlender.year + "-" + month + "-" + date);
-
+      console.log(this.data);
     },
-    packup() {
 
-      let self = this;
-      if (this.data.isOpen) {
-        let year = self.data.canlender.year + "-" + self.data.canlender.month + "-" + self.data.canlender.date
-        let _date = self.getDate(year, 0);
-        self.getWeek(_date);
-        return
-      }
-      self.setData({
-        dateShow: false
-      }, () => {
-        setTimeout(() => {
-          self.setData({
-            calShow: true
-          }, () => {
-            let year = self.data.canlender.year + "-" + self.data.canlender.month + "-" + self.data.canlender.date
-            let _date = self.getDate(year, 0);
-            self.getWeek(_date);
-            self.triggerEvent('select', { ischeck: !self.data.calShow })
-          })
-        }, 300)
-      })
-    },
     // 返回今天
     backtoday() { this.getWeek(new Date()); },
     // 前一天|| 后一天
