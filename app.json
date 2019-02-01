@@ -1,8 +1,9 @@
 {
   "pages": [
 
-    "pages/my/my",
+
     "pages/index/index",
+    "pages/my/my",
     "pages/toPay/toPay",
     "pages/post_activity/post_activity",
     "pages/ranking/ranking",
