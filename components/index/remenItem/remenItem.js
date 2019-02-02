@@ -30,9 +30,12 @@ Component({
             title: res.msg,
             icon: 'none'
           })
-          wx.navigateTo({
-            url: '/pages/roleDetail/roleDetail',
-          })
+          setTimeout(()=>{
+            wx.navigateTo({
+              url: '/pages/my_roles/myRoles?id=' + e.currentTarget.dataset.id,
+            })
+          },1000)
+
         }
         if(res.code === 1){
           wx.navigateTo({
@@ -42,7 +45,7 @@ Component({
         if (res.code === 602){
           // 则跳转至对应我的习惯详情
           wx.navigateTo({
-            url: 'pages/habitDetail/habitDetail',
+            url: '/pages/habitDetail/habitDetail',
           })
         }
       })

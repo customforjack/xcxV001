@@ -106,9 +106,19 @@ Page({
             icon: 'none'
           })
           wx.setStorageSync('token', res.data.token)
-          wx.switchTab({
-            url: '/pages/index/index',
-          })
+          const backUrl = wx.getStorageSync('backUrl')
+          if (backUrl){
+            wx.navigateTo({
+              url: backUrl,
+              success(){
+                wx.removeStorageSync('backUrl')
+              }
+            })
+          } else {
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
+          }
         } else {
           wx.showToast({
             title: res.msg,

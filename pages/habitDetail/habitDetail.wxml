@@ -21,7 +21,7 @@
     <view class='fudyuanList'>
       <image wx:for="{{detail.member_habit_supervisor}}" wx:key="index" src='{{item.member_img}}'></image>
     </view>
-    <addBtn class="addfdy"></addBtn>
+    <addBtn class="addfdy" bindtap="toYQdd"></addBtn>
   </view>
   <!--我的辅导团 end-->
   <!--说说感想 start-->

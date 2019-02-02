@@ -63,7 +63,7 @@
         "selectedIconPath": "/img/xiguanbang_act.png"
       },
       {
-        "pagePath": "pages/classes/classes",
+        "pagePath": "pages/my_class/my_class",
         "text": "课堂",
         "iconPath": "/img/yueke.png",
         "selectedIconPath": "/img/yueke_act.png"

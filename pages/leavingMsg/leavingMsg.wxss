@@ -27,6 +27,80 @@
   box-sizing: border-box;
   min-height: 175rpx;
 }
+.leavingMsg .show .imgBox{
+  width: 212rpx;
+  height: 212rpx;
+  display: inline-block;
+  margin-right: 21rpx;
+  margin-bottom:40rpx;
+  position: relative;
+}
+.leavingMsg .show .imgBox image{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 10rpx;
+}
+.leavingMsg .show .imgBox:nth-of-type(3n+0){
+  margin-right: 0;
+}
+.leavingMsg .show .imgBox .icon {
+  width: 36rpx;
+  height: 36rpx;
+  background: #5fd3db;
+  border-radius: 50%;
+  position: absolute;
+  top: -18rpx;
+  right: -18rpx;
+}
+.leavingMsg .show  .audioPlay{
+  padding: 0 30rpx;
+  line-height:60rpx;
+border-radius:30rpx;
+font-size:22rpx;
+color:rgba(69, 180, 188, 1);
+text-align: left;
+border: none;
+width: 400rpx;
+position: relative;
+  display: inline-block;
+}
+
+.leavingMsg .show  .audioPlay:after{
+  display: none;
+}
+.leavingMsg .show  .audioPlay image{
+  height: 40rpx;
+  width: 40rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
+.leavingMsg .show   .audioCard .delBtn{
+  width: 45rpx;
+  height: 45rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+.leavingMsg .show  .audioPlay .text{
+  width: 300rpx;
+  display: inline-block;
+  line-height: 40rpx;
+  text-align: right;
+  vertical-align: middle;
+  font-size: 28rpx;
+}
+.leavingMsg .show .imgBox .line {
+  height: 4rpx;
+  background: #fff;
+  margin-top: 16rpx;
+  width: 20rpx;
+  margin-left: 9rpx;
+}
+.sayType{
+  margin-top: 40rpx;
+}
 .sayType button{
   display: inline-block;
   width: 212rpx;
@@ -62,4 +136,13 @@
   margin-top: 78rpx;
   color:rgba(22,22,22,1);
   line-height: 96rpx;
+}
+.leavingMsg .stopAudio{
+  position: fixed;
+  width: 200rpx;
+  margin-left: -100rpx;
+  left: 50%;
+  bottom: 40rpx;
+  padding: 0;
+  font-size: 20rpx;
 }

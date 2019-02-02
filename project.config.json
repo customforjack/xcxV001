@@ -37,14 +37,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 25,
+			"current": 5,
 			"list": [
-				{
-					"id": -1,
-					"name": "角色详情",
-					"pathName": "pages/roleDetail/roleDetail",
-					"query": ""
-				},
 				{
 					"id": -1,
 					"name": "login",
@@ -79,7 +73,7 @@
 					"scene": null
 				},
 				{
-					"id": 7,
+					"id": 5,
 					"name": "习惯详情 11-1",
 					"pathName": "pages/habitDetail/habitDetail",
 					"query": "",
@@ -123,8 +117,8 @@
 					"query": ""
 				},
 				{
-					"id": 14,
-					"name": "课程详情页 8-1",
+					"id": 12,
+					"name": "角色详情页 课程  8-1",
 					"pathName": "pages/my_roles/myRoles",
 					"query": "",
 					"scene": null
@@ -198,7 +192,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 24,
 					"name": "督导接受邀请 14-2",
 					"pathName": "pages/acceptInvita/acceptInvita",
 					"query": "",
@@ -208,6 +202,13 @@
 					"id": 25,
 					"name": "留言 13",
 					"pathName": "pages/leavingMsg/leavingMsg",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 26,
+					"name": "角色详情页 习惯  10",
+					"pathName": "pages/buyRoles/buyRoles",
 					"query": "",
 					"scene": null
 				}

@@ -1,12 +1,14 @@
 <!--pages/sendInvita/sendInvita.wxml-->
 <view class='sendInvita'>
   <view class='bg'>
-    <view class='icon'></view>
+    <view class='icon'>
+      <image src='{{icon}}'></image>
+    </view>
   </view>
   <view class='info'>
-    <view class='tit'>钱多多的邀请函</view>
-    <view class='text'>我是钱多多, 我正在习达人平台练习一个习惯, 我非常想要 得到您的帮助,在我偷懒的时候督促我一下, 不胜!</view>
-    <view class='auther'>钱多多</view>
+    <view class='tit'>{{nickName}}的邀请函</view>
+    <view class='text'>我是{{nickName}}, 我正在习达人平台练习一个习惯, 我非常想要 得到您的帮助,在我偷懒的时候督促我一下, 不胜!</view>
+    <view class='auther'>{{nickName}}</view>
   </view>
 
   <view class='activityRole'>
@@ -20,11 +22,10 @@
 
   <view class='btnBox'>
     <view class='checkBox'>
-      <view class='checkCard'>
-        <view class='check active'></view>邀请TA督导我本角色（全部12个习惯）</view>
-      <view class='checkCard'>
-        <view class='check'></view>邀请TA督导我本习惯</view>
+      <view class='checkCard' data-type="{{item.type}}" data-id="{{item.id}}" bindtap='toggleTab' wx:for="{{tabs}}" wx:key="index">
+        <view class="{{item.select ? 'check active': 'check' }}"></view>{{item.name}}
+        </view>
     </view>
-    <button class='ok'>邀请督导</button>
+    <button  open-type='share' class='ok'>邀请督导</button>
   </view>
 </view>

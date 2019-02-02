@@ -16,15 +16,11 @@ Page({
     duration:300,
     tabs:[
       {
-        name: '好妻子',
+        name: '12堂必修课',
         checked: true
       },
       {
-        name: '12个习惯',
-        checked: false
-      },
-      {
-        name: '个习惯',
+        name: '12个好习惯',
         checked: false
       }
     ]
@@ -42,7 +38,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log('options', options)
+    options.id = parseInt(options.id)
   },
 
   /**

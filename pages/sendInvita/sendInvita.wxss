@@ -19,6 +19,11 @@
   left: 50%;
   margin-left: -60rpx;
   bottom: -60rpx;
+  overflow: hidden;
+}
+.sendInvita .bg .icon image{
+  width: 100%;
+  height: 100%;
 }
 
 .sendInvita .info {

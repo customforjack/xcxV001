@@ -17,10 +17,9 @@ Page({
   onLoad: function (options) {
     console.log('load ...')
     const _this = this
-    this.getHabitList()
-   setTimeout(()=>{
-     this.getQuanList()
-   },200)
+    this.getHabitList().then(()=>{
+      this.getQuanList()
+    })
  
   },
   // 获取习惯列表
@@ -32,6 +31,9 @@ Page({
           token: wx.getStorageSync('token')
         }
       }).then(res => {
+        if (res.data.length === 0){
+          return false
+        }
         const arr = []
         const sArr = []
         res.data.forEach((item, i) => {

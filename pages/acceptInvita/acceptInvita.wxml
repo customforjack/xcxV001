@@ -1,14 +1,15 @@
 <!--pages/sendInvita/sendInvita.wxml-->
 <view class='acceptInvita'>
   <view class='bg'>
-    <view class='icon'></view>
+    <view class='icon'>
+      <image src='{{options.icon}}'></image>
+    </view>
   </view>
   <view class='info'>
-    <view class='tit'>钱多多的邀请函</view>
-    <view class='text'>我是钱多多, 我正在习达人平台练习一个习惯, 我非常想要 得到您的帮助,在我偷懒的时候督促我一下, 不胜!</view>
-    <view class='auther'>钱多多</view>
+    <view class='tit'>{{options.nickName}}的邀请函</view>
+    <view class='text'>我是{{options.nickName}}, 我正在习达人平台练习一个习惯, 我非常想要 得到您的帮助,在我偷懒的时候督促我一下, 不胜!</view>
+    <view class='auther'>{{options.nickName}}</view>
   </view>
-
   <view class='activityRole'>
     <view class='tit'>活动规则:</view>
     <view class='text'>
@@ -17,17 +18,10 @@
       朋友已成为“习达人”。
     </view>
   </view>
-
   <view class='btnBox'>
-    <view class='checkBox'>
-      <view class='checkCard'>
-        <view class='check active'></view>邀请TA督导我本角色（全部12个习惯）</view>
-      <view class='checkCard'>
-        <view class='check'></view>邀请TA督导我本习惯</view>
-    </view>
     <view class='boxs'>
           <button class='detail'>了解详情</button>
-          <button class='ok'>邀请督导</button>
+          <button class='ok' bindtap='toAccept'>接收邀请</button>
     </view>
   </view>
 </view>

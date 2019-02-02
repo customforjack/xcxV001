@@ -4,17 +4,27 @@
     <button>打卡要求: 必须上传图片</button>
   </view>
   <textarea bindinput="say" placeholder='说说今天的感想…' class='say'></textarea>
+  <view class='show'>
+    <view class='imgBox' wx:for="{{imgArr}}"  wx:key="index">
+          <image  src='{{item}}'></image>
+          <view class='icon' data-idx="{{index}}" bindtap='delImg'><view class='line'></view></view>
+    </view>
+    <view class='audioCard' wx:for="{{audioArr}}" wx:key="index">
+        <button  bindtap='playAudio' class='audioPlay'><image src='/img/audio-icon.png'></image><view class='text'>{{item.duration}}秒</view></button>
+    <image class='delBtn' bindtap='delAudio' data-idx="{{index}}" src='/img/delAudio.png'></image>
+    </view>
+  </view>
   <view class='sayType'>
-    <button class='sayBtn'>
+    <button class='sayBtn' bindtap='upAudio'>
       <image src='/img/ziyuan.png'></image>
     </button>
-    <button class='imgBtn' bindtap="upImg">
+    <button class='imgBtn' wx:if="{{audioArr.length === 0}}" bindtap="upImg">
       <image src='/img/tupian.png'></image>
     </button>
     <button class='videoBtn'>
       <image src='/img/videpBtn.png'></image>
     </button>
   </view>
-  <view>{{imgUrls}}</view>
+  <button class='stopAudio' wx:if="{{audioFlag}}" bindtap='saveAudio'>保存录音</button>
   <button class='fbBtn' bindtap='subForm'>发布</button>
 </view>

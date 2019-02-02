@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail: {}
+    detail: {},
+    options:{}
   },
 
   /**
@@ -13,6 +14,9 @@ Page({
    */
   onLoad: function (options) {
     console.log('options', options)
+    this.setData({
+      options: options
+    })
     this.getDetail(options)
   },
   addLeavingMsg(){
@@ -36,6 +40,12 @@ Page({
         title:this.data.detail.habit_name
       })
     })
+  },
+  toYQdd(){
+// 邀请督导
+  wx.navigateTo({
+    url: '/pages/sendInvita/sendInvita?member_habit_id=' + this.data.options.member_habit_id,
+  })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

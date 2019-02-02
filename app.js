@@ -7,7 +7,7 @@ wx.getParams = (params) => {
   Object.keys(params).forEach(key => {
     str += `${key}=${params[key]}&`
   })
-  return str
+  return str.substr(0,str.length-1)
 }
 wx.tranNumber = (params) => {
   let Obj = {}

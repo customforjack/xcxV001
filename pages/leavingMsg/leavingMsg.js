@@ -1,4 +1,6 @@
 // pages/leavingMsg/leavingMsg.js
+const RecorderManager = wx.getRecorderManager()
+const InnerAudioContext = wx.createInnerAudioContext()
 Page({
 
   /**
@@ -10,7 +12,9 @@ Page({
     video: '',
     audio: '',
     content:'',
-    files: {}
+    imgArr: [],
+    audioArr: [],
+    audioFlag:false
   },
 
   /**
@@ -38,10 +42,7 @@ Page({
       })
       return false
     }
-    if (this.data.images || this.data.audio || this.data.video) {
-
-
-      return
+    if (this.data.imgArr.length || this.data.audioArr.length || this.data.video) {
       wx.ajax({
         url: '/api/Topic/topicAdd',
         params : {
@@ -49,8 +50,8 @@ Page({
           type: parseInt(_this.data.params.type),
           p_id: parseInt(_this.data.params.p_id),
           content: _this.data.content,
-          images: _this.data.images,
-          video: _this.data.video,
+          images: _this.data.imgArr.join(','),
+          video: _this.data.audioArr[0].src,
           audio: _this.data.audio
         }
       }).then(res => {
@@ -89,6 +90,86 @@ Page({
   onShow: function () {
 
   },
+  saveAudio () {
+    RecorderManager.stop();
+  },
+  delAudio(e){
+    this.data.audioArr.splice(e.currentTarget.dataset.idx, 1)
+    this.setData({
+      audioArr: this.data.audioArr
+    })
+  },
+  playAudio(){
+    InnerAudioContext.autoplay = true
+    InnerAudioContext.src = this.tempFilePath,
+      InnerAudioContext.onPlay(() => {
+        console.log('开始播放')
+      })
+    InnerAudioContext.onError((res) => {
+      console.log(res.errMsg)
+      console.log(res.errCode)
+    })
+  },
+  toUpAudio(file, duration){
+    const _this = this
+          wx.uploadFile({
+            url: 'https://admin.habit21.com.cn/api/Topic/upload',
+            filePath:file,
+            name: 'file',
+            formData: wx.getMd5({token: wx.getStorageSync('token')}),
+            success(res) {
+              console.log('upload audio', res.data)
+              const d = JSON.parse(res.data)
+              if (d.code === 1){
+                _this.data.audioArr.push({
+                  src: d.data.src,
+                  duration: duration/1000
+                })
+                _this.setData({
+                  audioArr: _this.data.audioArr
+                })
+              }else{
+                wx.showToast({
+                  title: d.msg,
+                })
+              }
+              // do something
+            },
+            fail(err){
+              console.log(err)
+            }
+          })
+  },
+  upAudio (){
+    if (this.data.audioArr.lenght>0){
+      this.showToast({
+        title:'您已经有一段录音了'
+      })
+      return false
+    }
+    this.setData({
+      audioFlag:true
+    })
+    const options = {
+      duration: 60000,//指定录音的时长，单位 ms
+      sampleRate: 16000,//采样率
+      numberOfChannels: 1,//录音通道数
+      encodeBitRate: 96000,//编码码率
+      format: 'mp3',//音频格式，有效值 aac/mp3
+      frameSize: 50,//指定帧大小，单位 KB
+    }
+    RecorderManager.start(options)
+    RecorderManager.onStop((res) => {
+      console.log('audio', res)
+      this.tempFilePath = res.tempFilePath;
+      console.log('停止录音', res.tempFilePath)
+      const { tempFilePath } = res
+      this.setData({
+        audioFlag: false
+      })
+      this.toUpAudio(tempFilePath, res.duration)
+    })
+  },
   upImg(){
     const _this =this
     wx.chooseImage({
@@ -99,39 +180,55 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
         console.log('file', res.tempFiles)
-
-        res.tempFilePaths.forEach(item => {
+        console.log('params', wx.getMd5({ token: wx.getStorageSync('token') }))        
+        res.tempFilePaths.forEach((item,i) => {
           console.log('item', item)
-          const uploadTask = wx.uploadFile({
-            url: 'http://124.225.68.169:7777/api/Topic/upload',
+          // 最多只能上传9张校验
+          if(_this.data.imgArr.length >= 9){
+            wx.showToast({
+              title: '最多只能上传9张',
+              icon:'none'
+            })
+            return false
+          }
+          wx.uploadFile({
+            url: 'https://admin.habit21.com.cn/api/Topic/upload',
             filePath:item,
             name: 'file',
             formData: wx.getMd5({token: wx.getStorageSync('token')}),
             success(res) {
               console.log('upload img', res.data)
+              const d = JSON.parse(res.data)
+              if (d.code === 1){
+                _this.data.imgArr.push(d.data.src)
+                _this.setData({
+                  imgArr:_this.data.imgArr
+                })
+              }else{
+                wx.showToast({
+                  title: d.msg,
+                })
+              }
               // do something
+            },
+            fail(err){
+              console.log(err)
             }
           })
         })
         // 先上传文件
 
-        _this.setData({
-          tempFiles: res.tempFiles
-        })
-        console.log('....', tempFilePaths)
-        const arr = []
-        tempFilePaths.forEach(item => {
-          console.log(item)
-          arr.push(item)
-        })
-        const imgUrls = tempFilePaths.join(',')
-        _this.setData({
-          images: imgUrls
-        })
+
       }
     })
   },
-
+  delImg(e){
+    console.log(e.currentTarget.dataset.idx)
+    this.data.imgArr.splice(e.currentTarget.dataset.idx, 1)
+    this.setData({
+      imgArr: this.data.imgArr
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
