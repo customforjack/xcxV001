@@ -1,4 +1,7 @@
 <!--pages/habitDetail/habitDetail.wxml-->
+<view>
+  <calendar id="component"  bindtap=""></calendar>
+</view>
 <view class='habitDetail'>
   <!--量化描述 start-->
   <view class='remark'>

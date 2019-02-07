@@ -3,7 +3,8 @@
     "showCard": "/components/showCard/showCard",
     "toDoBtn": "/components/toDoBtn/toDoBtn",
     "remarkCard": "/components/habitDetail-card/habitDetail-card",
-    "addBtn": "/components/addBtn/addBtn"
+    "addBtn": "/components/addBtn/addBtn",
+    "calendar": "/components_show/calendar/calendar"
   },
   "navigationBarTitleText": "今日打卡"
 }

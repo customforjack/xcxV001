@@ -20,27 +20,27 @@ Page({
   todo(){
     console.log('todo')
   },
-  //获取详情
+  //进入课堂
   details: function (roleId){
     var that = this;
      wx.ajax({
-      url: '/api/Product/getCharacterClassify',
+       url: '/api/Product/getCourseDetail',
       checkRole: false,
       params: {
-        //token: wx.getStorageSync('token'),
-        id: roleId
+        token: wx.getStorageSync('token'),
+        id: 3
       },
       type: 'POST',
       success(res) {
 
         console.log("角色详情", res);
+        console.log("角色详情", res.data);
         if (res.code === 1) {
           // 角色获取成功
         
-          var roleDetails = res.data;
-
+          var classDetails = res.data
           that.setData({
-
+            classDetails: classDetails
           })
         }
       }

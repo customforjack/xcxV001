@@ -29,6 +29,7 @@ Page({
         token: wx.getStorageSync('token')
       }
     }).then(res => {
+      console.log(res);
       this.setData({
         detail: res.data
       })

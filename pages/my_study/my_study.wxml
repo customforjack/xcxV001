@@ -29,7 +29,7 @@
       <!-- <text class='remnant'>已学习10分钟</text> -->
       </text>
      </view>
-     <view class='click_cade' data-id='{{studyList.id}}' catchtap='details'>
+     <view class='click_cade' data-id='{{studyList.id}}' catchtap='classDetails'>
      进入课堂
      </view>
     </view>

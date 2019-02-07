@@ -65,7 +65,7 @@ page{
 }
 .model_item image{
   display: block;
-  width: 60rpx;
+  width: 50rpx;
   height: 60rpx;
   /* background: #D8D8D8; */
   margin: 0 auto;
@@ -89,7 +89,7 @@ page{
 }
 .model_item_copy image{
   display: block;
-  width: 60rpx;
+  width: 50rpx;
   height: 60rpx;
   /* background: #D8D8D8; */
   margin: 0 auto 16rpx;
