@@ -1,34 +1,29 @@
 <!--pages/roleDetail/roleDetail.wxml-->
 <view class='roleDetail'>
   <view class='detail-box'>
-    <view class='tit'>《如何成为一个合适的好妻子》</view>
-    <video id="myVideo" poster="https://imgc.woyaoxunpai.com/data/banner/2018082417313292666.jpg" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+    <view class='tit'>《{{detail.name}}》</view>
+    <video id="myVideo"  src="{{detail.video_url}}"
       danmu-list="{{danmuList}}" enable-danmu danmu-btn controls="true"></video>
     <view class='text'>
-      <text>最可怕的不是变老, 而是高枯衰老的破坏力. 你害怕变老 吗? 害怕变成家里那个不受关注的一员吗? 好妻子该如 何抵抗这些, 一件…</text>
-      <text>最可怕的不是变老, 而是高枯衰老的破坏力. 你害怕变老 吗? 害怕变成家里那个不受关注的一员吗? 好妻子该如 何抵抗这些, 一件…</text>
-      <text>最可怕的不是变老, 而是高枯衰老的破坏力. 你害怕变老 吗? 害怕变成家里那个不受关注的一员吗? 好妻子该如 何抵抗这些, 一件…</text>
+      <text>{{detail.description}}</text>
     </view>
   </view>
   <!--习惯 -->
-  <view class='habit'>
-    <view class='h-tit'>
-      <view class='h-tit-l'>已练30次</view>
-      <view class='h-tit-r '></view>
-    </view>
-  </view>
+
 
   <view class='otherCard'>
     <view class='tit'>
-      <text class='t-name'>陪孩子一小时</text>
+      <text class='t-name'>{{detail.character.name}}</text>
       <addBtn class="addBtn"></addBtn>
     </view>
     <view class='o-info clearfix'>
-      <view class='o-icon'></view>
+      <view class='o-icon'>
+        <image src='{{detail.character.thumbnail}}'></image>
+      </view>
       <view class='o-txt'>
-        <text class='txt'>如何和孩子建立亲密关系的自我学习和 介绍</text>
+        <text class='txt'>{{detail.character.description}}</text>
         <view class='o-b'>
-          <text class='o-family'>20.6万人参与 / 家庭</text>
+          <text class='o-family'>{{detail.character.collection_view}}万人参与 / 家庭</text>
           <view class='label'>
             <image mode="widthFix" src='/img/yinle-g.png'></image>Audio</view>
         </view>
@@ -39,22 +34,16 @@
   <view class='teacherBox'>
     <view class='tit'>讲师介绍</view>
     <view class='t-info'>
-      <view class='t-icon'></view>
+      <view class='t-icon'>
+        <image src='{{detail.teacher.thumbnail}}'></image>
+      </view>
       <view class='t-msg'>
-        <text class='t-i-t'>钱多多</text>
-        <text class='t-i-b'>高级讲师</text>
+        <text class='t-i-t'>{{detail.teacher.name}}</text>
+        <text class='t-i-b'>{{detail.teacher.position}}</text>
       </view>
     </view>
     <view class='t-js'>
-      “职业经理人导师”—— 《TTT国际职业培训师认证教程》授权导师 《TTT国际职业培训师认证教程》授权导师 21年丰富的营销实战与管理经验，与数千家企业交流 合作，对国内外数百家著名企业深入研究，研创了 “CPM精准营销管理”模式 …
-    </view>
-    <view class='talk-box'>
-      <button class='scBtn'>
-        <image mode="widthFix" src='/img/shoucang-2.png'></image> 12
-      </button>
-      <button class='talkBtn'>
-        <image mode="widthFix" src='/img/xiazai16.png'></image> 3
-      </button>
+     {{detail.teacher.description}}
     </view>
   </view>
   <view class='friendList'>
@@ -63,16 +52,6 @@
     <showCard></showCard>  
   </view>
 
-  <view class='pageFooter'>
-    <button  class='scBtn'>
-      <image mode="widthFix" src='/img/clockIcon.png'></image> 12
-    </button>
-    <button class='scBtn'>
-      <image mode="widthFix" src='/img/shoucang.png'></image> 12
-    </button>
-    <button class='talkBtn'>
-      <image mode="widthFix" src='/img/detailTalk.png'></image> 3
-    </button>
-  </view>
+
   <toDoBtn text="我也有话说" bind:bindtap="todo"></toDoBtn>
 </view>

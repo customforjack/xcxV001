@@ -1,6 +1,6 @@
 <!--components/index/renmenItem/remmenItem.wxml-->
-<view>
-  <view class='remen_item'>
+<view data-id="{{item.member_habit_id}}"  bindtap='toDetail' >
+  <view class='remen_item' >
     <view class='title_box'>
       <view class='title'>{{item.name}}</view>
       <view class='addBtn' data-id="{{item.id}}" hover-class="addBtnHover" bindtap='toaddStepOne'>
@@ -15,9 +15,8 @@
       </view>
       <view class='main_right'>
         <view class='desc'>{{item.description}}</view>
-        <view class='canshu'>20.6万人参与 / 家庭</view>
+        <view class='canshu'>{{item.page_view}}人参与 / {{item.classify_name}}</view>
       </view>
     </view>
   </view>
-
 </view>

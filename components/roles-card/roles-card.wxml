@@ -1,16 +1,16 @@
       <view class='my-roles-card'>
-        <view class='tit'>早茶 18.12.2</view>
+        <view class='tit'>{{item.name}}</view>
         <view class='info'>
           <view class='role-c-icon'>
-            <image src='/img/advertisement.jpg'></image>
+            <image src='{{item.thumbnail}}'></image>
           </view>
           <view class='role-c-info'>
-            <view class='role-c-text'>如何成为一个贤惠的妻子，这是一个非常 棒如何成为一个贤惠的妻子，这是一个非</view>
+            <view class='role-c-text'>{{item.description}}</view>
             <view class='role-c-labels'>
-                <view class='left'>20.6万人参与/200人转发</view>
+                <view class='left'>{{item.page_view}}万人参与/{{item.share_view}}人转发</view>
                 <view class='right'>
                 <image src='/img/fabulous.png'></image>
-                225</view>
+                {{item.collection_view}}</view>
             </view>
           </view>
         </view>

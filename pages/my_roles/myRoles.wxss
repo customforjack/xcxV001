@@ -57,9 +57,15 @@ swiper swiper-item image {
   padding-left: 26rpx;
   padding-right: 26rpx;
 }
-
+.list .c{
+    border-bottom:1px solid rgba(231,231,231,1);
+}
+.list .c:nth-last-of-type(1){
+  border-bottom: none;
+}
 .toBuy {
   width: 226rpx;
+  padding: 0;
   line-height: 90rpx;
   height: 90rpx;
   background: rgba(95, 211, 219, 1);

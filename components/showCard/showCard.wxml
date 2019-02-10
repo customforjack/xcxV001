@@ -2,22 +2,34 @@
 <view class='friendList'>
   <view class='teacherBox'>
     <view class='t-info'>
-      <view class='t-icon'></view>
-      <view class='t-msg'>
-        <text class='t-i-t'>Xu茂茂</text>
-        <text class='t-i-b'>1天前</text>
+      <view class='t-icon'>
+        <image src='{{item.member_img}}'></image>
       </view>
-      <view class='t-label'>
+      <view class='t-msg'>
+        <text class='t-i-t'>{{item.member_name}}</text>
+        <text class='t-i-b'>{{item.create_time}}</text>
+      </view>
+      <!--
+    <view class='t-label'>
         <text class='t-label-txt'>皇冠</text>
+      </view> -->
+    </view>
+    <view class='talk-text'>{{item.content}}</view>
+    <view class='t-js'>
+      <image src='{{child}}' wx:key="idx" wx:if="{{child !== ''}}" wx:for="{{item.images}}" wx:for-index="idx" wx:for-item="child"></image>
+    </view>
+    <view class='t-audio' wx:if="{{item.audio && item.audio !== '' && item.audio != 'undefined'}}">
+      <view class='audioCard'>
+        <button bindtap='playAudio' data-src="{{item.audio}}" class='audioPlay'>
+          <image src='/img/audio-icon.png'></image>
+        </button>
       </view>
     </view>
-    <view class='t-js'>
-      <image src='/img/img.png'></image>
-      <image src='/img/img.png'></image>
-      <image src='/img/img.png'></image>
+    <view class='t-video'  wx:if="{{item.video && item.video !== '' && item.video != 'undefined'}}">
+      <video id="myVideo" src="{{item.video}}"  controls></video>
     </view>
     <view class='talk-box'>
-      <view class='fl msg'>已坚持打卡28天</view>
+      <view class='fl msg'></view>
       <button class='scBtn'>
         <image mode="widthFix" src='/img/shoucang-2.png'></image> 12
       </button>

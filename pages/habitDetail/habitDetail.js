@@ -6,7 +6,9 @@ Page({
    */
   data: {
     detail: {},
-    options:{}
+    options:{},
+    talkList:[],
+    model:false
   },
 
   /**
@@ -17,7 +19,9 @@ Page({
     this.setData({
       options: options
     })
-    this.getDetail(options)
+    this.getDetail(options).then(()=>{
+      this.getTopicList()
+    })
   },
   addLeavingMsg(){
     // 留言
@@ -26,7 +30,7 @@ Page({
     })
   },
   getDetail (params) {
-    wx.ajax({
+    return wx.ajax({
       url: '/api/Product/getHabitDetail',
       params: {
         member_habit_id: params.member_habit_id,
@@ -47,13 +51,53 @@ Page({
     url: '/pages/sendInvita/sendInvita?member_habit_id=' + this.data.options.member_habit_id,
   })
   },
+  getTopicList(){
+    const _this = this
+    wx.ajax({
+      url:'/api/Topic/getTopicList',
+      params:{
+        type: _this.data.detail.type,
+        p_id: _this.data.detail.habit_id,
+        page:'1',
+        pageSize:'20',
+        token:wx.getStorageSync('token')
+      }
+    }).then(res =>{
+      _this.setData({
+        talkList: res.data.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
-
+  todk(){
+    console.log('daka')
+    const _this = this
+    wx.ajax({
+      url:'/api/Product/signMyHabit',
+      params:{
+        member_habit_id: _this.data.detail.member_habit_id,
+        token:wx.getStorageSync('token')
+      }
+    }).then(res =>{
+      console.log(res)
+      if (res.code === 1){
+        _this.setData({
+          model:true
+        })
+      }
+      if(res.code === 400){
+        wx.showToast({
+          title: res.msg,
+          icon:'none'
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

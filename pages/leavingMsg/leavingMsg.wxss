@@ -8,7 +8,7 @@
 }
 .tip button {
   display: inline-block;
-  width: 302rpx;
+  width: 470rpx;
   height: 56rpx;
   background: rgba(195, 236, 239, 1);
   border-radius: 28rpx;
@@ -16,6 +16,10 @@
   color: rgba(69, 180, 188, 1);
   line-height:56rpx;
   opacity: 0.7016;
+  border: none;
+}
+.tip button:after{
+  display: none;
 }
 .leavingMsg .say{
   font-size:32rpx;
@@ -44,7 +48,7 @@
 .leavingMsg .show .imgBox:nth-of-type(3n+0){
   margin-right: 0;
 }
-.leavingMsg .show .imgBox .icon {
+.show  .icon {
   width: 36rpx;
   height: 36rpx;
   background: #5fd3db;
@@ -83,6 +87,12 @@ position: relative;
   margin-top: 10rpx;
   margin-left: 20rpx;
 }
+.leavingMsg .show .videoCard {
+  position: relative;
+}
+.leavingMsg .show .videoCard video{
+  width: 100%;
+}
 .leavingMsg .show  .audioPlay .text{
   width: 300rpx;
   display: inline-block;
@@ -91,7 +101,7 @@ position: relative;
   vertical-align: middle;
   font-size: 28rpx;
 }
-.leavingMsg .show .imgBox .line {
+.show  .line {
   height: 4rpx;
   background: #fff;
   margin-top: 16rpx;
@@ -114,13 +124,20 @@ position: relative;
 .sayType button:after{
   display: none;
 }
-.sayType button:nth-of-type(1) image{
+.sayType .sayBtn image{
   width: 44rpx;
   height: 65rpx;
+    margin-top: 73rpx;
 }
-.sayType button:nth-of-type(2) image{
-  width: 64rpx;
-  height: 64rpx;
+.sayType .imgBtn image{
+  width: 66rpx;
+  height: 66rpx;
+  margin-top: 73rpx;
+}
+.sayType .videoBtn image{
+  width: 72rpx;
+  height: 48rpx;
+  margin-top: 82rpx;
 }
 .sayType button:nth-of-type(3){
   margin-right: 0;

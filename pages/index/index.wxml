@@ -1,71 +1,72 @@
-<search bind:comfirm="search"></search>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{detail.banner}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.img_url}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
 
-<!--我的习惯列表 start-->
-<view class='myHabitList' wx:if="{{detail.my_habit.length}}">
+<!--今日习惯列表 start-->
+<view class='myHabitList' wx:if="{{detail.today_habit.length}}">
   <view class='tit'>
-    <text class='label'>今天</text>
-    <view class='line'></view>
     <text class='date'>12月3号 星期一</text>
-    <button>查看历史 <image src='/img/r_jiantou.png'></image></button>
+    <button bindtap='toMyHabit'>今日习惯</button>
   </view>
-  <view class='list'>
-    <myHabitCard wx:for="{{detail.my_habit}}" wx:key="index" item="{{item}}"></myHabitCard>
+  <scroll-view scroll-x="true" class="vip_xl">
+    <view class='role_list'>
+      <view class='role' data-idx="{{index}}" bindtap='checkRole' wx:for="{{detail.today_habit}}" wx:key="index">
+        <image src='{{item.thumbnail}}'></image>
+        <view class='name'>{{item.name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='list' wx:for="{{detail.today_habit}}" wx:key="index">
+    <view class='card' wx:if="{{idx < showLen}}" wx:key="idx" wx:for="{{item.habit}}" wx:for-item="child" wx:for-index="idx">
+      <myHabitCard bind:dakaSuccess="ondakaSuccess" item="{{child}}"></myHabitCard>
+    </view>
+    <button class='moreBtn' bindtap='moeRole'>MORE ></button>
   </view>
 </view>
-<!--我的习惯列表  end-->
-<!-- 训练营 -->
-<view class='xunlian'>
-  <view class='xl_top'>
-    <view class='today'>今天</view>
-    <view class='date'>12月3号 星期一</view>
-  </view>
-  <view class='tab'>
-    <view class="tab_item {{act==0?'act':''}}" style='background-image: url(/img/me.png);' data-act='0' bindtap='changeTab'>自我训练营</view>
-    <view class="tab_item posi {{act==1?'act':''}}" data-act='1' bindtap='changeTab' style='background-image: url(/img/vip.png);'>VIP训练营</view>
-    <view class='add' bindtap='goMe' wx:if="{{act==0}}"><image src='/img/add.png'></image></view>
-    <view class='add' bindtap='goVip' wx:if="{{act==1}}"><image src='/img/add.png'></image></view>
-  </view>
-  <block wx:if="{{act==0}}">
-       <scroll-view scroll-x="true" class="vip_xl">
-      <view class='vip_item' wx:for="{{detail.free_habit_list}}" wx:key="unique">
-        <image src='{{item.icon}}'></image>
-        <view class='title'>{{item.name}}</view>
-        <view class='num'>{{item.step}}</view>
-      </view>
-    </scroll-view>
-  </block>
-  <block wx:if="{{act==1}}">
-    <scroll-view scroll-x="true" class="vip_xl">
-      <view class='vip_item' wx:for="{{detail.unfree_habit_list}}" wx:key="unique">
-        <image src='{{item.icon}}'></image>
-        <view class='title'>{{item.name}}</view>
-        <view class='num'>{{item.step}}</view>
-      </view>
-    </scroll-view>
-  </block>
-</view>
-<!-- 热门习惯 -->
+<!--今日习惯列表  end-->
+<!-- 热门习惯,角色 -->
 <view class='remmen'>
   <view class='biaoti'>
     <view class="bt_left">
       <image src='/img/remen.png' class='icon'></image>
-      <button  class="{{xgCheck === idx ? 'active':''}}" wx:for="{{checkxg}}" data-idx="{{idx}}" wx:for-index="idx" wx:key="idx" wx:for-item="item"  bindtap='toCheck'>{{item}}</button> 
+      <button data-idx="0" bindtap='toCheck'>热门角色</button>
     </view>
-    <text bindtap='toMore'>更多</text>
-    <image  bindtap='toMore' src='/img/r_jiantou.png'></image>
+    <text bindtap='toMoreRole'>更多</text>
+    <image bindtap='toMoreRole' src='/img/r_jiantou.png'></image>
   </view>
-  <!-- 列表 -->
-  <view class='re-card'  wx:if="{{xgCheck === 0}}" wx:key="index" wx:for="{{detail.habit_list}}">
-    <remmen-item class="remmen-card" item="{{item}}" ></remmen-item>
+  <!--热门角色  start-->
+  <view class='hotRoles re-card-list'>
+    <scroll-view scroll-x="true" class="vip_xl">
+      <view class='re-card' data-id="{{item.id}}" bindtap='toRoleDetail' wx:key="index" wx:for="{{detail.character_list}}">
+        <image class='roleIcon' src="{{item.thumbnail}}"></image>
+        <view class='name'>{{item.name}}</view>
+        <view class='sale'>{{item.sale_num}}万人</view>
+      </view>
+    </scroll-view>
   </view>
-  <view class='re-card' wx:if="{{xgCheck === 1}}" wx:key="index" wx:for="{{detail.character_list}}">
-    <remmen-item class="remmen-card"  item="{{item}}"  ></remmen-item> 
-  </view>
+  <!--热门角色 end-->
 </view>
 
-<!-- 已显示全部内容 -->
-<view class='daodi'>已显示全部内容</view>
-
+<view class='remmen'>
+  <view class='biaoti'>
+    <view class="bt_left">
+      <image src='/img/remen.png' class='icon'></image>
+      <button data-idx="0" bindtap='toCheck'>热门习惯</button>
+    </view>
+    <text bindtap='toMore'>更多</text>
+    <image bindtap='toMore' src='/img/r_jiantou.png'></image>
+  </view>
+  <!--热门习惯 start-->
+  <view class='hotHabits re-card-list'>
+    <view class='ha-card' wx:key="index" wx:for="{{detail.habit_list}}">
+      <remmen-item class="remmen-card" item="{{item}}"></remmen-item>
+    </view>
+  </view>
+  <!--热门习惯 end-->
+</view>
 <!-- 回到顶部 -->
 <view></view>
-

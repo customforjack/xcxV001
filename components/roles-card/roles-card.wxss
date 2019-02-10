@@ -2,10 +2,9 @@
 .my-roles-card{
   padding-top: 30rpx;
     padding-bottom: 42rpx; 
-  border-bottom:1px solid rgba(231,231,231,1);
 }
 .my-roles-card .info .role-c-text{
-    margin-bottom: 30rpx;
+    margin-bottom: 65rpx;
 }
 .my-roles-card .tit{
   margin-bottom: 39rpx;

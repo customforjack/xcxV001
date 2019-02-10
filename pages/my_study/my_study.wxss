@@ -95,15 +95,21 @@
    
 }
 .content text:nth-of-type(2){
+  display: inline-block;
   height: 100rpx;
   color: #616161;
   font-size: 24rpx;
-  line-height:30rpx;
+  line-height:35rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .content text:last-child{
   font-size: 22rpx;
   color: #999999;
-  margin-top: 20rpx;
+  margin-top: 16rpx;
   }
 .miaoshu{
   word-wrap: break-word;
@@ -131,25 +137,27 @@
 
 }
 .click_cade{
-  color: #ffffff;
-  border-radius: 6rpx;
+  border-radius:30rpx;
   position: absolute;
-  width: 35rpx;
+  width: 145rpx;
   text-align: center;
-  height: 30rpx;
+  height: 60rpx;
+  background: #2AC0CB;
+  color: white;
   line-height: 60rpx;
   font-size: 26rpx;
   top: 0;
   right: 0;
-
-
 }
-.click_cade2{
-  top: 80rpx;
-  background: #ffffff;
-  color: #2AC0CB;
-  border: 1rpx solid #2AC0CB;
-  box-sizing: border-box;
+.daka{
+  height: 60rpx;
+  width: calc(100% - 560rpx);
+  text-align: right;
+}
+.daka image{
+  height:60rpx;
+  width:70rpx;
+  vertical-align:top;
 }
 .qdd{
   margin-left:-90rpx;

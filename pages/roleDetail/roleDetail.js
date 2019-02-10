@@ -5,13 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    detail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('options 课程', options)
     var that=this;
     var roleId = options.id;
     console.log(roleId);
@@ -24,10 +25,10 @@ Page({
   details: function (roleId){
     var that = this;
      wx.ajax({
-      url: '/api/Product/getCharacterClassify',
+       url: '/api/Product/getCourseDetail',
       checkRole: false,
       params: {
-        //token: wx.getStorageSync('token'),
+        token: wx.getStorageSync('token'),
         id: roleId
       },
       type: 'POST',
@@ -37,11 +38,18 @@ Page({
         if (res.code === 1) {
           // 角色获取成功
         
-          var roleDetails = res.data;
-
           that.setData({
-
+            detail:res.data
           })
+        }
+        if(res.code === 601){
+          wx.showToast({
+            title: res.msg,
+            icon:'none'
+          })
+          setTimeout(()=>{
+            wx.navigateBack()
+          },1000)
         }
       }
     })

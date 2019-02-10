@@ -5,15 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'https://imgc.woyaoxunpai.com/data/banner/2018082417365510328.jpeg',
-      'https://imgc.woyaoxunpai.com/data/banner/2018082417313292666.jpg',
-      'https://imgc.woyaoxunpai.com/data/banner/2018082417365510328.jpeg'
-    ],
-    indicatorDots: false,
-    autoplay: true,
-    interval: 5000,
-    duration:300,
+    id:null,
+    showTab:0,
     tabs:[
       {
         name: '12堂必修课',
@@ -23,7 +16,9 @@ Page({
         name: '12个好习惯',
         checked: false
       }
-    ]
+    ],
+    detail:{},
+    showArr:[]
   },
   toggleTab(e){
     this.data.tabs.forEach(item => {
@@ -31,15 +26,107 @@ Page({
     })
     this.data.tabs[e.currentTarget.dataset.idx].checked = true
     this.setData({
-      tabs: this.data.tabs
+      tabs: this.data.tabs,
+      showTab: e.currentTarget.dataset.idx
+    })
+    if (parseInt(e.currentTarget.dataset.idx) === 0){
+      this.setData({
+        showArr: this.data.detail.course
+      })
+    }
+    if (parseInt(e.currentTarget.dataset.idx) === 1){
+      this.setData({
+        showArr: this.data.detail.habit
+      })
+    }
+  },
+  getDetail(_id){
+    return wx.ajax({
+      url:'/api/Product/getCharacterDetail',
+      params:{
+        id:_id
+      }
+    })
+  },
+  toDetail(e){
+    console.log('e', e)
+    console.log('type', this.data.showTab)
+    if(this.data.showTab == 0){
+      wx.navigateTo({
+        url: '/pages/roleDetail/roleDetail?id='+e.currentTarget.dataset.id
+      })
+    }
+    if (this.data.showTab == 1) {
+      this.toaddStepOne(e)
+    }
+  },
+  toaddStepOne(e) {
+    console.log(e.currentTarget.dataset.id)
+    this.getHabitDetail(e.currentTarget.dataset.id).then(res => {
+      console.log('res:', res)
+      if (res.code === 601) {
+        // 则给出提示，并跳转至对应角色详情页
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
+        })
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '/pages/my_roles/myRoles?id=' + e.currentTarget.dataset.id,
+          })
+        }, 1000)
+
+      }
+      if (res.code === 1) {
+        wx.navigateTo({
+          url: '/pages/add_habit_step1/addHabitStep1',
+        })
+      }
+      if (res.code === 602) {
+        // 则跳转至对应我的习惯详情
+        wx.navigateTo({
+          url: '/pages/habitDetail/habitDetail?member_habit_id=' + res.data.member_habit_id,
+        })
+      }
+    })
+  },
+  getHabitDetail(_id) {
+    return new Promise((resolve, reject) => {
+      wx.ajax({
+        url: '/api/Product/getHabitAuth',
+        params: {
+          token: wx.getStorageSync('token'),
+          id: _id
+        },
+        success(res) {
+          resolve(res)
+        }
+      })
+    })
+  },
+  toBuy(){
+    wx.setStorageSync('payList', this.data.detail)
+    wx.navigateTo({
+      url: '/pages/toPay/toPay',
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('options', options)
-    options.id = parseInt(options.id)
+    const _this = this 
+    this.setData({
+      id: parseInt(options.id)
+    })
+    this.getDetail(this.data.id).then(res => {
+      _this.setData({
+        detail: res.data,
+        showArr: res.data.course
+      })
+      wx.setNavigationBarTitle({
+        title: res.data.name
+      })
+    })
   },
 
   /**

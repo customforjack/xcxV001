@@ -14,7 +14,7 @@
   </view>
   <!--量化描述 end-->
   <!--我的辅导团 start-->
-  <view class='myfdyuan'>
+  <view class='myfdyuan' wx:if="{{detail.character_id != 0}}">
     <view class='tit'>
       <image src='/img/bookIcon.png'></image>我的督导团
     </view>
@@ -43,12 +43,9 @@
     <view class='tit'>
       <image src='/img/bookIcon.png'></image> 我们在一起练</view>
     <view class='list'>
-      <showCard></showCard>
-      <showCard></showCard>
+      <showCard wx:for="{{talkList}}" item="{{item}}" wx:key="index"></showCard>
     </view>
-
   </view>
-
-
-  <toDoBtn text="去打卡"></toDoBtn>
+  <dakaSuccess wx:if="{{model}}"></dakaSuccess> 
+  <toDoBtn text="去打卡" bindtap="todk"></toDoBtn>
 </view>

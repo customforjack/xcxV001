@@ -67,7 +67,9 @@
   border-bottom:2rpx solid #DCDCDC; 
   padding-bottom: 25rpx;
 }
-
+.content:nth-last-of-type(1){
+  border-bottom: none;
+}
 .content image{
   width:140rpx;
   height:100%;
@@ -82,7 +84,6 @@
 .heart_xx{
   width: 100%;
   display: inline-block;
-  margin-top: 35rpx; 
   font-size: 20rpx;
   color: #999999;
 }
@@ -100,11 +101,19 @@ position:absolute;
 top: -10rpx;
 right: -10rpx;
 }
-.heart_xx text{display: inline-block;}
+.heart_xx text{
+  display: inline-block;
+  width: 300rpx;
+  }
 .miaoshu{
-  width: 70%;
+  width: 560rpx;
   height: 140rpx;
 } 
+.miaoshu image{
+  vertical-align: top;
+  margin-top: 5rpx;
+  display: inline-block;
+}
 .miaoshu_one{
   font-size:28rpx;
   word-break:break-all;
@@ -113,6 +122,12 @@ right: -10rpx;
   display: -webkit-box;
  -webkit-box-orient: vertical;
  -webkit-line-clamp: 2; 
+ }
+ .miaoshu .num{
+   margin-left: 10rpx;
+   width: 180rpx;
+   text-align: right;
+   display: inline-block;
  }
 .click_ta{
   border-radius: 30rpx;

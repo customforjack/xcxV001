@@ -1,32 +1,30 @@
 /* components/index/myHabitCard/myHabitCard.wxss */
 
 .myHabitCard {
-  padding: 32rpx 6rpx 0;
-  height: 207rpx;
+  padding: 32rpx 6rpx 40rpx;
   position: relative;
 }
 
 .myHabitCard .icon {
-  width: 178rpx;
-  height: 207rpx;
+  width: 140rpx;
+  height: 140rpx;
   display: inline-block;
   vertical-align: top;
 }
 
 .myHabitCard .icon image {
   width: 100%;
-  height: 178rpx;
+  height: 140rpx;
   display: block;
   border-radius: 5rpx;
-  margin-top: 6rpx;
 }
 
 .myHabitCard  .h-info {
   width: 504rpx;
   display: inline-block;
   vertical-align: top;
-  height: 178rpx;
-  padding-left: 44rpx;
+  height: 140rpx;
+  padding-left:27rpx;
   box-sizing: border-box;
 }
 
@@ -47,7 +45,7 @@
   font-size: 22rpx;
   color: rgba(153, 153, 153, 1);
   line-height: 30rpx;
-  margin-top: 69rpx;
+  margin-top:31rpx;
 }
 
 .myHabitCard .btn-group {
@@ -68,6 +66,9 @@
   padding: 0;
   color: #fff;
   font-size:26rpx;
+}
+.myHabitCard .btn-group .daka{
+  width: 100rpx;
 }
 .myHabitCard .btn-group button text{
   width: 75rpx;

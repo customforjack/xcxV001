@@ -45,7 +45,7 @@ Component({
         if (res.code === 602){
           // 则跳转至对应我的习惯详情
           wx.navigateTo({
-            url: '/pages/habitDetail/habitDetail',
+            url: '/pages/habitDetail/habitDetail?member_habit_id=' + res.data.member_habit_id,
           })
         }
       })
@@ -63,6 +63,10 @@ Component({
           }
         })
       })
+    },
+    toDetail(e) {
+      console.log(e)
+      this.toaddStepOne(e)
     }
   }
 })

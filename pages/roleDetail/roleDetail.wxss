@@ -72,8 +72,9 @@
 }
 
 .otherCard .o-info .o-icon image {
-  width: 100%;
-  height: 100%;
+  width: 140rpx;
+  height: 140rpx;
+  display: block;
 }
 
 .otherCard .o-info .o-txt {
@@ -141,6 +142,11 @@
   background: rgba(217, 217, 217, 1);
   border-radius: 50%;
   display: inline-block;
+}
+.teacherBox .t-info .t-icon image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .teacherBox .t-info .t-msg {

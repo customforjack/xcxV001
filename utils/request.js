@@ -58,6 +58,7 @@ function ajax(opt) {
     }
     return checkRole().then(res =>{
       if (res.data.code === 1){
+        wx.setStorageSync('loginData', res.data.data)
         //正常登陆 继续请求
         return newAjax(obj)
       }else {

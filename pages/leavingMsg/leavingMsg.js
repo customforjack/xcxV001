@@ -8,12 +8,10 @@ Page({
    */
   data: {
     params:{},
-    images: '',
-    video: '',
-    audio: '',
     content:'',
     imgArr: [],
     audioArr: [],
+    videoArr: [],
     audioFlag:false
   },
 
@@ -42,7 +40,7 @@ Page({
       })
       return false
     }
-    if (this.data.imgArr.length || this.data.audioArr.length || this.data.video) {
+    if (this.data.imgArr.length || this.data.audioArr.length || this.data.videoArr.length) {
       wx.ajax({
         url: '/api/Topic/topicAdd',
         params : {
@@ -51,8 +49,8 @@ Page({
           p_id: parseInt(_this.data.params.p_id),
           content: _this.data.content,
           images: _this.data.imgArr.join(','),
-          video: _this.data.audioArr[0].src,
-          audio: _this.data.audio
+          video: _this.data.videoArr.length ? _this.data.videoArr[0].src : '',
+          audio: _this.data.audioArr.length ? _this.data.audioArr[0].src : ''
         }
       }).then(res => {
         console.log(_this.data.images)
@@ -60,6 +58,9 @@ Page({
           wx.showToast({
             title: '提交成功',
             icon:'none'
+          })
+          wx.navigateTo({
+            url: '/pages/habitDetail/habitDetail',
           })
         }else{
           wx.showToast({
@@ -112,6 +113,9 @@ Page({
   },
   toUpAudio(file, duration){
     const _this = this
+    wx.showLoading({
+      title: '上传中',
+    })
           wx.uploadFile({
             url: 'https://admin.habit21.com.cn/api/Topic/upload',
             filePath:file,
@@ -134,16 +138,23 @@ Page({
                 })
               }
               // do something
+              wx.hideLoading()
             },
             fail(err){
               console.log(err)
+              wx.hideLoading()
+              wx.showToast({
+                title: err,
+              })
             }
           })
   },
   upAudio (){
-    if (this.data.audioArr.lenght>0){
-      this.showToast({
-        title:'您已经有一段录音了'
+    console.log('this.data.audioArr', this.data.audioArr)
+    if (this.data.audioArr.length>0){
+      wx.showToast({
+        title:'您已经有一段录音了',
+        icon:'none'
       })
       return false
     }
@@ -191,6 +202,9 @@ Page({
             })
             return false
           }
+          wx.showLoading({
+            title: '上传中',
+          })
           wx.uploadFile({
             url: 'https://admin.habit21.com.cn/api/Topic/upload',
             filePath:item,
@@ -210,9 +224,14 @@ Page({
                 })
               }
               // do something
+              wx.hideLoading()
             },
             fail(err){
               console.log(err)
+              wx.hideLoading()
+              wx.showToast({
+                title: err,
+              })
             }
           })
         })
@@ -232,6 +251,62 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
+  delVideo(e){
+    this.data.videoArr.splice(e.currentTarget.dataset.idx, 1)
+    this.setData({
+      videoArr: this.data.videoArr
+    })
+  },
+  upVideo(){
+    const _this = this
+    if (_this.data.videoArr.length > 0) {
+      wx.showToast({
+        title: '您已经上传过一段短视频了',
+        icon: 'none'
+      })
+      return false
+    }
+    wx.chooseVideo({
+      sourceType: ['album', 'camera'],
+      maxDuration: 60,
+      camera: 'back',
+      success(res) {
+        console.log(res)
+        wx.showLoading({
+          title: '上传中',
+        })
+        wx.uploadFile({
+          url: 'https://admin.habit21.com.cn/api/Topic/upload',
+          filePath: res.tempFilePath,
+          name: 'file',
+          formData: wx.getMd5({ token: wx.getStorageSync('token') }),
+          success(res) {
+            console.log('upload img', res.data)
+            const d = JSON.parse(res.data)
+            if (d.code === 1) {
+              _this.data.videoArr.push({ src: d.data.src})
+              _this.setData({
+                videoArr: _this.data.videoArr
+              })
+            } else {
+              wx.showToast({
+                title: d.msg,
+              })
+            }
+            // do something
+            wx.hideLoading()
+          },
+          fail(err) {
+            console.log(err)
+            wx.hideLoading()
+            wx.showToast({
+              title: err,
+            })
+          }
+        })
+      }
+    })
+  },
   onHide: function () {
 
   },

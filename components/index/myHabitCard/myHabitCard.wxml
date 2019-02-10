@@ -1,14 +1,15 @@
 <!--components/index/myHabitCard/myHabitCard.wxml-->
-<view class='myHabitCard'>
+<view class='myHabitCard' data-id="{{item.member_habit_id}}" data-ismine="{{item.is_mine}}" bindtap='toDetail'>
     <view class='icon'>
       <image src='/img/demo.jpeg'></image>
     </view>
     <view class='h-info'>
       <view class='h-name'>{{item.habit_name}}</view>
-      <view class='h-num'>TA已练习20次</view>
-      <view class='h-total'>18888人正在练习</view>
+      <view class='h-num'>您已练习{{item.sign_num}}次</view>
+      <view class='h-total'>{{item.page_view}}人正在练习</view>
     </view>
     <view class='btn-group'>
-      <button class='add' hover-class="showText"><text>打卡</text><image src='/img/add.png'></image></button>
+      <button class='add' wx:if="{{item.is_mine == 0}}" hover-class="showText" data-id="{{item.id}}" bindtap='toaddStepOne'><image src='/img/add.png'></image></button>
+      <button class='daka' data-id='{{item.member_habit_id}}' bindtap='todaka' wx:if="{{item.is_mine == 1}}">打卡</button>
     </view>
 </view>

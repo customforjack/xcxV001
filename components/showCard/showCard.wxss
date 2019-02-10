@@ -4,7 +4,38 @@
   padding:35rpx 30rpx 0;
   background: #fff;
 }
-
+.teacherBox .show  .audioPlay{
+  padding: 0 30rpx;
+  line-height:60rpx;
+border-radius:30rpx;
+font-size:22rpx;
+color:rgba(69, 180, 188, 1);
+text-align: left;
+border: none;
+width: 400rpx;
+position: relative;
+  display: inline-block;
+}
+.teacherBox .t-video video{
+  width: 100%;
+}
+.teacherBox   .audioPlay:after{
+  display: none;
+}
+.teacherBox .audioPlay image{
+  height: 40rpx;
+  width: 40rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
+.teacherBox   .audioCard .delBtn{
+  width: 45rpx;
+  height: 45rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
 .teacherBox .tit {
   font-size: 34rpx;
   color: rgba(22, 22, 22, 1);
@@ -17,7 +48,11 @@
   border-radius: 50%;
   display: inline-block;
 }
-
+.teacherBox .talk-text{
+  font-size:36rpx;
+  color:rgba(77,77,77,1);
+  line-height:50rpx;
+}
 .teacherBox .t-info .t-msg {
   padding-left: 26rpx;
   display: inline-block;
@@ -53,7 +88,9 @@
   width: 222rpx;
   height: 228rpx;
   display: inline-block;
+  margin-bottom: 12rpx;
   margin-right: 12rpx;
+  border-radius: 10rpx;
 }
 
 .teacherBox .t-js image:nth-of-type(3n+0) {
@@ -183,6 +220,11 @@
 .friendList .teacherBox .t-info .t-icon{
   width: 82rpx;
   height: 82rpx;
+}
+.friendList .teacherBox .t-info .t-icon image{
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 .friendList .teacherBox .t-js{
   line-height: 0;
