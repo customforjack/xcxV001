@@ -124,20 +124,26 @@ Page({
         });
 },
   /*跳转课堂详情页*/
-  details: function (e) {
+  classDetails: function (e) {
     console.log(e);
     var roleId = e.currentTarget.dataset.id
     var that = this;
+    var role={
+      id:roleId
+    };
     wx.navigateTo({
-      url: '../roleDetail/roleDetail?id=' + roleId
+      url: '../roleDetail/roleDetail?' + wx.getParams(role)
     })
   },
   /*跳转习惯详情页*/
   habitDetails:function(e){
         console.log(e);
-        var habitId = e.currentTarget.dataset.id;
+    var habitId = {
+      "member_habit_id": e.currentTarget.dataset.id
+      };
+    console.log(habitId);
         wx.navigateTo({
-          url: '../habitDetail/habitDetail?id='+habitId
+          url: '../habitDetail/habitDetail?' + wx.getParams(habitId)
       })
     },
     //打卡

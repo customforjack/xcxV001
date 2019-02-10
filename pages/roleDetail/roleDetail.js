@@ -21,7 +21,7 @@ Page({
   todo(){
     console.log('todo')
   },
-  //获取详情
+  //进入课堂
   details: function (roleId){
     var that = this;
      wx.ajax({
@@ -35,17 +35,17 @@ Page({
       success(res) {
 
         console.log("角色详情", res);
+        console.log("角色详情", res.data);
         if (res.code === 1) {
           // 角色获取成功
-        
           that.setData({
             detail:res.data
           })
         }
         if(res.code === 601){
           wx.showToast({
-            title: res.msg,
-            icon:'none'
+              title: res.msg,
+              icon: 'none'
           })
           setTimeout(()=>{
             wx.navigateBack()

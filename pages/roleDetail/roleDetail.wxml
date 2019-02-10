@@ -5,7 +5,13 @@
     <video id="myVideo"  src="{{detail.video_url}}"
       danmu-list="{{danmuList}}" enable-danmu danmu-btn controls="true"></video>
     <view class='text'>
+<<<<<<< HEAD
       <text>{{detail.description}}</text>
+=======
+      <text>{{classDetails.content}}</text>
+      <!-- <text>最可怕的不是变老, 而是高枯衰老的破坏力. 你害怕变老 吗? 害怕变成家里那个不受关注的一员吗? 好妻子该如 何抵抗这些, 一件…</text>
+      <text>最可怕的不是变老, 而是高枯衰老的破坏力. 你害怕变老 吗? 害怕变成家里那个不受关注的一员吗? 好妻子该如 何抵抗这些, 一件…</text> -->
+>>>>>>> 70d146b8bd4db21422e1fb50b8ce28ce5aacffd7
     </view>
   </view>
   <!--习惯 -->
@@ -13,6 +19,7 @@
 
   <view class='otherCard'>
     <view class='tit'>
+<<<<<<< HEAD
       <text class='t-name'>{{detail.character.name}}</text>
       <addBtn class="addBtn"></addBtn>
     </view>
@@ -24,6 +31,17 @@
         <text class='txt'>{{detail.character.description}}</text>
         <view class='o-b'>
           <text class='o-family'>{{detail.character.collection_view}}万人参与 / 家庭</text>
+=======
+      <text class='t-name'>{{classDetails.character.name}}</text>
+      <addBtn class="addBtn"></addBtn>
+    </view>
+    <view class='o-info clearfix'>
+      <view class='role'><image src='http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg'></image></view>
+      <view class='o-txt'>
+        <text class='txt'>{{classDetails.character.description}}</text>
+        <view class='o-b'>
+          <text class='o-family'>{{classDetails.character.price}}万人参与 / 家庭</text>
+>>>>>>> 70d146b8bd4db21422e1fb50b8ce28ce5aacffd7
           <view class='label'>
             <image mode="widthFix" src='/img/yinle-g.png'></image>Audio</view>
         </view>
@@ -38,12 +56,30 @@
         <image src='{{detail.teacher.thumbnail}}'></image>
       </view>
       <view class='t-msg'>
+<<<<<<< HEAD
         <text class='t-i-t'>{{detail.teacher.name}}</text>
         <text class='t-i-b'>{{detail.teacher.position}}</text>
       </view>
     </view>
     <view class='t-js'>
      {{detail.teacher.description}}
+=======
+        <text class='t-i-t'>{{classDetails.teacher.name}}</text>
+        <text class='t-i-b'>{{classDetails.teacher.position}}</text>
+      </view>
+    </view>
+    <view class='t-js'>
+      <!-- “职业经理人导师”—— 《TTT国际职业培训师认证教程》授权导师 《TTT国际职业培训师认证教程》授权导师 21年丰富的营销实战与管理经验，与数千家企业交流 合作，对国内外数百家著名企业深入研究，研创了 “CPM精准营销管理”模式 … -->
+      {{classDetails.teacher.description}}
+    </view>
+    <view class='talk-box'>
+      <button class='scBtn'>
+        <image mode="widthFix" src='/img/shoucang-2.png'></image> 12
+      </button>
+      <button class='talkBtn'>
+        <image mode="widthFix" src='/img/xiazai16.png'></image> 3
+      </button>
+>>>>>>> 70d146b8bd4db21422e1fb50b8ce28ce5aacffd7
     </view>
   </view>
   <view class='friendList'>

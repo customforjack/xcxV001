@@ -79,14 +79,15 @@ Page({
       url: '/api/Product/getCourseList',
       checkRole: false,
       params: {
-        token: token,
-        type:2,
-        page:1,
-        pageSize: 20
+        id:3
+        // token: token,
+        // type:2,
+        // page:1,
+        // pageSize: 20
       },
       type: 'POST',
       success(res) {
-        console.log("课程",res)
+        console.log("角色详情",res)
         // if (res.code === 1) {
         //   // 登陆成功
         //   wx.setStorageSync('token', res.data.token)
