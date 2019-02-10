@@ -29,7 +29,7 @@ Page({
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
-        id: roleId
+        id: 3
       },
       type: 'POST',
       success(res) {
@@ -52,6 +52,12 @@ Page({
           },1000)
         }
       }
+    })
+  },
+  //跳转角色详情
+  role_detail:function(){
+    wx.navigateTo({
+      url: '/pages/my_roles/myRoles'
     })
   },
   /**

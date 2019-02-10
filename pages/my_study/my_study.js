@@ -42,6 +42,7 @@ Page({
             },
             type: 'POST',
             success(res) {
+              console.log(res);
                 console.log("我的课堂",res.data.data);
                 console.log("页码",res.data.count);
                 if (res.code === 1) {

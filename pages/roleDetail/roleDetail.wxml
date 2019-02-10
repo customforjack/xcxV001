@@ -21,31 +21,19 @@
     <view class='tit'>
 
       <text class='t-name'>{{detail.character.name}}</text>
-      <addBtn class="addBtn"></addBtn>
+      <addBtn class="addBtn" bindtap='role_detail'></addBtn>
     </view>
     <view class='o-info clearfix'>
       <view class='o-icon'>
         <image src='{{detail.character.thumbnail}}'></image>
       </view>
       <view class='o-txt'>
-        <text class='txt'>{{detail.character.description}}</text>
+        <text class='txt'>{{detail.character.description}}11</text>
         <view class='o-b'>
           <text class='o-family'>{{detail.character.collection_view}}万人参与 / 家庭</text>
-
-      <text class='t-name'>{{classDetails.character.name}}</text>
-      <addBtn class="addBtn"></addBtn>
     </view>
     <view class='o-info clearfix'>
-      <view class='role'><image src='http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg'></image></view>
-      <view class='o-txt'>
-        <text class='txt'>{{classDetails.character.description}}</text>
-        <view class='o-b'>
-          <text class='o-family'>{{classDetails.character.price}}万人参与 / 家庭</text>
-
-          <view class='label'>
-            <image mode="widthFix" src='/img/yinle-g.png'></image>Audio</view>
-        </view>
-      </view>
+      
     </view>
   </view>
 

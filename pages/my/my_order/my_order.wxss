@@ -20,8 +20,35 @@
   padding: 40rpx 0 25rpx;
   margin: 0 0 0 36rpx;
   border-bottom: 1rpx solid rgba(220,220,220,1);
-  height: 178rpx;
+  height: 360rpx;
+  
+}
+.orderNum{
   display: flex;
+  font-size: 20rpx;
+  color: #999999;
+  margin-bottom: 32rpx;
+}
+.orderNum view{
+  flex: 1;
+}
+.orderConten{
+  display: flex;
+  height: 178rpx;
+}
+.orderConten checkbox {line-height: 178rpx}
+  checkbox .wx-checkbox-input{
+  line-height: 178rpx;
+  border-radius: 33rpx;
+  height: 33rpx;
+  width: 33rpx;
+  margin-top: -4rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+background-color: #2AC0CB;
+border: 1rpx solid #2AC0CB;
+border-radius: 33rpx;
+color: white
 }
 .tu{
   display: block;
@@ -30,7 +57,7 @@
   margin-right: 44rpx;
 }
 .list_r{
-  flex: 1;
+  /* flex: 1; */
 }
 .juese{
   display: flex;
@@ -56,6 +83,7 @@
   margin-top: 10rpx;
 }
 .desc{
+  width: 264rpx;
   color: #616161;
   font-size: 22rpx;
   text-overflow: ellipsis;
@@ -71,4 +99,31 @@
   color: #FF1E1D;
   font-size: 28rpx;
   margin-top: 5rpx;
+}
+.reality{
+  margin-left: 30rpx;
+}
+.state{
+ text-align: right;
+ font-size: 24rpx;
+ margin-top: 42rpx;
+}
+.state text{
+  text-align: center;
+  display: inline-block;
+  border: 1rpx solid #DEDEDE;
+  border-radius: 25rpx;
+  width: 136rpx;
+  height: 50rpx;
+  margin-right: 18rpx;
+ line-height: 50rpx;
+}
+.already{
+  color: #717171;
+  font-size: 24rpx;
+  margin-top: 55rpx;
+  margin-left: 80rpx;
+}
+.already text{
+  display: block
 }
