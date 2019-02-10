@@ -1,8 +1,9 @@
 <!--pages/my/my_order/my_order.wxml-->
 <view class='tab_box'>
   <view class="tab_item {{act==0?'act':''}}" bindtap='changeTab' data-act='0'>全部</view>
-  <view class="tab_item {{act==1?'act':''}}" bindtap='changeTab' data-act='1'>已付款</view>
-  <view class="tab_item {{act==2?'act':''}}" bindtap='changeTab' data-act='2'>未付款</view>
+  <view class="tab_item {{act==1?'act':''}}" bindtap='changeTab' data-act='1'>待付款</view>
+  <view class="tab_item {{act==2?'act':''}}" bindtap='changeTab' data-act='2'>已付款</view>
+  <view class="tab_item {{act==3?'act':''}}" bindtap='changeTab' data-act='3'>已取消</view>
 </view>
 <view class='list_item'>
   <image src='/img/demo.jpeg' class='tu'></image>

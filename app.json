@@ -42,7 +42,10 @@
     "pages/add_custom/add_custom",
     "pages/my/my_account/my_account",
     "pages/my/withdraw/withdraw",
-    "pages/my/my_order/my_order"
+    "pages/my/my_order/my_order",
+    "pages/my/my_orderDetail/my_orderDetail",
+    "pages/my/my_withdrawDetail/my_withdrawDetail"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

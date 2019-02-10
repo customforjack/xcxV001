@@ -1,17 +1,17 @@
 <!--pages/roleDetail/roleDetail.wxml-->
 <view class='roleDetail'>
   <view class='detail-box'>
-    <view class='tit'>《{{detail.name}}》</view>
+    <view class='tit'>{{detail.name}}</view>
     <video id="myVideo"  src="{{detail.video_url}}"
       danmu-list="{{danmuList}}" enable-danmu danmu-btn controls="true"></video>
     <view class='text'>
-<<<<<<< HEAD
+
       <text>{{detail.description}}</text>
-=======
+
       <text>{{classDetails.content}}</text>
       <!-- <text>最可怕的不是变老, 而是高枯衰老的破坏力. 你害怕变老 吗? 害怕变成家里那个不受关注的一员吗? 好妻子该如 何抵抗这些, 一件…</text>
       <text>最可怕的不是变老, 而是高枯衰老的破坏力. 你害怕变老 吗? 害怕变成家里那个不受关注的一员吗? 好妻子该如 何抵抗这些, 一件…</text> -->
->>>>>>> 70d146b8bd4db21422e1fb50b8ce28ce5aacffd7
+
     </view>
   </view>
   <!--习惯 -->
@@ -19,7 +19,7 @@
 
   <view class='otherCard'>
     <view class='tit'>
-<<<<<<< HEAD
+
       <text class='t-name'>{{detail.character.name}}</text>
       <addBtn class="addBtn"></addBtn>
     </view>
@@ -31,7 +31,7 @@
         <text class='txt'>{{detail.character.description}}</text>
         <view class='o-b'>
           <text class='o-family'>{{detail.character.collection_view}}万人参与 / 家庭</text>
-=======
+
       <text class='t-name'>{{classDetails.character.name}}</text>
       <addBtn class="addBtn"></addBtn>
     </view>
@@ -41,7 +41,7 @@
         <text class='txt'>{{classDetails.character.description}}</text>
         <view class='o-b'>
           <text class='o-family'>{{classDetails.character.price}}万人参与 / 家庭</text>
->>>>>>> 70d146b8bd4db21422e1fb50b8ce28ce5aacffd7
+
           <view class='label'>
             <image mode="widthFix" src='/img/yinle-g.png'></image>Audio</view>
         </view>
@@ -56,14 +56,13 @@
         <image src='{{detail.teacher.thumbnail}}'></image>
       </view>
       <view class='t-msg'>
-<<<<<<< HEAD
+
         <text class='t-i-t'>{{detail.teacher.name}}</text>
         <text class='t-i-b'>{{detail.teacher.position}}</text>
       </view>
     </view>
     <view class='t-js'>
      {{detail.teacher.description}}
-=======
         <text class='t-i-t'>{{classDetails.teacher.name}}</text>
         <text class='t-i-b'>{{classDetails.teacher.position}}</text>
       </view>
@@ -79,7 +78,7 @@
       <button class='talkBtn'>
         <image mode="widthFix" src='/img/xiazai16.png'></image> 3
       </button>
->>>>>>> 70d146b8bd4db21422e1fb50b8ce28ce5aacffd7
+
     </view>
   </view>
   <view class='friendList'>
@@ -90,4 +89,5 @@
 
 
   <toDoBtn text="我也有话说" bind:bindtap="todo"></toDoBtn>
+</view>
 </view>

@@ -119,6 +119,7 @@ Page({
       id: parseInt(options.id)
     })
     this.getDetail(this.data.id).then(res => {
+      console.log(res)
       _this.setData({
         detail: res.data,
         showArr: res.data.course
