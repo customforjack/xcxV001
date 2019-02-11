@@ -46,29 +46,28 @@ Page({
             },
             type: 'POST',
             success(res) {
-                console.log("角色",res.data);
-                console.log("角色",res);
+                console.log("已使用角色",res.data);
                 if (res.code === 1) {
-                    // 角色获取成功
-                    res.data=[
-                        {
-                            "id": 1,
-                            "name": "测试角色",
-                            "thumbnail": "../../img/advertisement.jpg",
-                            "description": "阿斯顿撒",
-                            "end_time": "2018-01-11",
-                            "time_status": 1
-                        },
-                        {
-                            "id": 2,
-                            "name": "测试角色",
-                            "thumbnail": "../../img/advertisement.jpg",
-                            "description": "阿斯顿撒",
-                            "end_time": "2018-01-11",
-                            "time_status": 1
-                        },
-                    ];
-                    var roleList= res.data;
+                    //角色获取成功
+                    // res.data=[
+                    //     {
+                    //         "id": 1,
+                    //         "name": "测试角色",
+                    //         "thumbnail": "../../img/advertisement.jpg",
+                    //         "description": "阿斯顿撒",
+                    //         "end_time": "2018-01-11",
+                    //         "time_status": 1
+                    //     },
+                    //     {
+                    //         "id": 2,
+                    //         "name": "测试角色",
+                    //         "thumbnail": "../../img/advertisement.jpg",
+                    //         "description": "阿斯顿撒",
+                    //         "end_time": "2018-01-11",
+                    //         "time_status": 1
+                    //     },
+                    // ];
+                  var roleList = res.data.data;
 
                     that.setData({
                         roleList:roleList
@@ -90,31 +89,10 @@ Page({
             },
             type: 'POST',
             success(res) {
-                console.log("未使用角色",res.data);
                 console.log("未使用角色",res);
                 if (res.code === 1) {
-                    // 角色获取成功
-                    res.data=[
-                        {
-                            "id": 1,
-                            "name": "未使用角色",
-                            "thumbnail": "../../img/advertisement.jpg",
-                            "description": "阿斯顿撒",
-                            "end_time": "2018-01-01",
-                            "number2":3,
-                            "time_status": 1
-                        },
-                        {
-                            "id": 2,
-                            "name": "未使用角色",
-                            "thumbnail": "../../img/advertisement.jpg",
-                            "description": "阿斯顿撒",
-                            "end_time": "2018-01-01",
-                            "number2":1,
-                            "time_status": 1
-                        },
-                    ];
-                    var roleList_no= res.data;
+                   
+                  var roleList_no = res.data.data;
 
                     that.setData({
                         roleList_no:roleList_no
@@ -123,7 +101,26 @@ Page({
             }
         })
     },
-
+  //点击使用
+  employ:function(e){
+    console.log(e);
+    // wx.ajax({
+    //   url: '/api/Order/useStock',
+    //   checkRole: false,
+    //   params: {
+    //     token: wx.getStorageSync('token'),
+    //     character_id: 1,
+    //     number: 1
+    //   },
+    //   type: 'POST',
+    //   success(res) {
+    //     console.log("使用成功", res);
+    //     if (res.code === 1) {
+          
+    //     }
+    //   }
+    // })
+  },
   //跳转角色详情
   details:function(e){
     console.log(e);

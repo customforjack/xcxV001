@@ -13,7 +13,7 @@
       <view class='yu_title'>我的余额</view>
       <view class='money'><text>￥</text>0.00</view>
       <view class='tixian' bindtap='tixian'>微信提现</view>
-      <view class='tixian mingxi' bindtap='my_withdrawDetail'>提现明细</view>
+      
       <view class='tixian mingxi' bindtap='my_orderDetail'>账单明细</view>
     </block>
   </view>

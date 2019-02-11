@@ -19,12 +19,7 @@ Page({
       url: '/pages/my/withdraw/withdraw',
     })
   },
-  //提现明细
-  my_withdrawDetail(){
-    wx.navigateTo({
-      url: '/pages/my/my_withdrawDetail/my_withdrawDetail',
-    })
-  },
+  
   //账单明细
   my_orderDetail(){
     wx.navigateTo({

@@ -9,7 +9,7 @@
   </view>
   
 
- <block wx:if="{{flag==0}}">
+ <block wx:if="{{flag==0 && roleList.length>0}}">
   <view class='tilte' wx:for='{{roleList}}' bindtap='details' data-id='{{role.id}}'  wx:for-item="role"  wx:key="unique">
     <view class='content'>
      <view>
@@ -22,19 +22,19 @@
       <text>
          {{role.description}}
       </text>
-      <text>
+      <text class='validity_time '>
       有效期至{{role.end_time}}
       </text>
      </view>
-      <view class='qdd'>已使用</view>
-     <view class='click_ta'>续费</view>
+      <view class='qdd'>使用中</view>
+     <view class='click_ta'>延长</view>
     </view>
   </view>
  
  </block>
 
 
- <block wx:if="{{flag==1}}">
+ <block wx:if="{{flag==1 && roleList_no.length>0}}">
   <view class='tilte' wx:for='{{roleList_no}}' wx:for-item="norole" bindtap='details' data-id='{{norole.id}}'  wx:key='key_list'>
     <view class='content'>
      <view>
@@ -47,16 +47,23 @@
       <text> 
           {{norole.description}}
       </text>
-      <text class='validity'>
-      有效期至{{norole.end_time}}
-      <text class='remnant'>剩余{{norole.number2}}件</text>
-      </text>
+      <text class='number'>剩余{{norole.number}}件</text>
      </view>
       <!-- <view class='qdd'>钱多多</view> -->
-     <view class='click_cade'>续费</view>
+     <view class='click_cade' catchtap='employ'>使用</view>
      <view class='click_cade click_cade2'>赠送</view>
     </view>
       
   </view> 
    
 </block>
+<view class='backpic'>
+<view class='check_num'>
+  <text>请选择使用数量</text>
+  <view class='count'>
+    <view class='sub'>-</view>
+    <view class='kc_num'>1</view>
+    <view class='add'>+</view>
+  </view> 
+</view>
+</view>

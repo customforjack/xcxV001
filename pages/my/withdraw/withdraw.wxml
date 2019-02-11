@@ -7,4 +7,5 @@
   </view>
   <view class='tishi'>可提现余额 0.00, <text>全部提现</text></view>
   <view class='btn' bindtap='drawing'>提现</view>
+  <view class='btn txmx' bindtap='my_withdrawDetail'>提现明细</view>
 </view>

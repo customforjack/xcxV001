@@ -5,35 +5,173 @@
   <view class="tab_item {{act==2?'act':''}}" bindtap='changeTab' data-act='2'>已付款</view>
   <view class="tab_item {{act==3?'act':''}}" bindtap='changeTab' data-act='3'>已取消</view>
 </view>
-<view class='list_item'>
+<!-- 全部 -->
+<block wx:if="{{act==0 && orderList.length>0}}">
+<view class='list_item' wx:for='{{orderList}}' bindtap='details' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
 <view class='orderNum'>
-  <view>订单编号：201900000012</view>
-  <view>下单时间：2019-01-20 21:3</view>
+  <view>订单编号：{{orderList.order_sn}}</view>
+  <view>下单时间：{{orderList.create_time}}</view>
 </view>
 <view>
-   <label class='orderConten'>
+   <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
    <checkbox  value="" checked="" />
-  <image src='/img/demo.jpeg' class='tu'></image>
+  <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
   <view class='list_r'>
     <view class='juese'>
-      <text>好妻子</text>
+      <text>{{orderList_duo.name}}</text>
       <view>角色</view>
     </view>
-    <view class='desc'>如何成为一个贤惠的好妻子121212</view>
-    <view class='num'>已购289件</view>
-    <view class='money'><text>￥99</text><text class='reality'>实付2000</text></view>
+    <view class='desc'>{{orderList_duo.description}}</view>
+    <view class='num'>已购{{orderList_duo.num}}件</view>
+    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_priceid}}</text></view>
   </view>
   <view class='already'>
-      <text>￥99</text>
-      <text>x20</text>
+      <text>￥{{orderList_duo.price}}</text>
+      <text>x{{orderList_duo.num}}</text>
   </view>
   </label>
   </view>
 
-  <view class='state'>
-    <text>取消订单</text>
+  <view class='state' wx:if='{{orderList.order_status==1}}'>
+    <text data-orderNum='{{orderList.order_sn}}' catchtap='cancel_order'>取消订单</text>
+    <text data-orderNum='{{orderList.order_sn}}' catchtap='pay'>付款</text>
+  </view>
+  <view class='state' wx:if='{{orderList.order_status==2}}'>
+    
     <text>赠送</text>
-    <text>付款</text>
+    <text>已付款</text>
+  </view>
+  <view class='state' wx:if='{{orderList.order_status==3}}'>
+    <text>已取消</text>
+  
   </view>
 </view>
+</block>
 
+<!-- 待付款 -->
+<block wx:if="{{act==1 && orderList.length>0}}">
+<view class='list_item' wx:for='{{orderList}}' bindtap='details' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
+<view class='orderNum'>
+  <view>订单编号：{{orderList.order_sn}}</view>
+  <view>下单时间：{{orderList.create_time}}</view>
+</view>
+<view>
+   <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
+   <checkbox  value="" checked="" />
+  <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
+  <view class='list_r'>
+    <view class='juese'>
+      <text>{{orderList_duo.name}}</text>
+      <view>角色</view>
+    </view>
+    <view class='desc'>{{orderList_duo.description}}</view>
+    <view class='num'>已购{{orderList_duo.num}}件</view>
+    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_priceid}}</text></view>
+  </view>
+  <view class='already'>
+      <text>￥{{orderList_duo.price}}</text>
+      <text>x{{orderList_duo.num}}</text>
+  </view>
+  </label>
+  </view>
+
+  <view class='state' wx:if='{{orderList.order_status==1}}'>
+    <text data-orderNum='{{orderList.order_sn}}' catchtap='cancel_order'>取消订单</text>
+    <text data-orderNum='{{orderList.order_sn}}' catchtap='pay'>付款</text>
+  </view>
+  <view class='state' wx:if='{{orderList.order_status==2}}'>
+    
+    <text>赠送</text>
+    <text>已付款</text>
+  </view>
+  <view class='state' wx:if='{{orderList.order_status==3}}'>
+    <text>已取消</text>
+  
+  </view>
+</view>
+</block>
+<!-- 已付款 -->
+<block wx:if="{{act==2 && orderList.length>0}}">
+<view class='list_item' wx:for='{{orderList}}' bindtap='details' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
+<view class='orderNum'>
+  <view>订单编号：{{orderList.order_sn}}</view>
+  <view>下单时间：{{orderList.create_time}}</view>
+</view>
+<view>
+   <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
+   <checkbox  value="" checked="" />
+  <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
+  <view class='list_r'>
+    <view class='juese'>
+      <text>{{orderList_duo.name}}</text>
+      <view>角色</view>
+    </view>
+    <view class='desc'>{{orderList_duo.description}}</view>
+    <view class='num'>已购{{orderList_duo.num}}件</view>
+    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_priceid}}</text></view>
+  </view>
+  <view class='already'>
+      <text>￥{{orderList_duo.price}}</text>
+      <text>x{{orderList_duo.num}}</text>
+  </view>
+  </label>
+  </view>
+
+  <view class='state' wx:if='{{orderList.order_status==1}}'>
+    <text data-orderNum='{{orderList.order_sn}}' catchtap='cancel_order'>取消订单</text>
+    <text data-orderNum='{{orderList.order_sn}}' catchtap='pay'>付款</text>
+  </view>
+  <view class='state' wx:if='{{orderList.order_status==2}}'>
+    
+    <text>赠送</text>
+    <text>已付款</text>
+  </view>
+  <view class='state' wx:if='{{orderList.order_status==3}}'>
+    <text>已取消</text>
+  
+  </view>
+</view>
+</block>
+
+<!-- 已取消 -->
+<block wx:if="{{act==3 && orderList.length>0}}">
+<view class='list_item' wx:for='{{orderList}}' bindtap='details' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
+<view class='orderNum'>
+  <view>订单编号：{{orderList.order_sn}}</view>
+  <view>下单时间：{{orderList.create_time}}</view>
+</view>
+<view>
+   <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
+   <checkbox  value="" checked="" />
+  <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
+  <view class='list_r'>
+    <view class='juese'>
+      <text>{{orderList_duo.name}}</text>
+      <view>角色</view>
+    </view>
+    <view class='desc'>{{orderList_duo.description}}</view>
+    <view class='num'>已购{{orderList_duo.num}}件</view>
+    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_priceid}}</text></view>
+  </view>
+  <view class='already'>
+      <text>￥{{orderList_duo.price}}</text>
+      <text>x{{orderList_duo.num}}</text>
+  </view>
+  </label>
+  </view>
+
+  <view class='state' wx:if='{{orderList.order_status==1}}'>
+    <text data-orderNum='{{orderList.order_sn}}' catchtap='cancel_order'>取消订单</text>
+    <text data-orderNum='{{orderList.order_sn}}' catchtap='pay'>付款</text>
+  </view>
+  <view class='state' wx:if='{{orderList.order_status==2}}'>
+    
+    <text>赠送</text>
+    <text>已付款</text>
+  </view>
+  <view class='state' wx:if='{{orderList.order_status==3}}'>
+    <text>已取消</text>
+  
+  </view>
+</view>
+</block>

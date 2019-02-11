@@ -39,6 +39,12 @@ Page({
       }
     });
   },
+  //提现明细
+  my_withdrawDetail() {
+    wx.navigateTo({
+      url: '/pages/my/my_withdrawDetail/my_withdrawDetail',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
