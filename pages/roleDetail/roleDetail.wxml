@@ -60,6 +60,5 @@
   </view>
 
 
-  <toDoBtn text="我也有话说" bind:bindtap="todo"></toDoBtn>
-</view>
+  <toDoBtn text="我也有话说" bind:bindtap="todo" ></toDoBtn>
 </view>
