@@ -1,0 +1,31 @@
+/* pages/my/my_withdrawDetail/my_withdrawDetail.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: #F7F9FB;
+}
+.date{
+  display:inline-block; 
+  line-height: 85rpx;
+  height: 85rpx;
+  padding-left: 35rpx;
+  }
+.withdrawList{
+ font-size: 26rpx;
+ color: #7C7C7C
+
+}
+.detailContent{
+  padding-left: 35rpx;
+  background: white;
+  height: 244rpx;
+  line-height: calc(244rpx / 3);
+  margin-bottom: 20rpx;
+}
+.detailContent text{
+  display: inline-block
+}
+.money{
+  color: #FF0000;
+  font-size: 38rpx;
+}

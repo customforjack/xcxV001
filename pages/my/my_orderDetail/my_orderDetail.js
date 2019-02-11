@@ -1,36 +1,13 @@
-// pages/my/my_account/my_account.js
+// pages/my/my_orderDetail/my_orderDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    flag:0
+
   },
-  changeTab(e){
-    var tab = e.currentTarget.dataset.tab
-    this.setData({
-      flag: tab
-    })
-  },
-  // 提现
-  tixian(){
-    wx.navigateTo({
-      url: '/pages/my/withdraw/withdraw',
-    })
-  },
-  //提现明细
-  my_withdrawDetail(){
-    wx.navigateTo({
-      url: '/pages/my/my_withdrawDetail/my_withdrawDetail',
-    })
-  },
-  //账单明细
-  my_orderDetail(){
-    wx.navigateTo({
-      url: '/pages/my/my_orderDetail/my_orderDetail',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

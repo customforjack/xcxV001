@@ -1,11 +1,13 @@
 <!--pages/roleDetail/roleDetail.wxml-->
 <view class='roleDetail'>
   <view class='detail-box'>
-    <view class='tit'>《{{detail.name}}》</view>
+    <view class='tit'>{{detail.name}}</view>
     <video id="myVideo"  src="{{detail.video_url}}"
       danmu-list="{{danmuList}}" enable-danmu danmu-btn controls="true"></video>
     <view class='text'>
+
       <text>{{detail.description}}</text>
+
     </view>
   </view>
   <!--习惯 -->
@@ -13,21 +15,26 @@
 
   <view class='otherCard'>
     <view class='tit'>
+
       <text class='t-name'>{{detail.character.name}}</text>
-      <addBtn class="addBtn"></addBtn>
+      <addBtn class="addBtn" bindtap='role_detail'></addBtn>
     </view>
     <view class='o-info clearfix'>
       <view class='o-icon'>
         <image src='{{detail.character.thumbnail}}'></image>
       </view>
       <view class='o-txt'>
-        <text class='txt'>{{detail.character.description}}</text>
+        <text class='txt'>{{detail.character.description}}11</text>
         <view class='o-b'>
           <text class='o-family'>{{detail.character.collection_view}}万人参与 / 家庭</text>
           <view class='label'>
             <image mode="widthFix" src='/img/yinle-g.png'></image>Audio</view>
         </view>
       </view>
+
+    </view>
+    <view class='o-info clearfix'>
+
     </view>
   </view>
 
@@ -54,4 +61,5 @@
 
 
   <toDoBtn text="我也有话说" bind:bindtap="todo"></toDoBtn>
+</view>
 </view>

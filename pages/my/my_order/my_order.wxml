@@ -1,30 +1,39 @@
 <!--pages/my/my_order/my_order.wxml-->
 <view class='tab_box'>
   <view class="tab_item {{act==0?'act':''}}" bindtap='changeTab' data-act='0'>全部</view>
-  <view class="tab_item {{act==1?'act':''}}" bindtap='changeTab' data-act='1'>已付款</view>
-  <view class="tab_item {{act==2?'act':''}}" bindtap='changeTab' data-act='2'>未付款</view>
+  <view class="tab_item {{act==1?'act':''}}" bindtap='changeTab' data-act='1'>待付款</view>
+  <view class="tab_item {{act==2?'act':''}}" bindtap='changeTab' data-act='2'>已付款</view>
+  <view class="tab_item {{act==3?'act':''}}" bindtap='changeTab' data-act='3'>已取消</view>
 </view>
 <view class='list_item'>
+<view class='orderNum'>
+  <view>订单编号：201900000012</view>
+  <view>下单时间：2019-01-20 21:3</view>
+</view>
+<view>
+   <label class='orderConten'>
+   <checkbox  value="" checked="" />
   <image src='/img/demo.jpeg' class='tu'></image>
   <view class='list_r'>
     <view class='juese'>
       <text>好妻子</text>
-      <view>精选</view>
+      <view>角色</view>
     </view>
-    <view class='desc'>如何成为一个贤惠的好妻子</view>
+    <view class='desc'>如何成为一个贤惠的好妻子121212</view>
     <view class='num'>已购289件</view>
-    <view class='money'>￥99</view>
+    <view class='money'><text>￥99</text><text class='reality'>实付2000</text></view>
+  </view>
+  <view class='already'>
+      <text>￥99</text>
+      <text>x20</text>
+  </view>
+  </label>
+  </view>
+
+  <view class='state'>
+    <text>取消订单</text>
+    <text>赠送</text>
+    <text>付款</text>
   </view>
 </view>
-<view class='list_item'>
-  <image src='/img/demo.jpeg' class='tu'></image>
-  <view class='list_r'>
-    <view class='juese'>
-      <text>好妻子</text>
-      <view>精选</view>
-    </view>
-    <view class='desc'>如何成为一个贤惠的好妻子</view>
-    <view class='num'>已购289件</view>
-    <view class='money'>￥99</view>
-  </view>
-</view>
+

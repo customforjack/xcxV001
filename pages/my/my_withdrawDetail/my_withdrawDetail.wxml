@@ -1,0 +1,23 @@
+<!--pages/my/my_withdrawDetail/my_withdrawDetail.wxml-->
+<view class='withdrawList'>
+  <text class='date'>2019年01月</text>
+  <view class='detailContent'>
+    <view>
+    <text >提现日期：2019-01-18</text>
+    </view>
+    <view>
+    <text>提现金额：</text><text class='money'>￥60</text>
+    </view>
+    <view><text>提现进度：</text><text>受理中</text></view>
+  </view>
+
+   <view class='detailContent'>
+    <view>
+    <text >提现日期：2019-01-18</text>
+    </view>
+    <view>
+    <text>提现金额：</text><text class='money'>￥60</text>
+    </view>
+    <view><text>提现进度：</text><text>受理中</text></view>
+  </view>
+</view>

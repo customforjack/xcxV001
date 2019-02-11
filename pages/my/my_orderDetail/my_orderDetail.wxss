@@ -1,0 +1,55 @@
+/* pages/my/my_orderDetail/my_orderDetail.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: #F7F9FB;
+}
+.date{
+  display:flex; 
+  line-height: 108rpx;
+  height: 108rpx;
+  padding-left: 35rpx;
+
+  }
+  .month{
+    height: 43rpx;
+    width: 107rpx;
+    background: white;
+    line-height: 43rpx;
+    text-align: center;
+    margin: auto 0;
+
+  }
+  .expend{
+     text-align: left;
+     margin-left: 40%;
+     flex: 1;
+     line-height: calc(108rpx / 2)
+  }
+  .expend :first-child{
+    color: #2AC0CB
+  }
+  .expend text{
+    display: block;
+    height: 50%;
+
+  }
+.withdrawList{
+ font-size: 26rpx;
+ color: #7C7C7C
+
+}
+.detailContent{
+  padding-left: 35rpx;
+  background: white;
+  height: 313rpx;
+  line-height: calc(313rpx / 4);
+  margin-bottom: 20rpx;
+}
+.detailContent text{
+  display: inline-block
+}
+.money{
+  color: #FF0000;
+  font-size: 38rpx;
+}
