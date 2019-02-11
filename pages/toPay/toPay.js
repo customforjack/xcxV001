@@ -26,24 +26,36 @@ Page({
       this.component.showModal(2);
     }
   },
-  addition:function(){
+  addition:function(e){
+    console.log('e +++',e)
+    const index = e.currentTarget.dataset.idx
     var that=this;
-    var all_num = that.data.num;
-    if (that.data.num >= 0){
+    var all_num = that.data.detail[index].number;
+    if (all_num >= 0){
+      that.data.detail[index].number = that.data.detail[index].number+1
       that.setData({
-        num: all_num+1
+        detail: that.data.detail
+      })
+
+      // 计算总价
+      let totalMoney = 0
+      that.data.detail.forEach(item => {
+        totalMoney += item.number * parseFloat(item.price)
+        console.log('totalMoney', totalMoney)
       })
       that.setData({
-        total:parseInt(that.data.detail.price) * parseInt(that.data.num)
+        total:totalMoney
       })
     }
   },
   toPay(){
     // 支付
     let params = []
-    params.push({
-      id: this.data.detail.id,
-      number: this.data.num
+    this.data.detail.forEach((item,i) => {
+      params.push({
+        id:item.id,
+        number:item.number
+      })
     })
     console.log('params', params)
     // 创建订单
@@ -93,31 +105,43 @@ Page({
       }
     })
   },
-  reduce: function () {
+  reduce: function (e) {
+    console.log('e ---',e)
+    const index = e.currentTarget.dataset.idx
     var that = this;
-    var all_num = that.data.num;
-    if (that.data.num > 1) {
+    var all_num = that.data.detail[index].number;
+    if (all_num >= 2) {
+      that.data.detail[index].number = that.data.detail[index].number - 1
       that.setData({
-        num: all_num -1
+        detail: that.data.detail
+      })
+
+      // 计算总价
+      let totalMoney = 0
+      that.data.detail.forEach(item => {
+        totalMoney += item.number * parseFloat(item.price)
       })
       that.setData({
-        total: parseInt(that.data.detail.price) * parseInt(that.data.num)
+        total: totalMoney
       })
     }
+
   },
-
-
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('options', wx.getStorageSync('payList'))
-    this.setData({
-      detail: wx.getStorageSync('payList')
+    const list = wx.getStorageSync('payList')
+    list.forEach(item => {
+      item.number = 1
+    })
+    let total = 0
+    list.forEach(item =>{
+      total += item.number * parseFloat(item.price)
     })
     this.setData({
-      total: parseInt(this.data.detail.price) * parseInt(this.data.num)
+      detail: list,
+      total: total
     })
   },
 

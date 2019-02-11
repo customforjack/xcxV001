@@ -1,5 +1,5 @@
 <!--components/index/myHabitCard/myHabitCard.wxml-->
-<view class='myHabitCard' data-id="{{item.member_habit_id}}" data-ismine="{{item.is_mine}}" bindtap='toDetail'>
+<view class='myHabitCard' data-id="{{item.member_habit_id}}" data-ismine="{{item.is_mine}}" catchtap='toDetail'>
     <view class='icon'>
       <image src='/img/demo.jpeg'></image>
     </view>

@@ -1,12 +1,13 @@
 <!--components/dakaSuccess/dakaSuccess.wxml-->
-<view class='daka-box'>
-<view class='dakaSuccess'>
-  <button class='i-know'>我知道了</button>
-  <button class='no-again-show'>不再显示</button>
-</view>
-<view class='close'>
-  <image src='/img/close-bg.png'></image>
-</view>
-<view class='mask'></view>
+<view class='daka-box' wx:if="{{show}}" >
+  <view class='dakaSuccess'>
+  <view class='tit'>打卡成功！</view>
+    <button class='i-know'>我知道了</button>
+    <button class='no-again-show'>不再显示</button>
+  </view>
+  <view class='close' bindtap='close'>
+    <image src='/img/close-bg.png'></image>
+  </view>
+  <view class='mask'></view>
 
 </view>

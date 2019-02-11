@@ -49,6 +49,6 @@
       <showCard wx:for="{{talkList}}" item="{{item}}" wx:key="index"></showCard>
     </view>
   </view>
-  <dakaSuccess wx:if="{{model}}"></dakaSuccess> 
+  <dakaSuccess show="{{model}}" ></dakaSuccess> 
   <toDoBtn text="去打卡" bindtap="todk"></toDoBtn>
 </view>

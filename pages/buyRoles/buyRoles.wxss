@@ -1,4 +1,16 @@
 /* pages/buyRoles/buyRoles.wxss */
+.tabs-box{
+  position: relative;
+  padding-right: 50rpx;
+}
+.tabs-box .toCheck{
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size:28rpx;
+color:rgba(42,192,203,1);
+line-height:40rpx;
+}
 .buyRoles{
   min-height: 100vh;
     background:rgba(247,249,251,1);
@@ -28,7 +40,10 @@ color: #343433;
   display: none;
 }
 .roleList{
- 
+ display: none;
+}
+.roleList.active{
+  display: block;
 }
 .roleList .r-card{
   width:206rpx;
@@ -45,6 +60,13 @@ margin-bottom: 32rpx;
 .roleList .r-card>image{
   width: 100%;
   height: 100%;
+  border-radius: 8rpx;
+}
+.roleList .r-card .check{
+  display: none;
+}
+.roleList .r-card .check.checked{
+  display: block;
 }
 .roleList .r-card  .name{
   font-size:32rpx;

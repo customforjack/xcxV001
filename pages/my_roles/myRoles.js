@@ -99,7 +99,7 @@ Page({
     })
   },
   toBuy(){
-    wx.setStorageSync('payList', this.data.detail)
+    wx.setStorageSync('payList', [this.data.detail])
     wx.navigateTo({
       url: '/pages/toPay/toPay',
     })

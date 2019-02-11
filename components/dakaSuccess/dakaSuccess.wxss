@@ -9,7 +9,10 @@
   background: rgba(0, 0, 0, 0.73);
   z-index: 100;
 }
-
+.daka-box .tit{
+  font-size: 38rpx;
+  line-height: 100rpx;
+}
 .daka-box .to-say {
   width: 489rpx;
   height: 88rpx;

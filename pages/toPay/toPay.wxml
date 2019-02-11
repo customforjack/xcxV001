@@ -4,21 +4,21 @@
 </view>
 
 <!-- 购买列表 -->
-<view class='list_item'>
-  <image src='/img/demo.jpeg' class='tu'></image>
+<view class='list_item' wx:for="{{detail}}" wx:key="index">
+  <image src='{{item.thumbnail}}' class='tu'></image>
   <view class='list_r'>
     <view class='juese'>
-      <text>{{detail.name}}</text>
+      <text>{{item.name}}</text>
       <view>精选</view>
     </view>
-    <view class='desc'>{{detail.description}}</view>
-    <view class='num'>已购{{detail.sale_num}}件</view>
+    <view class='desc'>{{item.description}}</view>
+    <view class='num'>已购{{item.sale_num}}件</view>
     <view class='money'>
-        <view class='price'>￥{{detail.price}}</view>
+        <view class='price'>￥{{item.price}}</view>
         <view class='amount'>
-        <view class='reduce' hover-class='back_color' bindtap='reduce'>-</view>
-        <view class='num_all'>{{num}}</view>
-        <view class='addition' hover-class='back_color' bindtap='addition'>+</view>
+        <view class='reduce' hover-class='back_color' data-idx="{{index}}" bindtap='reduce'>-</view>
+        <view class='num_all'>{{item.number}}</view>
+        <view class='addition' hover-class='back_color' data-idx="{{index}}" bindtap='addition'>+</view>
         </view>
     </view>
   </view>
