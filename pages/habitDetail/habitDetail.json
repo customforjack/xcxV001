@@ -4,11 +4,8 @@
     "toDoBtn": "/components/toDoBtn/toDoBtn",
     "remarkCard": "/components/habitDetail-card/habitDetail-card",
     "addBtn": "/components/addBtn/addBtn",
-<<<<<<< HEAD
-    "dakaSuccess":"/components/dakaSuccess/dakaSuccess"
-=======
+    "dakaSuccess":"/components/dakaSuccess/dakaSuccess",
     "calendar": "/components_show/calendar/calendar"
->>>>>>> 70d146b8bd4db21422e1fb50b8ce28ce5aacffd7
   },
   "navigationBarTitleText": "今日打卡"
 }

@@ -33,8 +33,6 @@ Page({
       },
       type: 'POST',
       success(res) {
-
-        console.log("角色详情", res);
         console.log("角色详情", res.data);
         if (res.code === 1) {
           // 角色获取成功
