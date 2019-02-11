@@ -70,12 +70,6 @@ Page({
           title: res.msg,
           icon: 'none'
         })
-        setTimeout(() => {
-          wx.navigateTo({
-            url: '/pages/my_roles/myRoles?id=' + e.currentTarget.dataset.id,
-          })
-        }, 1000)
-
       }
       if (res.code === 1) {
         wx.navigateTo({
