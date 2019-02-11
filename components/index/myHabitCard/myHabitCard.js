@@ -35,7 +35,6 @@ Component({
               url: '/pages/my_roles/myRoles?character_id=' + e.currentTarget.dataset.character_id,
             })
           }, 1000)
-
         }
         if (res.code === 1) {
           wx.navigateTo({
@@ -86,7 +85,11 @@ Component({
         })
         if(res.code === 1){
           console.log('child ok...')
-          _this.triggerEvent('dakaSuccess')
+          try{
+            _this.triggerEvent('myEvent', { val: 'ok' })
+          }catch(err){
+            console.error(err)
+          }
         }
       })
     },

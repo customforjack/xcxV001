@@ -45,8 +45,8 @@ Page({
       url: '/pages/add_habit/addHabit',
     })
   },
-  ondakaSuccess(){
-    console.log('ok')
+  ondakaSuccess(e){
+    console.log('success 打卡完成',e.detail)
     const _this = this
     wx.ajax({
       url: '/api/Home/home',
@@ -54,6 +54,7 @@ Page({
         token: wx.getStorageSync('token')
       },
       success(res) {
+        console.log('首页重加载',res)
         if (res.code === 1) {
           _this.setData({
             detail: res.data

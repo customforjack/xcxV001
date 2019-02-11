@@ -7,6 +7,7 @@ Page({
   data: {
     params :{},
     timeArr:[],
+    time:'',
     name: '',
     myPromise1: '',
     myPromise2: '',
@@ -14,6 +15,38 @@ Page({
     otherPromise2: '',
     date:'',
     date1:'',
+    range:[
+      [
+        { name: '00', value: 0 },
+        { name: '01', value: 1 },
+        { name: '02', value: 2 },
+        { name: '03', value: 3 },
+        { name: '04', value: 4 },
+        { name: '05', value: 5 },
+        { name: '06', value: 6 },
+        { name: '07', value: 7 },
+        { name: '08', value: 8 },
+        { name: '09', value: 9 },
+        { name: '10', value: 10 },
+        { name: '11', value: 11 },
+        { name: '12', value:12 },
+        { name: '13', value: 13 },
+        { name: '14', value: 14 },
+        { name: '15', value: 15 },
+        { name: '16', value: 16 },
+        { name: '17', value: 17 },
+        { name: '18', value: 18 },
+        { name: '19', value: 19 },
+        { name: '20', value: 20 },
+        { name: '21', value: 21 },
+        { name: '22', value: 22 },
+        { name: '23', value: 23 }
+        ],
+      [
+        {name:'00',value:0},
+        {name:'30',value:30}
+      ]
+    ],
     weekArr: [
      {
        name:'周一',
@@ -120,9 +153,14 @@ Page({
     })
   },
   bindTimeChange (e) {
+    console.log('time',e)
     // 选择时间
     if (this.data.timeArr.length < 4) {
-      this.data.timeArr.push(e.detail.value)
+      this.data.timeArr.push({
+        name:this.data.range[0][e.detail.value[0]].name + ':' + this.data.range[1][e.detail.value[1]].name,
+        hour:this.data.range[0][e.detail.value[0]].value,
+        minite:this.data.range[1][e.detail.value[1]].value
+        })
       this.setData({
         timeArr: this.data.timeArr
       })
@@ -203,7 +241,12 @@ Page({
       } 
     }
     //提醒时间处理
-    let time = this.data.timeArr.join(',')
+    let timeArr = []
+   this.data.timeArr.join(',')
+    this.data.timeArr.forEach(item => {
+      timeArr.push(item.name)
+    })
+    let time = timeArr.join(',')
     let weekList = []
     this.data.weekArr.forEach(item =>{
       if(item.select){

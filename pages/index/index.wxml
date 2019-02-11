@@ -22,7 +22,7 @@
   </scroll-view>
   <view class='list' wx:for="{{detail.today_habit}}" wx:key="index">
     <view class='card' wx:if="{{idx < showLen}}" wx:key="idx" wx:for="{{item.habit}}" wx:for-item="child" wx:for-index="idx">
-      <myHabitCard bind:dakaSuccess="ondakaSuccess" item="{{child}}"></myHabitCard>
+      <myHabitCard bind:myEvent="ondakaSuccess" item="{{child}}"></myHabitCard>
     </view>
     <button class='moreBtn' bindtap='moeRole'>MORE ></button>
   </view>

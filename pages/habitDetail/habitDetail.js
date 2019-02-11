@@ -19,8 +19,11 @@ Page({
     this.setData({
       options: options
     })
-    this.getDetail(options).then(()=>{
-      this.getTopicList()
+    this.getDetail(options).then(res => {
+      this.getTopicList().then(res => {
+        this.getCalendar()
+
+      })
     })
   },
   addLeavingMsg(){
@@ -54,7 +57,7 @@ Page({
   },
   getTopicList(){
     const _this = this
-    wx.ajax({
+    return wx.ajax({
       url:'/api/Topic/getTopicList',
       params:{
         type: _this.data.detail.type,
@@ -74,6 +77,18 @@ Page({
    */
   onReady: function () {
 
+  },
+  getCalendar() {
+    // 获取日历信息
+    return wx.ajax({
+      url: '/api/Product/getSignDate',
+      params: {
+        member_habit_id: this.data.detail.member_habit_id,
+        year: 2019,
+        month: 2,
+        token: wx.getStorageSync('token')
+      }
+    })
   },
   todk(){
     console.log('daka')
@@ -103,7 +118,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**

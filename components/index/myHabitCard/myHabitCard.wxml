@@ -10,6 +10,6 @@
     </view>
     <view class='btn-group'>
       <button class='add' wx:if="{{item.is_mine == 0}}" hover-class="showText" data-id="{{item.id}}" bindtap='toaddStepOne'><image src='/img/add.png'></image></button>
-      <button class='daka' data-id='{{item.member_habit_id}}' bindtap='todaka' wx:if="{{item.is_mine == 1}}">打卡</button>
+      <button class='daka' data-id='{{item.member_habit_id}}' catchtap='todaka' wx:if="{{item.is_mine == 1}}">打卡</button>
     </view>
 </view>

@@ -13,6 +13,12 @@
   font-size: 38rpx;
   line-height: 100rpx;
 }
+.daka-box .tit image{
+  width: 100%;
+  display: block;
+  height: 350rpx;
+  margin: 0 auto;
+}
 .daka-box .to-say {
   width: 489rpx;
   height: 88rpx;
@@ -26,7 +32,7 @@
   padding: 0 50rpx;
   position: fixed;
   width: 589rpx;
-  height: 640rpx;
+  height: 540rpx;
   background: rgba(255, 255, 255, 1);
   border-radius: 12rpx;
   left: 81rpx;
