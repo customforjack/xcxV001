@@ -63,7 +63,7 @@ page{
   }
   .content_list{
      margin-top:9rpx; 
-    display: flex;
+      display: flex;
     justify-content: space-between;
      flex-wrap: wrap;
      font-size: 20rpx;

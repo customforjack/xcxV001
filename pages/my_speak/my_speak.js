@@ -43,7 +43,10 @@ Page({
       success(res) {
         console.log("发言列表", res);
         if (res.code == 1) {
-        
+          var  speak=res.data.data;
+          that.setData({
+            speak: speak
+          })
          
         }
         

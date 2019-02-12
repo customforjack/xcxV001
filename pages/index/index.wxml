@@ -14,14 +14,14 @@
   </view>
   <scroll-view scroll-x="true" class="vip_xl">
     <view class='role_list'>
-      <view class='role' data-idx="{{index}}" bindtap='checkRole' wx:for="{{detail.today_habit}}" wx:key="index">
+      <view class='role' data-idx="{{index}}" bindtap='checkRole' wx:for="{{detail.today_habit}}"  wx:key="index">
         <image src='{{item.thumbnail}}'></image>
         <view class='name'>{{item.name}}</view>
       </view>
     </view>
   </scroll-view>
-  <view class='list' wx:for="{{detail.today_habit}}" wx:key="index">
-    <view class='card' wx:if="{{idx < showLen}}" wx:key="idx" wx:for="{{item.habit}}" wx:for-item="child" wx:for-index="idx">
+  <view class='list'   wx:for="{{detail.today_habit}}" wx:for-index="bindex" wx:if="{{bindex==show_hide}}"  wx:key="index">
+    <view class='card' wx:if="{{idx < showLen}}"  wx:key="idx" wx:for="{{item.habit}}" wx:for-item="child" wx:for-index="idx">
       <myHabitCard bind:myEvent="ondakaSuccess" item="{{child}}"></myHabitCard>
     </view>
     <button class='moreBtn' bindtap='moeRole'>MORE ></button>

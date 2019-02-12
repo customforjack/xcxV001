@@ -9,11 +9,12 @@ Page({
     tabx: 0
   },
   changeTab(e) {
+    var that=this;
     var tab = e.currentTarget.dataset.tab
     this.setData({
       flag: tab
     })
-
+    that.rankbang(tab)
   },
 
 
@@ -25,7 +26,7 @@ Page({
     that.rankbang(1);
   },
   rankbang: function (type){
-
+      var that=this;
     wx.ajax({
       url: '/api/Member/myRanking',
       checkRole: false,
@@ -37,8 +38,12 @@ Page({
       },
       type: 'POST',
       success(res) {
+        console.log("排行榜",res);
         if (res.code === 1) {
-      
+          var rankingList=res.data.data;
+          that.setData({
+            rankingList: rankingList
+          })
         }
       }
     })

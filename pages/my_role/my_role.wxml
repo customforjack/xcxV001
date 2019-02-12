@@ -1,15 +1,15 @@
 <!--pages/my_role/my_role.wxml-->
 <view class='circle_top'>
     <view class='tab_item' bindtap='changeTab' data-tab='0'>
-      <text class="text {{flag==0?'act':''}}">已使用</text>
+      <text class="text {{flag==0?'act':''}}">未使用</text>
     </view>
     <view class='tab_item' bindtap='changeTab' data-tab='1'>
-      <text class="text {{flag==1?'act':''}}">未使用</text>
+      <text class="text {{flag==1?'act':''}}">已使用</text>
     </view>
   </view>
   
 
- <block wx:if="{{flag==0 && roleList.length>0}}">
+ <block wx:if="{{flag==1 && roleList.length>0}}">
   <view class='tilte' wx:for='{{roleList}}' bindtap='details' data-id='{{role.id}}'  wx:for-item="role"  wx:key="unique">
     <view class='content'>
      <view>
@@ -34,7 +34,7 @@
  </block>
 
 
- <block wx:if="{{flag==1 && roleList_no.length>0}}">
+ <block wx:if="{{flag==0 && roleList_no.length>0}}">
   <view class='tilte' wx:for='{{roleList_no}}' wx:for-item="norole" bindtap='details' data-id='{{norole.id}}'  wx:key='key_list'>
     <view class='content'>
      <view>

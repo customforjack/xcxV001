@@ -47,28 +47,28 @@ Page({
                 console.log("页码",res.data.count);
                 if (res.code === 1) {
                     // 角色获取成功
-                    res.data.data=[
-                        {
-                            "id": 1,
-                            "name": "测试课程",
-                            "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                            "description": "课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介",
-                            "video_url": "http://47.99.45.172/mmv/7.mp4",
-                            "collection_view": "100",
-                            "page_view": 110,
-                            "share_view": 110
-                        },
-                        {
-                            "id": 1,
-                            "name": "测试课程",
-                            "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                            "description": "课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介",
-                            "video_url": "http://47.99.45.172/mmv/7.mp4",
-                            "collection_view": "100",
-                            "page_view": 10,
-                            "share_view": 10
-                        },
-                    ];
+                    // res.data.data=[
+                    //     {
+                    //         "id": 1,
+                    //         "name": "测试课程",
+                    //         "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
+                    //         "description": "课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介",
+                    //         "video_url": "http://47.99.45.172/mmv/7.mp4",
+                    //         "collection_view": "100",
+                    //         "page_view": 110,
+                    //         "share_view": 110
+                    //     },
+                    //     {
+                    //         "id": 1,
+                    //         "name": "测试课程",
+                    //         "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
+                    //         "description": "课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介课程简介",
+                    //         "video_url": "http://47.99.45.172/mmv/7.mp4",
+                    //         "collection_view": "100",
+                    //         "page_view": 10,
+                    //         "share_view": 10
+                    //     },
+                    // ];
                     var studyList= res.data.data;
                     console.log(studyList);
                     that.setData({
@@ -95,25 +95,26 @@ Page({
             success(res) {
                 console.log("我的习惯",res.data.data);
                 console.log("我的习惯",res.data.count);
+              console.log("我的习惯", res);
                 if (res.code === 1) {
-                    res.data.data=[
-                        {
-                            "id": 1,
-                            "habit_name": "我的习惯",
-                            "sign_num": "1222",
-                            "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                        "description": "最可怕的不是变老, 好妻子该 如何抵抗这,最可怕的不是变老, 好妻子该 如何抵抗这",
-                            "is_sign": 1
-                        },
-                      {
-                        "id": 1,
-                        "habit_name": "我的习惯",
-                        "sign_num": "1222",
-                        "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                        "description": "最可怕的不是变老, 好妻子该 如何抵抗这,最可怕的不是变老, 好妻子该 如何抵抗这",
-                        "is_sign": 2
-                      },
-                    ];
+                    // res.data.data=[
+                    //     {
+                    //         "id": 1,
+                    //         "habit_name": "我的习惯",
+                    //         "sign_num": "1222",
+                    //         "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
+                    //     "description": "最可怕的不是变老, 好妻子该 如何抵抗这,最可怕的不是变老, 好妻子该 如何抵抗这",
+                    //         "is_sign": 1
+                    //     },
+                    //   {
+                    //     "id": 1,
+                    //     "habit_name": "我的习惯",
+                    //     "sign_num": "1222",
+                    //     "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
+                    //     "description": "最可怕的不是变老, 好妻子该 如何抵抗这,最可怕的不是变老, 好妻子该 如何抵抗这",
+                    //     "is_sign": 2
+                    //   },
+                    // ];
                     var habitList= res.data.data;
                     that.setData({
                         habitList:habitList,

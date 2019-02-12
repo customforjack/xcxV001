@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    show_hide:0,
     // 组件所需的参数
     nvabarData: {
       showCapsule: 1, //是否显示左上角图标
@@ -124,8 +125,10 @@ Page({
     console.log(e.currentTarget.dataset.idx)
     this.setData({
       roleChecked: e.currentTarget.dataset.idx,
-      showLen:3
+      showLen:3,
+      show_hide: e.currentTarget.dataset.idx
     })
+    
   },
   changeTab(e){
     var act = e.currentTarget.dataset.act

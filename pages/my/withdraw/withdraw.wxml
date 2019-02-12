@@ -3,7 +3,7 @@
   <view class='title'>提现金额</view>
   <view class='qian'>
     <text>￥</text>
-    <input bindinput ="numInput" value='{{cash}}'></input>
+    <input bindinput ="numInput"  type="number" value='{{cash}}'></input>
   </view>
   <view class='tishi'>可提现余额 {{available_balance-freeze_balance}}<text bindtap='all_money'>全部提现</text></view>
   <!-- <view class='freeze'>冻结余额 {{freeze_balance}}</view> -->

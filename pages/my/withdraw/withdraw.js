@@ -29,10 +29,15 @@ Page({
   },
   numInput:function(e){
     
-    var input_money = e.detail.value;
+    var input_money = e.detail.value.replace(/[^\d]/g, '');
+  
     if (input_money > this.data.available_balance - this.data.freeze_balance){
       this.setData({
         cash: this.data.available_balance - this.data.freeze_balance
+      })
+    } else if (input_money<=0){
+      this.setData({
+        cash: 1
       })
     }else{
       this.setData({

@@ -14,10 +14,10 @@ Page({
     this.setData({
       flag: tab
     });
-      if(tab==1){
+      if(tab==0){
           that.myCharacterUnused();
           console.log(that.data)
-      }else if(tab==0){
+      }else if(tab==1){
           that.myCharacterUsed();
       }
   },
@@ -29,7 +29,7 @@ Page({
    */
   onLoad: function (options) {
       var that= this;
-      that.myCharacterUsed();
+      that.myCharacterUnused();
 
   },
   //获取已使用角色列表
@@ -87,7 +87,7 @@ Page({
   employ:function(e){
     var that=this;
     var character_id = e.currentTarget.dataset.id;
-    console.log(e.currentTarget.dataset.id);
+    console.log(e.currentTarget);
     wx.ajax({
       url: '/api/Order/useStock',
       checkRole: false,
@@ -100,7 +100,7 @@ Page({
       success(res) {
         if (res.code === 1) {
           console.log("使用成功", res);
-          if (that.data.flag==0){
+          if (that.data.flag==1){
             if (getCurrentPages().length != 0) {
               //刷新当前页面的数据
               getCurrentPages()[getCurrentPages().length - 1].onLoad();
@@ -118,10 +118,10 @@ Page({
               success: 
                 setTimeout(
                   function () {
-                  that.setData({
-                    flag:0
-                  })
-                that.myCharacterUnused();
+                  wx.navigateTo({
+                    url: '../my_roles/myRoles?id=' + character_id
+                    })
+        
                   }, 1000)
             })
             
@@ -131,13 +131,13 @@ Page({
         } else if (res.code === 400){
           //无库存跳转购买页面
         }
+      },
+      fail(res){
+          console.log(res)
       }
     })
   },
-  //点击延长
-  longTime:function(e){
 
-  },
   //跳转角色详情
   details:function(e){
     console.log(e);

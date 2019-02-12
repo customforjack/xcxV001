@@ -23,17 +23,17 @@
 
 
 
-  <view class='tilte'>
+  <view class='tilte' wx:for='{{speak}}'  data-id='{{speak.id}}'  wx:for-item="speak"  wx:key="unique">
     <view class='content'>
     <view class='date'>
-    <text>28</text><text>8月</text>
+    <text>{{speak.day}}</text><text>{{speak.month}}月</text>
    
     </view>
      <view>
-      <image src='../../img/advertisement.jpg' style='width:140rpx;height:140rpx; vertical-align: middle;'></image>
+      <image src='{{speak.images[0]}}' style='width:140rpx;height:140rpx; vertical-align: middle;'></image>
       </view>
      <view class='miaoshu'>
-      <text>最可怕的不是变老, 好妻子该如 何抵抗这 最可怕的不是变老, 好妻子该如 何抵抗这</text>
+      <text>{{speak.content}}</text>
       <view class='fabulous'>
       <image src='../../img/fabulous.png'></image><text>2020</text>
       </view>
