@@ -154,8 +154,8 @@
 .qdd{
   margin-left:-90rpx;
   font-size: 18rpx;
-  color: #1FAAB4;
-  background: #E7F6F7;
+  color: #FF6325;
+  background: #FFF0A9;
   height: 30rpx;
   width: 70rpx;
   text-align: center;

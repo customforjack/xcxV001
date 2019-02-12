@@ -19,6 +19,9 @@ Page({
     that.details(roleId)
   },
   todo(){
+    wx.navigateTo({
+      url: '/pages/leavingMsg/leavingMsg',
+    })
     console.log('todo')
   },
   //进入课堂

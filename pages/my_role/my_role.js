@@ -48,25 +48,7 @@ Page({
             success(res) {
                 console.log("已使用角色",res.data);
                 if (res.code === 1) {
-                    //角色获取成功
-                    // res.data=[
-                    //     {
-                    //         "id": 1,
-                    //         "name": "测试角色",
-                    //         "thumbnail": "../../img/advertisement.jpg",
-                    //         "description": "阿斯顿撒",
-                    //         "end_time": "2018-01-11",
-                    //         "time_status": 1
-                    //     },
-                    //     {
-                    //         "id": 2,
-                    //         "name": "测试角色",
-                    //         "thumbnail": "../../img/advertisement.jpg",
-                    //         "description": "阿斯顿撒",
-                    //         "end_time": "2018-01-11",
-                    //         "time_status": 1
-                    //     },
-                    // ];
+                    
                   var roleList = res.data.data;
 
                     that.setData({
@@ -101,25 +83,31 @@ Page({
             }
         })
     },
-  //点击使用
+  //点击使用/延长
   employ:function(e){
-    console.log(e);
-    // wx.ajax({
-    //   url: '/api/Order/useStock',
-    //   checkRole: false,
-    //   params: {
-    //     token: wx.getStorageSync('token'),
-    //     character_id: 1,
-    //     number: 1
-    //   },
-    //   type: 'POST',
-    //   success(res) {
-    //     console.log("使用成功", res);
-    //     if (res.code === 1) {
-          
-    //     }
-    //   }
-    // })
+    var character_id = e.currentTarget.dataset.id;
+    console.log(e.currentTarget.dataset.id);
+    wx.ajax({
+      url: '/api/Order/useStock',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        character_id: character_id,
+        number: 1
+      },
+      type: 'POST',
+      success(res) {
+        if (res.code === 1) {
+          console.log("使用成功", res);
+        } else if (res.code === 400){
+          //无库存跳转购买页面
+        }
+      }
+    })
+  },
+  //点击延长
+  longTime:function(e){
+
   },
   //跳转角色详情
   details:function(e){

@@ -7,29 +7,18 @@
         <text>收入:￥0.00</text>
     </view>
   </view>
-  <view class='detailContent'>
+  <view class='detailContent' wx:for='{{orderDetail}}' bindtap='details' data-id='{{orderDetail.id}}'  wx:for-item="orderDetail"  wx:key="unique">
     <view>
-    <text >收支来源:微信支付</text>
+    <text >收支来源:{{orderDetail.remark}}</text>
     </view>
     <view>
-    <text >账单分类:好父亲角色</text>
+    <text >账单分类:{{orderDetail.origin}}</text>
     </view>
     <view>
-    <text>收入金额：</text><text class='money'>￥60</text>
+    <text wx:if="{{orderDetail.type==1}}">收入金额：</text>
+    <text wx:if="{{orderDetail.type==2}}">支出金额：</text><text class='money'>￥{{orderDetail.price}}</text>
     </view>
-    <view><text>创建时间:2019-01-18</text></view>
+    <view><text>创建时间:{{orderDetail.create_time}}</text></view>
   </view>
 
-    <view class='detailContent'>
-    <view>
-    <text >收支来源:微信支付</text>
-    </view>
-    <view>
-    <text >账单分类:好父亲角色</text>
-    </view>
-    <view>
-    <text>收入金额：</text><text class='money'>￥60</text>
-    </view>
-    <view><text>创建时间:2019-01-18</text></view>
-  </view>
 </view>

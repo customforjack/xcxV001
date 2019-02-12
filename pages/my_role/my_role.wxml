@@ -27,7 +27,7 @@
       </text>
      </view>
       <view class='qdd'>使用中</view>
-     <view class='click_ta'>延长</view>
+     <view class='click_ta' data-id='{{role.id}}' catchtap='employ'>延长</view>
     </view>
   </view>
  
@@ -39,7 +39,7 @@
     <view class='content'>
      <view>
       <image src='{{norole.thumbnail}}'></image>
-      </view>
+     </view>
      <view class='miaoshu'>
       <text> 
          {{norole.name}}
@@ -50,14 +50,14 @@
       <text class='number'>剩余{{norole.number}}件</text>
      </view>
       <!-- <view class='qdd'>钱多多</view> -->
-     <view class='click_cade' catchtap='employ'>使用</view>
+     <view class='click_cade' data-id='{{norole.id}}'  catchtap='employ'>使用</view>
      <view class='click_cade click_cade2'>赠送</view>
     </view>
       
   </view> 
    
 </block>
-<view class='backpic'>
+<!-- <view class='backpic'>
 <view class='check_num'>
   <text>请选择使用数量</text>
   <view class='count'>
@@ -66,4 +66,4 @@
     <view class='add'>+</view>
   </view> 
 </view>
-</view>
+</view> -->

@@ -52,7 +52,7 @@ Page({
   },
   goGroup() {
     wx.navigateTo({
-      url: '/pages/group/group',
+      url: '/pages/my_speak/my_speak',
     })
   },
   goActivity() {
@@ -75,37 +75,6 @@ Page({
     })
     var token = wx.getStorageSync('token')
     console.log(token);
-    wx.ajax({
-      url: '/api/Product/getCourseList',
-      checkRole: false,
-      params: {
-        id:3
-        // token: token,
-        // type:2,
-        // page:1,
-        // pageSize: 20
-      },
-      type: 'POST',
-      success(res) {
-        console.log("角色详情",res)
-        // if (res.code === 1) {
-        //   // 登陆成功
-        //   wx.setStorageSync('token', res.data.token)
-        //   wx.switchTab({
-        //     url: '/pages/index/index',
-        //   })
-        // } else if (res.code === 201) {
-        //   // 未注册 跳转到注册页
-        //   wx.setStorageSync('open_id', res.data.open_id)
-        //   wx.setStorageSync('session_key', res.data.session_key)
-        //   wx.navigateTo({
-        //     url: '/pages/login/login',
-        //   })
-        // }
-      }
-    })
-
-    
   },
 
   /**

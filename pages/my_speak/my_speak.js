@@ -12,43 +12,45 @@ Page({
     var tab = e.currentTarget.dataset.tab
     this.setData({
       flag: tab
-    })
-  },
-  changeTabx(e) {
-    var tabx = e.currentTarget.dataset.tabx
-    this.setData({
-      tabx: tabx
-    })
-  },
-  showInput: function () {
-    this.setData({
-      inputShowed: true
     });
+    var that = this;
+    that.speak();
   },
-  hideInput: function () {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
-    });
-  },
-  clearInput: function () {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
-  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.speak();
   },
+  speak: function () {
+    var that = this;
+    var type = that.data.flag;
+    console.log(type);
+    /*我的发言*/
+    wx.ajax({
+      url: '/api/Topic/getMyTopicList',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        type: type,
+        page:1,
+        pageSize:20
+      },
+      type: 'POST',
+      success(res) {
+        console.log("发言列表", res);
+        if (res.code == 1) {
+        
+         
+        }
+        
 
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

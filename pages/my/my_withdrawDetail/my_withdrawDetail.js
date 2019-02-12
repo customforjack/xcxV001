@@ -12,9 +12,73 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.withthdraw();
   },
+  //提现列表
+  withthdraw: function () {
+    var that = this;
+    wx.ajax({
+      url: '/api/Member/withdrawList',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        page: 1,
+        pageSize: 20
+      },
+      type: 'POST',
+      success(res) {
+        console.log("提现明细", res.data);
+        if (res.code === 1) {
 
+          var withthdrawDetail = res.data.data;
+
+          that.setData({
+            withthdrawDetail: withthdrawDetail
+          })
+        }
+      }
+    });
+  },
+  //撤回提现
+  back:function(e){
+    console.log(e);
+    var witdrawId = e.currentTarget.dataset.id;
+    wx.showModal({
+      title: '提示',
+      content: '这是一个模态弹窗',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          wx.ajax({
+            url: '/api/Member/undoDeposit',
+            checkRole: false,
+            params: {
+              token: wx.getStorageSync('token'),
+              id: witdrawId
+            },
+            type: 'POST',
+            success(res) {
+              console.log("撤回提现", res);
+              if (res.code === 1) {
+                console.log("撤回提现成功", res);
+                wx.showToast({
+                  title: '成功',
+                  icon: 'success',
+                  duration: 1000
+                })
+              }
+            }
+          });
+
+
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -12,9 +12,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that= this;
+   that.orderDetail();
   },
+  orderDetail:function(){
+    var that = this;
+    wx.ajax({
+      url: '/api/Member/myPayments',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        page: 1,
+        pageSize: 20
+      },
+      type: 'POST',
+      success(res) {
+        console.log("账单明细", res.data);
+        if (res.code === 1) {
 
+          var orderDetail = res.data.data;
+
+          that.setData({
+            orderDetail: orderDetail
+          })
+        }
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

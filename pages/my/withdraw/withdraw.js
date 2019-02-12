@@ -34,6 +34,16 @@ Page({
       },
       type: 'POST',
       success(res) {
+        if(res.code==1){
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 1000
+          })
+          wx.navigateTo({
+            url: '/pages/my/my_withdrawDetail/my_withdrawDetail',
+          })
+        }
         console.log("提现", res);
       
       }
