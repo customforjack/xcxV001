@@ -26,8 +26,8 @@
      <view class='miaoshu'>
       <text class='miaoshu_one'>{{habitList.description}}</text>
       <view class='heart_xx'>
-      <text>{{habitList.page_view}}万人参与/{{habitList.share_view}}人转发</text>
-      <text>audio</text>
+      <text>{{habitList.page_view}}人参与/{{habitList.share_view}}人转发</text>
+      <!-- <text>audio</text> -->
        <!-- <image src='../../img/shoucang-2.png'></image> -->
       </view>
      </view>
@@ -49,8 +49,8 @@
      <view class='miaoshu'>
       <text class='miaoshu_one'>{{habitList.description}}</text>
       <view class='heart_xx'>
-      <text>{{habitList.page_view}}万人参与/{{habitList.share_view}}人转发</text>
-      <text>audio</text>
+      <text>{{habitList.page_view}}人参与/{{habitList.share_view}}人转发</text>
+      <!-- <text>audio</text> -->
        <!-- <image src='../../img/shoucang-2.png'></image> -->
       </view>
      </view>
