@@ -29,8 +29,7 @@ Page({
   },
   numInput:function(e){
     
-    var input_money = e.detail.value.replace(/[^\d]/g, '');
-  
+    var input_money = e.detail.value.replace(/^((\d*[1-9])|(0?\.\d{3}))$/g, '')
     if (input_money > this.data.available_balance - this.data.freeze_balance){
       this.setData({
         cash: this.data.available_balance - this.data.freeze_balance

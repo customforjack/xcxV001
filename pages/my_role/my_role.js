@@ -129,7 +129,10 @@ Page({
         
           
         } else if (res.code === 400){
-          //无库存跳转购买页面
+          wx.showToast({
+            title: '库存不足',
+            icon: 'nonef',
+            duration: 1000})
         }
       },
       fail(res){

@@ -13,9 +13,10 @@
   </view>
 
 <block wx:if='{{flag==1}}'>
-  <view class='recommend' wx:for='{{rankingList}}'  data-id='{{rankingList.m_id}}'  wx:for-item="rankingList"  wx:key="unique">
+  <view class='recommend' wx:for='{{rankingList}}' wx:for-index='rankNum' data-id='{{rankingList.m_id}}'  wx:for-item="rankingList"  wx:key="unique">
   <view class='recommend_list rank'>
-    <image src='../../img/paixu.png'></image>
+{{rankNum + 1}}
+    <!-- <image src='../../img/paixu.png'></image> -->
     </view>
     <view class='recommend_list pix'>
     <image src='{{rankingList.member_img}}'></image>
@@ -32,15 +33,16 @@
 </block>
 
 <block wx:if='{{flag==2}}'>
-  <view class='recommend' wx:for='{{rankingList}}'  data-id='{{rankingList.m_id}}'  wx:for-item="rankingList"  wx:key="unique">
+  <view class='recommend' wx:for='{{rankingList}}'  wx:for-index='rankNum'  data-id='{{rankingList.m_id}}'  wx:for-item="rankingList"  wx:key="unique">
   <view class='recommend_list rank'>
-    <image src='../../img/paixu.png'></image>
+  {{rankNum + 1}}
+    <!-- <image src='../../img/paixu.png'></image> -->
     </view>
     <view class='recommend_list pix'>
     <image src='{{rankingList.member_img}}'></image>
     </view>
     <view class='recommend_list content'>
-      <view>{{rankingList.member_name}}hello</view>
+      <view>{{rankingList.member_name}}</view>
       <view class='content_list'>
         <text>打卡{{rankingList.num}}次</text>
         <!-- <text>30次习惯数</text>
@@ -51,15 +53,16 @@
 </block>
 
 <block wx:if='{{flag==3}}'>
-  <view class='recommend' wx:for='{{rankingList}}'  data-id='{{rankingList.m_id}}'  wx:for-item="rankingList"  wx:key="unique">
+  <view class='recommend' wx:for='{{rankingList}}'  wx:for-index='rankNum'  data-id='{{rankingList.m_id}}'  wx:for-item="rankingList"  wx:key="unique">
   <view class='recommend_list rank'>
-    <image src='../../img/paixu.png'></image>
+  {{rankNum + 1}}
+    <!-- <image src='../../img/paixu.png'></image> -->
     </view>
     <view class='recommend_list pix'>
     <image src='{{rankingList.member_img}}'></image>
     </view>
     <view class='recommend_list content'>
-      <view>{{rankingList.member_name}}hello</view>
+      <view>{{rankingList.member_name}}</view>
       <view class='content_list'>
         <text>打卡{{rankingList.num}}次</text>
         <!-- <text>30次习惯数</text>
