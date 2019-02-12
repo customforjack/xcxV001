@@ -122,7 +122,8 @@ Page({
   })
   },
   checkRole(e){
-    console.log(e.currentTarget.dataset.idx)
+    console.log(e.currentTarget.dataset.idx);
+    console.log(this.data.detail)
     this.setData({
       roleChecked: e.currentTarget.dataset.idx,
       showLen:3,
