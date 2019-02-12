@@ -67,8 +67,17 @@
   color: #fff;
   font-size:26rpx;
 }
+.myHabitCard .btn-group.disabled{
+  background: #ccc;
+}
 .myHabitCard .btn-group .daka{
   width: 100rpx;
+}
+.myHabitCard .btn-group .daka.disabled{
+  background: #ccc;
+}
+.myHabitCard .btn-group .daka.disabled:after{
+    background: #ccc;
 }
 .myHabitCard .btn-group button text{
   width: 75rpx;

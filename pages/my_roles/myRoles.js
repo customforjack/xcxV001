@@ -9,11 +9,11 @@ Page({
     showTab:0,
     tabs:[
       {
-        name: '12堂必修课',
+        name: '12个好习惯',
         checked: true
       },
       {
-        name: '12个好习惯',
+        name: '12堂必修课',
         checked: false
       }
     ],
@@ -31,12 +31,12 @@ Page({
     })
     if (parseInt(e.currentTarget.dataset.idx) === 0){
       this.setData({
-        showArr: this.data.detail.course
+        showArr: this.data.detail.habit
       })
     }
     if (parseInt(e.currentTarget.dataset.idx) === 1){
       this.setData({
-        showArr: this.data.detail.habit
+        showArr: this.data.detail.course
       })
     }
   },
@@ -117,22 +117,7 @@ Page({
       _this.setData({
         detail: res.data,
        // showArr: res.data.course
-        showArr: [
-          {
-            "id": 3,
-            "name": "测试课程",
-            "description": "啊啊啊",
-            "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-            "video_url": "http://47.99.45.172/mmv/7.mp4",
-            "content": "2222",
-            "teacher_id": 1,
-            "character_id": 1,
-            "is_free": 0,
-            "collection_view": 0,
-            "page_view": 0,
-            "share_vew": 0
-          }
-        ]
+        showArr: res.data.habit
       })
       wx.setNavigationBarTitle({
         title: res.data.name

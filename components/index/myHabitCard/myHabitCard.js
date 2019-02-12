@@ -13,7 +13,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    h_hum:''
   },
 
   /**
@@ -21,6 +21,7 @@ Component({
    */
   methods: {
     toaddStepOne(e) {
+      const _this =this
       console.log(e.currentTarget.dataset.id)
       this.getDetail(e.currentTarget.dataset.id).then(res => {
         console.log('res:', res)
@@ -38,7 +39,7 @@ Component({
         }
         if (res.code === 1) {
           wx.navigateTo({
-            url: '/pages/add_habit_step1/addHabitStep1',
+            url: '/pages/add_habit_step1/addHabitStep1?'+wx.getParams(_this.data.item),
           })
         }
         if (res.code === 400) {
@@ -51,7 +52,7 @@ Component({
           // 则跳转至对应我的习惯详情
           console.log('则跳转至对应我的习惯详情')
           wx.navigateTo({
-            url: '/pages/habitDetail/habitDetail?member_habit_id=' + res.data.member_habit_id,
+            url: '/pages/habitDetail/habitDetail?' + wx.getParams(_this.data.item),
           })
         }
       })
@@ -72,7 +73,7 @@ Component({
     },
     todaka(e){
       const _this = this
-      console.log('e',e.currentTarget.dataset.id)
+      console.log('e',e)
       wx.ajax({
         url:'/api/Product/signMyHabit',
         params:{
@@ -84,12 +85,8 @@ Component({
           title: res.msg,
         })
         if(res.code === 1){
-          console.log('child ok...')
-          try{
-            _this.triggerEvent('myEvent', { val: 'ok' })
-          }catch(err){
-            console.error(err)
-          }
+          console.log('儿子传值给老爸  ok...')
+          _this.triggerEvent("childEvent",{},{})
         }
       })
     },

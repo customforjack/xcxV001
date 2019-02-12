@@ -22,6 +22,7 @@ Component({
   methods: {
     toaddStepOne(e) {
       console.log(e.currentTarget.dataset.id)
+      const _this = this
       this.getDetail(e.currentTarget.dataset.id).then(res => {
         console.log('res:', res)
         if (res.code === 601){
@@ -39,7 +40,7 @@ Component({
         }
         if(res.code === 1){
           wx.navigateTo({
-            url: '/pages/add_habit_step1/addHabitStep1',
+            url: '/pages/add_habit_step1/addHabitStep1?' + wx.getParams(_this.data.item),
           })
         }
         if (res.code === 602){

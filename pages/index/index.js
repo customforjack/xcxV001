@@ -33,6 +33,9 @@ Page({
   /**
      * 跳转vip训练营
      */
+  dkSuccess(){
+    console.log('爸爸收到啦')
+  },
   goMe() {
     wx.navigateTo({
       url: '/pages/add_habit/addHabit',
@@ -44,24 +47,6 @@ Page({
   goVip(){
     wx.navigateTo({
       url: '/pages/add_habit/addHabit',
-    })
-  },
-  ondakaSuccess(e){
-    console.log('success 打卡完成',e.detail)
-    const _this = this
-    wx.ajax({
-      url: '/api/Home/home',
-      params: {
-        token: wx.getStorageSync('token')
-      },
-      success(res) {
-        console.log('首页重加载',res)
-        if (res.code === 1) {
-          _this.setData({
-            detail: res.data
-          })
-        }
-      }
     })
   },
   toRoleDetail(e){
