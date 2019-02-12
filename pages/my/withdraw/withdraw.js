@@ -35,11 +35,13 @@ Page({
       this.setData({
         cash: this.data.available_balance - this.data.freeze_balance
       })
-    } else if (input_money<=0){
-      this.setData({
-        cash: 1
-      })
-    }else{
+    } 
+    // else if (input_money==0){
+    //   this.setData({
+    //     cash: 10
+    //   })
+    // }
+    else{
       this.setData({
         cash: input_money
       })
@@ -77,7 +79,7 @@ Page({
          
         } else if (res.code == 400){
           wx.showToast({
-            title: '金额不能小于0',
+            title: '金额不能为0',
             icon: 'none',
             duration: 2000
           })
