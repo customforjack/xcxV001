@@ -37,8 +37,13 @@
   text-align: center;
   font-size: 96rpx;
   color: #333;
-  margin-bottom: 100rpx;
+   margin-bottom: 100rpx;
   font-family:Helvetica;
+}
+.freeze{
+ 
+  font-size: 30rpx;
+  text-align: center;
 }
 .money text{
   font-size: 60rpx;

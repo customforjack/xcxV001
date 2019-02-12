@@ -1,12 +1,12 @@
 <!--pages/my/my_orderDetail/my_orderDetail.wxml-->
 <view class='withdrawList'>
-  <view class='date'>
+  <!-- <view class='date'>
     <view class='month'>本月</view>
     <view class='expend'>
         <text >支出:￥60</text>
         <text>收入:￥0.00</text>
     </view>
-  </view>
+  </view> -->
   <view class='detailContent' wx:for='{{orderDetail}}' bindtap='details' data-id='{{orderDetail.id}}'  wx:for-item="orderDetail"  wx:key="unique">
     <view>
     <text >收支来源:{{orderDetail.remark}}</text>

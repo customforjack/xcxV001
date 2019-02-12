@@ -15,8 +15,9 @@ Page({
   },
   // 提现
   tixian(){
+    var that=this;
     wx.navigateTo({
-      url: '/pages/my/withdraw/withdraw',
+      url: '/pages/my/withdraw/withdraw?available=' + that.data.available_balance + "&freeze=" + that.data.freeze_balance,
     })
   },
   
@@ -44,7 +45,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    
+    wx.ajax({
+      url: '/api/Member/checklogin',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token')
+      },
+      type: 'POST',
+      success(res) {
+        console.log("验证登陆", res);
+        if (res.code === 1) {
+          that.setData({
+            available_balance: res.data.available_balance,
+            freeze_balance: res.data.freeze_balance
+          })
+        }
+      }
+    })
   },
 
   /**

@@ -12,7 +12,7 @@
 
  <block wx:if="{{flag==0}}">
   <view class='tilte'  wx:for='{{supervisorList}}'  wx:for-item='supervisorList' bindtap='dudaoDetail'    wx:key='supervisorList'  wx:for-index="supervisorIndex" data-id='{{supervisorList.id}}'>
-    <text class='tilte_big' bindtap='moreDudao'>MORE</text>
+    <text class='tilte_big' catchtap='moreDudao'>MORE</text>
     <view class='content'>
      <view>
       <image src='{{supervisorList.thumbnail}}'></image>
@@ -29,10 +29,11 @@
       </text>
      </view>
       <view class='qdd'>钱多多</view>
-     <view class='click_ta' catchtap='daka'>袭TA一下</view>
+      
+     <view class='click_ta' catchtap='hint'>袭TA一下</view>
     </view>
   </view>
-
+<dakaSuccess show="{{model}}"></dakaSuccess> 
 
 
 </block>

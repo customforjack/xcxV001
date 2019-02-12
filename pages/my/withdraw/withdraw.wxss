@@ -38,10 +38,17 @@ page{
 .tishi{
   font-size: 28rpx;
   color: #BABABA;
-  padding: 47rpx 40rpx 44rpx;
+  padding: 47rpx 40rpx 40rpx;
 }
+
 .tishi text{
   color: #2AC0CB;
+}
+.freeze{
+ 
+  font-size: 28rpx;
+  color: #BABABA;
+  padding: 0rpx 40rpx 40rpx;
 }
 .btn{
   margin: 0 40rpx 40rpx 0;

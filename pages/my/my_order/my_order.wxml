@@ -14,7 +14,7 @@
 </view>
 <view>
    <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
-   <checkbox  value="" checked="" />
+   <!-- <checkbox  value="" checked="" /> -->
   <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
   <view class='list_r'>
     <view class='juese'>
@@ -22,12 +22,12 @@
       <view>角色</view>
     </view>
     <view class='desc'>{{orderList_duo.description}}</view>
-    <view class='num'>已购{{orderList_duo.num}}件</view>
-    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_priceid}}</text></view>
+    <view class='num'>已购{{orderList_duo.number}}件</view>
+    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_price}}</text></view>
   </view>
   <view class='already'>
       <text>￥{{orderList_duo.price}}</text>
-      <text>x{{orderList_duo.num}}</text>
+      <text>x{{orderList_duo.number}}</text>
   </view>
   </label>
   </view>
@@ -57,7 +57,7 @@
 </view>
 <view>
    <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
-   <checkbox  value="" checked="" />
+   <!-- <checkbox  value="" checked="" /> -->
   <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
   <view class='list_r'>
     <view class='juese'>
@@ -65,12 +65,12 @@
       <view>角色</view>
     </view>
     <view class='desc'>{{orderList_duo.description}}</view>
-    <view class='num'>已购{{orderList_duo.num}}件</view>
-    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_priceid}}</text></view>
+    <view class='num'>已购{{orderList_duo.number}}件</view>
+    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_price}}</text></view>
   </view>
   <view class='already'>
       <text>￥{{orderList_duo.price}}</text>
-      <text>x{{orderList_duo.num}}</text>
+      <text>x{{orderList_duo.number}}</text>
   </view>
   </label>
   </view>
@@ -99,7 +99,7 @@
 </view>
 <view>
    <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
-   <checkbox  value="" checked="" />
+   <!-- <checkbox  value="" checked="" /> -->
   <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
   <view class='list_r'>
     <view class='juese'>
@@ -107,12 +107,12 @@
       <view>角色</view>
     </view>
     <view class='desc'>{{orderList_duo.description}}</view>
-    <view class='num'>已购{{orderList_duo.num}}件</view>
-    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_priceid}}</text></view>
+    <view class='num'>已购{{orderList_duo.number}}件</view>
+    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_price}}</text></view>
   </view>
   <view class='already'>
       <text>￥{{orderList_duo.price}}</text>
-      <text>x{{orderList_duo.num}}</text>
+      <text>x{{orderList_duo.number}}</text>
   </view>
   </label>
   </view>
@@ -142,7 +142,7 @@
 </view>
 <view>
    <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
-   <checkbox  value="" checked="" />
+   <!-- <checkbox  value="" checked="" /> -->
   <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
   <view class='list_r'>
     <view class='juese'>
@@ -150,12 +150,12 @@
       <view>角色</view>
     </view>
     <view class='desc'>{{orderList_duo.description}}</view>
-    <view class='num'>已购{{orderList_duo.num}}件</view>
-    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>实付{{orderList_duo.sum_priceid}}</text></view>
+    <view class='num'>已购{{orderList_duo.number}}件</view>
+    <view class='money'><text>￥{{orderList_duo.price}}</text><text class='reality'>总价{{orderList_duo.sum_price}}</text></view>
   </view>
   <view class='already'>
       <text>￥{{orderList_duo.price}}</text>
-      <text>x{{orderList_duo.num}}</text>
+      <text>x{{orderList_duo.number}}</text>
   </view>
   </label>
   </view>

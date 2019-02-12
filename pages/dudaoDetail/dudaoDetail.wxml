@@ -1,4 +1,7 @@
 <!--pages/iamdudao/iamdudao.wxml-->
+<view>
+  <calendar id="component"  bindtap=""></calendar>
+</view>
 <view class='iamdudao'>
   <!--说几句 start-->
   <view class='sayBox'>

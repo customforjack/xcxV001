@@ -12,12 +12,34 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({
+      available_balance: options.available,
+      freeze_balance: options.freeze
+    })
+  },
+  all_money:function(e){
+    console.log(e);
+    var all_money =this.data.available_balance - this.data.freeze_balance;
+    console.log(all_money);
+    this.setData({
+      cash: all_money
+    })
+    console.log(this.data)
   },
   numInput:function(e){
-    this.setData({
-      cash: e.detail.value
-    })
+    
+    var input_money = e.detail.value;
+    if (input_money > this.data.available_balance - this.data.freeze_balance){
+      this.setData({
+        cash: this.data.available_balance - this.data.freeze_balance
+      })
+    }else{
+      this.setData({
+        cash: input_money
+      })
+    }
+    
   },
   drawing:function(){
 
@@ -36,17 +58,29 @@ Page({
       success(res) {
         if(res.code==1){
           wx.showToast({
-            title: '成功',
+            title: '提现成功',
             icon: 'success',
-            duration: 1000
+            duration: 2000,
+            success:setTimeout(
+              function () {
+                wx.navigateTo({
+                  url: '/pages/my/my_withdrawDetail/my_withdrawDetail',
+                })
+              },1000
+            )
           })
-          wx.navigateTo({
-            url: '/pages/my/my_withdrawDetail/my_withdrawDetail',
+         
+        } else if (res.code == 400){
+          wx.showToast({
+            title: '金额不能小于0',
+            icon: 'none',
+            duration: 2000
           })
         }
         console.log("提现", res);
       
       }
+
     });
   },
   //提现明细

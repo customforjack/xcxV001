@@ -1,4 +1,8 @@
 {
+
+  "usingComponents": {
+    "dakaSuccess": "/components/dakaSuccess/dakaSuccess"
+  },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTitleText": "我的督导",

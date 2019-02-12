@@ -1,18 +1,18 @@
 <!--pages/ranking/ranking.wxml-->
 
  <view class='circle_top'>
-    <view class='tab_item' bindtap='changeTab' data-tab='0'>
-      <text class="text {{flag==0?'act':''}}">练习数</text>
-    </view>
     <view class='tab_item' bindtap='changeTab' data-tab='1'>
-      <text class="text {{flag==1?'act':''}}">习惯数</text>
+      <text class="text {{flag==1?'act':''}}">周榜</text>
     </view>
     <view class='tab_item' bindtap='changeTab' data-tab='2'>
-      <text class="text {{flag==2?'act':''}}">课时数</text>
+      <text class="text {{flag==2?'act':''}}">月榜</text>
+    </view>
+    <view class='tab_item' bindtap='changeTab' data-tab='3'>
+      <text class="text {{flag==3?'act':''}}">总榜</text>
     </view>
   </view>
 
-<block wx:if='{{flag==0}}'>
+<block wx:if='{{flag==1}}'>
   <view class='recommend'>
   <view class='recommend_list rank'>
     <image src='../../img/paixu.png'></image>
@@ -31,7 +31,7 @@
   </view>
 </block>
 
-<block wx:if='{{flag==1}}'>
+<block wx:if='{{flag==2}}'>
   <view class='recommend'>
   <view class='recommend_list rank'>
     <image src='../../img/paixu.png'></image>
@@ -50,7 +50,7 @@
   </view>
 </block>
 
-<block wx:if='{{flag==2}}'>
+<block wx:if='{{flag==3}}'>
   <view class='recommend'>
   <view class='recommend_list rank'>
     <image src='../../img/paixu.png'></image>

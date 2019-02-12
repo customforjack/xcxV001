@@ -11,7 +11,8 @@
   <view class='account_main'>
     <block wx:if="{{flag==0}}">
       <view class='yu_title'>我的余额</view>
-      <view class='money'><text>￥</text>0.00</view>
+      <view class='money'><text>￥</text>{{available_balance}}</view>
+      <!-- <view class='freeze'><text>已冻结</text>￥{{freeze_balance}}</view> -->
       <view class='tixian' bindtap='tixian'>微信提现</view>
       
       <view class='tixian mingxi' bindtap='my_orderDetail'>账单明细</view>

@@ -85,6 +85,7 @@ Page({
     },
   //点击使用/延长
   employ:function(e){
+    var that=this;
     var character_id = e.currentTarget.dataset.id;
     console.log(e.currentTarget.dataset.id);
     wx.ajax({
@@ -99,6 +100,34 @@ Page({
       success(res) {
         if (res.code === 1) {
           console.log("使用成功", res);
+          if (that.data.flag==0){
+            if (getCurrentPages().length != 0) {
+              //刷新当前页面的数据
+              getCurrentPages()[getCurrentPages().length - 1].onLoad();
+              wx.showToast({
+                title: '延长成功',
+                icon: 'success',
+                duration: 2000,
+              })
+            }
+          }else{
+            wx.showToast({
+              title: '使用成功',
+              icon: 'success',
+              duration: 1000,
+              success: 
+                setTimeout(
+                  function () {
+                  that.setData({
+                    flag:0
+                  })
+                that.myCharacterUnused();
+                  }, 1000)
+            })
+            
+          }
+        
+          
         } else if (res.code === 400){
           //无库存跳转购买页面
         }

@@ -3,7 +3,7 @@
 <view class='info_box'>
   <image src='{{userInfo.avatarUrl}}' class='photo'></image>
   <view class='name'>{{userInfo.nickName}}</view>
-  <view class='biaoqian'>城市合伙人　|　推广大使　|　VIP</view>
+  <!-- <view class='biaoqian'>城市合伙人　|　推广大使　|　VIP</view> -->
 </view>
 <view class='model_one'>
   <view class='model_item' bindtap='goAccount'>

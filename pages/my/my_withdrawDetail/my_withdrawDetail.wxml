@@ -1,6 +1,6 @@
 <!--pages/my/my_withdrawDetail/my_withdrawDetail.wxml-->
 <view class='withdrawList'>
-  <text class='date'>2019年01月</text>
+  <!-- <text class='date'>2019年01月</text> -->
   <view class='detailContent' wx:for='{{withthdrawDetail}}' bindtap='details' data-id='{{withthdrawDetail.id}}'  wx:for-item="withthdrawDetail"  wx:key="unique">
     <view>
     <text >提现日期：{{withthdrawDetail.create_time}}</text>
@@ -11,8 +11,8 @@
     <view><text>提现进度：</text>
     <text wx:if="{{withthdrawDetail.status==1}}" data-id='{{withthdrawDetail.id}}'  catchtap='back'>待审批</text>
     <text wx:if="{{withthdrawDetail.status==2}}">已提现 </text>
-    <text wx:if="{{withthdrawDetail.status==3}}">驳回</text>
-    <text wx:if="{{withthdrawDetail.status==4}}">用户撤回</text>
+    <text wx:if="{{withthdrawDetail.status==3}}">用户撤回</text>
+    <text wx:if="{{withthdrawDetail.status==4}}">驳回</text>
     </view>
   </view>
 

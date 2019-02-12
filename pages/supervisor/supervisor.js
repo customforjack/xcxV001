@@ -6,7 +6,8 @@ Page({
    */
   data: {
     flag: 0,
-    tabx: 0
+    tabx: 0,
+    model: false
   },
   changeTab(e) {
     var that=this;
@@ -45,30 +46,10 @@ Page({
             success(res) {
                 console.log("我的督导",res);
                 if (res.code === 1) {
-                    // 角色获取成功
-                    res.data=[
-                        {
-                            "id": 1,
-                            "habit_name": "去去去111",
-                            "page_view": "1",
-                          "thumbnail":"http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                            "member_name": "去去去111",
-                            "sign_num": "1"
-                        },
-                        {
-                            "id": 2,
-                            "habit_name": "去去去222",
-                            "page_view": "1",
-                            "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                            "member_name": "去去去222",
-                            "sign_num": "1"
-                        },
-                    ];
                     var supervisorList= res.data;
                     that.setData({
                         supervisorList:supervisorList,
-                        // page_habit:res.data.count.page,
-                        // pageSize_habit:res.data.count.pageSize
+                        
                     })
                 }
             }
@@ -77,7 +58,6 @@ Page({
     /*督导我的*/
     supervisorMeList: function () {
     var that = this;
-
     wx.ajax({
       url: '/api/Member/supervisorMeList',
       checkRole: false,
@@ -137,9 +117,9 @@ Page({
   },
   //  更多督导
     moreDudao:function(){
-        wx.navigateTo({
-            url: '../index/index'
-        })
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
     },
   // 督导详情
     dudaoDetail:function(){
@@ -147,6 +127,12 @@ Page({
             url: '../dudaoDetail/dudaoDetail'
         })
     },
+    //袭ta一下
+  hint:function(){
+    this.setData({
+      model:true
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

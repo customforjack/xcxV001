@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    flag: 0,
+    flag: 1,
     tabx: 0
   },
   changeTab(e) {
@@ -13,42 +13,36 @@ Page({
     this.setData({
       flag: tab
     })
+
   },
-  changeTabx(e) {
-    var tabx = e.currentTarget.dataset.tabx
-    this.setData({
-      tabx: tabx
-    })
-  },
-  showInput: function () {
-    this.setData({
-      inputShowed: true
-    });
-  },
-  hideInput: function () {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
-    });
-  },
-  clearInput: function () {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
-  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this;
+    that.rankbang(1);
   },
+  rankbang: function (type){
 
+    wx.ajax({
+      url: '/api/Member/myRanking',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        type: type,
+        page:1,
+        pageSize:20,
+      },
+      type: 'POST',
+      success(res) {
+        if (res.code === 1) {
+      
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
