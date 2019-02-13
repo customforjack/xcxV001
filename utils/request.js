@@ -12,16 +12,15 @@ import pageJson from "./package.js";
 import utilMd5 from './md5.js'
 const md5 = (params) => {
   var seckey = 'xdr_2019@DU^^&JGK_((*&gjGH';
+  params.token = wx.getStorageSync('token') || ''
   var str = '';
   for (let k in params) {
     if (k != 'apitoken') {
       str += utilMd5.hexMD5(seckey + params[k])
     }
   }
-
   str = utilMd5.hexMD5(seckey + str + seckey)
   params.apitoken = str
-  params.token = wx.getStorageSync('token')
   return params;
 }
 

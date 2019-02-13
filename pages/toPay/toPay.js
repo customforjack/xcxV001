@@ -106,6 +106,14 @@ Page({
     })
   },
   yePay(){
+    // 校验是否够支付
+    if (parseFloat(this.data.loginData.available_balance) < this.data.total){
+      wx.showToast({
+        title: '余额不足,请充值,或者使用微信支付',
+        icon:'none'
+      })
+      return false
+    }
     // 创建订单
     // 支付
     let params = []
@@ -134,7 +142,16 @@ Page({
             order_sn: res.data.order_sn
           }
         }).then(res => {
-          
+          if(res.code === 1){
+            wx.showToast({
+              title: res.msg,
+            })
+            setTimeout(()=>{
+              wx.navigateTo({
+                url: '/pages/my/my_order/my_order',
+              })
+            },500)
+          }
         })
       }
     })
