@@ -21,6 +21,7 @@ const md5 = (params) => {
 
   str = utilMd5.hexMD5(seckey + str + seckey)
   params.apitoken = str
+  params.token = wx.getStorageSync('token')
   return params;
 }
 
@@ -56,45 +57,12 @@ function ajax(opt) {
       })
       return false
     }
-    return checkRole().then(res =>{
-      if (res.data.code === 1){
-        wx.setStorageSync('loginData', res.data.data)
-        //正常登陆 继续请求
-        return newAjax(obj)
-      }else {
-        // 失效
-        if (obj.checkRole) {
-          wx.navigateTo({
-            url: '/pages/authorize/authorize'
-          })
-        }
-      }
-    })
+    return newAjax(obj)
   } else { // 不校验登录
-    return newAjax(obj).then(res=>{
-      return new Promise(resolve => {
-        resolve(res)
-      })
-    })
+    return newAjax(obj)
   }
 }
-function checkRole (){
-  return new Promise((resolve,reject) => {
-    wx.request({
-      url: pageJson.host + '/api/Member/checklogin',
-      data: md5({
-        token: wx.getStorageSync('token')
-      }),
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'POST',
-      success(res) {
-        resolve(res)
-      }
-      })
-  })
-}
+
 function newAjax(obj){
   if (obj.loading === 'loading') {
     wx.showLoading({
@@ -116,6 +84,14 @@ function newAjax(obj){
           wx.hideLoading()
         } else {
           wx.hideNavigationBarLoading()
+        }
+        if(res.code === 400){
+          // 去授权登录
+          // 失效
+          wx.navigateTo({
+            url: '/pages/authorize/authorize'
+          })
+
         }
         obj.success(res.data)
         resolve(res.data)

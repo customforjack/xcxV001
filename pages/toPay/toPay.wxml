@@ -29,7 +29,7 @@
 <view class='payment'>
     <view class='total'>总价: <text>￥{{total}}</text></view>
     <view class='all_pay'>
-        <view bindtap='changeBack' data-tab='0' class="type {{flag==0?'check':''}}">
+        <view bindtap='yePay' data-tab='0' class="type {{flag==0?'check':''}}">
           <text>余额支付</text>
         <text>({{loginData.available_balance}}元)</text>
         </view>

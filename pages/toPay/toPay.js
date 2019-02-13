@@ -105,6 +105,42 @@ Page({
       }
     })
   },
+  yePay(){
+    // 创建订单
+    // 支付
+    let params = []
+    this.data.detail.forEach((item, i) => {
+      params.push({
+        id: item.id,
+        number: item.number
+      })
+    })
+    wx.ajax({
+      url: '/api/Order/createOrder',
+      params: {
+        order_detail: JSON.stringify(params),
+        token: wx.getStorageSync('token')
+      }
+    }).then(res => {
+      console.log('res', res)
+      if (res.code === 1) {
+        wx.showToast({
+          title: res.msg
+        })
+
+        wx.ajax({
+          url: '/api/Order/balancePay',
+          params: {
+            order_sn: res.data.order_sn
+          }
+        }).then(res => {
+          
+        })
+      }
+    })
+
+
+  },
   reduce: function (e) {
     console.log('e ---',e)
     const index = e.currentTarget.dataset.idx

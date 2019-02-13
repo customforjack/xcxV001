@@ -115,7 +115,7 @@ Page({
   checkRole(e){
     console.log(e.currentTarget.dataset.idx);
     console.log(this.data.detail)
-    if (this.data.detail.today_habit[e.currentTarget.dataset.idx].habit.length >= this.data.showLen){
+    if (this.data.detail.today_habit[e.currentTarget.dataset.idx].habit.length > this.data.showLen){
       this.setData({
         moreBtnFlag: true
       })
@@ -187,7 +187,7 @@ Page({
             detail: res.data
           })
           if (_this.data.detail.today_habit && _this.data.detail.today_habit.length){
-            if (_this.data.detail.today_habit[0].habit.length >= _this.data.showLen) {
+            if (_this.data.detail.today_habit[0].habit.length > _this.data.showLen) {
               _this.setData({
                 moreBtnFlag: true
               })
@@ -205,8 +205,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const _this = this
-    this.getHomeData()
+    wx.checkLogin().then(()=>{
+      this.getHomeData()
+    })
   },
 
   /**

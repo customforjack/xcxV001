@@ -33,7 +33,7 @@ Component({
           })
           setTimeout(()=>{
             wx.navigateTo({
-              url: '/pages/my_roles/myRoles?id=' + e.currentTarget.dataset.id,
+              url: '/pages/my_roles/myRoles?id=' + res.data.character_id,
             })
           },1000)
 

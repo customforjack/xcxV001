@@ -40,6 +40,7 @@ Page({
           if (res.code === 1) {
             // 登陆成功
             wx.setStorageSync('token', res.data.token)
+            wx.checkLogin()
             const backUrl = wx.getStorageSync('backUrl')
             if (backUrl){
               wx.redirectTo({
@@ -60,6 +61,7 @@ Page({
             wx.navigateTo({
               url: '/pages/login/login',
             })
+
           }
         }
       })

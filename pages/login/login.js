@@ -56,6 +56,7 @@ Page({
             title: res.msg,
             icon: 'none'
           })
+          wx.checkLogin()
         }
         if (res.code === 400) {
           wx.showToast({

@@ -42,7 +42,7 @@
   </view>
   <!--说说感想 end-->
 
-  <view class='friendBox'>
+  <view class='friendBox' wx:if="{{talkList.length}}">
     <view class='tit'>
       <image src='/img/bookIcon.png'></image> 我们在一起练</view>
     <view class='list'>

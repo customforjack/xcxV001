@@ -19,11 +19,9 @@ Page({
     this.setData({
       options: options
     })
-    this.getDetail(options).then(res => {
-      this.getTopicList().then(res => {
-        this.getCalendar()
-
-      })
+    Promise.all([this.getDetail(options), this.getTopicList()]).then(arr => {
+      console.log('arr',arr)
+      this.getCalendar()
     })
   },
   addLeavingMsg(){
@@ -79,11 +77,12 @@ Page({
 
   },
   getCalendar() {
+    const _this = this
     // 获取日历信息
     return wx.ajax({
       url: '/api/Product/getSignDate',
       params: {
-        member_habit_id: this.data.detail.member_habit_id,
+        member_habit_id: _this.data.detail.member_habit_id,
         year: 2019,
         month: 2,
         token: wx.getStorageSync('token')

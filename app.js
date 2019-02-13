@@ -22,31 +22,16 @@ wx.tranNumber = (params) => {
 }
 
 // 校验登陆态
-wx.checkLogin = (params) => {
-  let opt = Object.assign({
-    toLogin: false
-  }, params)
-  return new Promise((resolve, reject) => {
-    ajax({
-      url: '/api/Member/checklogin',
-      params: {
-        token: wx.getStorageSync('token')
-      },
-      success(res) {
-        console.log('check login')
-        const pages = getCurrentPages() //获取加载的页面
-        const currentPage = pages[pages.length - 1] //获取当前页面的对象
-        const url = currentPage.route //当前页面url
-        const options = currentPage.options //如果要获取url中所带的参数可以查看options
-        if(res.code === 400){
-          wx.setStorageSync('backUrl', `/${url}`)
-        }
-        resolve(res.code === 1 ? true : false)
-      },
-      fail(res) {
-        reject(res)
-      }
-    })
+wx.checkLogin = () => {
+  return wx.ajax({
+    url: '/api/Member/checklogin',
+    params: {
+      token: wx.getStorageSync('token')
+    }
+  }).then(res => {
+    if (res.code === 1) {
+      wx.setStorageSync('loginData', res.data)
+    }
   })
 
 }
