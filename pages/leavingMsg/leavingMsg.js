@@ -59,8 +59,17 @@ Page({
             title: '提交成功',
             icon:'none'
           })
-          wx.navigateTo({
-            url: '/pages/habitDetail/habitDetail',
+          // wx.navigateTo({
+          //   url: '/pages/habitDetail/habitDetail',
+          // })
+          let pages = getCurrentPages();
+          let prevPage = pages[pages.length - 2]; 
+          // prevPage.setData({  
+          //   id: _this.data.params.p_id
+          // })
+         
+          wx.navigateBack({
+            delta: 1
           })
         }else{
           wx.showToast({

@@ -26,9 +26,10 @@
       <view class='o-txt'>
         <text class='txt'>{{detail.character.description}}11</text>
         <view class='o-b'>
-          <text class='o-family'>{{detail.character.collection_view}}万人参与 / 家庭</text>
+          <text class='o-family'>{{detail.character.collection_view}}人参与 / 家庭</text>
           <view class='label'>
-            <image mode="widthFix" src='/img/yinle-g.png'></image>Audio</view>
+            <!-- <image mode="widthFix" src='/img/yinle-g.png'></image>Audio -->
+            </view>
         </view>
       </view>
 
@@ -54,9 +55,7 @@
     </view>
   </view>
   <view class='friendList'>
-    <showCard item='{{comment.data}}' wx:if='{{comment.data>0}}'></showCard>  
+    <showCard wx:for="{{comment.data}}" item='{{item}}' wx:if='{{comment.data.length>0}}' wx:key="index"></showCard>  
   </view>
-
-
   <toDoBtn text="我也有话说" bind:bindtap="todo" ></toDoBtn>
 </view>

@@ -13,7 +13,8 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    this.setData({
+    var that=this;
+    that.setData({
       available_balance: options.available,
       freeze_balance: options.freeze
     })
@@ -28,8 +29,9 @@ Page({
     console.log(this.data)
   },
   numInput:function(e){
-    
-    var input_money = e.detail.value.replace(/^((\d*[1-9])|(0?\.\d{3}))$/g, '')
+    console.log(e);
+    var input_money = e.detail.value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3')
+    input_money = input_money.replace(/^\./g, "").replace(/[^\d.]/g, "")
     if (input_money > this.data.available_balance - this.data.freeze_balance){
       this.setData({
         cash: this.data.available_balance - this.data.freeze_balance

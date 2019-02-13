@@ -16,16 +16,21 @@ Page({
     var that=this;
     var roleId = options.id;
     console.log(roleId);
-    
-    that.details(roleId);
-    
-    
-  },
-  todo(){
-    wx.navigateTo({
-      url: '/pages/leavingMsg/leavingMsg',
+    that.setData({
+      p_id: roleId
     })
-    console.log('todo')
+    that.details(options.id);
+  },
+  todo(e){
+    var that=this;
+    var params={
+        p_id: that.data.p_id,
+        type:2
+      };
+    wx.navigateTo({
+      url: '/pages/leavingMsg/leavingMsg?' + wx.getParams(params),
+    })
+    console.log(e)
   },
   //进入课堂
   details: function (roleId){
@@ -89,7 +94,7 @@ Page({
           that.setData({
             comment: res.data
           })
-          console.log(that.data.comment);
+          console.log(that.data.comment.data);
         }
       
       }
@@ -106,7 +111,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.data.detail.id){
+      this.onLoad(this.data.detail)
+    }
   },
 
   /**

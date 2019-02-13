@@ -71,28 +71,11 @@ Page({
             },
             type: 'POST',
             success(res) {
-                console.log("我的习惯",res.data.data);
-                console.log("我的习惯",res.data.count);
-              console.log("我的习惯", res);
+                console.log("我的习惯1",res.data.data);
+                console.log("我的习惯1",res.data.count);
+                console.log("我的习惯", res);
                 if (res.code === 1) {
-                    // res.data.data=[
-                    //     {
-                    //         "id": 1,
-                    //         "habit_name": "我的习惯",
-                    //         "sign_num": "1222",
-                    //         "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                    //     "description": "最可怕的不是变老, 好妻子该 如何抵抗这,最可怕的不是变老, 好妻子该 如何抵抗这",
-                    //         "is_sign": 1
-                    //     },
-                    //   {
-                    //     "id": 1,
-                    //     "habit_name": "我的习惯",
-                    //     "sign_num": "1222",
-                    //     "thumbnail": "http://img.jiangtang360.com/15459782555c25c18f6b1aa.jpg",
-                    //     "description": "最可怕的不是变老, 好妻子该 如何抵抗这,最可怕的不是变老, 好妻子该 如何抵抗这",
-                    //     "is_sign": 2
-                    //   },
-                    // ];
+                    
                     var habitList= res.data.data;
                     that.setData({
                         habitList:habitList,
@@ -119,7 +102,7 @@ Page({
   habitDetails:function(e){
         console.log(e);
     var habitId = {
-      "member_habit_id": e.currentTarget.dataset.id
+      member_habit_id: e.currentTarget.dataset.id
       };
     console.log(habitId);
         wx.navigateTo({

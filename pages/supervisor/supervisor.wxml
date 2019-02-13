@@ -33,7 +33,7 @@
      <view class='click_ta' catchtap='hint'>袭TA一下</view>
     </view>
   </view>
-<dakaSuccess show="{{model}}"></dakaSuccess> 
+<dakaSuccess show="{{model}}" bindnumChange="numChange"></dakaSuccess> 
 
 
 </block>

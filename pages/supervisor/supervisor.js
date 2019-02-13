@@ -23,6 +23,12 @@ Page({
       that.mySupervisorList();
     };
   },
+//组建传值
+  numChange(e) {
+    console.log(e);
+    // const numi = e.detail;
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */

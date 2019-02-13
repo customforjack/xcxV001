@@ -131,7 +131,7 @@ Page({
         } else if (res.code === 400){
           wx.showToast({
             title: '库存不足',
-            icon: 'nonef',
+            icon: 'none',
             duration: 1000})
         }
       },

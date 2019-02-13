@@ -44,39 +44,45 @@ Page({
   back:function(e){
     console.log(e);
     var witdrawId = e.currentTarget.dataset.id;
-    wx.showModal({
-      title: '提示',
-      content: '确定撤销提现吗？',
-      success(res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-          wx.ajax({
-            url: '/api/Member/undoDeposit',
-            checkRole: false,
-            params: {
-              token: wx.getStorageSync('token'),
-              id: witdrawId
-            },
-            type: 'POST',
-            success(res) {
-              console.log("撤回提现", res);
-              if (res.code === 1) {
-                console.log("撤回提现成功", res);
-                wx.showToast({
-                  title: '成功',
-                  icon: 'success',
-                  duration: 1000
-                })
+    var status = e.currentTarget.dataset.location.status;
+    if (status==1){
+      wx.showModal({
+        title: '提示',
+        content: '确定撤销提现吗？',
+        success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            wx.ajax({
+              url: '/api/Member/undoDeposit',
+              checkRole: false,
+              params: {
+                token: wx.getStorageSync('token'),
+                id: witdrawId
+              },
+              type: 'POST',
+              success(res) {
+                console.log("撤回提现", res);
+                if (res.code === 1) {
+                  console.log("撤回提现成功", res);
+                  wx.showToast({
+                    title: '成功',
+                    icon: 'success',
+                    duration: 1000
+                  })
+                }
               }
-            }
-          });
+            });
 
 
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
         }
-      }
-    })
+      })
+    }else{
+      return false;
+    }
+  
   
   },
   /**

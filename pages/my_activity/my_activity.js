@@ -14,41 +14,42 @@ Page({
       flag: tab
     })
   },
-  changeTabx(e) {
-    var tabx = e.currentTarget.dataset.tabx
-    this.setData({
-      tabx: tabx
-    })
-  },
-  showInput: function () {
-    this.setData({
-      inputShowed: true
-    });
-  },
-  hideInput: function () {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
-    });
-  },
-  clearInput: function () {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    that.participation();
+
+
 
   },
+//我参与的
+  participation : function () {
+    var that = this;
+    // wx.ajax({
+    //   url: '/api/Activity/getList',
+    //   checkRole: false,
+    //   params: {
+    //     token: wx.getStorageSync('token'),
+    //     start_time: "asc",//倒序desc
+    //     join_num: "asc",//倒序desc
+    //     price: "asc",//倒序desc
+    //     page: 1,
+    //     pageSize: 20
+    //   },
+    //   type: 'POST',
+    //   success(res) {
+    //     if (res.code === 1) {
+    //       console.log(res);
+    //     }
+    //   }
+    // });
+  },
+  //我发起的
+  sponsor:function(){
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
