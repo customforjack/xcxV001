@@ -2,6 +2,6 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
       "onReachBottomDistance": 50,
-    "navigationBarTitleText": "我的课堂",
+    "navigationBarTitleText": "课堂",
     "navigationBarTextStyle": "black"
   }

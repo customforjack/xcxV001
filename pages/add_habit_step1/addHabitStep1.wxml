@@ -8,7 +8,7 @@
         <text>开始时间</text>
         <picker mode="date" end="{{date1}}" value="{{date}}" bindchange="bindDateChange">
           <view class="picker">
-            <input value='{{date}}'></input>
+            <input value='{{date}}' disabled='true'></input>
             <image src='/img/rightBtn.png' mode="aspectFill"></image>
           </view>
         </picker>
@@ -17,23 +17,29 @@
         <text>结束时间</text>
         <picker mode="date" start="{{date}}" value="{{date1}}" bindchange="bindDateChange1">
           <view class="picker">
-            <input value='{{date1}}'></input>
+            <input value='{{date1}}'  disabled='true'></input>
             <image src='/img/rightBtn.png' mode="aspectFill"></image>
           </view>
         </picker>
       </view>
     </view>
+    <view class='calendar'>
+    <calendar id="component" class='reqi'  bindtap=""></calendar>
+    </view>
+    
     <!--开始时间 end-->
     <view class='times'>
       <view class='addTime'>
         提醒时间
       </view>
       <view class='timeList'>
-        <button class='addBtn'>
+        <!-- <button class='addBtn'> -->
+        <view class='addBtn'>
           <picker mode="multiSelector" range-key="name" range='{{range}}' value="{{time}}" bindchange="bindTimeChange">
                <cover-image src='/img/addBtn-bg.png'></cover-image>
           </picker>
-        </button>
+          </view>
+        <!-- </button> -->
         <view class='btnBox' wx:for="{{timeArr}}" wx:key="index">
           <button>{{item.name}}</button>
           <view class='icon' data-idx="{{index}}" bindtap='deleteTime'>

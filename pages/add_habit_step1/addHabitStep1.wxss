@@ -31,6 +31,9 @@
 
 .addHabitStep1 .timeBox .card {
   margin-bottom: 75rpx;
+  display: inline-flex;
+   white-space:nowrap;
+   width: 100%;
 }
 
 .addHabitStep1 .timeBox .card text {
@@ -41,9 +44,11 @@
   vertical-align: top;
   line-height: 42rpx;
   width: 150rpx;
+  flex: 1
 }
 
 .addHabitStep1 .timeBox .card  input {
+  flex: 3;
   text-align: right;
   font-size: 28rpx;
   font-weight: 400;
@@ -51,7 +56,7 @@
   vertical-align: top;
   line-height: 42rpx;
   display: inline-block;
-  width: 450rpx;
+  /* width: 450rpx; */
   margin-right: 20rpx;
 }
 
@@ -66,9 +71,29 @@
   vertical-align: top;
   margin-top: 15rpx;
 }
-
+.calendar{
+  width: 100%;
+  margin: 0;
+  padding: 0
+}
+.reqi{
+   width: 10rpx;
+}
 .times .addBtn {
-  margin-right: 20rpx;
+margin-right: 20rpx;
+width:100rpx;
+height:100rpx;
+display:inline-block;
+padding:0;
+border:none;
+font-size:30rpx;
+line-height:100rpx;
+color:rgba(51, 51, 51, 1);
+vertical-align:top;
+background:rgba(245, 246, 248, 1);
+border-radius:8rpx;
+
+
 }
 
 .times .addTime {
@@ -78,6 +103,9 @@
   color: rgba(51, 51, 51, 1);
   line-height: 42rpx;
   vertical-align: top;
+}
+.times{
+  margin-top: 40rpx;
 }
 
 .times .addTime button image {

@@ -1,5 +1,5 @@
 
-<view  class=" active">
+<view  class="active my-class">
   <view class="calendar-wrapper active">
     <view class="calendar-panel">
     <view class="calendar-panel-box">

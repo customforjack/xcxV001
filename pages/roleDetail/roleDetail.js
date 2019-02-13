@@ -16,7 +16,10 @@ Page({
     var that=this;
     var roleId = options.id;
     console.log(roleId);
-    that.details(roleId)
+    
+    that.details(roleId);
+    
+    
   },
   todo(){
     wx.navigateTo({
@@ -32,16 +35,20 @@ Page({
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
-        id: 3
+        id: roleId
       },
       type: 'POST',
       success(res) {
-        console.log("角色详情", res.data);
+        console.log("课程详情", res.data);
         if (res.code === 1) {
-          // 角色获取成功
+          // 课程详情获取成功
           that.setData({
             detail:res.data
           })
+          wx.setNavigationBarTitle({
+            title: that.data.detail.name
+          })
+          that.comment(roleId);
         }
         if(res.code === 601){
           wx.showToast({
@@ -59,6 +66,33 @@ Page({
   role_detail:function(){
     wx.navigateTo({
       url: '/pages/my_roles/myRoles'
+    })
+  },
+  //获取评论
+  comment: function (roleId){
+    var that = this;
+    wx.ajax({
+      url: '/api/Topic/getTopicList',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        type: 2,
+        p_id: roleId,
+        page:1,
+        pageSize:20
+      },
+      type: 'POST',
+      success(res) {
+        console.log("评论", res.data);
+        if (res.code === 1) {
+          // 评论获取成功
+          that.setData({
+            comment: res.data
+          })
+          console.log(that.data.comment);
+        }
+      
+      }
     })
   },
   /**

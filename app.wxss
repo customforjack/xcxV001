@@ -2,8 +2,9 @@
 @import 'weui.wxss';
 page{
   font-family:PingFangSC-Regular;
+  
 }
-
+button:after{display:none} 
 .clearFix:after{
   content: '';
   display: block;

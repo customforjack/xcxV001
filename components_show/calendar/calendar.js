@@ -11,6 +11,7 @@ Component({
    * data [Date] 当前现实的月份
    * selected [Array] 所有被选择的天
    */
+  externalClasses: ["reqi"],
   properties: {
     date: {
       type: null,

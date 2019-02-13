@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "calendar": "/components_show/calendar/calendar"
+  },
     "navigationBarTitleText": "新建习惯",
         "navigationBarBackgroundColor": "#F7F9FB"
 }

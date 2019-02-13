@@ -54,9 +54,7 @@
     </view>
   </view>
   <view class='friendList'>
-    <showCard></showCard>  
-    <showCard></showCard>  
-    <showCard></showCard>  
+    <showCard item='{{comment.data}}' wx:if='{{comment.data>0}}'></showCard>  
   </view>
 
 
