@@ -90,6 +90,7 @@ Page({
               paySign: params.paySign,
               success(res) {
                 console.log('succcess',res)
+                wx.checkLogin()
                 wx.navigateTo({
                   url: '/pages/my/my_order/my_order',
                 })
@@ -146,6 +147,7 @@ Page({
             wx.showToast({
               title: res.msg,
             })
+            wx.checkLogin()
             setTimeout(()=>{
               wx.navigateTo({
                 url: '/pages/my/my_order/my_order',
