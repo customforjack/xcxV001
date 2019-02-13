@@ -20,7 +20,7 @@
 }
 
 .myHabitCard  .h-info {
-  width: 504rpx;
+  width: 450rpx;
   display: inline-block;
   vertical-align: top;
   height: 140rpx;

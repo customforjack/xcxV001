@@ -79,14 +79,16 @@ Component({
         params:{
           member_habit_id: e.currentTarget.dataset.id,
           token:wx.getStorageSync('token')
-        }
-      }).then(res=>{
-        wx.showToast({
-          title: res.msg,
-        })
-        if(res.code === 1){
-          console.log('儿子传值给老爸  ok...')
-          _this.triggerEvent("childEvent",{},{})
+        },
+        success(res){
+          console.log('打卡接口 值', res)
+          wx.showToast({
+            title: res.msg,
+          })
+          if (res.code === 1) {
+            console.log('儿子传值给老爸  ok...')
+            _this.triggerEvent("childEvent", {}, {})
+          }
         }
       })
     },

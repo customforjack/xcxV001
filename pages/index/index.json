@@ -1,11 +1,10 @@
 {
   "component": true,
-  "enablePullDownRefresh": true,
-  "onReachBottomDistance": 50,
   "usingComponents": {
     "nav-bar": "/components/navbar/navbar",
     "remmen-item": "/components/index/remenItem/remenItem",
     "search":"/components/index/search/search",
-    "myHabitCard": "/components/index/myHabitCard/myHabitCard"
+    "myHabitCard": "/components/index/myHabitCard/myHabitCard",
+    "dakaSuccess":"/components/dakaSuccess/dakaSuccess"
   }
 }

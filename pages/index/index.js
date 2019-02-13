@@ -25,7 +25,9 @@ Page({
     autoplay: false,
     interval: 1000,
     duration: 300,
-    todayCheck:0
+    todayCheck:0,
+    moreBtnFlag:false,
+    mode:false
   },
   search (e) {
       console.log('s',e)
@@ -35,6 +37,10 @@ Page({
      */
   dkSuccess(){
     console.log('爸爸收到啦')
+    this.setData({
+      model:true
+    })
+    this.getHomeData()
   },
   goMe() {
     wx.navigateTo({
@@ -109,6 +115,15 @@ Page({
   checkRole(e){
     console.log(e.currentTarget.dataset.idx);
     console.log(this.data.detail)
+    if (this.data.detail.today_habit[e.currentTarget.dataset.idx].habit.length >= this.data.showLen){
+      this.setData({
+        moreBtnFlag: true
+      })
+    }else{
+      this.setData({
+        moreBtnFlag:false
+      })
+    }
     this.setData({
       roleChecked: e.currentTarget.dataset.idx,
       showLen:3,
@@ -159,11 +174,7 @@ Page({
   onReady: function () {
     console.log('ready')
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  getHomeData(){
     const _this = this
     wx.ajax({
       url: '/api/Home/home',
@@ -175,9 +186,27 @@ Page({
           _this.setData({
             detail: res.data
           })
+          if (_this.data.detail.today_habit && _this.data.detail.today_habit.length){
+            if (_this.data.detail.today_habit[0].habit.length >= _this.data.showLen) {
+              _this.setData({
+                moreBtnFlag: true
+              })
+            } else {
+              _this.setData({
+                moreBtnFlag: false
+              })
+            }
+          }
         }
       }
     })
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    const _this = this
+    this.getHomeData()
   },
 
   /**

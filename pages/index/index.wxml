@@ -24,7 +24,7 @@
     <view class='card' wx:if="{{idx < showLen}}"  wx:key="idx" wx:for="{{item.habit}}" wx:for-item="child" wx:for-index="idx">
       <myHabitCard item="{{child}}"  bind:childEvent="dkSuccess"></myHabitCard>
     </view>
-    <button class='moreBtn' bindtap='moeRole'>MORE ></button>
+    <button class='moreBtn' wx:if="{{moreBtnFlag}}"  bindtap='moeRole'>MORE ></button>
   </view>
 </view>
 <!--今日习惯列表  end-->
@@ -68,5 +68,6 @@
   </view>
   <!--热门习惯 end-->
 </view>
+<dakaSuccess show="{{model}}" ></dakaSuccess>
 <!-- 回到顶部 -->
 <view></view>
