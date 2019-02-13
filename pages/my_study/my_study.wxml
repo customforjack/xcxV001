@@ -58,7 +58,7 @@
       </text>
      </view> 
      <view class='daka' catchtap='daka' data-index='{{habitIndex}}'  data-id='{{habitList.id}}'>
-      <image wx:if="{{habitList.is_sign==2}}" src='../../img/add.png'></image>
+      <image wx:if="{{habitList.is_sign==0}}" src='../../img/add.png'></image>
       <image wx:if="{{habitList.is_sign==1}}" src='../../img/daka.png'></image>
      </view>
     </view>
