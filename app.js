@@ -1,7 +1,6 @@
 //app.js
-import { ajax, getMd5} from "./utils/request.js";
+import { ajax} from "./utils/request.js";
 wx.ajax = ajax
-wx.getMd5 = getMd5
 wx.getParams = (params) => {
   let str = ''
   Object.keys(params).forEach(key => {
@@ -31,9 +30,9 @@ wx.checkLogin = () => {
   }).then(res => {
     if (res.code === 1) {
       wx.setStorageSync('loginData', res.data)
+      console.log('checkLOGIN', res)
     }
   })
-
 }
 App({
   onLaunch: function () {

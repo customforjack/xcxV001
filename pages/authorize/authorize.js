@@ -37,32 +37,35 @@ Page({
         type: 'POST',
         success(res) {
           console.log(res)
-          if (res.code === 1) {
-            // 登陆成功
-            wx.setStorageSync('token', res.data.token)
-            wx.checkLogin()
-            const backUrl = wx.getStorageSync('backUrl')
-            if (backUrl){
-              wx.redirectTo({
-                url: backUrl,
-                success(){
-                  wx.removeStorageSync('backUrl')
-                }
-              })
-            }else{
-              wx.reLaunch({
-                url: '/pages/index/index',
-              })
-            }
-          } else if (res.code === 201) {
-            // 未注册 跳转到注册页
-            wx.setStorageSync('open_id', res.data.open_id)
-            wx.setStorageSync('session_key', res.data.session_key)
-            wx.navigateTo({
-              url: '/pages/login/login',
+ 
+        }
+      }).then(res => {
+        if (res.code === 1) {
+          // 登陆成功
+          console.log(' res.data.token', res.data.token)
+          wx.setStorageSync('token', res.data.token)
+          wx.checkLogin()
+          const backUrl = wx.getStorageSync('backUrl')
+          if (backUrl) {
+            wx.redirectTo({
+              url: backUrl,
+              success() {
+                wx.removeStorageSync('backUrl')
+              }
             })
-
+          } else {
+            wx.reLaunch({
+              url: '/pages/index/index',
+            })
           }
+        } else if (res.code === 201) {
+          // 未注册 跳转到注册页
+          wx.setStorageSync('open_id', res.data.open_id)
+          wx.setStorageSync('session_key', res.data.session_key)
+          wx.navigateTo({
+            url: '/pages/login/login',
+          })
+
         }
       })
     } 
