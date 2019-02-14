@@ -68,9 +68,11 @@ Page({
     })
   },
   //跳转角色详情
-  role_detail:function(){
+  role_detail:function(e){
+    console.log(e);
+    var role_id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/my_roles/myRoles'
+      url: '/pages/my_roles/myRoles?id=' + role_id
     })
   },
   //获取评论
@@ -94,7 +96,7 @@ Page({
           that.setData({
             comment: res.data
           })
-          console.log(that.data.comment.data);
+          console.log(that.data.comment);
         }
       
       }
