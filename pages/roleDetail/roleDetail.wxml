@@ -17,19 +17,19 @@
     <view class='tit'>
 
       <text class='t-name'>{{detail.character.name}}</text>
-      <addBtn class="addBtn" bindtap='role_detail'></addBtn>
+      <addBtn class="addBtn" bindtap='role_detail' data-id='{{detail.character.id}}'></addBtn>
     </view>
     <view class='o-info clearfix'>
       <view class='o-icon'>
         <image src='{{detail.character.thumbnail}}'></image>
       </view>
       <view class='o-txt'>
-        <text class='txt'>{{detail.character.description}}11</text>
+        <text class='txt'>{{detail.character.description}}</text>
         <view class='o-b'>
-          <text class='o-family'>{{detail.character.collection_view}}人参与 / 家庭</text>
-          <view class='label'>
-            <!-- <image mode="widthFix" src='/img/yinle-g.png'></image>Audio -->
-            </view>
+          <text class='o-family'>{{detail.character.sale_num}}人参与 / 家庭</text>
+           <!--<view class='label'>
+            <image mode="widthFix" src='/img/yinle-g.png'></image>Audio 
+            </view>-->
         </view>
       </view>
 
