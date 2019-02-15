@@ -5,7 +5,7 @@
 
 <!-- 购买列表 -->
 <view class='list_item' wx:for="{{detail}}" wx:key="index">
-  <image src='{{item.thumbnail}}' class='tu'></image>
+  <image src='{{item.thumbnail}}' mode='aspectFill' class='tu'></image>
   <view class='list_r'>
     <view class='juese'>
       <text>{{item.name}}</text>
