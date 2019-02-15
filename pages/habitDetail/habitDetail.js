@@ -22,8 +22,9 @@ Page({
     this.setData({
       options: options
     })
-    Promise.all([this.getDetail(options), this.getTopicList()]).then(arr => {
+    Promise.all([this.getDetail(options)]).then(arr => {
       console.log('arr',arr)
+      this.getTopicList()
       this.getCalendar()
     })
   },
