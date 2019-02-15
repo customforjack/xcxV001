@@ -3,7 +3,7 @@
   <view class='teacherBox'>
     <view class='t-info'>
       <view class='t-icon'>
-        <image src='{{item.member_img}}'></image>
+        <image src='{{item.member_img}}' ></image>
       </view>
       <view class='t-msg'>
         <text class='t-i-t'>{{item.member_name}}</text>
@@ -16,7 +16,7 @@
     </view>
     <view class='talk-text'>{{item.content}}</view>
     <view class='t-js'>
-      <image src='{{child}}' wx:key="idx" wx:if="{{child !== ''}}" wx:for="{{item.images}}" wx:for-index="idx" wx:for-item="child"></image>
+      <image src='{{child}}' mode='aspectFill' wx:key="idx" wx:if="{{child !== ''}}" wx:for="{{item.images}}" wx:for-index="idx" wx:for-item="child" data-src="{{child}}" bindtap="previewImage"></image>
     </view>
     <view class='t-audio' wx:if="{{item.audio && item.audio !== '' && item.audio != 'undefined'}}">
       <view class='audioCard'>

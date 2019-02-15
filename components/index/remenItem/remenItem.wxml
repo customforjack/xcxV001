@@ -11,7 +11,6 @@
     <view class='main_content' data-id="{{item.id}}"  catchtap='toDetail'>
       <view class='main_tu'>
         <image src='{{item.thumbnail}}' class='tu'></image>
-        <image src='/img/v.png' class='icon'></image>
       </view>
       <view class='main_right'>
         <view class='desc'>{{item.description}}</view>

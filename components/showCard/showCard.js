@@ -11,6 +11,7 @@ Component({
       value: {},
       observer(newVal, oldVal, changedPath) {
         console.log('newVal', newVal)
+  
         // 属性被改变时执行的函数（可选），也可以写成在methods段中定义的方法名字符串, 如：'_propertyChange'
         // 通常 newVal 就是新设置的数据， oldVal 是旧数据
       }
@@ -21,7 +22,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+   
   },
 
   /**
@@ -38,6 +39,13 @@ Component({
       InnerAudioContext.onError((res) => {
         console.log(res.errMsg)
         console.log(res.errCode)
+      })
+    },
+    previewImage: function (e) {
+      const current = e.target.dataset.src;
+      wx.previewImage({
+        current: current, // 当前显示图片的http链接  
+        urls: this.data.item.images // 需要预览的图片http链接列表  
       })
     }
   }
