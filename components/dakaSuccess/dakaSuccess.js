@@ -31,6 +31,7 @@ Component({
       this.setData({
         show:false
       })
+      this.triggerEvent('showTab', this.data.show);
     }
   }
 })

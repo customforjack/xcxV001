@@ -117,38 +117,46 @@ Page({
         var habit_id = e.currentTarget.dataset.id;
         var up = "habitList[" + index + "].is_sign";//先用一个变量，把(info[0].gMoney)用字符串拼接起来
 
-        if(that.data.habitList[index].is_sign==2){
-
+        if(that.data.habitList[index].is_sign==0){
             that.setData({
                 [up]:1
             })
-        }else {
-            console.log("已经点赞")
-        }
-        wx.ajax({
+          wx.ajax({
             url: '/api/Product/signMyHabit',
             checkRole: false,
             params: {
-                token: wx.getStorageSync('token'),
-                member_habit_id:habit_id
+              token: wx.getStorageSync('token'),
+              member_habit_id: habit_id
             },
             type: 'POST',
             success(res) {
-                console.log("我的习惯",res.data.data);
-                console.log("我的习惯",res.data.count);
-                if (res.code === 1) {
-                    // 打卡成功
-                    if(that.data.habitList[index].is_sign==2){
-                        that.setData({
-                            [up]:1
-                        })
-                    }else {
-                        console.log("已经点赞")
-                    }
+              console.log("打卡", res);
+              if (res.code == 1) {
+                // 打卡成功
+                // if(that.data.habitList[index].is_sign==0){
+                that.setData({
+                  [up]: 1
+                })
+                // }
 
-                }
+              } else if (res.code == 400) {
+                wx.showToast({
+                  title: '已打卡',
+                  icon: 'none',
+                  duration: 1000
+                })
+              }
             }
-        });
+          });
+        }else {
+          wx.showToast({
+            title: '已打卡',
+            icon: 'none',
+            duration: 1000
+          })
+            console.log("已经点赞")
+        }
+        
     },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -161,8 +169,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
-  },
+    var that=this;
+    console.log(that.data.flag);
+    if (this.data.flag==1){
+      that.myHabit();
+    }
+    else if (this.data.flag == 0){
+      that.myCourse();
+    } 
+     },
 
   /**
    * 生命周期函数--监听页面隐藏

@@ -61,9 +61,9 @@
     <image src='../../img/agent.png'></image>
     <text>我的发言</text>
   </view>
-  <view class='model_item' bindtap='goRemind'>
-    <image src='../../img/zhong.png'></image>
-    <text>我的提醒</text>
+  <view class='model_item' >
+    <!-- <image src='../../img/zhong.png'></image>
+    <text>我的提醒</text> -->
   
   </view>
   

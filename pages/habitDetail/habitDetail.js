@@ -30,6 +30,7 @@ Page({
       url: '/pages/leavingMsg/leavingMsg?type=' + this.data.detail.type + '&p_id=' + this.data.detail.habit_id,
     })
   },
+  //习惯详情
   getDetail (params) {
     return wx.ajax({
       url: '/api/Product/getHabitDetail',
@@ -53,6 +54,7 @@ Page({
     url: '/pages/sendInvita/sendInvita?member_habit_id=' + this.data.options.member_habit_id,
   })
   },
+  //发言列表
   getTopicList(){
     const _this = this
     return wx.ajax({

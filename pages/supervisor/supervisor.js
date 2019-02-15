@@ -23,6 +23,13 @@ Page({
       that.mySupervisorList();
     };
   },
+  dkSuccess(e){
+    console.log(e)
+    
+    this.setData({
+      model: e.detail
+    })
+  },
 //组建传值
   numChange(e) {
     console.log(e);
