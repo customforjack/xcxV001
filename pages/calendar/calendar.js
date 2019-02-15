@@ -14,7 +14,7 @@ Component({
   properties: {
     date: {
       type: null,
-      value: new Date()
+      value: new Date(),
     },
     selected: {
       type: Array,
@@ -38,10 +38,16 @@ Component({
     selectDay: '', // 当前选择日期
     canlender: {
       "weeks": []
+    },
+    mak_time: {
+      year: 2019,
+      month: 1,
+      day: 14
     }
   },
   ready() {
     this.getWeek(new Date())
+    console.log(this.data)
   },
   /**
    * 组件的方法列表
@@ -152,6 +158,9 @@ Component({
         "canlender.day": day,
         'canlender.year': year,
       })
+    
+      console.log(this.data.canlender.weeks)
+      console.log(this.data.canlender.year)
       month = month < 10 ? "0" + month : month
       date = date < 10 ? "0" + date : date
       this.triggerEvent('getdate', { year, month, date })

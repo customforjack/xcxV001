@@ -1,4 +1,5 @@
 // pages/habitDetail/habitDetail.js
+var util = require('../../utils/util.js'); 
 Page({
 
   /**
@@ -8,13 +9,15 @@ Page({
     detail: {},
     options:{},
     talkList:[],
-    model:false
+    model:false,
+    mak_time:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+   
     console.log('options', options)
     this.setData({
       options: options
@@ -24,6 +27,17 @@ Page({
       this.getCalendar()
     })
   },
+
+
+
+  //监听日历变化
+  numChange:function(e){
+      console.log(e);
+    var year_time=  e.year;
+    var month_time = e.month;
+    var day_time = e.day;    
+  },
+  
   addLeavingMsg(){
     // 留言
     wx.navigateTo({
@@ -80,15 +94,34 @@ Page({
   },
   getCalendar() {
     const _this = this
+    
+    var now_date = new Date;
+    // var now_month = now_date.getMonth() + 1;
+    // console.log(now_month);
     // 获取日历信息
     return wx.ajax({
       url: '/api/Product/getSignDate',
       params: {
         member_habit_id: _this.data.detail.member_habit_id,
-        year: 2019,
-        month: 2,
+        year: "",
+        month: "",
         token: wx.getStorageSync('token')
       }
+    }).then(res => {
+      console.log("获取日历",res);
+      // mak_time: {
+      //   year: 2019,
+      //     month: 1,
+      //       day: 14
+      // }
+      _this.setData({
+        mak_time: {
+          year:2019,
+          month:2,
+          day:[11,10,20]
+        }
+       
+      })
     })
   },
   todk(){

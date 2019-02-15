@@ -35,9 +35,9 @@
     "pages/sendInvita/sendInvita",
     "pages/acceptInvita/acceptInvita",
     "pages/dudaoDetail/dudaoDetail",
-
-    "pages/find/find",
     "pages/calendar/calendar",
+    "pages/find/find",
+    
     "pages/vip/vip",
     "pages/add_custom/add_custom",
     "pages/my/my_account/my_account",

@@ -1,5 +1,5 @@
 
-<view  class=" active">
+<view  class=" active" >
   <view class="calendar-wrapper active">
     <view class="calendar-panel">
     <view class="calendar-panel-box">
@@ -41,7 +41,7 @@
               <view class="{{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'yuan': ''}} " data-week="{{week}}" > {{day.date}}
               </view>
               </view>
-              <view class='mark'></view>
+              <view class='mark' wx:if='{{canlender.year== mak_time.year && day.date==mak_time.day && day.month== mak_time.month}}'></view>
               <view wx:if="{{day.have}}" class="data-circle"></view>
             </view>
           </block>

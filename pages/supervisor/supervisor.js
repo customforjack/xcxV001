@@ -25,7 +25,6 @@ Page({
   },
   dkSuccess(e){
     console.log(e)
-    
     this.setData({
       model: e.detail
     })
@@ -103,10 +102,14 @@ Page({
   // 督导详情
     dudaoDetail:function(e){
       console.log(e);
-      var super_id = e.currentTarget.id;
+      var super_id = { member_habit_id: e.currentTarget.dataset.id };
+      console.log(super_id);
         wx.navigateTo({
-          url: '../dudaoDetail/dudaoDetail?' + wx.getParams(super_id)
+          // url: '../dudaoDetail/dudaoDetail?' + wx.getParams(super_id)
+          url: '/pages/habitDetail/habitDetail?' + wx.getParams(super_id)
+          
         })
+
     },
     //袭ta一下
   hint:function(){
@@ -126,7 +129,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
+    var that = this;
+    console.log(that.data.flag);
+    if (this.data.flag == 1) {
+      that.supervisorMeList();
+    }
+    else if (this.data.flag == 0) {
+      that.mySupervisorList();
+    } 
   },
 
   /**

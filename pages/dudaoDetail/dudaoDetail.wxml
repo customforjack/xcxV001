@@ -61,12 +61,11 @@
       <image src="/img/bookIcon.png"></image>晨读
     </view>
     <view class='list'>
-      <showCard></showCard>
-      <showCard></showCard>
-      <showCard></showCard>
+      <showCard wx:for="{{talkList}}" item="{{item}}" wx:key="index"></showCard>
     </view>
   </view>
   <!--晨读 end-->
-  <button class='gbtn left'>我也要养成</button>
-  <button class='gbtn right'>“袭”一下TA</button>
+  <button class='gbtn left' bindtap='new_habit'>我也要养成</button>
+  <button class='gbtn right' bindtap='hint'>“袭”一下TA</button>
 </view>
+<dakaSuccess show="{{model}}" bind:showTab="dkSuccess"></dakaSuccess> 

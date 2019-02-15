@@ -27,6 +27,12 @@ Component({
     isOpen: {
       type: Boolean,
       value: false,
+    },
+    mak_time: {  
+      type: null,
+      value: "",
+      observer: function (newData, oldData) {
+      }
     }
   },
 
@@ -43,6 +49,7 @@ Component({
   },
   ready() {
     this.getWeek(new Date())
+    console.log(this.data);
   },
   /**
    * 组件的方法列表
@@ -120,6 +127,7 @@ Component({
             have = true;
           }
         }
+        
         dates.currentMonthDys.push({
           'date': i + "",
           'month': month,
@@ -133,7 +141,7 @@ Component({
           'month': month + 1
         })
       }
-
+      
       canlender = canlender.concat(dates.lastMonthDays, dates.currentMonthDys, dates.nextMonthDays)
       // 拼接数组  上个月开始几天 + 本月天数+ 下个月开始几天
       for (let i = 0; i < canlender.length; i++) {
@@ -143,7 +151,7 @@ Component({
         dates.weeks[parseInt(i / 7)][i % 7] = canlender[i]
       }
 
-
+      
       // 渲染数据
       this.setData({
         selectDay: month + "月" + date + "日",
@@ -153,6 +161,12 @@ Component({
         "canlender.day": day,
         'canlender.year': year,
       })
+      var that=this;
+      console.log(this.data);
+      console.log("几号", that.data.canlender);
+      console.log("几号", that.data.mak_time);
+      console.log(this.data.canlender.weeks)
+      console.log(this.data.canlender.year)
       month = month < 10 ? "0" + month : month
       date = date < 10 ? "0" + date : date
       this.triggerEvent('getdate', { year, month, date })
