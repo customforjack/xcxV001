@@ -22,6 +22,16 @@ Page({
     })
  
   },
+  toggleTab(e){
+    console.log(e)
+    this.data.tabs.forEach(item => {
+      item.select = false
+    })
+    this.data.tabs[e.currentTarget.dataset.idx].select = true;
+    this.setData({
+      tabs:this.data.tabs
+    })
+  },
   // 获取习惯列表
   getHabitList() {
     const _this = this
@@ -105,7 +115,7 @@ Page({
         })
         setTimeout(()=>{
           wx.navigateTo({
-            url: '/pages/my_roles/myRoles?' + wx.getParams(params),
+            url: '/pages/my_roles/myRoles?id=' + res.data.character_id,
           })
         },1000)
       }

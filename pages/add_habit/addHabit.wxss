@@ -11,8 +11,9 @@
 }
 
 .tabs .tab {
-  width: 118rpx;
+  width: 110rpx;
   line-height: 64rpx;
+  padding: 0;
   background: rgba(255, 255, 255, 1);
   border-radius: 32rpx;
   display: inline-block;
@@ -22,7 +23,9 @@
   border: none;
   color: rgba(155, 155, 155, 1);
 }
-
+.tabs .tab:nth-of-type(5n+0){
+  margin-right: 0;
+}
 .tabs .tab:after {
   display: none;
 }

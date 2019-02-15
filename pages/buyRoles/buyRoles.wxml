@@ -1,13 +1,13 @@
 <!--pages/buyRoles/buyRoles.wxml-->
 <view class='buyRoles'>
   <view class='scroll-x tabs-box'>
-    <view class='toCheck'>选择</view>
     <scroll-view scroll-x style="width:auto;overflow:hidden" class="tabs">
       <button class="{{item.checked ? 'active' : ''}}" data-idx="{{index}}" wx:key="index" bindtap='toggleTab' wx:for="{{tabs}}">{{item.name}}</button>
     </scroll-view>
   </view>
   <view class="{{showTab === index ?'roleList active':'roleList'}}" wx:key="index" wx:for="{{showArr}}">
     <view class='r-card' data-fidx="{{index}}" data-idx="{{idx}}" bindtap='toCheck'  wx:for-index="idx" wx:key="idx" wx:for="{{item}}">
+    <view class='mask'></view>
       <image mode="aspectFill" src='{{item.thumbnail}}'></image>
       <view class='name'>{{item.name}}</view>
       <view class='label'>精选</view>

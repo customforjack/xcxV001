@@ -40,52 +40,43 @@ Page({
       })
       return false
     }
-    if (this.data.imgArr.length || this.data.audioArr.length || this.data.videoArr.length) {
-      wx.ajax({
-        url: '/api/Topic/topicAdd',
-        params : {
-          token:wx.getStorageSync('token'),
-          type: parseInt(_this.data.params.type),
-          p_id: parseInt(_this.data.params.p_id),
-          content: _this.data.content,
-          images: _this.data.imgArr.join(','),
-          video: _this.data.videoArr.length ? _this.data.videoArr[0].src : '',
-          audio: _this.data.audioArr.length ? _this.data.audioArr[0].src : ''
-        }
-      }).then(res => {
-        console.log(_this.data.images)
-        if(res.code === 1){
-          wx.showToast({
-            title: '提交成功',
-            icon:'none'
-          })
-          // wx.navigateTo({
-          //   url: '/pages/habitDetail/habitDetail',
-          // })
-          let pages = getCurrentPages();
-          let prevPage = pages[pages.length - 2]; 
-          // prevPage.setData({  
-          //   id: _this.data.params.p_id
-          // })
-         
-          wx.navigateBack({
-            delta: 1
-          })
-        }else{
-          wx.showToast({
-            title: res.msg,
-            icon: 'none'
-          })
-        }
-      })
+    wx.ajax({
+      url: '/api/Topic/topicAdd',
+      params: {
+        token: wx.getStorageSync('token'),
+        type: parseInt(_this.data.params.type),
+        p_id: parseInt(_this.data.params.p_id),
+        content: _this.data.content,
+        images: _this.data.imgArr.join(','),
+        video: _this.data.videoArr.length ? _this.data.videoArr[0].src : '',
+        audio: _this.data.audioArr.length ? _this.data.audioArr[0].src : ''
+      }
+    }).then(res => {
+      console.log(_this.data.images)
+      if (res.code === 1) {
+        wx.showToast({
+          title: '提交成功',
+          icon: 'none'
+        })
+        // wx.navigateTo({
+        //   url: '/pages/habitDetail/habitDetail',
+        // })
+        let pages = getCurrentPages();
+        let prevPage = pages[pages.length - 2];
+        // prevPage.setData({  
+        //   id: _this.data.params.p_id
+        // })
 
-    } else {
-      wx.showToast({
-        title: '图片、视频和音频必须提交一项',
-        icon: 'none'
-      })
-      return false
-    }
+        wx.navigateBack({
+          delta: 1
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

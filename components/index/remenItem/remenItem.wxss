@@ -1,7 +1,7 @@
 /* components/index/renmenItem/remmenItem.wxss */
 
 .remen_item {
-  padding: 26rpx 28rpx 40rpx 0;
+  padding: 26rpx 75rpx 40rpx 0;
   position: relative;
 }
 
@@ -9,7 +9,7 @@
   display: flex;
   height: 60rpx;
   line-height: 60rpx;
-  margin-bottom: 34rpx;
+  padding-bottom: 34rpx;
 }
 
 .title {

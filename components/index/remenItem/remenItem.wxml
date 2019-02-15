@@ -1,14 +1,14 @@
 <!--components/index/renmenItem/remmenItem.wxml-->
-<view data-id="{{item.id}}"  catchtap='toDetail' >
+<view  >
   <view class='remen_item' >
-    <view class='title_box'>
+    <view class='title_box' data-id="{{item.id}}"  catchtap='toDetail'>
       <view class='title'>{{item.name}}</view>
       <view class='addBtn' data-id="{{item.id}}" hover-class="addBtnHover" catchtap='toaddStepOne'>
         <view class='text'>加入</view>
         <image src='/img/add.png'></image>
       </view>
     </view>
-    <view class='main_content'>
+    <view class='main_content' data-id="{{item.id}}"  catchtap='toDetail'>
       <view class='main_tu'>
         <image src='{{item.thumbnail}}' class='tu'></image>
         <image src='/img/v.png' class='icon'></image>

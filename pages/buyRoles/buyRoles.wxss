@@ -1,7 +1,6 @@
 /* pages/buyRoles/buyRoles.wxss */
 .tabs-box{
   position: relative;
-  padding-right: 50rpx;
 }
 .tabs-box .toCheck{
   position: absolute;
@@ -53,6 +52,15 @@ position: relative;
 display: inline-block;
 margin-right: 30rpx;
 margin-bottom: 32rpx;
+}
+.roleList .r-card .mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .4);
+  border-radius: 8rpx;
 }
 .roleList .r-card:nth-of-type(3n+0){
   margin-right: 0;

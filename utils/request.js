@@ -41,13 +41,6 @@ let options = {
 function ajax(opt) {
   const tk = wx.getStorageSync('token')
   let obj = Object.assign(options, opt)
-  if (obj.loading === 'loading') {
-    wx.showLoading({
-      title: obj.msg,
-    })
-  } else {
-    wx.showNavigationBarLoading()
-  }
   // 调接口之前先校验登录  先判断checkRole  是否为true
   if (obj.checkRole){ // 校验登录
     if (!tk || tk === 'undefined'){
@@ -84,13 +77,21 @@ function newAjax(obj){
         } else {
           wx.hideNavigationBarLoading()
         }
-        if(res.code === 400){
+        if (res.data.code === 202 || res.data.code === 203 || res.data.code === 204){
           // 去授权登录
+
           // 失效
+        setTimeout(()=>{
           wx.navigateTo({
             url: '/pages/authorize/authorize'
           })
-
+        },1000)
+        }
+        if(res.data.code === 400){
+          wx.showToast({
+            title: res.data.msg,
+            icon:'none'
+          })
         }
         obj.success(res.data)
         resolve(res.data)

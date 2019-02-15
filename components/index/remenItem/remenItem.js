@@ -27,15 +27,9 @@ Component({
         console.log('res:', res)
         if (res.code === 601){
           // 则给出提示，并跳转至对应角色详情页
-          wx.showToast({
-            title: res.msg,
-            icon: 'none'
+          wx.navigateTo({
+            url: '/pages/my_roles/myRoles?id=' + res.data.character_id,
           })
-          setTimeout(()=>{
-            wx.navigateTo({
-              url: '/pages/my_roles/myRoles?id=' + res.data.character_id,
-            })
-          },1000)
 
         }
         if(res.code === 1){

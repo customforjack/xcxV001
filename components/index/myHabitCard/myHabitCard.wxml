@@ -1,9 +1,9 @@
 <!--components/index/myHabitCard/myHabitCard.wxml-->
 <view class='myHabitCard' >
-    <view class='icon' data-id="{{item.id}}" data-ismine="{{item.is_mine}}" bindtap='toDetail'>
+    <view class='icon' data-id="{{item.member_habit_id}}" data-ismine="{{item.is_mine}}" bindtap='toDetail'>
       <image src='/img/demo.jpeg'></image>
     </view>
-    <view class='h-info' data-id="{{item.id}}" data-ismine="{{item.is_mine}}" bindtap='toDetail'>
+    <view class='h-info' data-id="{{item.member_habit_id}}" data-ismine="{{item.is_mine}}" bindtap='toDetail'>
       <view class='h-name'>{{item.habit_name}}</view>
       <view class='h-num'>{{item.is_mine === 0 ?'您还未开始练习':(item.sign_num === 0 ?'您还未开始练习':'您已练习'+item.sign_num+'次')}}</view>
       <view class='h-total'>{{item.id === 0 ?'自定义习惯':item.page_view+'人正在练习'}}</view>

@@ -44,47 +44,14 @@ Page({
         ],
       [
         {name:'00',value:0},
-        {name:'30',value:30}
+        {name:'10',value:10},
+        { name: '20', value: 20 },
+        { name: '30', value: 30 },
+        { name: '40', value: 40 },
+        { name: '50', value: 50 }
+
+
       ]
-    ],
-    weekArr: [
-     {
-       name:'周一',
-       select: true,
-       value:'1'
-     },
-      {
-        name: '周二',
-        select: true,
-        value: '2'
-
-      },
-      {
-        name: '周三',
-        select: true,
-        value: '3'
-      },
-      {
-        name: '周四',
-        select: true,
-        value: '4'
-
-      },
-      {
-        name: '周五',
-        select: true,
-        value: '5'
-      },
-      {
-        name: '周六',
-        select: false,
-        value: '6'
-      },
-      {
-        name: '周日',
-        select: false,
-        value: '7'
-      }
     ]
   },
 
@@ -217,13 +184,7 @@ Page({
       })
       return false
     } 
-    if (_this.data.weekArr.length === 0) {
-      wx.showToast({
-        title: '请选择重复时间',
-        icon: 'none'
-      })
-      return false
-    } 
+ 
     if (this.data.params.character_id !== 0){
       if (_this.data.myPromise1 === '') {
         wx.showToast({
@@ -247,12 +208,7 @@ Page({
       timeArr.push(item.name)
     })
     let time = timeArr.join(',')
-    let weekList = []
-    this.data.weekArr.forEach(item =>{
-      if(item.select){
-        weekList.push(item.value)
-      }
-    })
+
     wx.ajax({
       url: '/api/Product/createMyHabit',
       params: {
@@ -265,7 +221,6 @@ Page({
         their_promise_success: this.data.otherPromise1,
         their_promise_fail: this.data.otherPromise2,
         remind_time: time,
-        remind_week: weekList.join(','),
         token: wx.getStorageSync('token')
       }
     }).then(res => {

@@ -17,6 +17,7 @@
       <view class='role' data-idx="{{index}}" bindtap='checkRole' wx:for="{{detail.today_habit}}"  wx:key="index">
         <image src='{{item.thumbnail}}'></image>
         <view class='name'>{{item.name}}</view>
+
       </view>
     </view>
   </scroll-view>
@@ -42,7 +43,8 @@
   <view class='hotRoles re-card-list'>
     <scroll-view scroll-x="true" class="vip_xl">
       <view class='re-card' data-id="{{item.id}}" bindtap='toRoleDetail' wx:key="index" wx:for="{{detail.character_list}}">
-        <image class='roleIcon' src="{{item.thumbnail}}"></image>
+        <view class='mask'></view>
+        <image class='roleIcon' mode="aspectFill" src="{{item.thumbnail}}"></image>
         <view class='name'>{{item.name}}</view>
         <view class='sale'>{{item.sale_num}}万人</view>
       </view>

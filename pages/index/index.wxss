@@ -71,13 +71,26 @@ swiper swiper-item image {
 }
 .re-card-list .re-card{
   width: 176rpx;
+  height: 176rpx;
+  border-radius: 50%;
+  overflow: hidden;
   display: inline-block;
   margin-right: 18rpx;
   position: relative;
 }
-.re-card-list .re-card .roleIcon{
+.re-card-list .re-card .mask{
   width: 176rpx;
   height: 176rpx;
+  border-radius: 50%;
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.re-card-list .re-card .roleIcon{
+  width: 176rpx;
   border-radius: 50%;
   display: block;
 }

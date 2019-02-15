@@ -15,6 +15,7 @@ Page({
    */
   onLoad: function (options) {
     console.log('options', options)
+    this.getRoles()
   },
   toNext(){
     wx.navigateTo({
@@ -109,7 +110,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getRoles()
+
   },
 
   /**
@@ -121,6 +122,13 @@ Page({
   toggleTab(e){
     console.log(e)
     let list = this.data.tabs
+    // 清空选中项
+    this.data.showArr.forEach((item, i) => {
+      item.forEach(child => {
+        child.checked = false
+      })
+    })
+
     list.forEach(item => {
       item.checked = false
     })
@@ -128,7 +136,8 @@ Page({
   
     this.setData({
       tabs: this.data.tabs,
-      showTab:e.currentTarget.dataset.idx
+      showTab:e.currentTarget.dataset.idx,
+      showArr: this.data.showArr
     })
   },
   /**

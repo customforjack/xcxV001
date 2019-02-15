@@ -1,11 +1,11 @@
 <!--pages/add_habit/addHabit.wxml-->
 <view class='addHabit'>
   <view class='tabs'>
-    <button class="{{item.select ? 'tab active' :'tab'}}" wx:key="index" wx:for="{{tabs}}">{{item.label}}</button>
+    <button class="{{item.select ? 'tab active' :'tab'}}" bindtap='toggleTab' data-idx="{{index}}" wx:key="index" wx:for="{{tabs}}">{{item.label}}</button>
   </view>
   <view class='list'>
     <view wx:if="{{tabs[index].select}}" wx:for="{{sportList}}" wx:key="idx">
-      <view class='card' wx:for="{{item}}" data-id="{{item.id}}" bindtap='toDetail' wx:key="index">
+      <view class='card' wx:for="{{item}}" data-id="{{item.id}}"  bindtap='toDetail' wx:key="index">
         <text>{{item.name}}</text>
         <view class='img-box'>
           <image mode="widthFix" src='{{item.icon}}'></image>
