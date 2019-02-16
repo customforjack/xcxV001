@@ -1,23 +1,27 @@
 <!--pages/iamdudao/iamdudao.wxml-->
+<view class='titel'>
+<image style='' src='../../img/xiguanbang_act.png'></image>
+<text>{{detail.member_name}}的{{detail.habit_name}}</text>
+</view>
 <view>
   <calendar id="component"  bindtap=""></calendar>
 </view>
 <view class='iamdudao'>
   <!--说几句 start-->
-  <view class='sayBox'>
+  <!-- <view class='sayBox'>
     <view class='tit'>说几句</view>
     <view class='box'>
       <textarea placeholder='在此处写下你想说的话' placeholder-class='sayTextarea'></textarea>
     </view>
     <button class='ok'>完成</button>
-  </view>
+  </view> -->
   <!--说几句 end-->
   <!--排行榜 start-->
   <view class='phb'>
     <view class='tit'>
-      <image src='/img/bookIcon.png'></image>钱多多的排行榜
+      <image src='/img/bookIcon.png'></image>量化描述
     </view>
-    <view class='tabs'>
+    <!-- <view class='tabs'>
       <view class='tab'>全国
         <view class='line'></view>
       </view>
@@ -25,9 +29,9 @@
         <view class='line'></view>
       </view>
       <view class='tab'>同圈</view>
-    </view>
+    </view> -->
     <view class='list'>
-      <view class='card'>
+      <!-- <view class='card'>
         <view class='c-left'>完成习惯个数</view>
         <view class='c-right'>
           <text>2个</text>
@@ -50,15 +54,45 @@
           <text>排名2014名</text>
           <text>金牌</text>
         </view>
-      </view>
+      </view> -->
+
+
+      <remarkCard label="加入日期" num="{{detail.create_time}}"></remarkCard>
+      <remarkCard label="已打卡" num="{{detail.sign_num}}"></remarkCard>
+      <remarkCard label="当前连续打卡" num="{{detail.now_serial}}"></remarkCard>
+      <remarkCard label="最高连续打卡" num="{{detail.max_serial}}"></remarkCard>
     </view>
   </view>
   <!--排行榜 end-->
+  <!--我的辅导团 start-->
+  <view class='myfdyuan' wx:if="{{detail.character_id != 0}}">
+    <view class='tit'>
+      <image src='/img/bookIcon.png'></image>我的督导团
+    </view>
+    <view class='fudyuanList'>
+      <image wx:for="{{detail.member_habit_supervisor}}" wx:key="index" src='{{item.member_img}}'></image>
+    </view>
+    <addBtn class="addfdy" bindtap="toYQdd"></addBtn>
+  </view>
+  <!--我的辅导团 end-->
+  <!--说说感想 start-->
+  <view class='saySomething'>
+    <view class='tit'>
+      <image src="/img/something-icon.png"></image>说说感想</view>
+    <addBtn class="addBtn" bindtap="addLeavingMsg"></addBtn>
+    <view class='list'>
+      <view class='nodataBox'>
+        <image class='nodata' src='/img/nodata-say.png'></image>
+        <text>还没有留下感想哦</text>
+      </view>
 
+    </view>
+  </view>
+  <!--说说感想 end-->
   <!--晨读 start-->
   <view class='readBox'>
     <view class='tit'>
-      <image src="/img/bookIcon.png"></image>晨读
+      <image src="/img/bookIcon.png"></image>我们在一起练
     </view>
     <view class='list'>
       <showCard wx:for="{{talkList}}" item="{{item}}" wx:key="index"></showCard>

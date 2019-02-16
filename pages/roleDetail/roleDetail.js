@@ -50,9 +50,9 @@ Page({
           that.setData({
             detail:res.data
           })
-          wx.setNavigationBarTitle({
-            title: that.data.detail.name
-          })
+          // wx.setNavigationBarTitle({
+          //   title: that.data.detail.name
+          // })
           that.comment(roleId);
         }
         if(res.code === 601){

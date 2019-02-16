@@ -1,6 +1,14 @@
 /* pages/dudaoDetail/dudaoDetail.wxss */
 /* pages/iamdudao/iamdudao.wxss */
-
+.titel image{
+  margin-right: 14rpx;
+  width:26rpx;
+  height:38rpx;
+  vertical-align: middle;
+  font-size: 34rpx;
+  color: #161616;
+}
+.titel{margin-left: 40rpx}
 .iamdudao {
   background: rgba(243, 247, 248, 1);
   padding-bottom: 100rpx;
@@ -55,6 +63,7 @@
   font-size: 34rpx;
   color: rgba(22, 22, 22, 1);
   line-height: 48rpx;
+  margin-bottom: 27rpx;
 }
 
 .phb .tit image {
@@ -177,4 +186,115 @@
   color: rgba(189, 192, 199, 1);
   text-align: center;
   line-height: 44rpx;
+}
+
+.myfdyuan {
+  padding: 48rpx 40rpx 25rpx;
+  background: #fff;
+  position: relative;
+}
+
+.myfdyuan .tit {
+  font-size: 34rpx;
+  color: rgba(51, 51, 51, 1);
+  line-height: 48rpx;
+  margin-bottom: 27rpx;
+}
+
+.myfdyuan .tit image {
+  width: 35rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.fudyuanList image {
+  width: 82rpx;
+  height: 82rpx;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+.addfdy {
+  position: absolute;
+  top: 42rpx;
+  right: 36rpx;
+}
+
+.friendBox {
+  margin-top: 20rpx;
+  padding-top: 42rpx;
+  background: #fff;
+}
+
+.friendBox .tit {
+  padding: 0 40rpx;
+  font-size: 34rpx;
+  color: rgba(22, 22, 22, 1);
+  line-height: 48rpx;
+  background: #fff;
+}
+
+.friendBox .tit image {
+  width: 34rpx;
+  height: 29rpx;
+  margin-right: 20rpx;
+}
+
+.remark {
+  padding: 42rpx 32rpx 1rpx;
+  background: #fff;
+  margin-bottom: 25rpx;
+}
+
+.remark .tit {
+  font-size: 34rpx;
+  color: rgba(51, 51, 51, 1);
+  line-height: 48rpx;
+  margin-bottom: 27rpx;
+  padding: 0 8rpx;
+}
+
+.remark .tit image {
+  width: 34rpx;
+  height: 29rpx;
+  margin-right: 20rpx;
+}
+
+.saySomething {
+  padding: 48rpx 40rpx 25rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  position: relative;
+}
+.saySomething .tit {
+  font-size: 34rpx;
+  color: rgba(22, 22, 22, 1);
+  line-height: 48rpx;
+}
+
+.saySomething .tit image {
+  width: 35rpx;
+  margin-right: 20rpx;
+  height: 30rpx;
+}
+.saySomething  .nodataBox{
+  text-align: center;
+  padding-top: 47rpx;
+}
+.saySomething  .nodataBox .nodata{
+  width: 171rpx;
+  height: 153rpx;
+  display: block;
+  margin: 0 auto 22rpx;
+}
+.saySomething  .nodataBox text{
+  font-size:24rpx;
+  color:rgba(205,205,207,1);
+  line-height:33rpx;
+}
+.addBtn{
+  position: absolute;
+  right: 36rpx;
+  top: 42rpx;
 }

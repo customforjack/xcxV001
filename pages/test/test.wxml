@@ -1,0 +1,6 @@
+<view>
+  <view>{{options.nickName}}</view>
+  <view><image src='{{options.icon}}'></image></view>
+  <view>{{options.give_id}}</view>
+  <view>9999999999999999</view>
+</view>

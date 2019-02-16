@@ -6,7 +6,10 @@ Page({
    */
   data: {
     flag: 0,
-    tabx: 0
+    tabx: 0,
+    icon: wx.getStorageSync('userInfo').avatarUrl,
+    nickName: wx.getStorageSync('userInfo').nickName,
+    give_id: '',
   },
   changeTab(e) {
     var that=this;
@@ -22,7 +25,37 @@ Page({
       }
   },
 
-
+  give: function (options) {
+    console.log(options);
+    var give_id = options.currentTarget.dataset.id;
+    this.setData({
+      give_id: give_id
+    })
+  },
+  onShareAppMessage(res) {
+    const params = {
+      nickName: this.data.nickName,
+      give_id: this.data.give_id,
+      icon: this.data.icon
+    }
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: `${this.data.nickName}赠送你礼物`,
+      path: '/pages/test/test',
+      success: function (res) {
+        // 转发成功
+        console.log(res);
+        console.log("转发成功:" + JSON.stringify(res));
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -32,6 +65,7 @@ Page({
       that.myCharacterUnused();
 
   },
+ 
   //获取已使用角色列表
     myCharacterUsed:function(){
         var that= this;
@@ -161,9 +195,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
-
+ 
   /**
    * 生命周期函数--监听页面隐藏
    */

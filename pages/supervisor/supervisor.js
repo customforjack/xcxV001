@@ -113,8 +113,8 @@ Page({
       var super_id = { member_habit_id: e.currentTarget.dataset.id };
       console.log(super_id);
         wx.navigateTo({
-          // url: '../dudaoDetail/dudaoDetail?' + wx.getParams(super_id)
-          url: '/pages/habitDetail/habitDetail?' + wx.getParams(super_id)
+           url: '../dudaoDetail/dudaoDetail?' + wx.getParams(super_id)
+         // url: '/pages/habitDetail/habitDetail?' + wx.getParams(super_id)
           
         })
 

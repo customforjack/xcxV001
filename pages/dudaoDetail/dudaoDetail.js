@@ -17,8 +17,9 @@ Page({
       options: options
     })
     
-    Promise.all([this.getDetail(options), this.getTopicList()]).then(arr => {
+    Promise.all([this.getDetail(options)]).then(arr => {
       console.log('arr', arr)
+      this.getTopicList()
       this.getCalendar()
     })
   },
@@ -34,6 +35,12 @@ Page({
       model: true
     })
 
+  },
+  addLeavingMsg() {
+    // 留言
+    wx.navigateTo({
+      url: '/pages/leavingMsg/leavingMsg?type=' + this.data.detail.type + '&p_id=' + this.data.detail.habit_id,
+    })
   },
   // 获取日历信息
   getCalendar() {
@@ -79,9 +86,9 @@ Page({
       this.setData({
         detail: res.data
       })
-      wx.setNavigationBarTitle({
-        title: this.data.detail.habit_name
-      })
+      // wx.setNavigationBarTitle({
+      //   title: this.data.detail.habit_name
+      // })
     })
   },
   /**
