@@ -4,6 +4,11 @@
   text-align: center;
   margin-top: 250rpx;
 }
+button{
+border:none;
+  padding: 0;
+  margin: 0;
+}
 .noList image{
   width: 300rpx;
   height: 195rpx;

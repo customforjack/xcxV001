@@ -1,6 +1,36 @@
-<view>
+<!-- <view>
   <view>{{options.nickName}}</view>
   <view><image src='{{options.icon}}'></image></view>
   <view>{{options.give_id}}</view>
-  <view>9999999999999999</view>
+  <view>{{options.thumbnail}}</view>
 </view>
+
+
+ -->
+
+你好{{options.id}}
+  <view class='tilte'>
+    <view class='content'>
+     <view>
+      <image src='../../img/add.png'></image>
+     </view>
+     <view class='miaoshu'>
+      <text class='miaoshu2'>
+        {{options.id}}
+      </text>
+      <text class='miaoshu3'>
+          pppodajsodasd jkasdjh ad akshdajsdkjl jasld ja khasdasd as adsadsad
+      </text>
+      <view class='lianxi' style='height:0'>
+       <text class='number' style='color:#616161;font-size:24rpx;'>12000人在练习</text>
+       <text class='number' style="text-decoration:line-through;color:red;">价值99元</text>
+       </view>
+     </view>
+    </view>
+    <view class='present'>
+      <text class='details'>查看详情</text>
+      <text class='accept'>接受</text>
+    </view>
+  </view>
+
+

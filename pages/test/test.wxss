@@ -1,0 +1,274 @@
+/* pages/my_role/my_role.wxss */
+.noData{
+  width: 100%;
+  text-align: center;
+  margin-top: 250rpx;
+}
+button{
+border:none;
+  padding: 0;
+  margin: 0;
+}
+.noList image{
+  width: 300rpx;
+  height: 195rpx;
+}
+.notisi{
+  font-size: 26rpx;
+  width: 100%;
+  margin-top: 55rpx;
+  color: #999999
+}
+.weui-search-bar{
+  border: none;
+  background-color:white;
+  padding:0;
+}
+.weui-search-bar__box{
+  height: 62rpx;
+}
+.weui-search-bar__label{
+  background: #F7F9FB;
+  /* border-radius:31rpx */
+}
+.search_box{
+  padding: 22rpx 27rpx;
+  }
+  .advertisement{
+  /* margin-top:40rpx;  */
+  height: 374rpx;
+}
+/* .advertisement image{
+  height: 374rpx;
+  display:block;
+  width: 100%
+} */
+.clearance{
+  height: 20rpx;
+  background: #E3EBEE;
+}
+.circle_top{
+  height: 84rpx;
+  display: flex;
+}
+.tab_item{
+  width: 50%;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.text{
+  color: #161616;
+  display: inline-block;
+  line-height: 88rpx;
+  height: 80rpx;
+  border-bottom: 4rpx solid transparent;
+}
+.act{
+  color: #2AC0CB;
+  border-bottom: 4rpx solid #5FD3DB;
+}
+.screen{
+  font-size:28rpx;
+  margin-top: 30rpx;
+  margin-left:34rpx;
+  color: #A6A6A6;
+}
+.screen text{
+  margin-right:80rpx
+}
+.screen_text{
+  color: #FF7657;
+}
+.tilte{
+  margin: 30rpx 28rpx 0rpx 28rpx;
+
+}
+.tilte_big{
+  font-size: 20rpx;
+  display: block;
+   margin-bottom: 39rpx;
+}
+.content{
+  height: 178rpx;
+  width: 100%;
+  display: flex;
+  position:relative;
+
+  padding-bottom: 25rpx;
+}
+
+.content image{
+  width:170rpx;
+  height:100%;
+  vertical-align: middle;
+}
+.content text{
+  flex: 1;
+  margin-left:44rpx;
+  display: block;
+  height: 30rpx;
+  line-height: 12rpx;
+
+}
+.content text:first-child{
+  font-size: 30rpx;
+
+}
+.content .miaoshu3{
+  height: 100rpx;
+  color: #616161;
+  font-size: 24rpx;
+  line-height:33rpx;
+  overflow:hidden;
+text-overflow:ellipsis;
+display:-webkit-box;
+-webkit-line-clamp:3;
+-webkit-box-orient:vertical
+}
+.validity_time{
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 20rpx;
+  }
+.miaoshu{
+  word-wrap: break-word;
+  
+  height: 178rpx;
+}
+.miaoshu2{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 32rpx;
+}
+.click_ta{
+  border-radius: 30rpx;
+  position: absolute;
+  width: 95rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  top: 0;
+  right: 0;
+  background: #2AC0CB;
+  color: #F7F9FB;
+
+}
+.click_cade{
+  color: #ffffff;
+  border-radius: 30rpx;
+  position: absolute;
+  width: 95rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  top: 0;
+  right: 0;
+  background: #2AC0CB;
+
+}
+.click_cade2{
+  top: 80rpx;
+  background: #ffffff;
+  color: #2AC0CB;
+  border: 1rpx solid #2AC0CB;
+  box-sizing: border-box;
+}
+.qdd{
+  margin-left:-90rpx;
+  font-size: 18rpx;
+  color: #FF6325;
+  background: #FFF0A9;
+  height: 30rpx;
+  width: 70rpx;
+  text-align: center;
+  line-height: 30rpx;
+}
+.pic_name{
+    margin-top: 22rpx;
+    display: flex;
+  }
+ .hitCard:not(:first-child) {margin-left:18rpx;}
+.hitCard{
+
+  width: 82rpx;
+  height: 82rpx;
+  text-align: center;
+   font-size: 22rpx;
+   color: #333333;
+}
+.hitCard image{
+   border-radius: 50%;
+   width: 100%;
+   height: 100%;
+   vertical-align: middle;
+}
+.line{
+  width: 100%;
+  height: 20rpx;
+  background: #F3F7F8;
+  margin-top:50rpx;
+}
+.lianxi{
+  display: flex
+}
+.lianxi text{
+  flex: 1
+}
+.number{
+  font-size: 22rpx;
+  text-align: left;
+  /* background: #FFEEA9;
+  color: #FF6325; */
+  width: 200rpx;
+  margin-top: 18rpx;
+ 
+  line-height: 30rpx!important;
+}
+.backpic{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(87,87,87, 0.6);
+}
+.check_num{
+   position: fixed;
+  border-radius: 16rpx;
+  text-align: center;
+  height: 240rpx;
+  background:#ffffff;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+}
+.count{
+display: flex;
+
+margin: 50rpx 30rpx;
+}
+.sub,.add{
+  flex: 1;
+  border: 1rpx solid #333333
+}
+.kc_num{
+  flex: 3;
+  border-top: 1rpx solid #333333;
+  border-bottom: 1rpx solid #333333;
+}
+.present{
+  text-align: center;
+
+}
+.present text{
+  display: inline-block;
+  background: #5FD3DB;
+  margin: 78rpx 30rpx 0 20rpx;
+  width: 274rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 48rpx;
+  }

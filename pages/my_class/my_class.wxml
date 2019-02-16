@@ -2,7 +2,7 @@
 <scroll-view>
 <view class='circle_top'>
     <view class='tab_item' bindtap='changeTab' data-tab='0'>
-      <text class="text {{flag==0?'act':''}}">vip课</text>
+      <text class="text {{flag==0?'act':''}}">精品课</text>
     </view>
     <view class='tab_item' bindtap='changeTab' data-tab='1'>
       <text class="text {{flag==1?'act':''}}">公开课</text>

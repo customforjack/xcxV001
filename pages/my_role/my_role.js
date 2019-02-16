@@ -8,8 +8,7 @@ Page({
     flag: 0,
     tabx: 0,
     icon: wx.getStorageSync('userInfo').avatarUrl,
-    nickName: wx.getStorageSync('userInfo').nickName,
-    give_id: '',
+    nickName: wx.getStorageSync('userInfo').nickName
   },
   changeTab(e) {
     var that=this;
@@ -27,24 +26,42 @@ Page({
 
   give: function (options) {
     console.log(options);
-    var give_id = options.currentTarget.dataset.id;
-    this.setData({
-      give_id: give_id
-    })
+   
   },
+  //转发
   onShareAppMessage(res) {
-    const params = {
+    var params = {
       nickName: this.data.nickName,
-      give_id: this.data.give_id,
       icon: this.data.icon
     }
     if (res.from === 'button') {
       // 来自页面内转发按钮
-      console.log(res.target)
+      params.give_id = res.target.dataset.id.id;
+      params.thumbnail = res.target.dataset.id.thumbnail;
+      console.log(params);
+      wx.ajax({
+        url: '/api/Order/createPresent',
+        checkRole: false,
+        params: {
+          token: wx.getStorageSync('token'),
+          character_id: params.give_id
+        },
+        type: 'POST',
+        success(res) {
+          console.log("赠送", res.data);
+          if (res.code === 1) {
+            params.id = res.data.id;
+            console.log(params);
+          }
+        }
+      });
     }
+
+
     return {
       title: `${this.data.nickName}赠送你礼物`,
-      path: '/pages/test/test',
+      path: '/pages/test/test?' + wx.getParams(params),
+      imageUrl: params.thumbnail,
       success: function (res) {
         // 转发成功
         console.log(res);
@@ -226,10 +243,6 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+ 
 
-  }
 })
