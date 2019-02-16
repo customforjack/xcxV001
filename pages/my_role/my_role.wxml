@@ -56,7 +56,7 @@
      </view>
       <!-- <view class='qdd'>钱多多</view> -->
      <view class='click_cade' data-id='{{norole.id}}'  catchtap='employ'>使用</view>
-     <view class='click_cade click_cade2'>赠送</view>
+     <button catchtap='give' data-id='{{norole.id}}'  class='click_cade click_cade2' open-type="share">赠送</button>
     </view>
       
   </view> 
