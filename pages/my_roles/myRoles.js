@@ -52,16 +52,15 @@ Page({
     console.log('e', e)
     console.log('type', this.data.showTab)
     if(this.data.showTab == 0){
-      this.getRoleDetail(e.currentTarget.dataset.id)
-
-    }
-
-    if (this.data.showTab == 1) {
+      // 习惯
       this.toaddStepOne(e)
     }
+    if (this.data.showTab == 1) {
+      this.getCourseDetail(e.currentTarget.dataset.id)
+    }
   },
-  //获取角色详情
-  getRoleDetail(roleId){
+  //获取课程详情
+  getCourseDetail(roleId){
     var that = this;
     return wx.ajax({
       url: '/api/Product/getCourseDetail',
@@ -77,7 +76,7 @@ Page({
           // 课程详情获取成功
 
           wx.navigateTo({
-            url: '/pages/roleDetail/roleDetail?' + wx.getParams(res.data) 
+            url: '/pages/habitDetail/habitDetail?' + wx.getParams(res.data) 
           })
         }
         if (res.code === 601) {
@@ -92,18 +91,20 @@ Page({
   },
   toaddStepOne(e) {
     console.log(e.currentTarget.dataset.id)
+    const _this = this
     this.getHabitDetail(e.currentTarget.dataset.id).then(res => {
       console.log('res:', res)
       if (res.code === 601) {
         // 则给出提示，并跳转至对应角色详情页
         wx.showToast({
           title: res.msg,
-          icon: 'none'
+          icon:'none'
         })
+
       }
       if (res.code === 1) {
         wx.navigateTo({
-          url: '/pages/add_habit_step1/addHabitStep1',
+          url: '/pages/add_habit_step1/addHabitStep1?' + wx.getParams(_this.data.item),
         })
       }
       if (res.code === 602) {
@@ -146,7 +147,6 @@ Page({
       console.log("角色详情列表",res)
       _this.setData({
         detail: res.data,
-       // showArr: res.data.course
         showArr: res.data.habit
       })
       wx.setNavigationBarTitle({
