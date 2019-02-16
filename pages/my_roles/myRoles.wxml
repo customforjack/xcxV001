@@ -6,12 +6,24 @@
     </view>
   </scroll-view>
   <view class='listBox'>
-    <view class='list'>
-    <view class='c' wx:for="{{showArr}}" wx:key="index">
-              <role-card item="{{item}}" data-id="{{item.id}}" bindtap="toDetail"></role-card>
+    <view class='list' wx:if="{{showTab === 0}}">
+    <view class='c' wx:for="{{detail.habit}}" wx:key="index">
+              <role-card item="{{item}}" data-id="{{item.id}}" bindscSuccess="scSuccess" catchtap="toDetail"></role-card>
+    </view>
+    </view>
+        <view class='list'  wx:if="{{showTab === 1}}">
+    <view class='c' wx:for="{{detail.course}}" wx:key="index">
+              <role-card item="{{item}}" data-id="{{item.id}}" bindscSuccess="scSuccess" catchtap="toDetail"></role-card>
     </view>
     </view>
   </view>
-
+  <view class='courseDailong' wx:if="{{modal}}">
+    <view class='msg'>该习惯对应角色尚未购买，您可以在购买该角色后进行练习</view>
+    <view class='bth-group'>
+      <button class='tobuy' bindtap='toBuy'>购买解锁</button>
+      <button class='close' bindtap='close'>再看看</button>
+    </view>
+  </view>
+  <view class='mask'  wx:if="{{modal}}"></view>
   <button class="toBuy" bindtap='toBuy'><image src='/img/btnRight-jt.png'></image><text>去购买</text></button>
 </view>

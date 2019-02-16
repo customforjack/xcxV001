@@ -4,13 +4,17 @@
     padding-bottom: 42rpx; 
 }
 .my-roles-card .info .role-c-text{
-    margin-bottom: 65rpx;
+  font-size:24rpx;
+  color:rgba(97,97,97,1);
+  line-height:33rpx;
+  margin-top: 10rpx;
+  margin-bottom: 27rpx;
 }
 .my-roles-card .tit{
-  margin-bottom: 39rpx;
-  font-size:36rpx;
-color:rgba(22,22,22,1);
-line-height:50rpx;
+height:42rpx;
+font-size:30rpx;
+color:rgba(1,1,1,1);
+line-height:42rpx;
 }
 .my-roles-card .role-c-icon{
   width:140rpx;

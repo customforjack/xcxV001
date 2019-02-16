@@ -57,9 +57,13 @@
 
     <view class='promise'  wx:if="{{params.character_id !== 0}}">
       <view class='tit'>对督导团承诺
-        <button class='sendBtn'>红包</button>
+        <button class='sendBtn'>发红包</button>
       </view>
       <input placeholder-class='ipt-place' bindinput='checkOtherPro1'  placeholder='完成任何, 如何犒劳督导'></input>
+       <view class="sendBtn2Box">
+        <button class='sendBtn2'>发红包</button>
+       </view>
+
       <input placeholder-class='ipt-place'  bindinput='checkOtherPro2' placeholder='未完成任何, 如何自我惩罚'></input>
     </view>
     <button class='subBtn' bindtap='subFrom'>完成</button>

@@ -153,6 +153,7 @@ border-radius:8rpx;
   display: inline-block;
   margin-right: 20rpx;
   position: relative;
+  margin-top: 20rpx;
 }
 
 .timeList button:after {
@@ -252,6 +253,19 @@ color: #fff;
 position: absolute;
 right: 0;
 top: -7rpx;
+}
+.sendBtn2Box{
+  text-align: right;
+}
+ .sendBtn2Box .sendBtn2{
+   display: inline-block;
+    width:120rpx;
+line-height:60rpx;
+background:rgba(42,192,203,1);
+border-radius:6rpx;
+font-size: 28rpx;
+padding: 0;
+color: #fff;
 }
 .subBtn{
   line-height:92rpx;

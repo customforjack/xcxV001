@@ -21,6 +21,21 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    scBtn(e){
+      console.log(e)
+      const _this = this
+      wx.ajax({
+        url:'/api/Product/collection',
+        params:{
+          id: e.currentTarget.dataset.id,
+          type: e.currentTarget.dataset.type
+        }
+      }).then(res => {
+  
+        if(res.code === 1){
+          _this.triggerEvent('scSuccess')
+        }
+      })
+    }
   }
 })

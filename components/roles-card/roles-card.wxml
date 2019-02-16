@@ -1,15 +1,15 @@
       <view class='my-roles-card'>
-        <view class='tit'>{{item.name}}</view>
         <view class='info'>
           <view class='role-c-icon'>
             <image src='{{item.thumbnail}}'></image>
           </view>
           <view class='role-c-info'>
+                  <view class='tit'>{{item.name}}</view>
             <view class='role-c-text'>{{item.description}}</view>
             <view class='role-c-labels'>
                 <view class='left'>{{item.page_view}}万人参与/{{item.share_view}}人转发</view>
-                <view class='right'>
-                <image src='/img/fabulous.png'></image>
+                <view class='right' catchtap="scBtn" data-id="{{item.id}}" data-type="{{item.type_flag}}">
+                <image src="{{item.is_collection === 1?'/img/fabulous.png':'/img/shoucang.png'}}"></image>
                 {{item.collection_view}}</view>
             </view>
           </view>

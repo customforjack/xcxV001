@@ -1,5 +1,9 @@
 <!--pages/habitDetail/habitDetail.wxml-->
 <view class='habitDetail'>
+<view class='daka-box'>
+  <image class='dakaOk' src='/img/daka-ok.png'></image>
+  <image class='dakaFail' src='/img/daka-fail.png'></image>
+</view>
 <view>
   <calendar id="component" mak_time='{{mak_time}}'  bindnumChange="numChange"></calendar>
 </view>

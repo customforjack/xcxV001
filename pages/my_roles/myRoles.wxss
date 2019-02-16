@@ -89,3 +89,53 @@ swiper swiper-item image {
   margin-top: 19rpx;
   margin-right: 16rpx;
 }
+.courseDailong{
+  width:589rpx;
+height:420rpx;
+background:rgba(255,255,255,1);
+border-radius:12rpx;
+position: absolute;
+left: 80rpx;
+right: 80rpx;
+top: 280rpx;
+z-index: 1000;
+padding:80rpx 40rpx 0rpx;
+box-sizing: border-box;
+}
+.courseDailong .msg{
+  margin-bottom: 30rpx;
+  font-size:28rpx;
+color:rgba(22,22,22,1);
+line-height:40rpx;
+height: 80rpx;
+letter-spacing:1rpx;
+}
+.courseDailong .bth-group{
+  width: 322rpx;
+  margin: 0 auto;
+}
+.courseDailong .bth-group button{
+  padding: 0;
+
+  line-height:88rpx;
+background:rgba(95,211,219,1);
+border-radius:5rpx;
+font-size: 30rpx;
+}
+.courseDailong .bth-group  .tobuy{
+background:rgba(95,211,219,1);
+border-radius:5rpx;
+  margin-bottom: 30rpx;
+}
+.courseDailong .bth-group .close{
+  background: none;
+  color:rgba(153,153,153,1);
+}
+.mask{
+  background: rgba(0, 0, 0, .7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}

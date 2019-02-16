@@ -7,6 +7,7 @@ Page({
   data: {
     id:null,
     showTab:0,
+    modal:false,
     tabs:[
       {
         name: '12个好习惯',
@@ -20,6 +21,11 @@ Page({
     detail:{},
     showArr:[]
   },
+  close(){
+    this.setData({
+      modal:false
+    })
+  },
   toggleTab(e){
     this.data.tabs.forEach(item => {
       item.checked = false
@@ -29,16 +35,6 @@ Page({
       tabs: this.data.tabs,
       showTab: e.currentTarget.dataset.idx
     })
-    if (parseInt(e.currentTarget.dataset.idx) === 0){
-      this.setData({
-        showArr: this.data.detail.habit
-      })
-    }
-    if (parseInt(e.currentTarget.dataset.idx) === 1){
-      this.setData({
-        showArr: this.data.detail.course
-      })
-    }
   },
   getDetail(_id){
     return wx.ajax({
@@ -74,17 +70,16 @@ Page({
         console.log("课程详情", res.data);
         if (res.code === 1) {
           // 课程详情获取成功
-
           wx.navigateTo({
-            url: '/pages/habitDetail/habitDetail?' + wx.getParams(res.data) 
+            url: '/pages/roleDetail/roleDetail?' + wx.getParams(res.data) 
           })
         }
         if (res.code === 601) {
-          wx.showToast({
-            title: res.msg,
-            icon: 'none'
+          // 弹窗
+          that.setData({
+            modal: true
           })
-
+    
         }
       }
     })
@@ -96,15 +91,14 @@ Page({
       console.log('res:', res)
       if (res.code === 601) {
         // 则给出提示，并跳转至对应角色详情页
-        wx.showToast({
-          title: res.msg,
-          icon:'none'
+        _this.setData({
+          modal: true
         })
 
       }
       if (res.code === 1) {
         wx.navigateTo({
-          url: '/pages/add_habit_step1/addHabitStep1?' + wx.getParams(_this.data.item),
+          url: '/pages/add_habit_step1/addHabitStep1?' + wx.getParams(res.data),
         })
       }
       if (res.code === 602) {
@@ -154,7 +148,21 @@ Page({
       })
     })
   },
-
+  // 收藏成功
+  scSuccess(){
+    const _this = this
+    console.log('收藏成功')
+    this.getDetail(this.data.id).then(res => {
+      console.log("角色详情列表", res)
+      _this.setData({
+        detail: res.data
+      })
+      wx.showToast({
+        title: '收藏成功',
+        icon: 'none'
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
