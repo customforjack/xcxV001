@@ -54,8 +54,42 @@ Page({
   },
 //支付
   pay: function(e){
+    let that=this;
       console.log(e.currentTarget.dataset.ordernum);
     var order_sn = e.currentTarget.dataset.ordernum;
+    wx.ajax({
+      url: '/api/Order/balancePay',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        order_sn: order_sn
+      },
+      type: 'POST',
+      success(res) {
+        console.log(res);
+        if (res.code===1){
+          that.setData({
+            act:2
+          })
+          wx.showToast({
+            title: '支付成功',
+            icon: 'success',
+            duration: 2000
+          })
+         
+          setTimeout(function () {
+            that.myOrder(that.data.act)
+          }, 2000)
+        } else if (res.code === 400){
+          that.wx_pay(order_sn);
+        }
+        
+      }
+      })
+   
+  },
+  wx_pay: function (order_sn){
+    let that=this;
     wx.ajax({
       url: '/api/Order/wxPayMP',
       checkRole: false,
@@ -76,24 +110,34 @@ Page({
             paySign: params.paySign,
             success(data) {
               console.log('succcess', data)
-              // wx.navigateTo({
-              //   url: '/pages/my/my_order/my_order',
-              // })
+              if (res.code === 1) {
+                that.setData({
+                  act: 2
+                })
+                wx.showToast({
+                  title: '支付成功',
+                  icon: 'success',
+                  duration: 2000
+                })
+                setTimeout(function () {
+                  that.myOrder(that.data.act)
+                }, 2000)
+              } else if (res.code === 400) {
+                that.wx_pay(order_sn);
+              }
             },
             fail(res) {
-              // wx.showToast({
-              //   title: JSON.stringify(res),
-              // })
+             console.log(res);
             }
           })
-          
+
         }
       }
     })
   },
 //取消订单
-  cancel_order: function(e){
-
+    cancel_order: function(e){
+      let that=this;
     console.log(e);
     var order_sn = e.currentTarget.dataset.ordernum;
 
@@ -115,6 +159,25 @@ Page({
               
               if (res.code === 1) {
                 console.log("取消成功");
+                that.setData({
+                  act: 3
+                })
+                wx.showToast({
+                  title: '取消成功',
+                  icon: 'success',
+                  duration: 1000
+                })
+                setTimeout(function(){
+                  that.myOrder(that.data.act)
+                },2000)
+               
+               
+              }else{
+                wx.showToast({
+                  title: '取消失败',
+                  icon: 'none',
+                  duration: 1000
+                })
               }
             }
           })

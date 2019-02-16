@@ -5,7 +5,7 @@
     <text>￥</text>
     <input bindinput ="numInput"  value='{{cash}}'></input>
   </view>
-  <view class='tishi'>可提现余额 {{available_balance-freeze_balance}}<text bindtap='all_money'>全部提现</text></view>
+  <view class='tishi'>可提现余额 {{available_balance}}<text bindtap='all_money'>全部提现</text></view>
   <!-- <view class='freeze'>冻结余额 {{freeze_balance}}</view> -->
   <view class='btn' bindtap='drawing'>提现</view>
   <view class='btn txmx' bindtap='my_withdrawDetail'>提现明细</view>

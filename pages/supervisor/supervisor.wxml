@@ -10,7 +10,7 @@
   </view>
 
 
- <block wx:if="{{flag==0}}">
+ <block wx:if="{{flag==0 && supervisorList.length>0}}">
   <view class='tilte'  wx:for='{{supervisorList}}'  wx:for-item='supervisorList' bindtap='dudaoDetail'    wx:key='supervisorList'  wx:for-index="supervisorIndex" data-id='{{supervisorList.id}}'>
     <!-- <text class='tilte_big' catchtap='moreDudao'>MORE</text> -->
     <view class='content'>
@@ -33,13 +33,17 @@
      <view class='click_ta' catchtap='hint'>袭TA一下</view>
     </view>
   </view>
+  
 <dakaSuccess show="{{model}}" bind:showTab="dkSuccess"></dakaSuccess> 
-
-
+</block>
+<block wx:if="{{flag==0 && supervisorList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
 </block>
 
-
- <block wx:if="{{flag==1}}">
+ <block wx:if="{{flag==1 && supervisorMeList.length>0}}">
   <view class='tilte'  wx:for='{{supervisorMeList}}' bindtap='dudaoDetail'  wx:for-item="itemName" wx:key='supervisorMeList'  wx:for-index="supervisorMeList" data-id='{{supervisorMeList.id}}'>
     <view class='content'>
      <view>
@@ -70,5 +74,11 @@
 
  
 
+</block>
+<block wx:if="{{flag==1 && supervisorMeList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
 </block>
 

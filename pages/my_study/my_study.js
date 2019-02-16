@@ -7,7 +7,8 @@ Page({
   data: {
     flag: 0,
     tabx: 0,
-    card:1
+    card:1,
+    model:false
   },
   changeTab(e) {
       var that=this;
@@ -134,7 +135,8 @@ Page({
                 // 打卡成功
                 // if(that.data.habitList[index].is_sign==0){
                 that.setData({
-                  [up]: 1
+                  [up]: 1,
+                  model:true
                 })
                 // }
 
@@ -157,6 +159,13 @@ Page({
         }
         
     },
+  dkSuccess:function(e){
+    console.log(e);
+    this.setData({
+      model:e.detail
+      })
+   
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -168,14 +177,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that=this;
-    console.log(that.data.flag);
-    if (this.data.flag==1){
-      that.myHabit();
-    }
-    else if (this.data.flag == 0){
-      that.myCourse();
-    } 
+    // var that=this;
+    // console.log(that.data.flag);
+    // if (this.data.flag==1){
+    //   that.myHabit();
+    // }
+    // else if (this.data.flag == 0){
+    //   that.myCourse();
+    // } 
      },
 
   /**

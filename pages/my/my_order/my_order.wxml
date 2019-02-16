@@ -47,6 +47,12 @@
   </view>
 </view>
 </block>
+<block wx:if="{{act==0 && orderList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
+</block>
 
 <!-- 待付款 -->
 <block wx:if="{{act==1 && orderList.length>0}}">
@@ -90,6 +96,13 @@
   </view>
 </view>
 </block>
+<block wx:if="{{act==1 && orderList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
+</block>
+
 <!-- 已付款 -->
 <block wx:if="{{act==2 && orderList.length>0}}">
 <view class='list_item' wx:for='{{orderList}}' bindtap='details' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
@@ -132,6 +145,14 @@
   </view>
 </view>
 </block>
+<block wx:if="{{act==2 && orderList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
+</block>
+
+
 
 <!-- 已取消 -->
 <block wx:if="{{act==3 && orderList.length>0}}">
@@ -174,4 +195,10 @@
   
   </view>
 </view>
+</block>
+<block wx:if="{{act==3 && orderList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
 </block>

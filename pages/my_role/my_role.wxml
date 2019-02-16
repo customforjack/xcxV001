@@ -32,7 +32,12 @@
   </view>
  
  </block>
-
+<block wx:if="{{flag==1 && orderList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
+</block>
 
  <block wx:if="{{flag==0 && roleList_no.length>0}}">
   <view class='tilte' wx:for='{{roleList_no}}' wx:for-item="norole" bindtap='details' data-id='{{norole.id}}'  wx:key='key_list'>
@@ -56,6 +61,12 @@
       
   </view> 
    
+</block>
+<block wx:if="{{flag==0 && roleList_no.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
 </block>
 <!-- <view class='backpic'>
 <view class='check_num'>

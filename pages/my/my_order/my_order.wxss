@@ -1,4 +1,19 @@
 /* pages/my/my_order/my_order.wxss */
+.noData{
+  width: 100%;
+  text-align: center;
+  margin-top: 250rpx;
+}
+.noList image{
+  width: 300rpx;
+  height: 195rpx;
+}
+.notisi{
+  font-size: 26rpx;
+  width: 100%;
+  margin-top: 55rpx;
+  color: #999999
+}
 .tab_box{
   padding: 0 28rpx;
   height: 100rpx;

@@ -18,9 +18,14 @@ Page({
     if (tab==1){
       console.log(that.data)
       that.supervisorMeList();
+      wx.setNavigationBarTitle({
+        title: '督导我的'
+      })
     } else if(tab == 0){
-    
       that.mySupervisorList();
+      wx.setNavigationBarTitle({
+        title: '我督导的'
+      })
     };
   },
   dkSuccess(e){
@@ -42,7 +47,7 @@ Page({
       var that=this;
       that.mySupervisorList();
   },
-    /*我的督导*/
+    /*我督导的*/
     mySupervisorList:function(){
         var that=this;
 
@@ -63,6 +68,9 @@ Page({
                         supervisorList:supervisorList,
                         
                     })
+                  wx.setNavigationBarTitle({
+                    　　　　title: '我督导的'
+                  　　})
                 }
             }
         });

@@ -10,7 +10,7 @@
   </view>
   
 
- <block wx:if="{{flag==0}}">
+ <block wx:if="{{flag==0 && studyList.length>0}}">
   <view class='tilte'   wx:for='{{studyList}}'  wx:for-item='studyList' wx:key='habitList'  wx:for-index="studyIndex" >
     <!-- <text class='tilte_big'>MORE</text> -->
     <view class='content'>
@@ -36,9 +36,15 @@
   </view> 
    
 </block>
+<block wx:if="{{flag==0 && studyList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
+</block>
 
 
- <block wx:if="{{flag==1}}">
+ <block wx:if="{{flag==1 && habitList.length>0 }}">
   <view class='tilte' wx:for='{{habitList}}' bindtap='habitDetails' wx:for-item='habitList' wx:key='habitList'  wx:for-index="habitIndex"  data-id='{{habitList.id}}'>
 
     <view class='content'>
@@ -64,6 +70,12 @@
     </view>
       
   </view> 
-   
+   <dakaSuccess show="{{model}}" bind:showTab="dkSuccess"></dakaSuccess>
+</block>
+<block wx:if="{{flag==1 && habitList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
 </block>
 

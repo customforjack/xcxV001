@@ -27,7 +27,7 @@
       <text>我的学习</text>
     </view>
     <view class='model_item_copy'>
-      <image src='../../img/huangguan.png'></image>
+      <image src='../../img/huangguan.png' style='width:56rpx;height:58rpx'></image>
     <text>集团用户</text>
     </view>
     <view class='model_item_copy'  bindtap='goCollection'>
@@ -58,7 +58,7 @@
     <text>我的活动</text>
   </view>
   <view class='model_item' bindtap='goGroup'>
-    <image src='../../img/agent.png'></image>
+    <image src='../../img/agent.png' style='width:58rpx;'></image>
     <text>我的发言</text>
   </view>
   <view class='model_item' >

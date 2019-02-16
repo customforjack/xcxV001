@@ -10,8 +10,7 @@
   </view>
   
 
- <block wx:if="{{flag==2}}">
-
+ <block wx:if="{{flag==2 && habitList.length>0}}">
   <view class='tilte' wx:for='{{habitList}}'  wx:for-item="habitList" data-id='{{habitList.id}}' wx:key="bb">
     <view class='tilte_one'>
     <text>{{habitList.name}}</text>
@@ -35,9 +34,15 @@
     </view>
   </view>
  </block>
+<block wx:if="{{flag==2 && habitList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
+</block>
 
 
- <block wx:if="{{flag==1}}">
+ <block wx:if="{{flag==1 && habitList.length>0}}">
     <view class='tilte' wx:for='{{habitList}}' bindtap='classDetails'  wx:for-item="habitList" data-id='{{habitList.id}}'  wx:key="bb">
     <view class='tilte_one'>{{habitList.name}}</view>
     <view class='content'>
@@ -57,4 +62,10 @@
       
     </view>
   </view>
+</block>
+<block wx:if="{{flag==1 && habitList.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
 </block>
