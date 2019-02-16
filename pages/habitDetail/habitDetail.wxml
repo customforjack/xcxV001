@@ -1,8 +1,8 @@
 <!--pages/habitDetail/habitDetail.wxml-->
+<view class='habitDetail'>
 <view>
   <calendar id="component" mak_time='{{mak_time}}'  bindnumChange="numChange"></calendar>
 </view>
-<view class='habitDetail'>
   <!--量化描述 start-->
   <view class='remark'>
     <view class='tit'>

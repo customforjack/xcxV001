@@ -13,3 +13,4 @@
       <button class="{{item.is_sign === 1 ?'daka disabled':'daka'}}" data-id='{{item.member_habit_id}}' disabled="{{item.is_sign === 1?true:false}}" catchtap='todaka' wx:if="{{item.is_mine == 1}}">{{item.is_sign === 1 ?'已打卡':'打卡'}}</button>
     </view>
 </view>
+ 

@@ -1,18 +1,19 @@
 <!--components/index/renmenItem/remmenItem.wxml-->
 <view  >
   <view class='remen_item' >
-    <view class='title_box' data-id="{{item.id}}"  catchtap='toDetail'>
-      <view class='title'>{{item.name}}</view>
-      <view class='addBtn' data-id="{{item.id}}" hover-class="addBtnHover" catchtap='toaddStepOne'>
-        <view class='text'>加入</view>
-        <image src='/img/add.png'></image>
-      </view>
-    </view>
+
     <view class='main_content' data-id="{{item.id}}"  catchtap='toDetail'>
       <view class='main_tu'>
         <image src='{{item.thumbnail}}' class='tu'></image>
       </view>
       <view class='main_right'>
+          <view class='title_box' data-id="{{item.id}}"  catchtap='toDetail'>
+      <view class='title'>{{item.name}}</view>
+      <view class='addBtn' data-id="{{item.id}}"  catchtap='toaddStepOne'>
+        <view class='text'>加入</view>
+        <image src='/img/add.png'></image>
+      </view>
+    </view>
         <view class='desc'>{{item.description}}</view>
         <view class='canshu'>{{item.page_view}}人参与 / {{item.classify_name}}</view>
       </view>

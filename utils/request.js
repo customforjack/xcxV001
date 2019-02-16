@@ -60,8 +60,6 @@ function newAjax(obj){
     wx.showLoading({
       title: obj.msg,
     })
-  } else {
-    wx.showNavigationBarLoading()
   }
   return new Promise((resolve,reject) => {
     wx.request({
@@ -74,8 +72,6 @@ function newAjax(obj){
       success(res) {
         if (obj.loading === 'loading') {
           wx.hideLoading()
-        } else {
-          wx.hideNavigationBarLoading()
         }
         if (res.data.code === 202 || res.data.code === 203 || res.data.code === 204){
           // 去授权登录

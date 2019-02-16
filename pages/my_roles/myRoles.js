@@ -52,13 +52,43 @@ Page({
     console.log('e', e)
     console.log('type', this.data.showTab)
     if(this.data.showTab == 0){
-      wx.navigateTo({
-        url: '/pages/roleDetail/roleDetail?id='+e.currentTarget.dataset.id
-      })
+      this.getRoleDetail(e.currentTarget.dataset.id)
+
     }
+
     if (this.data.showTab == 1) {
       this.toaddStepOne(e)
     }
+  },
+  //获取角色详情
+  getRoleDetail(roleId){
+    var that = this;
+    return wx.ajax({
+      url: '/api/Product/getCourseDetail',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        id: roleId
+      },
+      type: 'POST',
+      success(res) {
+        console.log("课程详情", res.data);
+        if (res.code === 1) {
+          // 课程详情获取成功
+
+          wx.navigateTo({
+            url: '/pages/roleDetail/roleDetail?' + wx.getParams(res.data) 
+          })
+        }
+        if (res.code === 601) {
+          wx.showToast({
+            title: res.msg,
+            icon: 'none'
+          })
+
+        }
+      }
+    })
   },
   toaddStepOne(e) {
     console.log(e.currentTarget.dataset.id)

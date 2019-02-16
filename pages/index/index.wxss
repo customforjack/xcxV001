@@ -315,6 +315,7 @@ font-size:20rpx;
 color:rgba(102,102,102,1);
 display: inline-block;
 border-radius: 0;
+padding: 0;
 }
 .myHabitList .role_list .role image {
   width: 140rpx;

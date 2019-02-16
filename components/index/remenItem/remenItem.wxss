@@ -7,9 +7,9 @@
 
 .title_box {
   display: flex;
-  height: 60rpx;
-  line-height: 60rpx;
-  padding-bottom: 34rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+
 }
 
 .title {
@@ -17,8 +17,8 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 36rpx;
-  color: #161616;
+  font-size: 28rpx;
+  color: #000000;
 }
 
 .title_box .addBtn image {
@@ -33,7 +33,7 @@
   border-radius: 6rpx;
   position: absolute;
   right: 0;
-  top: 42rpx;
+  top: 30rpx;
 }
 
 .title_box .addBtn .text {
@@ -87,13 +87,20 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+    white-space: nowrap;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  font-size: 28rpx;
-  color: #383838;
+  font-size: 24rpx;
+color:rgba(97, 97, 97, 1);
+line-height:33rpx;
+margin-top:10rpx;
+height: 33rpx;
+
 }
 
 .canshu {
-  font-size: 20rpx;
-  color: #383838;
+  font-size:22rpx;
+color:rgba(153, 153, 153, 1);
+line-height:30rpx;
+margin-top:31rpx;
 }
