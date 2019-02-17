@@ -10,7 +10,14 @@
     </view>
    
   </view>
-  
+
+  <block wx:if="!{{data}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/no_list.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
+</block>
+  <block wx:if='{{data}}'>
   <block wx:if='{{flag==0}}'>
   <view class='tilte'>
     <text class='tilte_big'>陪孩子一小时</text>
@@ -51,4 +58,5 @@
     </view>
   </view>
   <view class='division'></view>
+   </block>
    </block>

@@ -1,4 +1,13 @@
 <!--pages/recommend/recommend.wxml-->
+<block wx:if="{{data==1}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/no_list.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
+</block>
+
+
+<block wx:if="{{data==2}}">
 <view>
 <view class='recommend'>
   <view class='recommend_list pix'><image src='../../img/advertisement.jpg'></image></view>
@@ -45,3 +54,4 @@
  <view class='baseline'></view>
  </view>
 
+</block>

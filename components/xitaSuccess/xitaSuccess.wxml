@@ -1,0 +1,11 @@
+<!--components/xitaSuccess/xitaSuccess.wxml-->
+<view class='daka-box' wx:if="{{show}}" >
+  <view class='dakaSuccess'>
+  <view class='tit'>
+    <image mode="aspectFit" src='/img/xitacg.png'></image>
+  </view>
+    <button class='i-know' bindtap='close'>我知道了</button>
+  </view>
+  <view class='mask'></view>
+
+</view>

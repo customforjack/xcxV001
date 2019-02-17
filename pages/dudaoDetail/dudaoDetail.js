@@ -16,11 +16,11 @@ Page({
     this.setData({
       options: options
     })
-    
+    options.member_habit_id
     Promise.all([this.getDetail(options)]).then(arr => {
       console.log('arr', arr)
       this.getTopicList()
-      this.getCalendar()
+      // this.getCalendar()
     })
   },
   //我也要养成
@@ -45,15 +45,22 @@ Page({
   // 获取日历信息
   getCalendar() {
     const _this = this
-    return wx.ajax({
-      url: '/api/Product/getSignDate',
-      params: {
-        member_habit_id: _this.data.detail.member_habit_id,
-        year: 2019,
-        month: 2,
-        token: wx.getStorageSync('token')
-      }
-    })
+    // return wx.ajax({
+    //   url: '/api/Product/getSignDate',
+    //   params: {
+    //     member_habit_id: _this.data.detail.member_habit_id,
+    //     year: 2019,
+    //     month: "",
+    //     token: wx.getStorageSync('token')
+    //   }
+    // })
+    // .then(res => {
+    //   console.log("打卡日期",res);
+    //   _this.setData({
+    //     mak_time: res.data
+    //   })
+    //   console.log("打卡日期", res.data);
+    // })
   },
   //发言列表
   getTopicList() {

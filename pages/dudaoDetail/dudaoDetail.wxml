@@ -4,7 +4,7 @@
 <text>{{detail.member_name}}的{{detail.habit_name}}</text>
 </view>
 <view>
-  <calendar id="component"  bindtap=""></calendar>
+  <calendar id="component" mak_time='{{options.member_habit_id}}' bindtap=""></calendar>
 </view>
 <view class='iamdudao'>
   <!--说几句 start-->

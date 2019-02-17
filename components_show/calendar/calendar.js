@@ -30,8 +30,9 @@ Component({
     },
     mak_time: {  
       type: null,
-      value: "",
+      value: '',
       observer: function (newData, oldData) {
+      
       }
     }
   },
@@ -48,14 +49,37 @@ Component({
     }
   },
   ready() {
-    this.getWeek(new Date())
-    console.log(this.data);
+    console.log("传过来的值", this.properties);
+     this.all_daka()
   },
+  
   /**
    * 组件的方法列表
    */
   methods: {
+      all_daka(){
+        var that = this
+        wx.ajax({
+          url: '/api/Product/getSignDate',
+          params: {
+            token: wx.getStorageSync('token'),
+            member_habit_id: that.properties.mak_time,
+            year: "",
+            month: ""
+          },
+          success(res) {
+            if (res.code == 1) {
+              console.log(res)
+              that.setData({
+                mak_time2: res.data
+              })
+              that.getWeek(new Date())
+            
+            }
 
+          }
+        })
+      },
     selectDay(e) {
       console.log(e);
       let index = e.currentTarget.dataset.index;
@@ -100,7 +124,6 @@ Component({
       let date = _date.getDate();//日
       let day = _date.getDay();// 天
       let canlender = [];
-      // console.log(selected)
       let dates = {
         firstDay: new Date(year, month - 1, 1).getDay(),
         lastMonthDays: [],// 上个月末尾几天
@@ -160,13 +183,17 @@ Component({
         'canlender.date': date,
         "canlender.day": day,
         'canlender.year': year,
+        'mak_y': 2019,
+        'mak_m': 2,
+        'mak_d': [11,12,13]
       })
-      var that=this;
-      console.log(this.data);
-      console.log("几号", that.data.canlender);
-      console.log("几号", that.data.mak_time);
+      
+      console.log(this.data)
+
+      console.log(this.data.canlender)
       console.log(this.data.canlender.weeks)
-      console.log(this.data.canlender.year)
+     
+     
       month = month < 10 ? "0" + month : month
       date = date < 10 ? "0" + date : date
       this.triggerEvent('getdate', { year, month, date })
