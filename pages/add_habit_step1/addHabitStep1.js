@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    show_type:false,
     params :{},
     timeArr:[],
     time:'',
@@ -144,13 +145,16 @@ Page({
     })
   },
   bindDateChange: function (e) {
+    console.log(e)
     this.setData({
       date: e.detail.value
     })
   },
   bindDateChange1: function (e) {
+    
     this.setData({
-      date1: e.detail.value
+      date1: e.detail.value,
+      show_type:true
     })
   },
   subFrom (){

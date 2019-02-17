@@ -3,7 +3,6 @@
   <view class="calendar-wrapper active">
     <view class="calendar-panel">
     <view class="calendar-panel-box">
-    {{mak_time}}
         <view>{{canlender.year}}年{{canlender.month}}月</view>
       
       </view>
@@ -42,7 +41,7 @@
               <view class="{{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'yuan': ''}} " data-week="{{week}}" > {{day.date}}
               </view>
               </view>
-              <view class='mark'   data-mak='{{canlender.date}}' wx:if='{{canlender.year == mak_y && day.month==mak_m && mak_d.indexOf(day.date)>-1}}'></view>
+              <view class='mark'   data-mak='{{canlender.date}}' wx:if='{{day.mark==true}}'></view>
               <view wx:if="{{day.have}}" class="data-circle"></view>
             </view>
           </block>

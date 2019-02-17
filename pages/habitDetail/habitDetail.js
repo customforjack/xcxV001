@@ -25,7 +25,7 @@ Page({
     Promise.all([this.getDetail(options)]).then(arr => {
       console.log('arr',arr)
       this.getTopicList()
-      this.getCalendar()
+      // this.getCalendar()
     })
   },
 
@@ -95,27 +95,23 @@ Page({
   },
   getCalendar() {
     const _this = this
-    
-    var now_date = new Date;
-    // var now_month = now_date.getMonth() + 1;
-    // console.log(now_month);
     // 获取日历信息
-    return wx.ajax({
-      url: '/api/Product/getSignDate',
-      params: {
-        member_habit_id: _this.data.detail.member_habit_id,
-        year: "",
-        month: "",
-        token: wx.getStorageSync('token')
-      }
-    }).then(res => {
-      console.log("获取日历",res);
+    // return wx.ajax({
+    //   url: '/api/Product/getSignDate',
+    //   params: {
+    //     member_habit_id: _this.data.detail.member_habit_id,
+    //     year: "",
+    //     month: "",
+    //     token: wx.getStorageSync('token')
+    //   }
+    // }).then(res => {
+    //   console.log("获取日历",res);
    
-      _this.setData({
-        mak_time:res.data
+    //   _this.setData({
+    //     mak_time:res.data
        
-      })
-    })
+    //   })
+    // })
   },
   todk(){
     console.log('daka')

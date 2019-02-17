@@ -1,6 +1,6 @@
 <!--pages/habitDetail/habitDetail.wxml-->
 <view>
-  <calendar id="component" mak_time='{{mak_time}}'  bindnumChange="numChange"></calendar>
+  <calendar id="component" mak_time='{{options.member_habit_id}}'  bindnumChange="numChange"></calendar>
 </view>
 <view class='habitDetail'>
   <!--量化描述 start-->

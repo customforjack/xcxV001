@@ -34,7 +34,17 @@ Component({
       observer: function (newData, oldData) {
       
       }
-    }
+    },
+    show:{
+      type: Boolean,
+      value: false,
+      observer(newVal, oldVal, changedPath) {
+        // 属性被改变时执行的函数（可选），也可以写成在methods段中定义的方法名字符串, 如：'_propertyChange'
+        // 通常 newVal 就是新设置的数据， oldVal 是旧数据
+        console.log('newVal', newVal)
+        return newVal
+      }
+    },
   },
 
   /**
@@ -59,26 +69,22 @@ Component({
   methods: {
       all_daka(){
         var that = this
-        wx.ajax({
+
+        return  wx.ajax({
           url: '/api/Product/getSignDate',
           params: {
             token: wx.getStorageSync('token'),
             member_habit_id: that.properties.mak_time,
             year: "",
             month: ""
-          },
-          success(res) {
-            if (res.code == 1) {
-              console.log(res)
-              that.setData({
+          }
+         }).then(res => {
+      console.log("打卡日期",res);
+          that.setData({
                 mak_time2: res.data
               })
-              that.getWeek(new Date())
-            
-            }
-
-          }
-        })
+          that.getWeek(new Date())
+    })
       },
     selectDay(e) {
       console.log(e);
@@ -90,7 +96,7 @@ Component({
       let month = canlender.weeks[week][index].month < 10 ? "0" + canlender.weeks[week][index].month : canlender.weeks[week][index].month
       let date = canlender.weeks[week][index].date < 10 ? "0" + canlender.weeks[week][index].date : canlender.weeks[week][index].date
       this.getWeek(canlender.year + "-" + month + "-" + date);
-      console.log(this.data);
+  
     },
 
     // 返回今天
@@ -141,7 +147,17 @@ Component({
         })
       }
       // 循环本月天数添加到数组
+      console.log("需要显示的红点", this.data.mak_time2)
+      var mark_list = this.data.mak_time2.day.map(Number);
+      let mark = false;
       for (let i = 1; i <= new Date(year, month, 0).getDate(); i++) {
+    
+        console.log(mark_list);
+        if (mark_list.indexOf(i) != -1) {
+          mark = true;
+        } else { 
+          mark = false;
+          }
         let have = false;
         for (let j = 0; j < selected.length; j++) {
           let selDate = selected[j].date.split('-');
@@ -149,14 +165,17 @@ Component({
           if (Number(year) === Number(selDate[0]) && Number(month) === Number(selDate[1]) && Number(i) === Number(selDate[2])) {
             have = true;
           }
+          
         }
         
         dates.currentMonthDys.push({
           'date': i + "",
           'month': month,
+          mark,
           have
         })
       }
+      console.log(dates.currentMonthDys);
       // 循环下个月开始几天 添加到数组
       for (let i = 1; i < 7 - dates.endDay; i++) {
         dates.nextMonthDays.push({
@@ -174,7 +193,7 @@ Component({
         dates.weeks[parseInt(i / 7)][i % 7] = canlender[i]
       }
 
-      
+      console.log(dates.weeks)
       // 渲染数据
       this.setData({
         selectDay: month + "月" + date + "日",
@@ -188,10 +207,10 @@ Component({
         'mak_d': [11,12,13]
       })
       
-      console.log(this.data)
-
-      console.log(this.data.canlender)
-      console.log(this.data.canlender.weeks)
+      // console.log(this.data)
+      
+      // console.log(this.data.canlender)
+      // console.log(this.data.canlender.weeks)
      
      
       month = month < 10 ? "0" + month : month

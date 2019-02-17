@@ -1,5 +1,5 @@
 <!--pages/my_study/my_study.wxml-->
-
+<dakaSuccess show="{{model}}" ></dakaSuccess>
 <view class='circle_top'>
     <view class='tab_item' bindtap='changeTab' data-tab='0'>
       <text class="text {{flag==0?'act':''}}">课堂</text>
@@ -70,7 +70,7 @@
     </view>
       
   </view> 
-   <dakaSuccess show="{{model}}" bind:showTab="dkSuccess"></dakaSuccess>
+   
 </block>
 <block wx:if="{{flag==1 && habitList.length==0}}">
     <view class='noData'>
