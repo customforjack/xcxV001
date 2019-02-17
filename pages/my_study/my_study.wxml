@@ -38,7 +38,7 @@
 </block>
 <block wx:if="{{flag==0 && studyList.length==0}}">
     <view class='noData'>
-      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='noList'><image src='/img/no_list.png'></image> </view>
       <view class='notisi'>暂无更多内容哦~</view>
     </view>
 </block>
@@ -74,7 +74,7 @@
 </block>
 <block wx:if="{{flag==1 && habitList.length==0}}">
     <view class='noData'>
-      <view class='noList'><image src='/img/nodata-say.png'></image> </view>
+      <view class='noList'><image src='/img/no_list.png'></image> </view>
       <view class='notisi'>暂无更多内容哦~</view>
     </view>
 </block>

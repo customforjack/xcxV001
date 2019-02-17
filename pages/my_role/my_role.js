@@ -7,9 +7,11 @@ Page({
   data: {
     flag: 0,
     tabx: 0,
+
     icon: wx.getStorageSync('userInfo').avatarUrl,
     nickName: wx.getStorageSync('userInfo').nickName,
-    give_id: '',
+    forward_data:{},
+    song:false
   },
   changeTab(e) {
     var that=this;
@@ -24,27 +26,57 @@ Page({
           that.myCharacterUsed();
       }
   },
-
-  give: function (options) {
-    console.log(options);
-    var give_id = options.currentTarget.dataset.id;
+  showModal:function(e){
+    console.log(e)
     this.setData({
-      give_id: give_id
+      song: false,
     })
   },
+  give: function (options) {
+    var that=this;
+    console.log(options);
+   
+    that.setData({
+      song:true,
+      forward_data: options.currentTarget.dataset.id
+      })
+    wx.ajax({
+      url: '/api/Order/createPresent',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        character_id: that.data.forward_data.id
+      },
+      type: 'POST',
+      success(res) {
+        console.log("赠送", res.data);
+        if (res.code === 1) {
+          var forward2 = 'forward_data.zs_id'
+          that.setData({
+            [forward2]: res.data.id
+          })
+          console.log(that.data.forward_data)
+        }
+      }
+    });
+   
+  },
+  //转发
   onShareAppMessage(res) {
-    const params = {
-      nickName: this.data.nickName,
-      give_id: this.data.give_id,
-      icon: this.data.icon
-    }
+    console.log(res);
+
     if (res.from === 'button') {
       // 来自页面内转发按钮
-      console.log(res.target)
+     
+      console.log(this.data.forward_data);
+    
     }
+    var params = this.data.forward_data
+
     return {
       title: `${this.data.nickName}赠送你礼物`,
-      path: '/pages/test/test',
+      path: '/pages/test/test?' + wx.getParams(params),
+      imageUrl: this.data.forward_data.thumbnail,
       success: function (res) {
         // 转发成功
         console.log(res);
@@ -216,13 +248,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
 
   }
 })

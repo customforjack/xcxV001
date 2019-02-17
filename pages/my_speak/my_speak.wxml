@@ -42,6 +42,12 @@
     </view>
   </view>
   <view class='division'></view>
+  <block wx:if="{{speak.length==0}}">
+    <view class='noData'>
+      <view class='noList'><image src='/img/no_list.png'></image> </view>
+      <view class='notisi'>暂无更多内容哦~</view>
+    </view>
+</block>
 
 
 

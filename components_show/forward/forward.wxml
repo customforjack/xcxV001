@@ -1,0 +1,12 @@
+<!-- 组件模板 -->
+<view class="wrapper" forward_data="{{forward_data}}">
+<!-- 权限不够 -->
+
+  <!-- 去支付 -->
+  <view class='diong_pay' >
+      <view class='pay_title'>创建赠送订单完成，点击赠送</view>
+      <button class='go_pay'  open-type='share'>赠送</button>
+  </view>
+  
+  <slot></slot>
+</view>
