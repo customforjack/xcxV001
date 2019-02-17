@@ -110,17 +110,9 @@ Page({
       }
     }).then(res => {
       console.log("获取日历",res);
-      // mak_time: {
-      //   year: 2019,
-      //     month: 1,
-      //       day: 14
-      // }
+   
       _this.setData({
-        mak_time: {
-          year:2019,
-          month:2,
-          day:[11,10,20]
-        }
+        mak_time:res.data
        
       })
     })

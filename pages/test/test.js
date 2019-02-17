@@ -48,7 +48,7 @@ Page({
           })
         }else{
           wx.showToast({
-            title: '接受失败',
+            title: res.msg,
             icon: 'none',
             duration: 2000
           })

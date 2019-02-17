@@ -3,6 +3,7 @@
   <view class="calendar-wrapper active">
     <view class="calendar-panel">
     <view class="calendar-panel-box">
+    {{mak_time}}
         <view>{{canlender.year}}年{{canlender.month}}月</view>
       
       </view>
@@ -36,12 +37,12 @@
       <block wx:for="{{canlender.weeks}}" wx:for-item="weeks" wx:for-index="week" wx:key="weeks">
         <view class="calender-body-date-week">
           <block wx:for="{{weeks}}" wx:for-item="day" wx:key="day">
-            <view class="date {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'date-current': ''}} " data-week="{{week}}" data-index="{{index}}" data-ischeck="{{canlender.month === day.month}}" bindtap='selectDay'>
+            <view class="date {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'date-current': ''}} " data-week="{{week}}" data-index="{{index}}" data-mak="{{canlender.month}}"   data-ischeck="{{canlender.month === day.month}}" bindtap='selectDay'>
               <view class='reqi'>
               <view class="{{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'yuan': ''}} " data-week="{{week}}" > {{day.date}}
               </view>
               </view>
-              <view class='mark' wx:if='{{canlender.year== mak_time.year && day.date==mak_time.day && day.month== mak_time.month}}'></view>
+              <view class='mark'   data-mak='{{canlender.date}}' wx:if='{{canlender.year == mak_y && day.month==mak_m && mak_d.indexOf(day.date)>-1}}'></view>
               <view wx:if="{{day.have}}" class="data-circle"></view>
             </view>
           </block>
