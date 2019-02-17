@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 26,
 			"list": [
 				{
 					"id": -1,
@@ -209,6 +209,13 @@
 					"id": 26,
 					"name": "角色详情页 习惯  10",
 					"pathName": "pages/buyRoles/buyRoles",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 26,
+					"name": "我的课堂",
+					"pathName": "pages/my_class/my_class",
 					"query": "",
 					"scene": null
 				}

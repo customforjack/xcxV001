@@ -25,5 +25,4 @@
     </view>
   </view>
   <view class='mask'  wx:if="{{modal}}"></view>
-  <button class="toBuy" bindtap='toBuy'><image src='/img/btnRight-jt.png'></image><text>去购买</text></button>
 </view>

@@ -1,7 +1,11 @@
-  {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-      "onReachBottomDistance": 50,
-    "navigationBarTitleText": "课堂",
-    "navigationBarTextStyle": "black"
-  }
+{
+    "component": true,
+  "usingComponents": {
+    "roles-card": "/components/roles-card/roles-card"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "onReachBottomDistance": 50,
+  "navigationBarTitleText": "课堂",
+  "navigationBarTextStyle": "black"
+}

@@ -28,14 +28,41 @@ Page({
       })
     })
   },
+  // 收藏成功
+  scSuccess(e) {
+    const _this = this
+    console.log('收藏',e)
+    this.getDetail(this.data.params).then(res => {
+      console.log('data', res.data.data)
+      if (_this.data.flag === 0){
+        _this.setData({
+          vipDetail: res.data.data
+        })
+      }
+      if (_this.data.flag === 1) {
+        _this.setData({
+          classDetail: res.data.data
+        })
+      }
+
+      if (res.code === 1){
+        wx.showToast({
+          title: e.detail.msg,
+          icon: 'none'
+        })
+      }
+    })
+  },
   changeTab(e) {
     var tab = e.currentTarget.dataset.tab
     const _this = this 
     console.log('tab', tab)
     console.log(typeof tab)
     this.setData({
-      flag: parseInt(tab)
+      flag: parseInt(tab),
+      'params.page':1
     })
+
     this.data.params.type = parseInt(tab) === 0 ? 1 : 2
     this.getDetail(this.data.params).then(res=>{
       const data = res.data.data

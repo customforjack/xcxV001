@@ -33,7 +33,7 @@ Component({
       }).then(res => {
   
         if(res.code === 1){
-          _this.triggerEvent('scSuccess')
+          _this.triggerEvent('scSuccess',{msg:res.msg})
         }
       })
     }

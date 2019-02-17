@@ -149,16 +149,16 @@ Page({
     })
   },
   // 收藏成功
-  scSuccess(){
+  scSuccess(e){
     const _this = this
-    console.log('收藏成功')
+    console.log('收藏', e)
     this.getDetail(this.data.id).then(res => {
       console.log("角色详情列表", res)
       _this.setData({
         detail: res.data
       })
       wx.showToast({
-        title: '收藏成功',
+        title: e.detail.msg,
         icon: 'none'
       })
     })

@@ -2,7 +2,7 @@
 <scroll-view>
 <view class='circle_top'>
     <view class='tab_item' bindtap='changeTab' data-tab='0'>
-      <text class="text {{flag==0?'act':''}}">vip课</text>
+      <text class="text {{flag==0?'act':''}}">精品课</text>
     </view>
     <view class='tab_item' bindtap='changeTab' data-tab='1'>
       <text class="text {{flag==1?'act':''}}">公开课</text>
@@ -13,39 +13,12 @@
  <block wx:if="{{flag === 0}}">
  <!--  wx:for='{{}}'  wx:for-item=""  wx:key="" -->
   <view class='tilte' wx:for="{{vipDetail}}" bindtap='toDetail' data-id="{{item.id}}" wx:key="index">
-    <view class='tilte_one'>{{item.name}}</view>
-    <view class='content' >
-     <view class='vip_box'>
-      <image src='{{item.thumbnail}}'></image>
-      <image class='vip' style='width:34rpx;height:34rpx;' src='../../img/v.png'></image>
-      </view>
-     <view class='miaoshu'>
-      <text class='miaoshu_one'>{{item.description}}</text>
-      <view class='heart_xx'>
-      <text>{{item.page_view}}万人参与/{{item.share_view}}人转发</text>
-       <view class='num'><image src='../../img/shoucang-2.png'></image> {{item.collection_view}}</view>
-      </view>
-     </view>
-    </view>
+    <roles-card  item="{{item}}" data-id="{{item.id}}" bindscSuccess="scSuccess" catchtap="toDetail"></roles-card>
   </view>
  </block>
  <block wx:if="{{flag === 1}}">
- <!--  wx:for='{{}}' wx:for-item=""  wx:key='' -->
   <view class='tilte' wx:for="{{classDetail}}" bindtap='toDetail' data-id="{{item.id}}"  wx:key="index">
-    <view class='tilte_one'>{{item.name}}</view>
-    <view class='content'>
-     <view class='vip_box'>
-      <image src='{{item.thumbnail}}'></image>
-      <image class='vip' style='width:34rpx;height:34rpx;' src='../../img/v.png'></image>
-      </view>
-     <view class='miaoshu'>
-      <text class='miaoshu_one'>{{item.description}}</text>
-      <view class='heart_xx'>
-      <text>{{item.page_view}}万人参与/{{item.share_view}}人转发</text>
-       <view class='num'><image src='../../img/shoucang-2.png'></image> {{item.collection_view}}</view>
-      </view>
-     </view>
-    </view>
+    <roles-card  item="{{item}}" data-id="{{item.id}}" bindscSuccess="scSuccess" catchtap="toDetail"></roles-card>
   </view>
 </block>
 </scroll-view>

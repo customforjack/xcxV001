@@ -34,7 +34,7 @@ line-height:42rpx;
 .my-roles-card .role-c-info .role-c-labels .left{
 font-size:20rpx;
 color:rgba(56,56,56,1);
-width: 430rpx;
+width:350rpx;
 display: inline-block;
 line-height:33rpx;
 }
@@ -43,7 +43,8 @@ font-size:20rpx;
 color:#B2B2B2;
 line-height:33rpx;
 display: inline-block;
-width: 82rpx;
+width: 150rpx;
+text-align: right;
 }
 .my-roles-card .role-c-info .role-c-labels .right image{
   display: inline-block;
@@ -60,4 +61,5 @@ width: 82rpx;
   font-size:28rpx;
 color:rgba(56,56,56,1);
 line-height:40rpx;
+box-sizing: border-box;
 }
