@@ -27,6 +27,43 @@ Page({
     var that=this;
     that.myOrder(that.data.act);
   },
+  showModal: function (e) {
+    console.log(e)
+    this.setData({
+      song: false,
+    })
+  },
+  //赠送
+  give: function (options) {
+    var that = this;
+    console.log(options);
+
+    that.setData({
+      song: true,
+      forward_data: options.currentTarget.dataset.ordernum.order_detail
+    })
+    console.log(that.data.forward_data)
+    wx.ajax({
+      url: '/api/Order/createPresent',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+        character_id: that.data.forward_data.id
+      },
+      type: 'POST',
+      success(res) {
+        console.log("赠送", res.data);
+        if (res.code === 1) {
+          var forward2 = 'forward_data.zs_id'
+          that.setData({
+            [forward2]: res.data.id
+          })
+          console.log(that.data.forward_data)
+        }
+      }
+    });
+
+  },
 //订单列表
   myOrder: function (act) {
     var that = this;

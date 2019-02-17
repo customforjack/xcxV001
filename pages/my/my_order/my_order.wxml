@@ -1,4 +1,5 @@
 <!--pages/my/my_order/my_order.wxml-->
+<forward item='{{forward_data}}' bindtap='showModal' wx:if="{{song}}"></forward>
 <view class='tab_box'>
   <view class="tab_item {{act==0?'act':''}}" bindtap='changeTab' data-act='0'>全部</view>
   <view class="tab_item {{act==1?'act':''}}" bindtap='changeTab' data-act='1'>待付款</view>
@@ -38,7 +39,7 @@
   </view>
   <view class='state' wx:if='{{orderList.order_status==2}}'>
     
-    <text>赠送</text>
+    <!-- <text bindtap='give' data-orderNum='{{orderList}}'>赠送</text> -->
     <text>已付款</text>
   </view>
   <view class='state' wx:if='{{orderList.order_status==3}}'>
@@ -87,7 +88,7 @@
   </view>
   <view class='state' wx:if='{{orderList.order_status==2}}'>
     
-    <text>赠送</text>
+    <!-- <text bindtap='give' data-orderNum='{{orderList}}'>赠送</text> -->
     <text>已付款</text>
   </view>
   <view class='state' wx:if='{{orderList.order_status==3}}'>
@@ -136,7 +137,7 @@
   </view>
   <view class='state' wx:if='{{orderList.order_status==2}}'>
     
-    <text>赠送</text>
+    <!-- <text bindtap='give' data-orderNum='{{orderList}}'>赠送</text> -->
     <text>已付款</text>
   </view>
   <view class='state' wx:if='{{orderList.order_status==3}}'>
@@ -187,7 +188,7 @@
   </view>
   <view class='state' wx:if='{{orderList.order_status==2}}'>
     
-    <text>赠送</text>
+    <!-- <text bindtap='give' data-orderNum='{{orderList}}'>赠送</text> -->
     <text>已付款</text>
   </view>
   <view class='state' wx:if='{{orderList.order_status==3}}'>

@@ -108,7 +108,7 @@ border:none;
   margin-left:44rpx;
   display: block;
   height: 30rpx;
-  line-height: 12rpx;
+  line-height: 10rpx;
 
 }
 .content text:first-child{
@@ -219,6 +219,7 @@ display:-webkit-box;
   flex: 1
 }
 .number{
+ 
   font-size: 22rpx;
   text-align: left;
   /* background: #FFEEA9;

@@ -1,4 +1,7 @@
 {
+  "usingComponents": {
+    "forward": "/components_show/forward/forward"
+  },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTitleText": "我的角色",

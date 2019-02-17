@@ -8,28 +8,27 @@
 
  -->
 
-你好{{options.id}}
   <view class='tilte'>
     <view class='content'>
      <view>
-      <image src='../../img/add.png'></image>
+      <image src='{{zs_data.thumbnail}}'></image>
      </view>
      <view class='miaoshu'>
       <text class='miaoshu2'>
-        {{options.id}}
+       你啊你那视{{zs_data.name}}
       </text>
       <text class='miaoshu3'>
-          pppodajsodasd jkasdjh ad akshdajsdkjl jasld ja khasdasd as adsadsad
+         {{zs_data.description}}是第三个是
       </text>
       <view class='lianxi' style='height:0'>
-       <text class='number' style='color:#616161;font-size:24rpx;'>12000人在练习</text>
-       <text class='number' style="text-decoration:line-through;color:red;">价值99元</text>
+       <text class='number' style='color:#616161;font-size:24rpx;'>{{zs_data.sale_num}}人在练习</text>
+       <text class='number' style="text-decoration:line-through;color:red;">价值{{zs_data.price}}元</text>
        </view>
      </view>
     </view>
     <view class='present'>
       <text class='details'>查看详情</text>
-      <text class='accept'>接受</text>
+      <text class='accept' bindtap='accept'>接受</text>
     </view>
   </view>
 

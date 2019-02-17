@@ -1,3 +1,6 @@
 {
+  "usingComponents": {
+    "forward": "/components_show/forward/forward"
+  },
   "navigationBarTitleText": "我的订单"
 }
