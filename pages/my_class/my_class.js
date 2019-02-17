@@ -31,6 +31,7 @@ Page({
   // 收藏成功
   scSuccess(e) {
     const _this = this
+    this.data.params.page = 1
     console.log('收藏',e)
     this.getDetail(this.data.params).then(res => {
       console.log('data', res.data.data)

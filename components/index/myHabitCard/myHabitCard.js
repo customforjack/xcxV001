@@ -95,11 +95,13 @@ Component({
     toDetail(e){
       console.log(e)
       if (e.currentTarget.dataset.ismine == 1){
+        console.log('已创建')
         wx.navigateTo({
           url: '/pages/habitDetail/habitDetail?member_habit_id=' + e.currentTarget.dataset.id,
         })
       }
       if (e.currentTarget.dataset.ismine == 0) {
+        console.log('未创建')
         this.toaddStepOne(e)
       }
     }

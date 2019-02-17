@@ -49,6 +49,7 @@
   box-sizing: border-box;
   margin-right: 45rpx;
   margin-bottom: 46rpx;
+  vertical-align: top;
 }
 
 .list .card:nth-of-type(3n+0) {
@@ -63,10 +64,17 @@
 .list .card text {
   display: block;
   height: 45rpx;
+  width: 144rpx;
   font-size: 32rpx;
   font-weight: 400;
   color: rgba(52, 52, 51, 1);
   line-height: 45rpx;
+-webkit-line-clamp:1;
+-webkit-box-orient:vertical;
+overflow: hidden;
+white-space: nowrap;
+text-overflow:ellipsis;
+
 }
 
 .list .card image {

@@ -7,7 +7,8 @@ Page({
   data: {
     showTab:0,
     tabs:[],
-    showArr:[]
+    showArr:[],
+    duoxuanflag:false
   },
 
   /**
@@ -20,6 +21,16 @@ Page({
   toNext(){
     wx.navigateTo({
       url: '/pages/my_roles/myRoles',
+    })
+  },
+  duoxuan(){
+    this.setData({
+      duoxuanflag: !this.data.duoxuanflag
+    })
+  },
+  toDetail(e){
+    wx.navigateTo({
+      url: '/pages/my_roles/myRoles?id='+e.currentTarget.dataset.id,
     })
   },
   toCheck(e){
