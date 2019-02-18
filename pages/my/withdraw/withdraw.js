@@ -55,36 +55,36 @@ Page({
     var cash=that.data.cash;
     console.log(cash);
     /*提现*/
-    wx.ajax({
+  return  wx.ajax({
       url: '/api/Member/withdraw',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         price: cash,
-      },
-      type: 'POST',
-      success(res) {
-        if(res.code==1){
+      }
+    }).then(res =>{
+     
+        if (res.code == 1) {
           var yue = that.data.available_balance - that.data.cash;
-            that.setData({
-              available_balance: yue
-            })
-          
+          that.setData({
+            available_balance: yue
+          })
+
           wx.showToast({
             title: '提现成功',
             icon: 'success',
             duration: 2000,
-            success:setTimeout(
+            success: setTimeout(
               function () {
-                
+
                 wx.navigateTo({
                   url: '/pages/my/my_withdrawDetail/my_withdrawDetail',
                 })
-              },1000
+              }, 1000
             )
           })
-         
-        } else if (res.code == 400){
+
+        } else if (res.code == 400) {
           wx.showToast({
             title: '金额不能为0',
             icon: 'none',
@@ -92,8 +92,6 @@ Page({
           })
         }
         console.log("提现", res);
-      
-      }
 
     });
   },

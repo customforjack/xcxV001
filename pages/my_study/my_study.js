@@ -33,36 +33,35 @@ Page({
   /*我的课堂*/
     myCourse:function(){
         var that=this;
-        wx.ajax({
+      return wx.ajax({
             url: '/api/Member/myCourse',
             checkRole: false,
             params: {
                 token: wx.getStorageSync('token'),
                 page:1,
                 pageSize: 20
-            },
-            type: 'POST',
-            success(res) {
-              console.log(res);
-                console.log("我的课堂",res.data.data);
-                console.log("页码",res.data.count);
-                if (res.code === 1) {
-                   
-                    var studyList= res.data.data;
-                    console.log(studyList);
-                    that.setData({
-                        studyList:studyList,
-                        page_study:res.data.count.page,
-                        pageSize_study:res.data.count.pageSize
-                    })
-                }
             }
-        });
+      }).then(res => {
+
+        console.log(this.data);
+        console.log("我的课堂", res.data.data);
+
+        if (res.code === 1) {
+
+          var studyList = res.data.data;
+          console.log(studyList);
+          that.setData({
+            studyList: studyList,
+            page_study: res.data.count.page,
+            pageSize_study: res.data.count.pageSize
+          })
+        }
+      });
     },
   /*我的习惯*/
     myHabit:function(){
         var that=this;
-        wx.ajax({
+     return  wx.ajax({
             url: '/api/Member/myHabit',
             checkRole: false,
             params: {
@@ -70,22 +69,19 @@ Page({
                 page:1,
                 pageSize: 20
             },
-            type: 'POST',
-            success(res) {
-                console.log("我的习惯1",res.data.data);
-                console.log("我的习惯1",res.data.count);
-                console.log("我的习惯", res);
-                if (res.code === 1) {
-                    
-                    var habitList= res.data.data;
-                    that.setData({
-                        habitList:habitList,
-                        page_habit:res.data.count.page,
-                        pageSize_habit:res.data.count.pageSize
-                    })
-                }
-            }
-        });
+            
+     }).then(res => {
+       console.log(this.data);
+       console.log("我的习惯1", res.data.data);
+       if (res.code === 1) {
+         var habitList = res.data.data;
+         that.setData({
+           habitList: habitList,
+           page_habit: res.data.count.page,
+           pageSize_habit: res.data.count.pageSize
+         })
+       }
+     });
 },
   /*跳转课堂详情页*/
   classDetails: function (e) {
@@ -121,25 +117,20 @@ Page({
             that.setData({
                 [up]:1
             })
-          wx.ajax({
+          return   wx.ajax({
             url: '/api/Product/signMyHabit',
             checkRole: false,
             params: {
               token: wx.getStorageSync('token'),
               member_habit_id: habit_id
-            },
-            type: 'POST',
-            success(res) {
+            }
+          }).then(res => {
               console.log("打卡", res);
               if (res.code == 1) {
-                // 打卡成功
-                // if(that.data.habitList[index].is_sign==0){
                 that.setData({
                   [up]: 1,
-                  model:true
+                  model: true
                 })
-                // }
-
               } else if (res.code == 400) {
                 wx.showToast({
                   title: '已打卡',
@@ -147,7 +138,7 @@ Page({
                   duration: 1000
                 })
               }
-            }
+            
           });
         }else {
           wx.showToast({
@@ -177,14 +168,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // var that=this;
-    // console.log(that.data.flag);
-    // if (this.data.flag==1){
-    //   that.myHabit();
-    // }
-    // else if (this.data.flag == 0){
-    //   that.myCourse();
-    // } 
+    
      },
 
   /**

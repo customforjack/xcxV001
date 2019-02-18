@@ -51,54 +51,53 @@ Page({
     mySupervisorList:function(){
         var that=this;
 
-        wx.ajax({
+      return  wx.ajax({
             url: '/api/Member/mySupervisorList',
             checkRole: false,
             params: {
                 token: wx.getStorageSync('token'),
                 page:1,
                 pageSize: 20
-            },
-            type: 'POST',
-            success(res) {
-                console.log("我的督导",res);
-                if (res.code === 1) {
-                    var supervisorList= res.data;
-                    that.setData({
-                        supervisorList:supervisorList,
-                        
-                    })
-                  wx.setNavigationBarTitle({
-                    　　　　title: '我督导的'
-                  　　})
-                }
             }
-        });
+      }).then(res => {
+       
+          console.log("我的督导", res);
+          if (res.code === 1) {
+            var supervisorList = res.data;
+            that.setData({
+              supervisorList: supervisorList,
+
+            })
+            wx.setNavigationBarTitle({
+              title: '我督导的'
+            })
+          
+        }
+      });
     },
     /*督导我的*/
     supervisorMeList: function () {
     var that = this;
-    wx.ajax({
+  return  wx.ajax({
       url: '/api/Member/supervisorMeList',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         page: 1,
         pageSize: 20
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res => {
+    
         console.log("督导我的", res);
         if (res.code === 1) {
-          
+
           var supervisorMeList = res.data;
           that.setData({
             supervisorMeList: supervisorMeList,
-            // page_habit:res.data.count.page,
-            // pageSize_habit:res.data.count.pageSize
+           
           })
         }
-      }
+      
     });
   },
   //  更多督导
@@ -138,14 +137,14 @@ Page({
    */
   onShow: function () {
     
-    var that = this;
-    console.log(that.data.flag);
-    if (this.data.flag == 1) {
-      that.supervisorMeList();
-    }
-    else if (this.data.flag == 0) {
-      that.mySupervisorList();
-    } 
+    // var that = this;
+    // console.log(that.data.flag);
+    // if (this.data.flag == 1) {
+    //   that.supervisorMeList();
+    // }
+    // else if (this.data.flag == 0) {
+    //   that.mySupervisorList();
+    // } 
   },
 
   /**

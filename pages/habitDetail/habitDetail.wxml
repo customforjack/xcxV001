@@ -5,7 +5,7 @@
   <image class='dakaFail' src='/img/daka-fail.png'></image>
 </view>
 <view>
-  <calendar id="component" mak_time='{{mak_time}}'  bindnumChange="numChange"></calendar>
+  <calendar id="component" mak_time='{{options.member_habit_id}}'  bindnumChange="numChange"></calendar>
 </view>
   <!--量化描述 start-->
   <view class='remark'>
