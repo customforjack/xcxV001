@@ -35,36 +35,34 @@ Page({
   //进入课堂
   details: function (roleId){
     var that = this;
-     wx.ajax({
+   return  wx.ajax({
        url: '/api/Product/getCourseDetail',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         id: roleId
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
+      
         console.log("课程详情", res.data);
         if (res.code === 1) {
           // 课程详情获取成功
           that.setData({
-            detail:res.data
+            detail: res.data
           })
-          // wx.setNavigationBarTitle({
-          //   title: that.data.detail.name
-          // })
+
           that.comment(roleId);
         }
-        if(res.code === 601){
+        if (res.code === 601) {
           wx.showToast({
-              title: res.msg,
-              icon: 'none'
+            title: res.msg,
+            icon: 'none'
           })
-          setTimeout(()=>{
+          setTimeout(() => {
             wx.navigateBack()
-          },1000)
+          }, 1000)
         }
-      }
+      
     })
   },
   //跳转角色详情
@@ -78,7 +76,7 @@ Page({
   //获取评论
   comment: function (roleId){
     var that = this;
-    wx.ajax({
+    return wx.ajax({
       url: '/api/Topic/getTopicList',
       checkRole: false,
       params: {
@@ -87,9 +85,9 @@ Page({
         p_id: roleId,
         page:1,
         pageSize:20
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
+      
         console.log("评论", res.data);
         if (res.code === 1) {
           // 评论获取成功
@@ -98,8 +96,6 @@ Page({
           })
           console.log(that.data.comment);
         }
-      
-      }
     })
   },
   /**

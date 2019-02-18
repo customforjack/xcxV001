@@ -30,7 +30,7 @@ Page({
     var type = that.data.flag;
     console.log(type);
     /*我的发言*/
-    wx.ajax({
+   return wx.ajax({
       url: '/api/Topic/getMyTopicList',
       checkRole: false,
       params: {
@@ -38,20 +38,15 @@ Page({
         type: type,
         page:1,
         pageSize:20
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
         console.log("发言列表", res);
         if (res.code == 1) {
-          var  speak=res.data.data;
+          var speak = res.data.data;
           that.setData({
             speak: speak
           })
-         
         }
-        
-
-      }
     });
   },
   /**

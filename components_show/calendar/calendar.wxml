@@ -33,12 +33,12 @@
       <view>六</view>
     </view>
     <view class="calendar-body">
-      <block wx:for="{{canlender.weeks}}" wx:for-item="weeks" wx:for-index="week" wx:key="weeks">
+      <block wx:for="{{canlender.weeks}}" wx:for-item="weeks"  wx:for-index="week" wx:key="weeks">
         <view class="calender-body-date-week">
-          <block wx:for="{{weeks}}" wx:for-item="day" wx:key="day">
-            <view class="date {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'date-current': ''}} " data-week="{{week}}" data-index="{{index}}" data-mak="{{canlender.month}}"   data-ischeck="{{canlender.month === day.month}}" bindtap='selectDay'>
+          <block wx:for="{{weeks}}" wx:for-item="day"  wx:key="day">
+            <view class="date {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'date-current': ''}} " data-week="{{week}}" data-index="{{index}}" data-mak="{{canlender.month}}"   data-ischeck="{{canlender.month === day.month}}" bindtap='selectDay' data-clickday='{{day.date}}' data-col='{{day.col}}'>
               <view class='reqi'>
-              <view class="{{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'yuan': ''}} " data-week="{{week}}" > {{day.date}}
+              <view class="{{day.col==1?'yuan':''}}  {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'yuan': ''}} " data-week="{{week}}"  > {{day.date}}
               </view>
               </view>
               <view class='mark'   data-mak='{{canlender.date}}' wx:if='{{day.mark==true}}'></view>

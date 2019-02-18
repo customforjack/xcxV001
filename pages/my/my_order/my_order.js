@@ -43,15 +43,15 @@ Page({
       forward_data: options.currentTarget.dataset.ordernum.order_detail
     })
     console.log(that.data.forward_data)
-    wx.ajax({
+   return wx.ajax({
       url: '/api/Order/createPresent',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         character_id: that.data.forward_data.id
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
+     
         console.log("赠送", res.data);
         if (res.code === 1) {
           var forward2 = 'forward_data.zs_id'
@@ -59,7 +59,7 @@ Page({
             [forward2]: res.data.id
           })
           console.log(that.data.forward_data)
-        }
+        
       }
     });
 
@@ -67,7 +67,7 @@ Page({
 //订单列表
   myOrder: function (act) {
     var that = this;
-    wx.ajax({
+    return wx.ajax({
       url: '/api/Member/getOrderList',
       checkRole: false,
       params: {
@@ -75,9 +75,9 @@ Page({
         order_status: act,
         page: 1,
         pageSize: 20
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
+      
         console.log("订单", res);
         if (res.code === 1) {
           var orderList = res.data.data;
@@ -86,7 +86,7 @@ Page({
             orderList: orderList
           })
         }
-      }
+      
     })
   },
 //支付
@@ -94,48 +94,48 @@ Page({
     let that=this;
       console.log(e.currentTarget.dataset.ordernum);
     var order_sn = e.currentTarget.dataset.ordernum;
-    wx.ajax({
+   return wx.ajax({
       url: '/api/Order/balancePay',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         order_sn: order_sn
-      },
-      type: 'POST',
-      success(res) {
-        console.log(res);
-        if (res.code===1){
-          that.setData({
-            act:2
-          })
-          wx.showToast({
-            title: '支付成功',
-            icon: 'success',
-            duration: 2000
-          })
-         
-          setTimeout(function () {
-            that.myOrder(that.data.act)
-          }, 2000)
-        } else if (res.code === 400){
-          that.wx_pay(order_sn);
-        }
-        
       }
+      }).then(res =>{
+       
+          console.log(res);
+          if (res.code === 1) {
+            that.setData({
+              act: 2
+            })
+            wx.showToast({
+              title: '支付成功',
+              icon: 'success',
+              duration: 2000
+            })
+
+            setTimeout(function () {
+              that.myOrder(that.data.act)
+            }, 2000)
+          } else if (res.code === 400) {
+            that.wx_pay(order_sn);
+          }
+
+        
       })
    
   },
   wx_pay: function (order_sn){
     let that=this;
-    wx.ajax({
+   return wx.ajax({
       url: '/api/Order/wxPayMP',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         order_sn: order_sn
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
+      
         console.log("支付参数", res);
         const params = JSON.parse(res.data)
         if (res.code === 1) {
@@ -164,12 +164,12 @@ Page({
               }
             },
             fail(res) {
-             console.log(res);
+              console.log(res);
             }
           })
 
         }
-      }
+      
     })
   },
 //取消订单
@@ -183,17 +183,17 @@ Page({
       content: '确定取消订单吗?',
       success(res) {
         if (res.confirm) {
-          wx.ajax({
+         return wx.ajax({
             url: '/api/Order/cancelOrder',
             checkRole: false,
             params: {
               token: wx.getStorageSync('token'),
               order_sn: order_sn
-            },
-            type: 'POST',
-            success(res) {
+            }
+          }).them(res =>{
+        
               console.log("取消订单", res);
-              
+
               if (res.code === 1) {
                 console.log("取消成功");
                 that.setData({
@@ -204,19 +204,19 @@ Page({
                   icon: 'success',
                   duration: 1000
                 })
-                setTimeout(function(){
+                setTimeout(function () {
                   that.myOrder(that.data.act)
-                },2000)
-               
-               
-              }else{
+                }, 2000)
+
+
+              } else {
                 wx.showToast({
                   title: '取消失败',
                   icon: 'none',
                   duration: 1000
                 })
               }
-            }
+            
           })
         } else if (res.cancel) {
           console.log('用户点击取消')

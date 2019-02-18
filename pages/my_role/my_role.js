@@ -40,15 +40,15 @@ Page({
       song:true,
       forward_data: options.currentTarget.dataset.id
       })
-    wx.ajax({
+   return wx.ajax({
       url: '/api/Order/createPresent',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         character_id: that.data.forward_data.id
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
+     
         console.log("赠送", res.data);
         if (res.code === 1) {
           var forward2 = 'forward_data.zs_id'
@@ -56,7 +56,7 @@ Page({
             [forward2]: res.data.id
           })
           console.log(that.data.forward_data)
-        }
+        
       }
     });
    
@@ -102,51 +102,51 @@ Page({
     myCharacterUsed:function(){
         var that= this;
         /*获取已使用角色*/
-        wx.ajax({
+       return wx.ajax({
             url: '/api/Member/myCharacterUsed',
             checkRole: false,
             params: {
                 token: wx.getStorageSync('token'),
                 page:1,
                 pageSize: 20
-            },
-            type: 'POST',
-            success(res) {
-                console.log("已使用角色",res.data);
-                if (res.code === 1) {
-                    
-                  var roleList = res.data.data;
-
-                    that.setData({
-                        roleList:roleList
-                    })
-                }
             }
+        }).then(res =>{
+          
+            console.log("已使用角色", res.data);
+            if (res.code === 1) {
+
+              var roleList = res.data.data;
+
+              that.setData({
+                roleList: roleList
+              })
+            
+          }
         });
     },
   //获取未使用的角色列表
     myCharacterUnused:function(){
         var that= this;
-        wx.ajax({
+       return wx.ajax({
             url: '/api/Member/myCharacterUnused',
             checkRole: false,
             params: {
                 token: wx.getStorageSync('token'),
                 page:1,
                 pageSize: 20
-            },
-            type: 'POST',
-            success(res) {
-                console.log("未使用角色",res);
-                if (res.code === 1) {
-                   
-                  var roleList_no = res.data.data;
-
-                    that.setData({
-                        roleList_no:roleList_no
-                    })
-                }
             }
+        }).then(res =>{
+        
+            console.log("未使用角色", res);
+            if (res.code === 1) {
+
+              var roleList_no = res.data.data;
+
+              that.setData({
+                roleList_no: roleList_no
+              })
+            }
+          
         })
     },
   //点击使用/延长
@@ -154,19 +154,19 @@ Page({
     var that=this;
     var character_id = e.currentTarget.dataset.id;
     console.log(e.currentTarget);
-    wx.ajax({
+   return wx.ajax({
       url: '/api/Order/useStock',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         character_id: character_id,
         number: 1
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
+      
         if (res.code === 1) {
           console.log("使用成功", res);
-          if (that.data.flag==1){
+          if (that.data.flag == 1) {
             if (getCurrentPages().length != 0) {
               //刷新当前页面的数据
               getCurrentPages()[getCurrentPages().length - 1].onLoad();
@@ -176,34 +176,32 @@ Page({
                 duration: 2000,
               })
             }
-          }else{
+          } else {
             wx.showToast({
               title: '使用成功',
               icon: 'success',
               duration: 1000,
-              success: 
+              success:
                 setTimeout(
                   function () {
-                  wx.navigateTo({
-                    url: '../my_roles/myRoles?id=' + character_id
+                    wx.navigateTo({
+                      url: '../my_roles/myRoles?id=' + character_id
                     })
-        
+
                   }, 1000)
             })
-            
+
           }
-        
-          
-        } else if (res.code === 400){
+
+
+        } else if (res.code === 400) {
           wx.showToast({
             title: '库存不足',
             icon: 'none',
-            duration: 1000})
+            duration: 1000
+          })
         }
-      },
-      fail(res){
-          console.log(res)
-      }
+      
     })
   },
 

@@ -18,16 +18,16 @@ Page({
   //提现列表
   withthdraw: function () {
     var that = this;
-    wx.ajax({
+   return wx.ajax({
       url: '/api/Member/withdrawList',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         page: 1,
         pageSize: 20
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
+      
         console.log("提现明细", res.data);
         if (res.code === 1) {
 
@@ -37,7 +37,7 @@ Page({
             withthdrawDetail: withthdrawDetail
           })
         }
-      }
+      
     });
   },
   //撤回提现
@@ -52,15 +52,15 @@ Page({
         success(res) {
           if (res.confirm) {
             console.log('用户点击确定')
-            wx.ajax({
+          return  wx.ajax({
               url: '/api/Member/undoDeposit',
               checkRole: false,
               params: {
                 token: wx.getStorageSync('token'),
                 id: witdrawId
-              },
-              type: 'POST',
-              success(res) {
+              }
+            }).then(res =>{
+             
                 console.log("撤回提现", res);
                 if (res.code === 1) {
                   console.log("撤回提现成功", res);
@@ -70,7 +70,7 @@ Page({
                     duration: 1000
                   })
                 }
-              }
+              
             });
 
 

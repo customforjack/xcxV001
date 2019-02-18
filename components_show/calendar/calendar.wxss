@@ -195,6 +195,7 @@
   /* height: 100rpx; */
 }
 .yuan{
+  color: white;
   text-align: center;
   line-height: 60rpx;
   width:60rpx;

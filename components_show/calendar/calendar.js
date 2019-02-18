@@ -56,7 +56,9 @@ Component({
     selectDay: '', // 当前选择日期
     canlender: {
       "weeks": []
-    }
+    },
+    cousedis:0
+
   },
   ready() {
     console.log("传过来的值", this.properties);
@@ -67,27 +69,57 @@ Component({
    * 组件的方法列表
    */
   methods: {
-      all_daka(){
+    all_daka(current,all){
         var that = this
-
+      if (!current){
+          current=["",""]
+        }
+        //获取打卡日期
         return  wx.ajax({
           url: '/api/Product/getSignDate',
           params: {
             token: wx.getStorageSync('token'),
             member_habit_id: that.properties.mak_time,
-            year: "",
-            month: ""
+            year: current[0],
+            month: current[1]
           }
          }).then(res => {
       console.log("打卡日期",res);
           that.setData({
                 mak_time2: res.data
               })
-          that.getWeek(new Date())
+              if(!all){
+                all=new Date()
+              }
+           console.log("渲染日历传值",all);
+              // 渲染日历'2017-01-06'
+           that.getWeek(all)
     })
       },
     selectDay(e) {
       console.log(e);
+      var rowNum = e.currentTarget.dataset.week
+      var rowNum2 = e.currentTarget.dataset.index
+      console.log(rowNum)
+      console.log(rowNum2)
+      console.log(this.data.canlender.weeks[rowNum][rowNum2])
+      //var row = "canlender.weeks[" + rowNum + "][" + rowNum2 +"].col"
+      // this.setData({
+        //   [row]: 1
+        // })
+      if (this.data.canlender.weeks[rowNum][rowNum2].col==0){
+        console.log("选中");
+        this.data.canlender.weeks[rowNum][rowNum2].col=1
+        console.log(this.data);    
+      }else {
+        console.log("未选中");
+        this.data.canlender.weeks[rowNum][rowNum2].col = 0
+      }
+      console.log(this.data.canlender)
+      this.setData({
+        canlender: this.data.canlender
+      })
+      console.log(this.data);
       let index = e.currentTarget.dataset.index;
       let week = e.currentTarget.dataset.week;
       let ischeck = e.currentTarget.dataset.ischeck;
@@ -95,7 +127,7 @@ Component({
       if (!ischeck) return false;
       let month = canlender.weeks[week][index].month < 10 ? "0" + canlender.weeks[week][index].month : canlender.weeks[week][index].month
       let date = canlender.weeks[week][index].date < 10 ? "0" + canlender.weeks[week][index].date : canlender.weeks[week][index].date
-      this.getWeek(canlender.year + "-" + month + "-" + date);
+     // this.getWeek(canlender.year + "-" + month + "-" + date);
   
     },
 
@@ -113,7 +145,11 @@ Component({
       }
       let year = this.data.canlender.year + "-" + this.data.canlender.month + "-" + this.data.canlender.date
       let _date = this.getDate(year, num, types === 'month' ? "month" : "day");
-      this.getWeek(_date);
+      console.log(_date)
+      console.log(_date.split("-"));
+      let _datef = _date.split("-")
+      this.all_daka(_datef, _date)
+     // this.getWeek(_date);
     },
     // 获取日历内容
     getWeek(dateData) {
@@ -147,12 +183,13 @@ Component({
         })
       }
       // 循环本月天数添加到数组
+      //将求情拿到的打卡日期和当前渲染的日期对比插入到数组一个状态
       console.log("需要显示的红点", this.data.mak_time2)
       var mark_list = this.data.mak_time2.day.map(Number);
       let mark = false;
+      console.log(mark_list);
       for (let i = 1; i <= new Date(year, month, 0).getDate(); i++) {
-    
-        console.log(mark_list);
+       
         if (mark_list.indexOf(i) != -1) {
           mark = true;
         } else { 
@@ -171,11 +208,12 @@ Component({
         dates.currentMonthDys.push({
           'date': i + "",
           'month': month,
+          col:0,
           mark,
           have
         })
       }
-      console.log(dates.currentMonthDys);
+      
       // 循环下个月开始几天 添加到数组
       for (let i = 1; i < 7 - dates.endDay; i++) {
         dates.nextMonthDays.push({
@@ -192,8 +230,6 @@ Component({
         }
         dates.weeks[parseInt(i / 7)][i % 7] = canlender[i]
       }
-
-      console.log(dates.weeks)
       // 渲染数据
       this.setData({
         selectDay: month + "月" + date + "日",
@@ -207,12 +243,6 @@ Component({
         'mak_d': [11,12,13]
       })
       
-      // console.log(this.data)
-      
-      // console.log(this.data.canlender)
-      // console.log(this.data.canlender.weeks)
-     
-     
       month = month < 10 ? "0" + month : month
       date = date < 10 ? "0" + date : date
       this.triggerEvent('getdate', { year, month, date })

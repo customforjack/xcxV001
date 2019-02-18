@@ -47,23 +47,23 @@ Page({
   onShow: function () {
     var that=this;
     
-    wx.ajax({
+   return wx.ajax({
       url: '/api/Member/checklogin',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token')
-      },
-      type: 'POST',
-      success(res) {
-        console.log("验证登陆", res);
-        if (res.code === 1) {
-          that.setData({
-            available_balance: res.data.available_balance,
-            freeze_balance: res.data.freeze_balance
-          })
-        }
       }
-    })
+   }).then(res => {
+    
+       console.log("验证登陆", res);
+       if (res.code === 1) {
+         that.setData({
+           available_balance: res.data.available_balance,
+           freeze_balance: res.data.freeze_balance
+         })
+       }
+     
+   })
   },
 
   /**
