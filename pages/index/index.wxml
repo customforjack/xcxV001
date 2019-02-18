@@ -15,7 +15,7 @@
   <scroll-view scroll-x="true" class="vip_xl">
     <view class='role_list'>
       <view class='role' data-idx="{{index}}" bindtap='checkRole' wx:for="{{detail.today_habit}}"  wx:key="index">
-        <image src='{{item.thumbnail}}'></image>
+        <image src='{{item.thumbnail}}' mode="aspectFill"></image>
         <view class='name'>{{item.name}}</view>
 
       </view>
