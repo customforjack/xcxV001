@@ -91,7 +91,6 @@ swiper swiper-item image {
 }
 .re-card-list .re-card .roleIcon{
   width: 176rpx;
-  border-radius: 50%;
   display: block;
 }
 .re-card-list .ha-card{

@@ -1,6 +1,8 @@
 /* pages/toPay/toPay.wxss */
 
-
+page{
+  padding-bottom: 100rpx;
+}
 .list_item{
   padding: 40rpx 0 25rpx;
   margin: 0 0 0 36rpx;
@@ -117,6 +119,7 @@
 .type{
   border-right:1rpx solid #D6F9FB; 
   flex: 1;
+  background: #fff;
 }
 .check{
     background: #5FD3DB;

@@ -29,9 +29,15 @@ Page({
     })
   },
   toDetail(e){
-    wx.navigateTo({
-      url: '/pages/my_roles/myRoles?id='+e.currentTarget.dataset.id,
-    })
+    // 如果多选状态 则不进入详情
+    if (this.data.duoxuanflag){
+      this.toCheck(e)
+    } else {
+      wx.navigateTo({
+        url: '/pages/my_roles/myRoles?id=' + e.currentTarget.dataset.id,
+      })
+    }
+ 
   },
   toCheck(e){
     const index = e.currentTarget.dataset.fidx

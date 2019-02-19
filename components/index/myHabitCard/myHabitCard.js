@@ -77,7 +77,7 @@ Component({
       wx.ajax({
         url:'/api/Product/signMyHabit',
         params:{
-          member_habit_id: e.currentTarget.dataset.id,
+          member_habit_id: e.currentTarget.dataset.member_habit_id,
           token:wx.getStorageSync('token')
         },
         success(res){
@@ -97,7 +97,7 @@ Component({
       if (e.currentTarget.dataset.ismine == 1){
         console.log('已创建')
         wx.navigateTo({
-          url: '/pages/habitDetail/habitDetail?member_habit_id=' + e.currentTarget.dataset.id,
+          url: '/pages/habitDetail/habitDetail?member_habit_id=' + e.currentTarget.dataset.member_habit_id,
         })
       }
       if (e.currentTarget.dataset.ismine == 0) {

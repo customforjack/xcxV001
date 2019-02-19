@@ -8,7 +8,7 @@
             <view class='role-c-text'>{{item.description}}</view>
             <view class='role-c-labels'>
                 <view class='left'>{{item.page_view}}万人参与/{{item.share_view}}人转发</view>
-                <view class='right' catchtap="scBtn" data-id="{{item.id}}" data-type="{{item.type_flag}}">
+                <view class='right' catchtap="scBtn"  data-id="{{item.id}}" data-type="{{item.type_flag}}">
                 <image src="{{item.is_collection === 1?'/img/fabulous.png':'/img/shoucang.png'}}"></image>
                 {{item.collection_view}}</view>
             </view>

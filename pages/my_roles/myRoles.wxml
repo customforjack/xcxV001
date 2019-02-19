@@ -8,12 +8,12 @@
   <view class='listBox'>
     <view class='list' wx:if="{{showTab === 0}}">
     <view class='c' wx:for="{{detail.habit}}" wx:key="index">
-              <role-card item="{{item}}" data-id="{{item.id}}" bindscSuccess="scSuccess" catchtap="toDetail"></role-card>
+              <role-card item="{{item}}" data-id="{{item.id}}"  catchtap="toDetail"></role-card>
     </view>
     </view>
         <view class='list'  wx:if="{{showTab === 1}}">
     <view class='c' wx:for="{{detail.course}}" wx:key="index">
-              <role-card item="{{item}}" data-id="{{item.id}}" bindscSuccess="scSuccess" catchtap="toDetail"></role-card>
+              <role-card item="{{item}}" data-id="{{item.id}}"  catchtap="toDetail"></role-card>
     </view>
     </view>
   </view>

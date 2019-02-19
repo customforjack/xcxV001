@@ -75,6 +75,10 @@ margin-bottom: 32rpx;
   width: 50rpx;
   height: 50rpx;
   border: 1rpx solid #fff;
+  box-sizing: border-box;
+}
+.roleList .r-card .check.checked{
+  border: none;
 }
 .roleList .r-card .check.checked image{
  display: block;

@@ -148,21 +148,6 @@ Page({
       })
     })
   },
-  // 收藏成功
-  scSuccess(e){
-    const _this = this
-    console.log('收藏', e)
-    this.getDetail(this.data.id).then(res => {
-      console.log("角色详情列表", res)
-      _this.setData({
-        detail: res.data
-      })
-      wx.showToast({
-        title: e.detail.msg,
-        icon: 'none'
-      })
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
