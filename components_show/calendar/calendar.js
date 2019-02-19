@@ -13,6 +13,10 @@ Component({
    */
   externalClasses: ["reqi"],
   properties: {
+    itemn:{
+      type: Object,
+      value:{}
+    },
     date: {
       type: null,
       value: new Date()
@@ -100,13 +104,25 @@ Component({
       console.log(e);
       var rowNum = e.currentTarget.dataset.week
       var rowNum2 = e.currentTarget.dataset.index
-      console.log(rowNum)
-      console.log(rowNum2)
+      console.log(this.data.canlender.weeks)
       console.log(this.data.canlender.weeks[rowNum][rowNum2])
-      //var row = "canlender.weeks[" + rowNum + "][" + rowNum2 +"].col"
-      // this.setData({
-        //   [row]: 1
-        // })
+      console.log(this.data.canlender.year)
+      var clickYear = this.data.canlender.year;
+      var clickMonth=this.data.canlender.weeks[rowNum][rowNum2].month;
+      
+      if (clickMonth<10){
+        console.log(clickMonth);
+        clickMonth = '0' + clickMonth
+      }
+      var clickDay=this.data.canlender.weeks[rowNum][rowNum2].date;
+      if (clickDay < 10) {
+        console.log(clickMonth);
+        clickDay = '0' + clickDay
+      }
+      //传值到页面
+      var clickDate = clickYear + '-' + clickMonth + '-' + clickDay;
+      console.log(clickDate);
+      this.triggerEvent('clickDate', clickDate)
       if (this.data.canlender.weeks[rowNum][rowNum2].col==0){
         console.log("选中");
         this.data.canlender.weeks[rowNum][rowNum2].col=1

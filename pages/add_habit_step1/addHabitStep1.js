@@ -16,6 +16,12 @@ Page({
     otherPromise2: '',
     date:'',
     date1:'',
+    date2:{
+      y:'2019',
+      m:'2',
+      d:'30'
+
+    },
     range:[
       [
         { name: '00', value: 0 },
@@ -138,6 +144,24 @@ Page({
         icon: 'none'
       })
     }
+  },
+  //获取日历组件传来的值
+  getDate:function(e){
+    console.log(e.detail);
+    var now_data = e.detail.replace(/-/g, "");
+    var sta_date = this.data.date.replace(/-/g, "");
+    var end_date = this.data.date1.replace(/-/g, "");
+    console.log(now_data, sta_date, end_date)
+    if (sta_date == '' || now_data < sta_date){
+      this.setData({date: e.detail})
+    } else if (now_data > end_date){
+      this.setData({
+        date1: e.detail
+      })
+    } else if (now_data < end_date && now_data > sta_date){
+      this.setData({date1: e.detail})
+    } 
+  
   },
   habitName (e) {
     this.setData({
