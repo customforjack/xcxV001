@@ -2,7 +2,7 @@
 <view class='daka-box' wx:if="{{show}}" >
   <view class='dakaSuccess'>
   <view class='tit'>
-    <image mode="aspectFit" src='/img/dakaSuccess.jpg'></image>
+    <image mode="aspectFit" src='/img/dakaSuccess.png'></image>
   </view>
     <button class='i-know' bindtap='close'>我知道了</button>
   </view>

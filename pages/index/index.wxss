@@ -47,7 +47,38 @@ swiper swiper-item image {
   line-height: 26rpx;
   margin-top: 9rpx;
 }
-
+.no-todayHabit{
+height:276rpx;
+background: #fff;
+margin-top: 36rpx;
+position: relative;
+}
+.no-todayHabit .info{
+  width:694rpx;
+height:276rpx;
+background:rgba(242,248,250,1);
+border-radius:16rpx;
+margin: 0 auto;
+}
+.no-todayHabit .add{
+  display: block;
+  width: 52rpx;
+  height: 52rpx;
+  position: absolute;
+  top: 34rpx;
+  right: 12rpx;
+}
+.no-todayHabit .info .msg{
+  vertical-align: middle;
+  font-size:30rpx;
+color:rgba(153,153,153,1);
+line-height:42rpx;
+text-align: center;
+padding-top: 117rpx;
+}
+.no-todayHabit .info .msg text{
+  color: #000;
+}
 .tab {
   display: flex;
   padding: 0 28rpx;
@@ -279,7 +310,9 @@ text-align: center;
   background: #fff;
   margin-bottom: 20rpx;
 }
-
+.myHabitList .tit{
+  height: 45rpx;
+}
 .myHabitList .tit button {
   display: inline-block;
   vertical-align: top;

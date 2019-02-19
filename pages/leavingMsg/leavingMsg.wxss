@@ -40,8 +40,8 @@
   position: relative;
 }
 .leavingMsg .show .imgBox image{
-  width: 100%;
-  height: 100%;
+  width: 212rpx;
+  height: 212rpx;
   display: block;
   border-radius: 10rpx;
 }

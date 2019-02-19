@@ -93,7 +93,7 @@
 }
 
 .saySomething {
-  padding: 48rpx 40rpx 25rpx;
+  padding: 48rpx 40rpx 37rpx;
   background: #fff;
   margin-top: 20rpx;
   position: relative;
@@ -112,6 +112,9 @@
 .saySomething  .nodataBox{
   text-align: center;
   padding-top: 47rpx;
+}
+.saySomething  .nodataBox button{
+  background:rgba(42, 192, 203, 1);
 }
 .saySomething  .nodataBox .nodata{
   width: 171rpx;

@@ -1,8 +1,8 @@
 <!--pages/habitDetail/habitDetail.wxml-->
 <view class='habitDetail'>
 <view class='daka-box'>
-  <image class='dakaOk' src='/img/daka-ok.png'></image>
-  <image class='dakaFail' src='/img/daka-fail.png'></image>
+  <image class='dakaOk' data-type="1" bindtap='todk' src='/img/daka-ok.png'></image>
+  <image class='dakaFail' data-type="2" bindtap='todk' src='/img/daka-fail.png'></image>
 </view>
 <view>
   <calendar id="component" mak_time='{{options.member_habit_id}}'  bindnumChange="numChange"></calendar>
@@ -35,13 +35,10 @@
   <view class='saySomething'>
     <view class='tit'>
       <image src="/img/something-icon.png"></image>说说感想</view>
-    <addBtn class="addBtn" bindtap="addLeavingMsg"></addBtn>
     <view class='list'>
       <view class='nodataBox'>
-        <image class='nodata' src='/img/nodata-say.png'></image>
-        <text>还没有留下感想哦</text>
+        <button  bindtap="addLeavingMsg">发表留言</button>
       </view>
-
     </view>
   </view>
   <!--说说感想 end-->
@@ -54,5 +51,4 @@
     </view>
   </view>
   <dakaSuccess show="{{model}}" ></dakaSuccess> 
-  <toDoBtn text="去打卡" bindtap="todk"></toDoBtn>
 </view>

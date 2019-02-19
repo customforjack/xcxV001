@@ -7,17 +7,22 @@
 </swiper>
 
 <!--今日习惯列表 start-->
-<view class='myHabitList' wx:if="{{detail.today_habit.length}}">
+<view class='myHabitList'>
   <view class='tit'>
     <text class='date'>12月3号 星期一</text>
     <button bindtap='toMyHabit'>今日习惯</button>
   </view>
-  <scroll-view scroll-x="true" class="vip_xl">
+  <view class='no-todayHabit' wx:if="{{detail.today_habit.length === 0}}">
+    <view class='info'>
+      <view class='msg'>您还没有任何习惯，点击<text>“+”</text>号可创建哦</view>
+    </view>
+    <image class='add' src='/img/Homeadd.png'></image>
+  </view>
+  <scroll-view scroll-x="true" class="vip_xl" wx:if="{{detail.today_habit.length}}">
     <view class='role_list'>
       <view class='role' data-idx="{{index}}" bindtap='checkRole' wx:for="{{detail.today_habit}}"  wx:key="index">
         <image src='{{item.thumbnail}}' mode="aspectFill"></image>
         <view class='name'>{{item.name}}</view>
-
       </view>
     </view>
   </scroll-view>

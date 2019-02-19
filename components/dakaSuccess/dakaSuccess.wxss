@@ -14,7 +14,7 @@
   line-height: 100rpx;
 }
 .daka-box .tit image{
-  width: 100%;
+  width: 90%;
   display: block;
   height: 350rpx;
   margin: 0 auto;
@@ -48,7 +48,7 @@
   border-radius: 5rpx;
   font-size: 30rpx;
   color: rgba(22, 22, 22, 1);
-  margin-top: 70rpx;
+  margin-top: 30rpx;
 }
 .daka-box .no-again-show{
   font-size:28rpx;

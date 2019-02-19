@@ -113,21 +113,30 @@ Page({
     //   })
     // })
   },
-  todk(){
-    console.log('daka')
+  todk(e){
+    console.log('daka',e)
+    
     const _this = this
     wx.ajax({
       url:'/api/Product/signMyHabit',
       params:{
         member_habit_id: _this.data.detail.member_habit_id,
-        token:wx.getStorageSync('token')
+        token:wx.getStorageSync('token'),
+        type:e.currentTarget.dataset.type
       }
     }).then(res =>{
       console.log(res)
       if (res.code === 1){
-        _this.setData({
-          model:true
-        })
+        if(e.currentTarget.dataset.type ==1){
+          _this.setData({
+            model: true
+          })
+        } else {
+          wx.showToast({
+            title: '打卡失败',
+            icon:'none'
+          })
+        }
       }
       if(res.code === 400){
         wx.showToast({
