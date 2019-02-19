@@ -14,7 +14,7 @@
     <view class='desc'>{{item.description}}</view>
     <view class='num'>已购{{item.sale_num}}件</view>
     <view class='money'>
-        <view class='price'>￥{{item.price}}</view>
+        <view class='price'>{{system === 'iOS'?'':'￥'+item.price}}</view>
         <view class='amount'>
         <view class='reduce' hover-class='back_color' data-idx="{{index}}" bindtap='reduce'>-</view>
         <view class='num_all'>{{item.number}}</view>
@@ -27,7 +27,7 @@
 
 
 <view class='payment'>
-    <view class='total'>总价: <text>￥{{total}}</text></view>
+    <view class='total'>{{system === 'iOS'? '':'总价:'}} <text>{{system === 'iOS'? '' :'￥'+total}}</text></view>
     <view class='all_pay'>
         <view bindtap='yePay' data-tab='0' class="type {{flag==0?'check':''}}">
           <text>余额支付</text>

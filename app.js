@@ -51,11 +51,14 @@ App({
     //虽然最后解决了，但是花费了不少时间
     wx.getSystemInfo({
       success: (res) => {
+        console.log('system', res)
         this.globalData.height = res.statusBarHeight
+        this.globalData.system = res.system.indexOf('iOS') > -1 ? 'iOS' :'Android'
       }
     })
   },
   globalData: {
-    height:0
+    height:0,
+    system:null
   }
 })

@@ -1,4 +1,5 @@
 // pages/toPay/toPay.js
+const app = getApp()
 Page({
 
   /**
@@ -10,7 +11,8 @@ Page({
     num:1,
     flag:0,
     total:0,
-    loginData:wx.getStorageSync('loginData')
+    loginData:wx.getStorageSync('loginData'),
+    system: app.globalData.system
   },
   showModal:function(e){
     this.component.close(e);
