@@ -32,7 +32,7 @@ Page({
     })
     console.log(e)
   },
-  //进入课堂
+  //课堂详情
   details: function (roleId){
     var that = this;
    return  wx.ajax({

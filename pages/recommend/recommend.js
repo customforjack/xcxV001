@@ -12,7 +12,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    return wx.ajax({
+      url: '/api/Member/myRecommend',
+      checkRole: false,
+      params: {
+        token: wx.getStorageSync('token'),
+      }
+    }).then(res => {
+      console.log("课程详情", res.data);
+    })
   },
 
   /**

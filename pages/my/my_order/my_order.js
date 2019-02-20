@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    act:0
+    act:0,
+    orderList:[],
+    page_all: 1,
+    page_p:1,
+    page_y:1,
+    page_c:1
+
   },
   /**
    * 改变Tab
@@ -67,26 +73,51 @@ Page({
 //订单列表
   myOrder: function (act) {
     var that = this;
+    var pages=1;
+    that.setData({
+      orderList: []
+    })
+    if (act==0){
+      pages = that.data.page_all;
+     
+      console.log(0)
+    } else if (act == 1){
+      pages = that.data.page_p;
+      console.log(1)
+    }
+    else if (act == 2) {
+      pages = that.data.page_y;
+      console.log(2)
+    }
+    else if (act == 3) {
+      pages = that.data.page_c;
+      console.log(3)
+    }
+    console.log(pages, act);
+    that.myOrders(pages, act)
+    
+  },
+  myOrders:function(pages,act){
+    var that=this;
     return wx.ajax({
       url: '/api/Member/getOrderList',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
         order_status: act,
-        page: 1,
+        page: pages,
         pageSize: 20
       }
-    }).then(res =>{
+    }).then(res => {
+      console.log("订单", res);
+      if (res.code === 1) {
+        let array = that.data.orderList.concat(res.data.data);
       
-        console.log("订单", res);
-        if (res.code === 1) {
-          var orderList = res.data.data;
-          // 订单
-          that.setData({
-            orderList: orderList
-          })
-        }
-      
+        // 订单
+        that.setData({
+          orderList: array
+        })
+      }
     })
   },
 //支付
@@ -267,7 +298,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log(this.data.act)
+    // var page_new = this.data.page + 1;
+    // this.setData({
+    //   page: page_new
+    // })
+    // this.withthdraw()
   },
 
   /**

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    page: 1,
+    orderDetail:[]
   },
 
   /**
@@ -17,26 +18,26 @@ Page({
   },
   orderDetail:function(){
     var that = this;
-    wx.ajax({
+    return  wx.ajax({
       url: '/api/Member/myPayments',
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
-        page: 1,
+        page: that.data.page,
         pageSize: 20
-      },
-      type: 'POST',
-      success(res) {
+      }
+    }).then(res =>{
+      
         console.log("账单明细", res.data);
+       
         if (res.code === 1) {
-
-          var orderDetail = res.data.data;
-
-          that.setData({
-            orderDetail: orderDetail
+          let array = that.data.orderDetail.concat(res.data.data); 
+          console.log(array);
+          this.setData({
+            orderDetail: array
           })
         }
-      }
+      
     });
   },
   /**
@@ -78,6 +79,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    console.log(this.data.page + 1) 
+    var page_new = this.data.page + 1;
+    this.setData({
+      page: page_new
+    })
+   this.orderDetail()
 
   },
 
@@ -85,6 +92,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+     
   }
 })
