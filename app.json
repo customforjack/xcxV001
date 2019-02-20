@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/add_habit_step1/addHabitStep1",
     "pages/index/index",
     "pages/test/test",
     "pages/my/my",
@@ -23,7 +22,7 @@
     "pages/collection/collection",
     "pages/login/login",
     "pages/add_habit/addHabit",
-
+    "pages/add_habit_step1/addHabitStep1",
     "pages/buyRoles/buyRoles",
     "pages/my_roles/myRoles",
     "pages/buyRolesStep2/buyRolesStep2",
