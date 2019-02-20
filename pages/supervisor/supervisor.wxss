@@ -159,6 +159,9 @@
   width: 70rpx;
   text-align: center;
   line-height: 30rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .pic_name{
     display: flex;

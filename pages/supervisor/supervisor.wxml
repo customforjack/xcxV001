@@ -15,7 +15,7 @@
     <!-- <text class='tilte_big' catchtap='moreDudao'>MORE</text> -->
     <view class='content'>
      <view>
-      <image src='{{supervisorList.thumbnail}}'></image>
+      <image mode="widthFix" src='{{supervisorList.thumbnail}}'></image>
       </view>
      <view class='miaoshu'>
       <text>
@@ -28,7 +28,7 @@
       {{supervisorList.page_view}}人参与/钱多多
       </text>
      </view>
-      <view class='qdd'>钱多多</view>
+      <view class='qdd'>{{supervisorList.member_name}}阿斯顿南京埃斯顿和</view>
       
      <view class='click_ta' catchtap='hint'>袭TA一下</view>
     </view>

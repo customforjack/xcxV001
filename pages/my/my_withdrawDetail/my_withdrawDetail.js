@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    page: 1,
+    withthdrawDetail:[]
 
   },
 
@@ -23,18 +25,17 @@ Page({
       checkRole: false,
       params: {
         token: wx.getStorageSync('token'),
-        page: 1,
+        page: that.data.page,
         pageSize: 20
       }
     }).then(res =>{
       
         console.log("提现明细", res.data);
+       
         if (res.code === 1) {
-
-          var withthdrawDetail = res.data.data;
-
+          let array = that.data.withthdrawDetail.concat(res.data.data);
           that.setData({
-            withthdrawDetail: withthdrawDetail
+            withthdrawDetail: array
           })
         }
       
@@ -124,7 +125,11 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var page_new = this.data.page + 1;
+    this.setData({
+      page: page_new
+    })
+    this.withthdraw()
   },
 
   /**
