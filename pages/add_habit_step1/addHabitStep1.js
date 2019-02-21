@@ -170,14 +170,15 @@ Page({
   bindDateChange: function (e) {
     console.log(e)
     this.setData({
-      date: e.detail.value
+      date: e.detail.value,
+      show_type: true
     })
   },
   bindDateChange1: function (e) {
-    
+    console.log(e)
     this.setData({
       date1: e.detail.value,
-      show_type:true
+     
     })
   },
   subFrom (){

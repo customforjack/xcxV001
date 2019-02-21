@@ -88,7 +88,7 @@ Page({
           // 则跳转至对应我的习惯详情
           console.log('则跳转至对应我的习惯详情')
           wx.navigateTo({
-            url: '/pages/habitDetail/habitDetail?' + wx.getParams(_this.data.item),
+            url: '/pages/habitDetail/habitDetail?' + wx.getParams(res.data),
           })
         }
       })

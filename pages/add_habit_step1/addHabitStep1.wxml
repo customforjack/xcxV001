@@ -24,7 +24,7 @@
       </view>
     </view>
     <view class='calendar'>
-    <calendar wx:if='{{show_type}}' itemn='{{date2}}' class='reqi' bind:clickDate="getDate"></calendar>
+    <calendar wx:if='{{show_type}}' date='{{date}}' date1='{{date1}}' class='reqi' bind:clickDate="getDate"></calendar>
     </view>
     
     <!--开始时间 end-->

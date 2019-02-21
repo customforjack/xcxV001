@@ -38,10 +38,12 @@
           <block wx:for="{{weeks}}" wx:for-item="day"  wx:key="day">
             <view class="date {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'date-current': ''}} " data-week="{{week}}" data-index="{{index}}" data-mak="{{canlender.month}}"   data-ischeck="{{canlender.month === day.month}}" bindtap='selectDay' data-clickday='{{day.date}}' data-col='{{day.col}}'>
               <view class='reqi'>
-              <view class="{{day.col==1?'yuan':''}}   {{(itemn.y==canlender.year) && (itemn.m==day.month)&&(itemn.d>day.date)?'yuan':''}}" data-week="{{week}}     data-qqq='{{day.date}}{{itemn.d}}'"  > {{day.date}}
+              
+              <view style='position:relative' class="{{day.mark==true?'icon':''}}  {{day.col==1?'yuan':''}} {{new_data2<=day.year&&day.year<=new_data?'yuan':''}}  {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'yuan': ''}}" data-week="{{week}}"   data-c='{{day.year}}' data-d='{{new_data2}}' data-e='{{new_data}}'   data-b='{{day.month}}'  data-a='{{day.date}}'> {{day.date}}
+              <!-- <image src='../../img/daka-ok.png' style=' position: absolute;height:100%;width:100%'></image> -->
               </view>
               </view>
-              <view class='mark'   data-mak='{{canlender.date}}' wx:if='{{day.mark==true}}'></view>
+              <view class='mark' data-mak='{{canlender.date}}' wx:if='{{day.mark==true}}'></view>
               <view wx:if="{{day.have}}" class="data-circle"></view>
             </view>
           </block>

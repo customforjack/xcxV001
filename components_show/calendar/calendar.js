@@ -19,7 +19,28 @@ Component({
     },
     date: {
       type: null,
-      value: new Date()
+      value:"",
+        observer(newVal, oldVal, changedPath) {
+        console.log("newVal",newVal);
+          var new_data2 = newVal.replace(/-/g, "")
+          this.setData({
+            new_data2: new_data2
+          })
+          console.log(new_data2)
+          this.all_daka()
+        }
+    },
+    date1: {
+        type: null,
+        value: "",
+        observer(newVal, oldVal, changedPath) {
+            console.log("newVal",newVal)
+          var new_data = newVal.replace(/-/g, "")
+            this.setData({
+              new_data: new_data
+            })
+          console.log(new_data)
+        }
     },
     selected: {
       type: Array,
@@ -79,26 +100,35 @@ Component({
           current=["",""]
         }
         //获取打卡日期
-        return  wx.ajax({
-          url: '/api/Product/getSignDate',
-          params: {
-            token: wx.getStorageSync('token'),
-            member_habit_id: that.properties.mak_time,
-            year: current[0],
-            month: current[1]
+        if(that.data.date){
+          if(!all){
+              all=new Date(Date.parse(that.data.date.replace(/-/g,"/")));
           }
-         }).then(res => {
-      console.log("打卡日期",res);
-          that.setData({
-                mak_time2: res.data
-              })
-              if(!all){
-                all=new Date()
-              }
-           console.log("渲染日历传值",all);
-              // 渲染日历'2017-01-06'
-           that.getWeek(all)
-    })
+          console.log(123);
+            that.getWeek(all)
+        }else {
+            return  wx.ajax({
+                url: '/api/Product/getSignDate',
+                params: {
+                    token: wx.getStorageSync('token'),
+                    member_habit_id: that.properties.mak_time,
+                    year: current[0],
+                    month: current[1]
+                }
+            }).then(res => {
+                console.log("打卡日期",res);
+                that.setData({
+                    mak_time2: res.data
+                })
+                console.log(all);
+                if(!all){
+                        all=new Date()
+                }
+                console.log("渲染日历传值",all);
+                that.getWeek(all)
+            })
+        }
+
       },
     selectDay(e) {
       console.log(e);
@@ -125,6 +155,10 @@ Component({
       this.triggerEvent('clickDate', clickDate)
       if (this.data.canlender.weeks[rowNum][rowNum2].col==0){
         console.log("选中");
+          // console.log(this.data.canlender.year)
+          // console.log(this.data.canlender.weeks[rowNum][rowNum2].month)
+          // console.log(this.data.canlender.weeks[rowNum][rowNum2].date)
+
         this.data.canlender.weeks[rowNum][rowNum2].col=1
         console.log(this.data);    
       }else {
@@ -168,7 +202,7 @@ Component({
      // this.getWeek(_date);
     },
     // 获取日历内容
-    getWeek(dateData) {
+      getWeek(dateData) {
       let selected = this.data.selected
       let a = new Date()
       // console.log("im date ", a, typeof a === 'object')
@@ -190,7 +224,7 @@ Component({
         endDay: new Date(year, month, 0).getDay(),
         weeks: []
       }
-
+        console.log("11111111111111",year)
       // 循环上个月末尾几天添加到数组
       for (let i = dates.firstDay; i > 0; i--) {
         dates.lastMonthDays.push({
@@ -201,7 +235,12 @@ Component({
       // 循环本月天数添加到数组
       //将求情拿到的打卡日期和当前渲染的日期对比插入到数组一个状态
       console.log("需要显示的红点", this.data.mak_time2)
-      var mark_list = this.data.mak_time2.day.map(Number);
+          if(this.data.mak_time2){
+              var mark_list = this.data.mak_time2.day.map(Number);
+          }else {
+              mark_list=[];
+          }
+
       let mark = false;
       console.log(mark_list);
       for (let i = 1; i <= new Date(year, month, 0).getDate(); i++) {
@@ -220,10 +259,31 @@ Component({
           }
           
         }
-        
+        // console.log("258888",year)
+        // console.log("258888",month)
+        // console.log("258888",i)
+          var month_ao=''
+          var day_ao=''
+          if(month<10){
+            month_ao="0"+month
+          }else {
+              month_ao=month
+          }
+          if(i<10){
+              day_ao="0"+i
+          }else {
+              day_ao=i;
+          }
+          var q=year.toString();
+          var w=month_ao.toString();
+          var e = day_ao.toString();
+          var duibi=q+w+e;
+          // console.log(duibi)
         dates.currentMonthDys.push({
           'date': i + "",
           'month': month,
+          'year': duibi,
+
           col:0,
           mark,
           have
@@ -253,16 +313,17 @@ Component({
         'canlender.month': month,
         'canlender.date': date,
         "canlender.day": day,
-        'canlender.year': year,
-        'mak_y': 2019,
-        'mak_m': 2,
-        'mak_d': [11,12,13]
+        'canlender.year': year
+        // 'mak_y': 2019,
+        // 'mak_m': 2,
+        // 'mak_d': [11,12,13]
       })
       
       month = month < 10 ? "0" + month : month
       date = date < 10 ? "0" + date : date
       this.triggerEvent('getdate', { year, month, date })
     },
+
     /**
      * 时间计算
      */
