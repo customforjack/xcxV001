@@ -10,23 +10,19 @@ Page({
     options:{},
     talkList:[],
     model:false,
-    mak_time:{}
+    mak_time:{},
+    status:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
     console.log('options', options)
     this.setData({
       options: options
     })
-    Promise.all([this.getDetail(options)]).then(arr => {
-      console.log('arr',arr)
-      this.getTopicList()
-      // this.getCalendar()
-    })
+
   },
 
 
@@ -115,7 +111,9 @@ Page({
   },
   todk(e){
     console.log('daka',e)
-    
+    this.setData({
+      status: e.currentTarget.dataset.type == 1?'success':'fail'
+    })
     const _this = this
     wx.ajax({
       url:'/api/Product/signMyHabit',
@@ -132,9 +130,8 @@ Page({
             model: true
           })
         } else {
-          wx.showToast({
-            title: '打卡失败',
-            icon:'none'
+          _this.setData({
+            model: true
           })
         }
       }
@@ -150,6 +147,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
+    Promise.all([this.getDetail(this.data.options)]).then(arr => {
+      console.log('arr', arr)
+      this.getTopicList()
+      // this.getCalendar()
+    })
   },
 
   /**

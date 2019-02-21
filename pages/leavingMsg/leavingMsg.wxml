@@ -1,7 +1,6 @@
 <!--pages/leavingMsg/leavingMsg.wxml-->
 <view class='leavingMsg'>
   <view class='tip'>
-    <button>打卡要求: 图片，视频，音频必须选择一项</button>
   </view>
   <textarea bindinput="say" placeholder='说说今天的感想…' class='say'></textarea>
   <view class='show'>

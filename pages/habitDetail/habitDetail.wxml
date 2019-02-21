@@ -50,5 +50,5 @@
       <showCard wx:for="{{talkList}}" item="{{item}}" wx:key="index"></showCard>
     </view>
   </view>
-  <dakaSuccess show="{{model}}" ></dakaSuccess> 
+  <dakaSuccess show="{{model}}" status="{{status}}" ></dakaSuccess> 
 </view>

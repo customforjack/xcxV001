@@ -16,7 +16,7 @@
 .daka-box .tit image{
   width: 90%;
   display: block;
-  height: 350rpx;
+  height: 250rpx;
   margin: 0 auto;
 }
 .daka-box .to-say {
@@ -26,10 +26,18 @@
   border-radius: 14rpx;
   text-align: center;
 }
-
+.daka-box .dakaSuccess .msg{
+font-size:30rpx;
+color:rgba(75,75,75,1);
+height:42rpx;
+text-align: center;
+line-height: 42rpx;
+margin-bottom: 20rpx;
+margin-top: 20rpx;
+}
 .daka-box .dakaSuccess {
   box-sizing: border-box;
-  padding: 0 50rpx;
+  padding: 30rpx 50rpx 0;
   position: fixed;
   width: 589rpx;
   height: 540rpx;

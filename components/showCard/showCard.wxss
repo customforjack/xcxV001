@@ -260,3 +260,39 @@ position: relative;
   color:rgba(174,98,205,1);
   text-align: center;
 }
+.friendList .hfList{
+  background:rgba(247,248,252,1);
+border-radius:5rpx;
+padding: 23rpx 26rpx;
+}
+.talk-child-box{
+  height: 70rpx;
+  background: #fff;
+  padding: 15rpx 30rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10001;
+}
+.talk-child-box input{
+  line-height: 70rpx;
+  height: 70rpx;
+  background:rgba(239,243,247,1);
+  border-radius: 35rpx;
+    display: inline-block;
+  width:548rpx;
+    padding: 0 30rpx;
+ font-size: 30rpx;
+ box-sizing: border-box;
+}
+.talk-child-box button{
+  display: inline-block;
+  padding: 0;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: none;
+  width: 106rpx;
+  color: #47BBC3;
+  font-size: 34rpx;
+  margin-left: 38rpx
+}

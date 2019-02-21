@@ -13,6 +13,13 @@ Component({
         console.log('newVal', newVal)
         return newVal     
       }
+    },
+    status:{
+      type:String,
+      value:'success',
+      observer(newVal, oldVal, changedPath) {
+        return newVal
+      }
     }
   },
 

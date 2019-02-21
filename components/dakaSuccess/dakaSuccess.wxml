@@ -2,8 +2,12 @@
 <view class='daka-box' wx:if="{{show}}" >
   <view class='dakaSuccess'>
   <view class='tit'>
-    <image mode="aspectFit" src='/img/dakaSuccess.png'></image>
+    <image wx:if="{{status === 'success'}}" mode="aspectFit" src='/img/dakaSuccess.png'></image>
+    <image wx:if="{{status === 'fail'}}" mode="aspectFit" src='/img/dakafail.png'></image>
   </view>
+  <view class='msg' wx:if="{{status === 'fail'}}">任务失败，明天要努力了哦</view>
+    <view  class='msg'   wx:if="{{status === 'success'}}"></view>
+
     <button class='i-know' bindtap='close'>我知道了</button>
   </view>
   <view class='mask'></view>

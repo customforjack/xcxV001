@@ -36,6 +36,16 @@ Component({
             title: res.msg,
             icon:'none'
           })
+          if (res.msg == '收藏成功！'){
+            _this.setData({
+              'item.collection_view': _this.data.item.collection_view+1
+            })
+          }
+          if (res.msg == '取消收藏'){
+            _this.setData({
+              'item.collection_view': _this.data.item.collection_view-1
+            })
+          }
           _this.setData({
             'item.is_collection': _this.data.item.is_collection === 0 ? 1 : 0
           })

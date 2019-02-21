@@ -5,11 +5,18 @@
   min-height: 100vh;
   padding: 40rpx 36rpx 126rpx;
 }
-
-.tabs {
-  
+.image-group{
+  height: 64rpx;
 }
+.tabs {
+  height: 64rpx;
+  white-space:nowrap;
 
+}
+.scroll-x {
+  white-space: nowrap;
+  width: 622rpx;
+}
 .tabs .tab {
   width: 110rpx;
   line-height: 64rpx;
@@ -23,9 +30,7 @@
   border: none;
   color: rgba(155, 155, 155, 1);
 }
-.tabs .tab:nth-of-type(5n+0){
-  margin-right: 0;
-}
+
 .tabs .tab:after {
   display: none;
 }

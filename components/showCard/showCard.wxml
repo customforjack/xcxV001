@@ -33,9 +33,17 @@
       <button class='scBtn'>
         <image mode="widthFix" src='/img/shoucang-2.png'></image> 12
       </button>
-      <button class='talkBtn'>
+      <button class='talkBtn' catchtap='talkthis'>
         <image mode="widthFix" src='/img/xiazai16.png'></image> 3
       </button>
     </view>
+    <!--回复列表-->
+    <view class='hfList'>
+    
+    </view>
+  </view>
+  <view class='talk-child-box' wx:if="{{tofocus}}" style='bottom:{{0}}rpx'>
+    <input bindinput='changeTalk' bindfocus="focused" cursor-spacing="8" bindblur="toBlur" focus="{{tofocus}}" placeholder='写评论...'></input>
+    <button catchtap='toTalking'>发送</button>
   </view>
 </view>

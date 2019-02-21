@@ -195,9 +195,9 @@ background: none;
 }
 
 .scroll-x {
-  white-space: nowrap;
-  width: 622rpx;
-}
+   white-space: nowrap;
+   width: 622rpx;
+ }
 
 .buyBtn {
   position: fixed;
