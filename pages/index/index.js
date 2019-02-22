@@ -60,6 +60,11 @@ Page({
       url: '/pages/my_roles/myRoles?id=' + e.currentTarget.dataset.id,
     })
   },
+  toAddHabitList(){
+    wx.navigateTo({
+      url:'/pages/add_habit/addHabit'
+    })
+  },
   toaddStepOne(e) {
     console.log(e.currentTarget.dataset.id)
     this.getDetail(e.currentTarget.dataset.id).then(res => {

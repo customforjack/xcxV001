@@ -16,7 +16,7 @@
     <view class='info'>
       <view class='msg'>您还没有任何习惯，点击<text>“+”</text>号可创建哦</view>
     </view>
-    <image class='add' src='/img/Homeadd.png'></image>
+    <image class='add' bindtap='toAddHabitList' src='/img/Homeadd.png'></image>
   </view>
   <scroll-view scroll-x="true" class="vip_xl" wx:if="{{detail.today_habit.length}}">
     <view class='role_list'>

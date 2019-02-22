@@ -1,5 +1,5 @@
 <!--components/showCard/showCard.wxml-->
-<view class='friendList'>
+<view class='friendList' catchtap='closejp'>
   <view class='teacherBox'>
     <view class='t-info'>
       <view class='t-icon'>
@@ -38,12 +38,14 @@
       </button>
     </view>
     <!--回复列表-->
-    <view class='hfList'>
-    
+    <view class='hfList' wx:if="{{item.reply.length}}">
+      <view class='h-card' wx:for="{{item.reply}}"  wx:for-index="child-idx" wx:for-item="child"><text class='name'>{{child.member_name}}：</text>
+      {{child.content}}
+      </view>
     </view>
   </view>
   <view class='talk-child-box' wx:if="{{tofocus}}" style='bottom:{{0}}rpx'>
-    <input bindinput='changeTalk' bindfocus="focused" cursor-spacing="8" bindblur="toBlur" focus="{{tofocus}}" placeholder='写评论...'></input>
+    <input bindinput='changeTalk' bindblur="toBlur"  cursor-spacing="8" focus="{{tofocus}}" placeholder='写评论...'></input>
     <button catchtap='toTalking'>发送</button>
   </view>
 </view>

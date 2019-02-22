@@ -264,6 +264,18 @@ position: relative;
   background:rgba(247,248,252,1);
 border-radius:5rpx;
 padding: 23rpx 26rpx;
+margin-top: 35rpx;
+}
+.friendList .hfList .h-card{
+font-size:26rpx;
+color:#4D4D4D;
+line-height:37rpx;
+margin-bottom: 5rpx;
+}
+.friendList .hfList .h-card .name{
+  font-size:26rpx;
+color:rgba(92,110,150,1);
+line-height:37rpx;
 }
 .talk-child-box{
   height: 70rpx;

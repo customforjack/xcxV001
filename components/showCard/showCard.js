@@ -62,17 +62,15 @@ Component({
         tofocus:true
       })
     },
-    focused(e){
+    closejp(){
       this.setData({
-        height: e.detail.height
-      })
-      wx.showToast({
-        title: e.detail.height.toString(),
-        icon:'none'
+        tofocus: false
       })
     },
     toBlur(){
- 
+      this.setData({
+        tofocus: false
+      })
     },
     // 回复
     toTalking(){
@@ -92,9 +90,17 @@ Component({
         }
       }).then(res => {
         if(res.code === 1){
+ 
+          _this.data.item.reply.push({
+            member_name: wx.getStorageSync('loginData').member_name,
+            content: _this.data.content
+          })
           _this.setData({
-            content:'',
-            tofocus:false
+            'item.reply': _this.data.item.reply
+          })
+          _this.setData({
+            content: '',
+            tofocus: false
           })
         }
         wx.showToast({
