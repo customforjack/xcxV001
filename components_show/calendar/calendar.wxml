@@ -39,7 +39,7 @@
             <view class="date {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'date-current': ''}} " data-week="{{week}}" data-index="{{index}}" data-mak="{{canlender.month}}"   data-ischeck="{{canlender.month === day.month}}" bindtap='selectDay' data-clickday='{{day.date}}' data-col='{{day.col}}'>
               <view class='reqi'>
               
-              <view style='position:relative' class="{{day.mark==true?'icon':''}}  {{day.col==1?'yuan':''}} {{new_data2<=day.year&&day.year<=new_data?'yuan':''}}  {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month?'yuan': ''}}" data-week="{{week}}"   data-c='{{day.year}}' data-d='{{new_data2}}' data-e='{{new_data}}'   data-b='{{day.month}}'  data-a='{{day.date}}'> {{day.date}}
+              <view style='position:relative' class="{{day.mark==true?'icon':''}} {{day.mark_fail==true?'icon2':''}} {{day.col==1?'yuan':''}} {{new_data2<=day.year&&day.year<=new_data?'yuan':''}}  {{canlender.month === day.month? '' : 'placeholder'}} {{(day.date==canlender.date||day.checked) && canlender.month == day.month &&day.mark_fail==false?'': ''}}" data-week="{{week}}" data-fail='{{day.mark_fail}}'   data-c='{{day.year}}' data-d='{{new_data2}}' data-e='{{new_data}}'   data-b='{{day.month}}'  data-a='{{day.date}}'> {{day.date}}
               <!-- <image src='../../img/daka-ok.png' style=' position: absolute;height:100%;width:100%'></image> -->
               </view>
               </view>

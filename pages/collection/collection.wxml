@@ -11,10 +11,10 @@
   
 
  <block wx:if="{{flag==2 && habitList.length>0}}">
-  <view class='tilte' wx:for='{{habitList}}'  wx:for-item="habitList" data-id='{{habitList.id}}' wx:key="bb">
+  <view class='tilte' wx:for='{{habitList}}' bindtap='habitDetails'  wx:for-item="habitList" data-id='{{habitList.id}}' wx:key="bb">
     <view class='tilte_one'>
     <text>{{habitList.name}}</text>
-    <text class='buy' catchtap='habitDetails' data-id='{{habitList.id}}'>加入</text>
+    <text class='buy' data-id='{{habitList.id}}'>加入</text>
     </view>
     <view class='content'>
       

@@ -208,7 +208,6 @@ Page({
       let that=this;
     console.log(e);
     var order_sn = e.currentTarget.dataset.ordernum;
-
     wx.showModal({
       title: '提示',
       content: '确定取消订单吗?',
@@ -254,9 +253,15 @@ Page({
         }
       }
     })
-
-
-    
+  },
+  //跳转角色详情
+  details: function (e) {
+    console.log(e);
+    var roleId = e.currentTarget.dataset.id
+    var that = this;
+    wx.navigateTo({
+      url: '../../my_roles/myRoles?id=' + roleId
+    })
   },
 
   /**

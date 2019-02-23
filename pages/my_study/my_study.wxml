@@ -9,7 +9,7 @@
     </view>
   </view>
   
-
+<!-- 课堂 -->
  <block wx:if="{{flag==0 && studyList.length>0}}">
   <view class='tilte'   wx:for='{{studyList}}'  wx:for-item='studyList' wx:key='habitList'  wx:for-index="studyIndex" >
     <!-- <text class='tilte_big'>MORE</text> -->
@@ -43,7 +43,7 @@
     </view>
 </block>
 
-
+<!-- 习惯 -->
  <block wx:if="{{flag==1 && habitList.length>0 }}">
   <view class='tilte' wx:for='{{habitList}}' bindtap='habitDetails' wx:for-item='habitList' wx:key='habitList'  wx:for-index="habitIndex"  data-id='{{habitList.id}}'>
 
@@ -59,12 +59,15 @@
       {{habitList.description}}
       </text>
         <text class='validity'>
-      已打卡{{habitList.sign_num}}次
+      有效期至{{habitList.end_time}}
+      <text style='position:absolute;top:-4rpx;right:0'>已打卡{{habitList.sign_num}}次</text>
+      
      <!-- <text class='remnant'>已学习10分钟</text> -->
       </text>
      </view> 
      <view class='daka' catchtap='daka' data-index='{{habitIndex}}'  data-id='{{habitList.id}}'>
-      <image wx:if="{{habitList.is_sign==0}}" src='../../img/add.png'></image>
+      <view style='color: #FFFFFF;' wx:if="{{habitList.is_sign==0}}">打卡</view>
+      <!-- <image wx:if="{{habitList.is_sign==0}}" src='../../img/add.png'></image> -->
       <image wx:if="{{habitList.is_sign==1}}" src='../../img/daka.png'></image>
      </view>
     </view>

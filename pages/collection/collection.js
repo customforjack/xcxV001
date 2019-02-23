@@ -69,7 +69,7 @@ Page({
           })
           setTimeout(() => {
             wx.navigateTo({
-              url: '/pages/my_roles/myRoles?character_id=' + e.currentTarget.dataset.character_id,
+              url: '/pages/my_roles/myRoles?character_id=' + e.currentTarget.dataset.id,
             })
           }, 1000)
         }

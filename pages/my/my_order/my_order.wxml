@@ -8,13 +8,13 @@
 </view>
 <!-- 全部 -->
 <block wx:if="{{act==0 && orderList.length>0}}">
-<view class='list_item' wx:for='{{orderList}}' bindtap='details' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
+<view class='list_item' wx:for='{{orderList}}' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
 <view class='orderNum'>
   <view>订单编号：{{orderList.order_sn}}</view>
   <view>下单时间：{{orderList.create_time}}</view>
 </view>
 <view>
-   <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
+   <label class='orderConten' wx:for='{{orderList.order_detail}}'  bindtap='details'  data-id='{{orderList_duo.id}}' wx:for-item="orderList_duo"  wx:key="duo">
    <!-- <checkbox  value="" checked="" /> -->
   <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
   <view class='list_r'>
@@ -57,13 +57,13 @@
 
 <!-- 待付款 -->
 <block wx:if="{{act==1 && orderList.length>0}}">
-<view class='list_item' wx:for='{{orderList}}' bindtap='details' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
+<view class='list_item' wx:for='{{orderList}}' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
 <view class='orderNum'>
   <view>订单编号：{{orderList.order_sn}}</view>
   <view>下单时间：{{orderList.create_time}}</view>
 </view>
 <view>
-   <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
+   <label class='orderConten' wx:for='{{orderList.order_detail}}' bindtap='details'  data-id='{{orderList_duo.id}}' wx:for-item="orderList_duo"  wx:key="duo">
    <!-- <checkbox  value="" checked="" /> -->
   <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
   <view class='list_r'>
@@ -106,13 +106,13 @@
 
 <!-- 已付款 -->
 <block wx:if="{{act==2 && orderList.length>0}}">
-<view class='list_item' wx:for='{{orderList}}' bindtap='details' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
+<view class='list_item' wx:for='{{orderList}}'  data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
 <view class='orderNum'>
   <view>订单编号：{{orderList.order_sn}}</view>
   <view>下单时间：{{orderList.create_time}}</view>
 </view>
 <view>
-   <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
+   <label class='orderConten' wx:for='{{orderList.order_detail}}' bindtap='details'  data-id='{{orderList_duo.id}}' wx:for-item="orderList_duo"  wx:key="duo">
    <!-- <checkbox  value="" checked="" /> -->
   <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
   <view class='list_r'>
@@ -157,13 +157,13 @@
 
 <!-- 已取消 -->
 <block wx:if="{{act==3 && orderList.length>0}}">
-<view class='list_item' wx:for='{{orderList}}' bindtap='details' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
+<view class='list_item' wx:for='{{orderList}}' data-id='{{orderList.id}}'  wx:for-item="orderList"  wx:key="unique">
 <view class='orderNum'>
   <view>订单编号：{{orderList.order_sn}}</view>
   <view>下单时间：{{orderList.create_time}}</view>
 </view>
 <view>
-   <label class='orderConten' wx:for='{{orderList.order_detail}}' data-id='{{orderList.id}}' wx:for-item="orderList_duo"  wx:key="duo">
+   <label class='orderConten' wx:for='{{orderList.order_detail}}' bindtap='details'  data-id='{{orderList_duo.id}}' wx:for-item="orderList_duo"  wx:key="duo">
    <!-- <checkbox  value="" checked="" /> -->
   <image src='{{orderList_duo.thumbnail}}' class='tu'></image>
   <view class='list_r'>

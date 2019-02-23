@@ -104,7 +104,7 @@ Component({
           if(!all){
               all=new Date(Date.parse(that.data.date.replace(/-/g,"/")));
           }
-          console.log(123);
+          
             that.getWeek(all)
         }else {
             return  wx.ajax({
@@ -237,11 +237,14 @@ Component({
       console.log("需要显示的红点", this.data.mak_time2)
           if(this.data.mak_time2){
               var mark_list = this.data.mak_time2.day.map(Number);
+            var mark_list2 = this.data.mak_time2.day_fail.map(Number);
           }else {
               mark_list=[];
+              mark_list2 = [];
           }
 
       let mark = false;
+      let mark_fail=false;
       console.log(mark_list);
       for (let i = 1; i <= new Date(year, month, 0).getDate(); i++) {
        
@@ -250,6 +253,13 @@ Component({
         } else { 
           mark = false;
           }
+        if (mark_list2.indexOf(i) != -1) {
+          mark_fail = true;
+        } else {
+          mark_fail = false;
+        }
+
+
         let have = false;
         for (let j = 0; j < selected.length; j++) {
           let selDate = selected[j].date.split('-');
@@ -283,9 +293,9 @@ Component({
           'date': i + "",
           'month': month,
           'year': duibi,
-
           col:0,
           mark,
+          mark_fail,
           have
         })
       }
